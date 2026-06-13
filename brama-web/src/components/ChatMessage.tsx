@@ -47,7 +47,7 @@ export function ChatMessage({ message, onAsk }: ChatMessageProps) {
         ) : (
           <>
             {assistantText ? <Markdown>{assistantText}</Markdown> : null}
-            {message.streaming && !message.text ? (
+            {message.streaming && !message.text && message.blocks.length === 0 ? (
               <p className="inline-flex gap-[0.35rem] my-[var(--space-2)]" aria-hidden="true">
                 <span className={TYPING_DOT} />
                 <span className={`${TYPING_DOT} [animation-delay:0.15s]`} />
