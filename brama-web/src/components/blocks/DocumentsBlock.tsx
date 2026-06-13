@@ -1,5 +1,6 @@
 import { useId } from 'react'
 import { FileCheck2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { BLOCK, BLOCK_TITLE } from './blockStyles'
 import type { documentsBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
@@ -8,12 +9,14 @@ type Props = z.infer<typeof documentsBlockSchema>
 
 /** Interactive checklist — residents tick off what they have. */
 export function DocumentsBlock({ title, items }: Props) {
+  const { t } = useTranslation()
   const baseId = useId()
+  const heading = title ?? t('chat.blocks.documents')
 
   return (
-    <section className={BLOCK} aria-label={title ?? 'Wymagane dokumenty'}>
+    <section className={BLOCK} aria-label={heading}>
       <p className={BLOCK_TITLE}>
-        <FileCheck2 aria-hidden="true" size={16} /> {title ?? 'Wymagane dokumenty'}
+        <FileCheck2 aria-hidden="true" size={16} /> {heading}
       </p>
       <ul className="flex flex-col gap-[var(--space-2)] m-0 p-0 list-none">
         {items.map((item, index) => {

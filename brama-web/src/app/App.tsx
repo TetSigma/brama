@@ -102,18 +102,18 @@ function App() {
           contentClassName="site-header__content"
           blur={17}
           distortion={343}
-          flexibility={17}
+          flexibility={0}
           borderColor="#ffffff"
           borderSize={1}
           borderRadius={130}
           borderOpacity={0.4}
           backgroundColor="#000000"
-          backgroundOpacity={0}
+          backgroundOpacity={0.06}
           chromaticAberration={0}
           onHoverScale={1}
           saturation={100}
           brightness={100}
-          padding="10px 16px"
+          padding="12px 18px"
         >
           <a className="brand-mark" href="#top" aria-label={t('navigation.homeLabel')}>
             <span className="brand-gate" aria-hidden="true" />
@@ -124,23 +124,28 @@ function App() {
             <a href="#services">{t('navigation.services')}</a>
             <a href="#trust">{t('navigation.trust')}</a>
           </nav>
-          <div className="language-switcher">
-            <label className="visually-hidden" htmlFor="language-select">
-              {t('navigation.languageLabel')}
-            </label>
-            <select
-              aria-label={`${t('navigation.languageLabel')}: ${languageNames[currentLanguage]}`}
-              className="language-select"
-              id="language-select"
-              onChange={(event) => handleLanguageChange(event.target.value as LanguageCode)}
-              value={currentLanguage}
-            >
-              {languageCodes.map((languageCode) => (
-                <option key={languageCode} value={languageCode}>
-                  {languageFlags[languageCode]}
-                </option>
-              ))}
-            </select>
+          <div className="flex items-center gap-[var(--space-3)]">
+            <Link className={uiButtonClass({ variant: 'primary', size: 'sm' })} to="/chat">
+              {t('navigation.assistant')}
+            </Link>
+            <div className="language-switcher">
+              <label className="visually-hidden" htmlFor="language-select">
+                {t('navigation.languageLabel')}
+              </label>
+              <select
+                aria-label={`${t('navigation.languageLabel')}: ${languageNames[currentLanguage]}`}
+                className="language-select"
+                id="language-select"
+                onChange={(event) => handleLanguageChange(event.target.value as LanguageCode)}
+                value={currentLanguage}
+              >
+                {languageCodes.map((languageCode) => (
+                  <option key={languageCode} value={languageCode}>
+                    {languageFlags[languageCode]}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </GlassCard>
       </header>
@@ -167,7 +172,31 @@ function App() {
         </div>
 
         <div className="hero-visual" aria-label={t('hero.visualLabel')}>
-          <img src={heroImage} alt={t('hero.imageAlt')} />
+          <GlassCard
+            className="hero-glass"
+            contentClassName="hero-glass__content"
+            borderRadius={28}
+            blur={3}
+            distortion={95}
+            chromaticAberration={9}
+            saturation={150}
+            brightness={106}
+            flexibility={0}
+            onHoverScale={1.03}
+            borderColor="#ffffff"
+            borderOpacity={0.65}
+            borderSize={1}
+            innerLightBlur={28}
+            innerLightSpread={3}
+            innerLightColor="#ffffff"
+            innerLightOpacity={0.8}
+            outerLightBlur={48}
+            outerLightSpread={4}
+            outerLightColor="#ffffff"
+            outerLightOpacity={0.35}
+          >
+            <img src={heroImage} alt={t('hero.imageAlt')} />
+          </GlassCard>
           <div className="assistant-panel" aria-label={t('assistantPreview.label')}>
             <p>{t('assistantPreview.question')}</p>
             <span>{t('assistantPreview.answer')}</span>

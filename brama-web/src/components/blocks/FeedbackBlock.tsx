@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ThumbsDown, ThumbsUp } from 'lucide-react'
 import { UIButton } from '@/ui'
 import { useFeedback } from '@/hooks/useFeedback'
@@ -12,6 +13,7 @@ const FEEDBACK = `${BLOCK_DASHED} flex flex-wrap items-center gap-[var(--space-3
 
 /** D12 — per-answer thumbs feedback. */
 export function FeedbackBlock({ answerId }: Props) {
+  const { t } = useTranslation()
   const feedback = useFeedback()
   const [submitted, setSubmitted] = useState<'up' | 'down' | null>(null)
 
@@ -24,20 +26,20 @@ export function FeedbackBlock({ answerId }: Props) {
   if (submitted) {
     return (
       <p className={`${FEEDBACK} text-[var(--color-success)]`} role="status">
-        Dziękujemy za opinię!
+        {t('chat.feedback.thanks')}
       </p>
     )
   }
 
   return (
-    <section className={FEEDBACK} aria-label="Oceń odpowiedź">
-      <span className="font-semibold">Czy to pomogło?</span>
+    <section className={FEEDBACK} aria-label={t('chat.feedback.label')}>
+      <span className="font-semibold">{t('chat.feedback.question')}</span>
       <div className="flex gap-[var(--space-2)]">
-        <UIButton variant="quiet" size="sm" aria-label="Pomocne" onClick={() => vote('up')}>
-          <ThumbsUp aria-hidden="true" size={16} /> Tak
+        <UIButton variant="quiet" size="sm" aria-label={t('chat.feedback.helpful')} onClick={() => vote('up')}>
+          <ThumbsUp aria-hidden="true" size={16} /> {t('chat.feedback.yes')}
         </UIButton>
-        <UIButton variant="quiet" size="sm" aria-label="Niepomocne" onClick={() => vote('down')}>
-          <ThumbsDown aria-hidden="true" size={16} /> Nie
+        <UIButton variant="quiet" size="sm" aria-label={t('chat.feedback.notHelpful')} onClick={() => vote('down')}>
+          <ThumbsDown aria-hidden="true" size={16} /> {t('chat.feedback.no')}
         </UIButton>
       </div>
     </section>

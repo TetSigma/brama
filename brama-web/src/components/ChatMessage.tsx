@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import type { ChatMessage as ChatMessageModel } from '@/@types/chat'
 import { AnswerBlocks } from './AnswerBlocks'
 import { Markdown } from './Markdown'
@@ -23,12 +24,13 @@ const BUBBLE_ASSISTANT =
 const TYPING_DOT = 'w-2 h-2 rounded-full bg-[var(--color-text-subtle)] animate-[chat-typing_1s_infinite_ease-in-out]'
 
 export function ChatMessage({ message, onAsk }: ChatMessageProps) {
+  const { t } = useTranslation()
   const isUser = message.role === 'user'
 
   return (
     <article
       className={`flex ${isUser ? 'justify-end' : ''}`}
-      aria-label={isUser ? 'Twoja wiadomość' : 'Odpowiedź asystenta'}
+      aria-label={isUser ? t('chat.userMessage') : t('chat.assistantMessage')}
     >
       <div className={`${BUBBLE_BASE} ${isUser ? BUBBLE_USER : BUBBLE_ASSISTANT}`}>
         {isUser ? (

@@ -1,4 +1,5 @@
 import { MapPin, Phone } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { UIButton } from '@/ui'
 import { BLOCK, BLOCK_TITLE } from './blockStyles'
 import type { placeBlockSchema } from '@/api/blocks'
@@ -6,18 +7,20 @@ import type { z } from 'zod'
 
 type Props = z.infer<typeof placeBlockSchema>
 
-const LABELS: Record<Props['kind'], string> = {
-  submit: 'Gdzie złożyć',
-  collect: 'Gdzie odebrać',
+const LABEL_KEY: Record<Props['kind'], string> = {
+  submit: 'chat.blocks.placeSubmit',
+  collect: 'chat.blocks.placeCollect',
 }
 
 export function PlaceBlock({ kind, address, phone, hours }: Props) {
+  const { t } = useTranslation()
+  const label = t(LABEL_KEY[kind])
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
 
   return (
-    <section className={BLOCK} aria-label={LABELS[kind]}>
+    <section className={BLOCK} aria-label={label}>
       <p className={BLOCK_TITLE}>
-        <MapPin aria-hidden="true" size={16} /> {LABELS[kind]}
+        <MapPin aria-hidden="true" size={16} /> {label}
       </p>
       <p className="m-0 font-medium">{address}</p>
       {hours ? (
@@ -27,7 +30,7 @@ export function PlaceBlock({ kind, address, phone, hours }: Props) {
       ) : null}
       <div className="flex gap-[var(--space-2)] mt-[var(--space-3)]">
         <UIButton href={mapsUrl} variant="quiet" size="sm" target="_blank" rel="noopener noreferrer">
-          <MapPin aria-hidden="true" size={16} /> Mapa
+          <MapPin aria-hidden="true" size={16} /> {t('chat.blocks.map')}
         </UIButton>
         {phone ? (
           <UIButton href={`tel:${phone.replace(/\s/g, '')}`} variant="quiet" size="sm">

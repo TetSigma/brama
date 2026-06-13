@@ -137,16 +137,27 @@ a {
 
 .site-header {
   position: sticky;
-  top: var(--space-4);
+  top: var(--space-3);
   z-index: 10;
-  width: 70%;
-  margin: var(--space-4) auto 0;
+  /* Match the chat header exactly: viewport-relative, same cap, centered, same top spacing. */
+  width: min(70vw, 44rem);
+  margin: 0 auto;
+  padding: var(--space-3) 0;
 }
 
 /* GlassCard is the surface; header is just the sticky positioning wrapper.
    GlassCard sets an inline `width: fit-content`, so override with !important to fill 70%. */
 .site-header__glass {
   width: 100% !important;
+}
+
+/* Chat composer glass bar — GlassCard defaults to fit-content, force full width. */
+.composer-glass {
+  width: 100% !important;
+  border-radius: 20px;
+  box-shadow:
+    0 16px 40px rgb(0 0 0 / 0.12),
+    0 2px 6px rgb(0 0 0 / 0.06);
 }
 
 .site-header__content {
@@ -211,6 +222,7 @@ a {
 
 .language-switcher::after {
   position: absolute;
+  top: 50%;
   right: var(--space-3);
   width: 0.42rem;
   height: 0.42rem;
@@ -218,24 +230,25 @@ a {
   content: '';
   border-right: var(--border-width-sm) solid var(--color-text);
   border-bottom: var(--border-width-sm) solid var(--color-text);
-  transform: translateY(-0.12rem) rotate(45deg);
+  transform: translateY(-65%) rotate(45deg);
 }
 
 .language-select {
-  width: 4.5rem;
-  min-height: 2.75rem;
-  padding: 0 var(--space-8) 0 var(--space-3);
+  padding: 8px 1.85rem 8px var(--space-3);
   color: var(--color-text);
-  border: var(--border-width-sm) solid rgb(0 0 0 / 0.16);
-  border-radius: var(--radius-1);
+  border: 1px solid #ffffff;
+  border-radius: 20px;
   appearance: none;
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.84), rgb(255 255 255 / 0.56)),
-    var(--glass-surface);
-  box-shadow: var(--glass-inner-light);
+  background: transparent;
   cursor: pointer;
-  font-size: var(--font-size-xl);
-  line-height: 1;
+  font-size: var(--font-size-lg);
+  line-height: 1.1;
+  transition: all 0.25s ease;
+}
+
+.language-select:hover {
+  background: var(--color-surface);
+  border-color: var(--color-primary);
 }
 
 .hero-section {

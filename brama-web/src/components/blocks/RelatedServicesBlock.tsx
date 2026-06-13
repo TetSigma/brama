@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { UIButton } from '@/ui'
 import { BLOCK, BLOCK_TITLE } from './blockStyles'
 import type { relatedServicesBlockSchema } from '@/api/blocks'
@@ -9,9 +10,10 @@ type Props = z.infer<typeof relatedServicesBlockSchema> & {
 }
 
 export function RelatedServicesBlock({ services, onAsk }: Props) {
+  const { t } = useTranslation()
   return (
-    <section className={BLOCK} aria-label="Sprawy powiązane">
-      <p className={BLOCK_TITLE}>Powiązane sprawy</p>
+    <section className={BLOCK} aria-label={t('chat.blocks.related')}>
+      <p className={BLOCK_TITLE}>{t('chat.blocks.related')}</p>
       <div className="flex flex-wrap gap-[var(--space-2)]">
         {services.map((service) => (
           <UIButton
