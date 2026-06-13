@@ -200,6 +200,25 @@ Transition logic optionally expressed with a state-machine library (**XState**) 
 
 ---
 
+## D14. Pre-filled wniosek PDF tool — **OPTIONAL: chat → ready-to-submit form**
+
+**Question.** Can the assistant turn a finished conversation/process into a real, pre-filled official form (wniosek) the citizen can submit?
+
+**Decision (OPTIONAL).** Add a capability (D8 registry entry) that generates a **pre-filled official-form PDF** from the data already collected during the process: it fills a known form template with the citizen's answers + structured facts (D2) and returns a ready-to-print / ready-to-submit PDF. This is the highest-value "do something after the chat" integration — it converts an explanation into a concrete artifact and saves both sides time (citizen doesn't re-enter data; office receives a clean, complete form). **Optional** because it depends on having real Lublin form templates and is not on the critical demo path.
+
+**How it fits:**
+- Lives as a registry capability (e.g. `generateWniosekPdf(serviceId, instanceId)`); the process state (D10) and structured facts (D2) supply the field values — the LLM does **not** invent form content.
+- Server-side PDF fill over a known template (e.g. `pdf-lib` / `pdf-fill` against an AcroForm template, or HTML→PDF for templates we recreate). No model in the fill path → no hallucinated fields.
+- Output is offered as a download and/or attached to the process; pairs naturally with the after-chat action loop (payment of opłata skarbowa, appointment QR, ePUAP submission) if those are pursued later.
+
+**Dependencies / gating.** Requires at least one **authentic Lublin form template** and a field-mapping for the chosen hero process — so it is **gated on the same data discovery as the hero process** (D9). Build it only if a real template for the hero process is available.
+
+**Guardrails.** Form values come from structured/validated data, not free LLM generation; collected fields are validated/typed (D8 security); the citizen reviews the filled form before submission (no silent auto-submit).
+
+**Scope guardrail (hackathon).** OPTIONAL. If pursued, scope to **one form for the hero process**. A demoable fallback is a filled PDF over a recreated template if the official AcroForm isn't obtainable in time.
+
+---
+
 ## Judging-criteria alignment (motyw przewodni)
 
 | # | Criterion | How the stack addresses it | Primary decision |
@@ -235,4 +254,5 @@ Transition logic optionally expressed with a state-machine library (**XState**) 
 | Guardrails | All four, grounding-first | **DECIDED** |
 | Feedback & metrics | In-app feedback + event metrics in SQLite; dashboard optional | **DECIDED** |
 | Accessibility | WCAG 2.1 Level AA (demo path verified; full audit = production) | **DECIDED** |
+| Pre-filled wniosek PDF tool | Registry capability fills real form template; gated on data | **OPTIONAL** |
 | Backend/Frontend | **Express** + React/Vite/Tailwind | **DECIDED** |
