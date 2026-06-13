@@ -8,6 +8,7 @@ import { streamMockChat } from './chatMock'
 const USE_MOCK = import.meta.env.VITE_USE_MOCK_CHAT === 'true'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? ''
+const BLOCKS_DELIMITER = '\n--BRAMA--\n'
 
 type ChatRequestBody = {
   conversationId: string
@@ -46,11 +47,31 @@ function parseSseFrame(frame: string): ChatStreamEvent | null {
   return null
 }
 
+function maybeParseBlocksEnvelope(rawEnvelope: string): unknown | null {
+  try {
+    const parsed = JSON.parse(rawEnvelope) as unknown
+    if (typeof parsed !== 'object' || parsed === null || !('blocks' in parsed)) {
+      return null
+    }
+
+    return (parsed as { blocks: unknown }).blocks
+  } catch {
+    return null
+  }
+}
+
+function couldBeBlocksEnvelope(buffer: string): boolean {
+  const trimmed = buffer.trimStart()
+  return trimmed.length === 0 || trimmed.startsWith('{')
+}
+
 async function* streamPlainText(response: Response): AsyncGenerator<ChatStreamEvent> {
   const reader = response.body?.pipeThrough(new TextDecoderStream()).getReader()
   if (!reader) return
 
   let fullResponse = ''
+  let pendingEnvelope = ''
+  let envelopeResolved = false
 
   try {
     while (true) {
@@ -60,7 +81,42 @@ async function* streamPlainText(response: Response): AsyncGenerator<ChatStreamEv
 
       fullResponse += value
       console.info('[chat] server response chunk', value)
-      yield { type: 'token', delta: value }
+
+      if (envelopeResolved) {
+        yield { type: 'token', delta: value }
+        continue
+      }
+
+      pendingEnvelope += value
+      const delimiterIndex = pendingEnvelope.indexOf(BLOCKS_DELIMITER)
+      if (delimiterIndex !== -1) {
+        const rawEnvelope = pendingEnvelope.slice(0, delimiterIndex)
+        const prose = pendingEnvelope.slice(delimiterIndex + BLOCKS_DELIMITER.length)
+        const blocks = maybeParseBlocksEnvelope(rawEnvelope)
+
+        envelopeResolved = true
+        pendingEnvelope = ''
+
+        if (blocks !== null) {
+          yield { type: 'blocks', blocks }
+        } else {
+          yield { type: 'token', delta: `${rawEnvelope}${BLOCKS_DELIMITER}` }
+        }
+        if (prose.length > 0) {
+          yield { type: 'token', delta: prose }
+        }
+        continue
+      }
+
+      if (!couldBeBlocksEnvelope(pendingEnvelope)) {
+        envelopeResolved = true
+        yield { type: 'token', delta: pendingEnvelope }
+        pendingEnvelope = ''
+      }
+    }
+
+    if (!envelopeResolved && pendingEnvelope.length > 0) {
+      yield { type: 'token', delta: pendingEnvelope }
     }
   } finally {
     console.info('[chat] full server response', {

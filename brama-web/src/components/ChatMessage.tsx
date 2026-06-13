@@ -23,9 +23,18 @@ const BUBBLE_ASSISTANT =
 
 const TYPING_DOT = 'w-2 h-2 rounded-full bg-[var(--color-text-subtle)] animate-[chat-typing_1s_infinite_ease-in-out]'
 
+function stripBlockTags(text: string): string {
+  return text
+    .replace(/\s*\[\[(?:map|fee|deadline|docs|form)\]\]\s*/giu, ' ')
+    .replace(/\s*\[\[[a-z]*$/iu, '')
+    .replace(/[ \t]+([,.;:!?])/g, '$1')
+    .replace(/[ \t]{2,}/g, ' ')
+}
+
 export function ChatMessage({ message, onAsk }: ChatMessageProps) {
   const { t } = useTranslation()
   const isUser = message.role === 'user'
+  const assistantText = isUser ? message.text : stripBlockTags(message.text)
 
   return (
     <article
@@ -34,10 +43,10 @@ export function ChatMessage({ message, onAsk }: ChatMessageProps) {
     >
       <div className={`${BUBBLE_BASE} ${isUser ? BUBBLE_USER : BUBBLE_ASSISTANT}`}>
         {isUser ? (
-          <p className="m-0 whitespace-pre-wrap">{message.text}</p>
+          <p className="m-0 whitespace-pre-wrap">{assistantText}</p>
         ) : (
           <>
-            {message.text ? <Markdown>{message.text}</Markdown> : null}
+            {assistantText ? <Markdown>{assistantText}</Markdown> : null}
             {message.streaming && !message.text ? (
               <p className="inline-flex gap-[0.35rem] my-[var(--space-2)]" aria-hidden="true">
                 <span className={TYPING_DOT} />

@@ -15,6 +15,7 @@ const SEKCJA = {
   applications: 'Wymagane wnioski',
   attachments: 'Wymagane załączniki',
   toView: 'Dokumenty do wglądu',
+  submitPlace: 'Sposób i miejsce składania dokumentów',
   pickup: 'Sposób i miejsce odbioru dokumentów',
   appeal: 'Tryb odwoławczy',
   legalBasis: 'Podstawa prawna',
@@ -32,8 +33,8 @@ export type MapBlock = {
   symbol: string
   nazwa: string
   adres: string | null
-  lat: number
-  lng: number
+  lat?: number
+  lng?: number
 }
 
 export type Bundle = {
@@ -54,6 +55,90 @@ export type Bundle = {
   pickup?: { text: string }
   related?: { cardId: string; nazwa: string }[]
   legal?: { appeal?: string; basis?: string; gdpr?: string; additional?: string }
+}
+
+type PhysicalPlace = {
+  name?: string
+  address: string
+  phone?: string
+  hours?: string
+}
+
+const OFFICE_WITH_ADDRESS_PATTERN =
+  /((?:Biuro|Wydział|Urząd|Miejski|Zarząd)[^:.;]{0,140}?)\s+((?:ul\.|al\.|pl\.|Plac)\s+.{0,180}?\d{2}-\d{3}\s+Lublin)/iu
+
+const ADDRESS_PATTERN =
+  /((?:ul\.|al\.|pl\.|Plac)\s+.{0,180}?\d{2}-\d{3}\s+Lublin)/iu
+
+function compact(text: string): string {
+  return text.replace(/\s+/g, ' ').trim()
+}
+
+function cleanOfficeName(value: string): string {
+  return compact(value)
+    .replace(/^(?:Osobiście|W siedzibie organu lub w|W siedzibie organu|w)\s+/iu, '')
+    .replace(/:$/u, '')
+}
+
+function cleanAddress(value: string): string {
+  return compact(value)
+    .replace(/\s+tel\..*$/iu, '')
+    .replace(/\s+Godziny przyjęć interesantów.*$/iu, '')
+}
+
+function extractFirstPhysicalPlace(section: string | undefined): PhysicalPlace | null {
+  if (!section) {
+    return null
+  }
+
+  const text = compact(section)
+  const personalVisitIndex = text.search(/\b(?:Osobiście|W siedzibie organu)\b/iu)
+  const searchText = personalVisitIndex >= 0 ? text.slice(personalVisitIndex) : text
+
+  const officeMatch = OFFICE_WITH_ADDRESS_PATTERN.exec(searchText)
+  const addressMatch = officeMatch ?? ADDRESS_PATTERN.exec(searchText)
+  if (!addressMatch) {
+    return null
+  }
+
+  const matchStart = addressMatch.index
+  const rawAddress = officeMatch?.[2] ?? addressMatch[1]
+  if (!rawAddress) {
+    return null
+  }
+  const name = officeMatch?.[1] ? cleanOfficeName(officeMatch[1]) : undefined
+  const address = cleanAddress(rawAddress)
+  const following = searchText.slice(matchStart + addressMatch[0].length, matchStart + 520)
+  const phone = /tel\.\s*([0-9][0-9\s,]+)/iu.exec(following)?.[1]
+  const hours =
+    /Godziny przyjęć interesantów:\s*(.*?)(?=\s+(?:Biuro|Wydział|Urząd|Miejski|Zarząd|Za pośrednictwem|Elektronicznie|$))/iu.exec(
+      following,
+    )?.[1]
+
+  return {
+    ...(name ? { name } : {}),
+    address,
+    ...(phone ? { phone: compact(phone) } : {}),
+    ...(hours ? { hours: compact(hours) } : {}),
+  }
+}
+
+function sameAddressPlace(left: string | null | undefined, right: string | null | undefined) {
+  if (!left || !right) {
+    return false
+  }
+
+  const normalise = (value: string) =>
+    value
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim()
+
+  const compactLeft = normalise(left)
+  const compactRight = normalise(right)
+  return compactLeft.includes(compactRight) || compactRight.includes(compactLeft)
 }
 
 export class BlocksService {
@@ -122,11 +207,32 @@ export class BlocksService {
       }
     }
 
-    // Office: card-number prefix = department symbol → SQLite row (with the
-    // geocoded coords). map block requires coords; contact does not.
+    // Prefer the concrete place from the service card. For many services the
+    // handling department and the resident-facing counter are different places.
     const symbol = cardId.split('-')[0] ?? ''
+    const servicePlace = card
+      ? extractFirstPhysicalPlace(card.sekcje?.[SEKCJA.submitPlace])
+      : null
     const department = symbol.length > 0 ? this.departmentService.getBySymbol(symbol) : null
-    if (department) {
+    if (servicePlace) {
+      const departmentCoordsMatch = sameAddressPlace(servicePlace.address, department?.adres)
+      bundle.map = {
+        symbol,
+        nazwa: servicePlace.name ?? department?.nazwa ?? symbol,
+        adres: servicePlace.address,
+        ...(departmentCoordsMatch && department?.lat != null && department.lng != null
+          ? { lat: department.lat, lng: department.lng }
+          : {}),
+      }
+
+      if (servicePlace.phone || servicePlace.hours || department?.email) {
+        bundle.contact = {
+          telefon: servicePlace.phone ?? department?.telefon ?? undefined,
+          email: department?.email ?? undefined,
+          godziny: servicePlace.hours ?? department?.godziny_pracy ?? undefined,
+        }
+      }
+    } else if (department) {
       if (department.lat != null && department.lng != null) {
         bundle.map = {
           symbol,
@@ -136,6 +242,7 @@ export class BlocksService {
           lng: department.lng,
         }
       }
+
       if (department.telefon || department.email || department.godziny_pracy) {
         bundle.contact = {
           telefon: department.telefon ?? undefined,
