@@ -2,13 +2,10 @@ import neo4j, { type Driver, type Session } from "neo4j-driver";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { env } from "../src/config/env.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.resolve(__dirname, "../../docs/bip_db");
-
-const NEO4J_URI = process.env.NEO4J_URI ?? "bolt://localhost:7687";
-const NEO4J_USER = process.env.NEO4J_USER ?? "neo4j";
-const NEO4J_PASSWORD = process.env.NEO4J_PASSWORD ?? "password";
 
 // --- types ---
 
@@ -239,8 +236,8 @@ async function resetGraph(session: Session): Promise<void> {
 
 async function main(): Promise<void> {
   const driver: Driver = neo4j.driver(
-    NEO4J_URI,
-    neo4j.auth.basic(NEO4J_USER, NEO4J_PASSWORD),
+    env.NEO4J_URI,
+    neo4j.auth.basic(env.NEO4J_USER, env.NEO4J_PASSWORD),
   );
   const session = driver.session();
 

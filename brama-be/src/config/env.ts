@@ -8,6 +8,7 @@ const envSchema = z.object({
   PORT: z.coerce.number().int().positive().default(4000),
   CORS_ORIGIN: z.string().default("http://localhost:5173"),
   CHAT_DATABASE_PATH: z.string().default("./data/chats.db"),
+  DEPARTMENTS_DATABASE_PATH: z.string().default("./data/brama.db"),
   OLLAMA_CHAT_MODEL: z
     .string()
     .default("hf.co/speakleash/Bielik-11B-v2.3-Instruct-GGUF:Q4_K_M"),
