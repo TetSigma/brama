@@ -148,3 +148,21 @@ When handing off work, include:
 - How it was verified.
 - Remaining risks or known failing checks.
 - Any environment or deployment step the human must apply outside the repo.
+
+# Qdrant Skills
+
+Agent skills encoding deep Qdrant knowledge for coding agents.
+
+## Available Skills
+
+- [qdrant-clients-sdk](https://skills.qdrant.tech/qdrant-clients-sdk/SKILL.md) — Client SDKs for Python, TypeScript, Rust, Go, .NET, and Java.
+- [qdrant-deployment-options](https://skills.qdrant.tech/qdrant-deployment-options/SKILL.md) — Choosing between local, Docker, self-hosted, Cloud, and embedded deployments.
+- [qdrant-model-migration](https://skills.qdrant.tech/qdrant-model-migration/SKILL.md) — Switching embedding models without downtime.
+- [qdrant-monitoring](https://skills.qdrant.tech/qdrant-monitoring/SKILL.md) — Monitoring, observability, health checks, and debugging production issues.
+- [qdrant-performance-optimization](https://skills.qdrant.tech/qdrant-performance-optimization/SKILL.md) — Search speed, memory usage, and indexing performance tuning.
+- [qdrant-scaling](https://skills.qdrant.tech/qdrant-scaling/SKILL.md) — Scaling decisions: data volume, QPS, latency, horizontal vs vertical.
+- [qdrant-search-quality](https://skills.qdrant.tech/qdrant-search-quality/SKILL.md) — Diagnosing bad results, search strategies, hybrid search, and reranking.
+- [qdrant-version-upgrade](https://skills.qdrant.tech/qdrant-version-upgrade/SKILL.md) — Safe upgrade paths, compatibility guarantees, and rolling upgrades.
+
+Skills strucure is hierarchical.
+You can use search: https://skills.qdrant.tech/search?query=your+query+here

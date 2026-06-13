@@ -1,196 +1,221 @@
-import 'dotenv/config'
-import { readFileSync } from 'node:fs'
-import { resolve } from 'node:path'
-import { QdrantClient } from '@qdrant/js-client-rest'
-import ollama from 'ollama'
+import { QdrantClient } from "@qdrant/js-client-rest";
+import Database from "better-sqlite3";
+import { createReadStream, readFileSync, mkdirSync } from "node:fs";
+import { createInterface } from "node:readline";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const QDRANT_URL = process.env.QDRANT_URL ?? 'http://localhost:6333'
-const COLLECTION = process.env.QDRANT_COLLECTION ?? 'bip_services'
-const EMBED_MODEL = process.env.OLLAMA_EMBED_MODEL ?? 'bge-m3'
-const DATA_DIR = resolve(process.cwd(), process.env.BIP_DATA_DIR ?? '../docs/bip_db')
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = path.resolve(__dirname, "../../docs/bip_db");
+const DB_PATH = path.resolve(__dirname, "../data/brama.db");
 
-const VECTOR_SIZE = 1024 // bge-m3
-const MAX_TEXT_LENGTH = 5000
-const UPSERT_BATCH = 64
+const QDRANT_URL = "http://10.8.45.10:6333";
+const OLLAMA_URL = "http://10.8.45.10:11434";
+const COLLECTION = "brama-services";
+const EMBED_MODEL = "mxbai-embed-large";
+const VECTOR_SIZE = 1024;
+const BATCH_SIZE = 20;
 
-type Section = Record<string, string>
+// --- types ---
 
-type ServiceRecord = {
-  numer_karty?: string
-  nazwa?: string
-  url?: string
-  sekcje?: Section
-  wnioski_do_pobrania?: Array<{ nazwa?: string }>
+interface ServiceRecord {
+  id: string;
+  nazwa: string;
+  komorka: string;
+  obszar: string;
+  url: string;
+  text: string;
 }
 
-type DepartmentRecord = {
-  nazwa?: string
-  symbol?: string
-  departament?: string
-  is_departament?: boolean
-  adres?: string
-  telefon?: string
-  email?: string
-  kierownik?: string
-  sekcje?: Section
+interface DepartmentRecord {
+  nazwa: string;
+  url: string;
+  departament_slug: string;
+  is_departament: boolean;
+  kierownik?: string;
+  symbol?: string;
+  departament?: string;
+  adres?: string;
+  telefon?: string;
+  faks?: string;
+  email?: string;
+  sekcje?: Record<string, string>;
 }
 
-type ChunkPayload = {
-  kind: 'service' | 'unit'
-  ref: string
-  title: string
-  text: string
-  komorka: string
-  departament: string
+// --- helpers ---
+
+async function embed(text: string): Promise<number[]> {
+  const res = await fetch(`${OLLAMA_URL}/api/embed`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ model: EMBED_MODEL, input: text }),
+  });
+  if (!res.ok) throw new Error(`Ollama embed failed: ${res.status}`);
+  const data = (await res.json()) as { embeddings: number[][] };
+  const vec = data.embeddings[0];
+  if (!vec) throw new Error("Empty embedding returned");
+  return vec;
 }
 
-type Point = { id: number; vector: number[]; payload: ChunkPayload }
-
-const client = new QdrantClient({ url: QDRANT_URL })
-
-const readJson = <T>(name: string): T =>
-  JSON.parse(readFileSync(resolve(DATA_DIR, name), 'utf8')) as T
-
-const sectionByPrefix = (sections: Section | undefined, prefix: string): string => {
-  for (const key of Object.keys(sections ?? {})) {
-    if (key.startsWith(prefix)) {
-      return sections?.[key] ?? ''
-    }
-  }
-  return ''
-}
-
-const contactLines = (unit: DepartmentRecord): string[] => {
-  const lines: string[] = []
-  if (unit.departament) lines.push(`Departament: ${unit.departament}.`)
-  if (unit.adres) lines.push(`Adres: ${unit.adres}.`)
-  if (unit.telefon) lines.push(`Telefon: ${unit.telefon}.`)
-  if (unit.email) lines.push(`E-mail: ${unit.email}.`)
-  if (unit.kierownik) lines.push(`Kierownik: ${unit.kierownik}.`)
-  const hours = sectionByPrefix(unit.sekcje, 'Godziny')
-  if (hours) lines.push(`Godziny pracy: ${hours}`)
-  return lines
-}
-
-const clamp = (text: string): string =>
-  text.length > MAX_TEXT_LENGTH ? text.slice(0, MAX_TEXT_LENGTH) : text
-
-const buildServiceText = (service: ServiceRecord, unit: DepartmentRecord | undefined): string => {
-  const head = [`Usluga: ${service.nazwa ?? ''}.`]
-  if (service.numer_karty) head.push(`Numer karty: ${service.numer_karty}.`)
-
-  const sections = service.sekcje ?? {}
-  const body: string[] = []
-  for (const key of Object.keys(sections)) {
-    if (key.startsWith('Klauzula')) continue // skip RODO boilerplate
-    const value = sections[key]
-    if (value) body.push(`${key}: ${value}`)
-  }
-
-  const forms = (service.wnioski_do_pobrania ?? [])
-    .map((form) => form.nazwa ?? '')
-    .filter((name) => name.length > 0)
-    .join(', ')
-  if (forms) body.push(`Wnioski do pobrania: ${forms}.`)
-
-  const segments = [head.join('\n'), clamp(body.join('\n'))]
-  if (unit) {
-    segments.push([`Komorka zalatwiajaca: ${unit.nazwa ?? ''}.`, ...contactLines(unit)].join(' '))
-  }
-  if (service.url) segments.push(`Zrodlo: ${service.url}`)
-
-  return segments.filter((segment) => segment.length > 0).join('\n\n')
-}
-
-const buildUnitText = (unit: DepartmentRecord): string => {
-  const lines = [`Komorka: ${unit.nazwa ?? ''}.`]
-  if (unit.symbol) lines.push(`Symbol: ${unit.symbol}.`)
-  lines.push(...contactLines(unit))
-  const scope = sectionByPrefix(unit.sekcje, 'Zakres')
-  if (scope) lines.push(`Zakres dzialania: ${scope}`)
-  return clamp(lines.join('\n'))
-}
-
-const embed = async (text: string): Promise<number[]> => {
-  const result = await ollama.embeddings({ model: EMBED_MODEL, prompt: text })
-  return result.embedding
-}
-
-const recreateCollection = async (): Promise<void> => {
-  const { collections } = await client.getCollections()
-  if (collections.some((collection) => collection.name === COLLECTION)) {
-    await client.deleteCollection(COLLECTION)
-  }
-  await client.createCollection(COLLECTION, {
-    vectors: { size: VECTOR_SIZE, distance: 'Cosine' },
-  })
-  console.log(`collection ready: ${COLLECTION}`)
-}
-
-const upsertAll = async (points: Point[]): Promise<void> => {
-  for (let index = 0; index < points.length; index += UPSERT_BATCH) {
-    await client.upsert(COLLECTION, { wait: true, points: points.slice(index, index + UPSERT_BATCH) })
+async function* readJsonl<T>(filePath: string): AsyncGenerator<T> {
+  const rl = createInterface({
+    input: createReadStream(filePath),
+    crlfDelay: Infinity,
+  });
+  for await (const line of rl) {
+    const trimmed = line.trim();
+    if (trimmed) yield JSON.parse(trimmed) as T;
   }
 }
 
-const main = async (): Promise<void> => {
-  const services = readJson<ServiceRecord[]>('services.json')
-  const departments = readJson<DepartmentRecord[]>('departments.json')
+function slugFromUrl(url: string): string {
+  const parts = url.replace(/\/$/, "").split("/");
+  return parts[parts.length - 1] ?? url;
+}
 
-  const unitsBySymbol = new Map<string, DepartmentRecord>()
-  for (const dept of departments) {
-    if (!dept.is_departament && dept.symbol) {
-      unitsBySymbol.set(dept.symbol, dept)
-    }
+// --- services → Qdrant ---
+
+async function ingestServices(qdrant: QdrantClient): Promise<void> {
+  console.log("→ Creating Qdrant collection...");
+
+  try {
+    await qdrant.deleteCollection(COLLECTION);
+  } catch {
+    // collection may not exist on first run
   }
 
-  await recreateCollection()
+  await qdrant.createCollection(COLLECTION, {
+    vectors: { size: VECTOR_SIZE, distance: "Cosine" },
+  });
 
-  const points: Point[] = []
+  await qdrant.createPayloadIndex(COLLECTION, {
+    field_name: "komorka",
+    field_schema: "keyword",
+  });
 
-  for (const service of services) {
-    const symbol = (service.numer_karty ?? '').split('-')[0] ?? ''
-    const unit = unitsBySymbol.get(symbol)
-    const text = buildServiceText(service, unit)
-    points.push({
-      id: points.length,
-      vector: await embed(text),
+  console.log("→ Embedding services (this takes ~2–3 min)...");
+
+  const batch: Array<{
+    id: number;
+    vector: number[];
+    payload: Record<string, unknown>;
+  }> = [];
+  let count = 0;
+
+  for await (const svc of readJsonl<ServiceRecord>(
+    `${DATA_DIR}/services.jsonl`,
+  )) {
+    const vector = await embed(svc.text);
+
+    batch.push({
+      id: count + 1,
+      vector,
       payload: {
-        kind: 'service',
-        ref: service.numer_karty ?? '',
-        title: service.nazwa ?? '',
-        text,
-        komorka: unit?.nazwa ?? '',
-        departament: unit?.departament ?? '',
+        card_id: svc.id,
+        nazwa: svc.nazwa,
+        komorka: svc.komorka,
+        obszar: svc.obszar,
+        url: svc.url,
       },
-    })
-    if (points.length % 25 === 0) console.log(`embedded ${points.length}`)
+    });
+    count++;
+
+    if (batch.length >= BATCH_SIZE) {
+      await qdrant.upsert(COLLECTION, { wait: true, points: batch.splice(0) });
+    }
+
+    process.stdout.write(`\r  ${count} / 389 embedded`);
   }
 
-  const serviceCount = points.length
-
-  for (const dept of departments) {
-    if (dept.is_departament) continue
-    const text = buildUnitText(dept)
-    points.push({
-      id: points.length,
-      vector: await embed(text),
-      payload: {
-        kind: 'unit',
-        ref: dept.symbol ?? '',
-        title: dept.nazwa ?? '',
-        text,
-        komorka: dept.nazwa ?? '',
-        departament: dept.departament ?? '',
-      },
-    })
+  if (batch.length > 0) {
+    await qdrant.upsert(COLLECTION, { wait: true, points: batch });
   }
 
-  await upsertAll(points)
-  console.log(`DONE total: ${points.length} (services: ${serviceCount}, units: ${points.length - serviceCount})`)
+  console.log(`\n✓ ${count} services stored in Qdrant`);
 }
 
-main().catch((error) => {
-  console.error(error)
-  process.exit(1)
-})
+// --- departments → SQLite ---
+
+function ingestDepartments(db: Database.Database): void {
+  console.log("→ Setting up departments in SQLite...");
+
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS departments (
+      slug           TEXT PRIMARY KEY,
+      nazwa          TEXT NOT NULL,
+      departament_slug TEXT,
+      is_departament INTEGER NOT NULL DEFAULT 0,
+      kierownik      TEXT,
+      symbol         TEXT,
+      departament    TEXT,
+      adres          TEXT,
+      telefon        TEXT,
+      faks           TEXT,
+      email          TEXT,
+      url            TEXT,
+      godziny_pracy  TEXT,
+      zakres_dzialania TEXT
+    )
+  `);
+
+  const raw = readFileSync(`${DATA_DIR}/departments.jsonl`, "utf-8");
+  const records: DepartmentRecord[] = raw
+    .trim()
+    .split("\n")
+    .map((l) => JSON.parse(l) as DepartmentRecord);
+
+  const insert = db.prepare(`
+    INSERT OR REPLACE INTO departments
+      (slug, nazwa, departament_slug, is_departament, kierownik, symbol,
+       departament, adres, telefon, faks, email, url, godziny_pracy, zakres_dzialania)
+    VALUES
+      (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+
+  const insertAll = db.transaction((rows: DepartmentRecord[]) => {
+    for (const r of rows) {
+      insert.run(
+        slugFromUrl(r.url),
+        r.nazwa,
+        r.departament_slug ?? null,
+        r.is_departament ? 1 : 0,
+        r.kierownik ?? null,
+        r.symbol ?? null,
+        r.departament ?? null,
+        r.adres ?? null,
+        r.telefon ?? null,
+        r.faks ?? null,
+        r.email ?? null,
+        r.url,
+        r.sekcje?.["Godziny pracy"] ?? null,
+        r.sekcje?.["Zakres działania"] ?? null,
+      );
+    }
+  });
+
+  insertAll(records);
+  console.log(`✓ ${records.length} departments stored in SQLite`);
+}
+
+// --- main ---
+
+async function main(): Promise<void> {
+  mkdirSync(path.resolve(__dirname, "../data"), { recursive: true });
+
+  const qdrant = new QdrantClient({ url: QDRANT_URL });
+  const db = new Database(DB_PATH);
+  db.pragma("journal_mode = WAL");
+
+  try {
+    await ingestServices(qdrant);
+    ingestDepartments(db);
+    console.log("\nDone. Qdrant + SQLite ready.");
+  } finally {
+    db.close();
+  }
+}
+
+main().catch((err: unknown) => {
+  console.error(err);
+  process.exit(1);
+});
