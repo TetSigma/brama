@@ -54,6 +54,14 @@ type CachedAnswer = {
   expiresAt: number
 }
 
+// Cap each retrieved card so the prompt leaves generation headroom inside the
+// model's context window (full BIP cards carry long boilerplate).
+const MAX_CARD_TEXT = 1400
+
+function clampCard(text: string): string {
+  return text.length > MAX_CARD_TEXT ? text.slice(0, MAX_CARD_TEXT) : text
+}
+
 export class ChatService {
   constructor(
     private readonly historyService: ChatHistoryService,
@@ -173,7 +181,7 @@ export class ChatService {
       return ''
     }
 
-    const services = hits.map((hit) => hit.text).join('\n\n---\n\n')
+    const services = hits.map((hit) => clampCard(hit.text)).join('\n\n---\n\n')
     const offices = this.collectOffices(hits)
     const dependencies = await this.collectDependencies(hits)
 
