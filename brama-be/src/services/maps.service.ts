@@ -60,29 +60,10 @@ export class MapsService {
       return { kind: 'disabled' }
     }
 
-    // Resolve the office the same way chat does: retrieve the top service, then
-    // map its card-number prefix to a department row.
-    const retrieval = await this.retrievalService.retrieve(request.query, {
-      komorka: request.komorka,
-    })
-    const top = retrieval.hits[0]
-    if (retrieval.status !== 'grounded' || !top) {
+    const dest = await this.resolveDestination(request)
+    if (!dest) {
+      // No office, never geocoded (run `npm run geocode`), or no retrieval match.
       return { kind: 'not_found' }
-    }
-
-    const symbol = top.cardId.split('-')[0] ?? ''
-    const department = symbol.length > 0 ? this.departmentService.getBySymbol(symbol) : null
-    if (!department || department.lat == null || department.lng == null) {
-      // No office, or it was never geocoded (run `npm run geocode`). 404 — no map.
-      return { kind: 'not_found' }
-    }
-
-    const dest: RouteDestination = {
-      symbol,
-      nazwa: department.nazwa,
-      adres: department.adres,
-      lat: department.lat,
-      lng: department.lng,
     }
 
     if (!request.origin) {
@@ -106,6 +87,59 @@ export class MapsService {
         viewport: route?.viewport ?? null,
       },
     }
+  }
+
+  // Destination precedence: explicit office symbol (from the chat bundle) →
+  // explicit dest coords (also from the bundle) → retrieve from the query.
+  private async resolveDestination(request: RouteRequest): Promise<RouteDestination | null> {
+    if (request.symbol) {
+      const department = this.departmentService.getBySymbol(request.symbol)
+      if (department && department.lat != null && department.lng != null) {
+        return {
+          symbol: request.symbol,
+          nazwa: department.nazwa,
+          adres: department.adres,
+          lat: department.lat,
+          lng: department.lng,
+        }
+      }
+    }
+
+    if (request.dest) {
+      const department = request.symbol
+        ? this.departmentService.getBySymbol(request.symbol)
+        : null
+      return {
+        symbol: request.symbol ?? '',
+        nazwa: department?.nazwa ?? '',
+        adres: department?.adres ?? null,
+        lat: request.dest.lat,
+        lng: request.dest.lng,
+      }
+    }
+
+    if (request.query) {
+      const retrieval = await this.retrievalService.retrieve(request.query, {
+        komorka: request.komorka,
+      })
+      const top = retrieval.hits[0]
+      if (retrieval.status === 'grounded' && top) {
+        const symbol = top.cardId.split('-')[0] ?? ''
+        const department =
+          symbol.length > 0 ? this.departmentService.getBySymbol(symbol) : null
+        if (department && department.lat != null && department.lng != null) {
+          return {
+            symbol,
+            nazwa: department.nazwa,
+            adres: department.adres,
+            lat: department.lat,
+            lng: department.lng,
+          }
+        }
+      }
+    }
+
+    return null
   }
 
   private async computeRoute(

@@ -18,6 +18,9 @@ const envSchema = z.object({
   OLLAMA_NUM_CTX: z.coerce.number().int().positive().default(8192),
   LIFE_EVENTS_PATH: z.string().default("../docs/bip_db/life_events.json"),
   LIFE_EVENT_THRESHOLD: z.coerce.number().min(0).max(1).default(0.55),
+  // Parsed BIP data dir (relative to brama-be cwd); services.json feeds the
+  // in-memory content-block bundle source.
+  BIP_DATA_DIR: z.string().default("../docs/bip_db"),
   QDRANT_URL: z.string().default("http://localhost:6333"),
   QDRANT_COLLECTION: z.string().default("bip_services"),
   RAG_TOP_K: z.coerce.number().int().positive().default(4),

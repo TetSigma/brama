@@ -25,7 +25,9 @@ const translationSystemSuffix =
   'names of documents, applications and forms together with their codes ' +
   '(e.g. MKZ-009, AB-008), street and building addresses ' +
   '(ul., al., plac, pok., + numbers), postal codes, room numbers, ' +
-  'phone numbers, e-mail addresses, URLs and bank account numbers. ' +
+  'phone numbers, e-mail addresses, URLs and bank account numbers, ' +
+  'and any double-bracket markers such as [[map]] or [[fee]] - keep them ' +
+  'exactly where they are, do not translate, move or remove them. ' +
   'Translate only the surrounding explanatory text and preserve the meaning ' +
   'exactly. Do not add, omit, explain or answer anything.'
 
