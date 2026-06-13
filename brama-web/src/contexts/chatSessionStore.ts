@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import type { AnswerBlock } from '../features/chat/schema/blocks'
-import type { ChatMessage } from '../features/chat/types'
+import type { AnswerBlock } from '@/api/blocks'
+import type { ChatMessage } from '@/@types/chat'
 
 let counter = 0
 /** Stable id without Date.now()/Math.random() for predictable rendering. */

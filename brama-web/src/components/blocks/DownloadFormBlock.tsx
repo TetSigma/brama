@@ -1,6 +1,6 @@
 import { Download } from 'lucide-react'
-import { UIButton } from '../../../../../ui'
-import type { downloadFormBlockSchema } from '../../schema/blocks'
+import { UIButton } from '@/ui'
+import type { downloadFormBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof downloadFormBlockSchema>

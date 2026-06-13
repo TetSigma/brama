@@ -1,4 +1,4 @@
-import type { AnswerBlock } from './schema/blocks'
+import type { AnswerBlock } from '@/api/blocks'
 
 export type RoleMode = 'young' | 'senior' | 'worker'
 

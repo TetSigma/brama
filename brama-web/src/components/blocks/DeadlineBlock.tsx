@@ -1,6 +1,6 @@
 import { Clock } from 'lucide-react'
-import { UIBadge } from '../../../../../ui'
-import type { deadlineBlockSchema } from '../../schema/blocks'
+import { UIBadge } from '@/ui'
+import type { deadlineBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof deadlineBlockSchema>

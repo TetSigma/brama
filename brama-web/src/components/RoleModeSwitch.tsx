@@ -1,6 +1,6 @@
 import { Briefcase, Users, Zap } from 'lucide-react'
-import { useUIStore } from '../../../stores/uiStore'
-import type { RoleMode } from '../types'
+import { useUIStore } from '@/contexts/uiStore'
+import type { RoleMode } from '@/@types/chat'
 
 const MODES: { value: RoleMode; label: string; icon: typeof Zap }[] = [
   { value: 'young', label: 'Standard', icon: Zap },

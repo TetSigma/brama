@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { SendHorizontal } from 'lucide-react'
-import { UIButton } from '../../../../ui'
+import { UIButton } from '@/ui'
 
 type ChatComposerProps = {
   onSend: (message: string) => void

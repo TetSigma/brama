@@ -1,4 +1,4 @@
-import type { ChatStreamEvent, SendChatInput } from '../types'
+import type { ChatStreamEvent, SendChatInput } from '@/@types/chat'
 import { streamMockChat } from './chatMock'
 
 /**

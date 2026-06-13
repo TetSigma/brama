@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { ThumbsDown, ThumbsUp } from 'lucide-react'
-import { UIButton } from '../../../../../ui'
-import { useFeedback } from '../../hooks/useFeedback'
-import type { feedbackPromptBlockSchema } from '../../schema/blocks'
+import { UIButton } from '@/ui'
+import { useFeedback } from '@/hooks/useFeedback'
+import type { feedbackPromptBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof feedbackPromptBlockSchema>

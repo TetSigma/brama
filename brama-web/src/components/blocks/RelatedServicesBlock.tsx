@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react'
-import { UIButton } from '../../../../../ui'
-import type { relatedServicesBlockSchema } from '../../schema/blocks'
+import { UIButton } from '@/ui'
+import type { relatedServicesBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof relatedServicesBlockSchema> & {

@@ -1,7 +1,7 @@
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { ChevronDown } from 'lucide-react'
-import { Markdown } from '../Markdown'
-import type { collapsibleBlockSchema } from '../../schema/blocks'
+import { Markdown } from '@/components/Markdown'
+import type { collapsibleBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof collapsibleBlockSchema>

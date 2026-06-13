@@ -1,6 +1,6 @@
-@import './styles/theme.css';
+@import './theme/theme.css';
 @import 'tailwindcss';
-@import '../ui/ui.css';
+@import './ui/ui.css';
 
 /* Bridge: expose existing design tokens (theme.css) as Tailwind theme values so
    utilities like bg-primary / text-muted / rounded-2 / p-4 reference one source. */

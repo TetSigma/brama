@@ -1,4 +1,4 @@
-import type { ChatMessage as ChatMessageModel } from '../types'
+import type { ChatMessage as ChatMessageModel } from '@/@types/chat'
 import { AnswerBlocks } from './AnswerBlocks'
 import { Markdown } from './Markdown'
 

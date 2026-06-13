@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { RoleMode } from '../features/chat/types'
+import type { RoleMode } from '@/@types/chat'
 
 type UIState = {
   role: RoleMode

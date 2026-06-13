@@ -1,4 +1,4 @@
-import type { AnswerBlock } from '../schema/blocks'
+import type { AnswerBlock } from '@/api/blocks'
 import { CitationsBlock } from './blocks/CitationsBlock'
 import { CollapsibleBlock } from './blocks/CollapsibleBlock'
 import { DeadlineBlock } from './blocks/DeadlineBlock'

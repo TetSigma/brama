@@ -1,6 +1,6 @@
 import { Building2 } from 'lucide-react'
-import { UIBadge, UIHeading } from '../../../../../ui'
-import type { serviceHeaderBlockSchema } from '../../schema/blocks'
+import { UIBadge, UIHeading } from '@/ui'
+import type { serviceHeaderBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof serviceHeaderBlockSchema>

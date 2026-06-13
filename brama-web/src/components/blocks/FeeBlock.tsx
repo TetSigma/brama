@@ -1,6 +1,6 @@
 import { Coins } from 'lucide-react'
-import { UIBadge } from '../../../../../ui'
-import type { feeBlockSchema } from '../../schema/blocks'
+import { UIBadge } from '@/ui'
+import type { feeBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof feeBlockSchema>

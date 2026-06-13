@@ -1,6 +1,6 @@
 import { MapPin, Phone } from 'lucide-react'
-import { UIButton } from '../../../../../ui'
-import type { placeBlockSchema } from '../../schema/blocks'
+import { UIButton } from '@/ui'
+import type { placeBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof placeBlockSchema>

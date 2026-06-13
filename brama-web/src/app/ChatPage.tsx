@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next'
-import { useChat } from '../features/chat/hooks/useChat'
-import { ChatComposer } from '../features/chat/components/ChatComposer'
-import { ChatThread } from '../features/chat/components/ChatThread'
-import { RoleModeSwitch } from '../features/chat/components/RoleModeSwitch'
-import { useChatSessionStore } from '../stores/chatSessionStore'
-import { useUIStore } from '../stores/uiStore'
+import { useChat } from '@/hooks/useChat'
+import { ChatComposer } from '@/components/ChatComposer'
+import { ChatThread } from '@/components/ChatThread'
+import { RoleModeSwitch } from '@/components/RoleModeSwitch'
+import { useChatSessionStore } from '@/contexts/chatSessionStore'
+import { useUIStore } from '@/contexts/uiStore'
 
 const SUGGESTIONS = [
   'Jak wyrobić dowód osobisty?',

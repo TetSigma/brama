@@ -1,4 +1,4 @@
-import type { ChatStreamEvent, SendChatInput } from '../types'
+import type { ChatStreamEvent, SendChatInput } from '@/@types/chat'
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 

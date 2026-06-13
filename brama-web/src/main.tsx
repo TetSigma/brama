@@ -6,11 +6,11 @@ import '@fontsource/noto-sans/400.css'
 import '@fontsource/noto-sans/500.css'
 import '@fontsource/noto-sans/600.css'
 import '@fontsource/noto-sans/700.css'
-import './i18n'
+import '@/localization'
 import './index.css'
-import './features/chat/chat.css'
-import { queryClient } from './lib/queryClient'
-import { router } from './router'
+import '@/theme/chat.css'
+import { queryClient } from '@/api/queryClient'
+import { router } from '@/app/router'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

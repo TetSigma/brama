@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import type { ChatMessage as ChatMessageModel } from '../types'
+import type { ChatMessage as ChatMessageModel } from '@/@types/chat'
 import { ChatMessage } from './ChatMessage'
 
 type ChatThreadProps = {

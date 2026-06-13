@@ -1,5 +1,5 @@
 import { ExternalLink, ShieldCheck } from 'lucide-react'
-import type { citationsBlockSchema } from '../../schema/blocks'
+import type { citationsBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof citationsBlockSchema>

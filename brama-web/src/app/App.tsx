@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import heroImage from './assets/lublin-civic-platform.png'
-import { UIButton } from '../ui'
-import { persistLanguage } from './i18n'
-import { languageCodes, languageFlags, languageNames, type LanguageCode } from './i18n/resources'
+import heroImage from '@/assets/lublin-civic-platform.png'
+import { UIButton } from '@/ui'
+import { persistLanguage } from '@/localization'
+import { languageCodes, languageFlags, languageNames, type LanguageCode } from '@/localization/resources'
 
 const serviceAreas = ['documents', 'appointments', 'benefits', 'transport'] as const
 const platformFeatures = ['guided', 'local', 'handoff'] as const

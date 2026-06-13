@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { FileCheck2 } from 'lucide-react'
-import type { documentsBlockSchema } from '../../schema/blocks'
+import type { documentsBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof documentsBlockSchema>

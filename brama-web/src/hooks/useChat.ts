@@ -1,9 +1,9 @@
 import { useMutation } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
-import { useUIStore } from '../../../stores/uiStore'
-import { useChatSessionStore } from '../../../stores/chatSessionStore'
-import { streamChat } from '../api/chatClient'
-import { parseBlocks } from '../schema/blocks'
+import { useUIStore } from '@/contexts/uiStore'
+import { useChatSessionStore } from '@/contexts/chatSessionStore'
+import { streamChat } from '@/api/chatClient'
+import { parseBlocks } from '@/api/blocks'
 
 /**
  * Domain hook: owns the chat send + stream loop. UI components call `send(text)`.
