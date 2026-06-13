@@ -14,8 +14,10 @@ export const LIFE_EVENTS: LifeEventDef[] = [
 ]
 
 /** `value` is the backend group; `labelKey` resolves under `lifeEvents.citizenshipGroups`. */
+export const DEFAULT_CITIZENSHIP_GROUP = 'polish'
+
 export const CITIZENSHIP_GROUPS: { value: string; labelKey: string }[] = [
-  { value: '', labelKey: 'polish' },
+  { value: DEFAULT_CITIZENSHIP_GROUP, labelKey: 'polish' },
   { value: 'ukrainian_temp_protection', labelKey: 'ukrainian_temp_protection' },
   { value: 'foreigner', labelKey: 'foreigner' },
 ]

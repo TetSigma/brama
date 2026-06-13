@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { UIButton, UIField, UISelect } from '@/ui'
-import { CITIZENSHIP_GROUPS, LIFE_EVENTS } from './config'
+import { CITIZENSHIP_GROUPS, DEFAULT_CITIZENSHIP_GROUP, LIFE_EVENTS } from './config'
 
 type RunInput = { eventId: string; group?: string; message: string }
 
@@ -16,7 +16,7 @@ const CARD =
 
 export function LifeEventLauncher({ onRun, disabled }: Props) {
   const { t } = useTranslation()
-  const [group, setGroup] = useState('')
+  const [group, setGroup] = useState(DEFAULT_CITIZENSHIP_GROUP)
 
   return (
     <div className="grid gap-[var(--space-3)] sm:grid-cols-2">
@@ -64,7 +64,7 @@ export function LifeEventLauncher({ onRun, disabled }: Props) {
               </UIField>
               <UIButton
                 disabled={disabled}
-                onClick={() => onRun({ eventId: event.id, group: group || undefined, message: label })}
+                onClick={() => onRun({ eventId: event.id, group, message: label })}
               >
                 {t('lifeEvents.build')}
               </UIButton>

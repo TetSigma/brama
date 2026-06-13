@@ -15,12 +15,28 @@ import {
   EVENT_PRIMARY_ANCHOR,
   inferUserContext,
 } from '../features/deadlineGuardian/deadlineGuardian.utils.js'
+import { withTimeout } from '../lib/timeout.js'
 import { buildTranslationPrompt, languageName } from '../lib/translation.js'
 import { DepartmentService, type Department } from './department.service.js'
-import { graphService, type GraphService, type ServiceNode } from './graph.service.js'
-import { lifeEventService, type ExternalInfo, type LifeEventService } from './life-event.service.js'
+import {
+  graphService,
+  type GraphService,
+  type ServiceGraph,
+  type ServiceNode,
+} from './graph.service.js'
+import {
+  lifeEventService,
+  type ExternalInfo,
+  type LifeEventConfig,
+  type LifeEventService,
+} from './life-event.service.js'
 import { OllamaService } from './ollama.service.js'
-import { RetrievalService } from './retrieval.service.js'
+import { RetrievalService, type RetrievalHit } from './retrieval.service.js'
+import {
+  servicesService,
+  type ServiceCard,
+  type ServicesService,
+} from './services.service.js'
 
 const MAX_CARD_TEXT = 1500
 
@@ -79,6 +95,7 @@ export class PlanService {
 
   constructor(
     private readonly retrievalService: RetrievalService,
+    private readonly servicesService: ServicesService,
     private readonly departmentService: DepartmentService,
     private readonly graphService: GraphService,
     private readonly lifeEventService: LifeEventService,
@@ -116,12 +133,8 @@ export class PlanService {
     }
 
     const evidence = this.buildEvidence(event.externalInfo ?? [], enriched)
-    const answerPolish = await this.ollamaService.complete(env.OLLAMA_CHAT_MODEL, [
-      { role: 'system', content: planSystemPrompt + evidence },
-      { role: 'user', content: message },
-    ])
-
-    const answer = lang === 'pl' ? answerPolish : await this.translate(answerPolish, lang)
+    const answerPolish = await this.buildAnswerPolish(event, enriched, evidence, message)
+    const answer = lang === 'pl' ? answerPolish : await this.translateAnswer(answerPolish, lang)
 
     // Deadline Guardian: detect deadlines, resolve dates, score urgency.
     const guardian = await this.deadlineGuardian.build({
@@ -130,6 +143,7 @@ export class PlanService {
       userContext: inferUserContext(message, event.id, userContext ?? {}),
       lang,
       useLlm: env.DEADLINE_LLM_ENABLED,
+      llmTimeoutMs: env.DEADLINE_LLM_TIMEOUT_MS,
     })
 
     const baseMissing = event.groups && !group ? ['citizenship_status'] : []
@@ -151,13 +165,13 @@ export class PlanService {
     const steps: EnrichedStep[] = []
 
     for (const cardId of cards) {
-      const hit = await this.retrievalService.getByCardId(cardId)
+      const hit = await this.getPlanHit(cardId)
       if (!hit) {
         continue
       }
 
       const symbol = cardId.split('-')[0] ?? ''
-      const graph = await this.graphService.getServiceGraph(cardId)
+      const graph = await this.getGraph(cardId)
 
       steps.push({
         text: hit.text,
@@ -177,6 +191,140 @@ export class PlanService {
     }
 
     return steps
+  }
+
+  private async getPlanHit(cardId: string): Promise<RetrievalHit | null> {
+    const localCard = this.servicesService.getByCardId(cardId)
+    if (localCard) {
+      return this.cardToHit(localCard)
+    }
+
+    try {
+      return await withTimeout(
+        this.retrievalService.getByCardId(cardId),
+        env.LIFE_EVENT_CARD_LOOKUP_TIMEOUT_MS,
+        `Life-event card lookup ${cardId}`,
+      )
+    } catch (error) {
+      console.error(`Life-event card lookup failed for ${cardId}`, error)
+      return null
+    }
+  }
+
+  private cardToHit(card: ServiceCard): RetrievalHit {
+    return {
+      text: this.cardToText(card),
+      cardId: card.numer_karty,
+      nazwa: card.nazwa,
+      komorka: card.komorka,
+      url: card.url,
+    }
+  }
+
+  private cardToText(card: ServiceCard): string {
+    const sections = Object.entries(card.sekcje ?? {})
+      .filter(([, value]) => value.trim().length > 0)
+      .map(([title, value]) => `${title}: ${value}`)
+    const forms = card.wnioski_do_pobrania
+      .map((form) => `${form.nazwa}: ${form.url}`)
+      .join('; ')
+
+    return [
+      `Usluga: ${card.nazwa}.`,
+      `Numer karty informacyjnej: ${card.numer_karty}.`,
+      `Komorka zalatwiajaca sprawe: ${card.komorka}.`,
+      `Zrodlo: ${card.url}`,
+      forms ? `Wnioski do pobrania: ${forms}` : '',
+      ...sections,
+    ]
+      .filter(Boolean)
+      .join('\n')
+  }
+
+  private async getGraph(cardId: string): Promise<ServiceGraph | null> {
+    try {
+      return await withTimeout(
+        this.graphService.getServiceGraph(cardId),
+        env.GRAPH_QUERY_TIMEOUT_MS,
+        `Graph lookup ${cardId}`,
+      )
+    } catch (error) {
+      console.error(`Graph lookup skipped for ${cardId}`, error)
+      return null
+    }
+  }
+
+  private async buildAnswerPolish(
+    event: LifeEventConfig,
+    enriched: EnrichedStep[],
+    evidence: string,
+    message: string,
+  ): Promise<string> {
+    const fallback = this.buildFallbackAnswer(event, enriched)
+
+    try {
+      const answer = await withTimeout(
+        this.ollamaService.complete(env.OLLAMA_CHAT_MODEL, [
+          { role: 'system', content: planSystemPrompt + evidence },
+          { role: 'user', content: message },
+        ]),
+        env.LIFE_EVENT_ANSWER_TIMEOUT_MS,
+        'Life-event plan answer',
+      )
+
+      return answer.trim().length > 0 ? answer : fallback
+    } catch (error) {
+      console.error('Life-event plan LLM answer unavailable; using deterministic plan', error)
+      return fallback
+    }
+  }
+
+  private buildFallbackAnswer(event: LifeEventConfig, enriched: EnrichedStep[]): string {
+    const lines = [
+      `## ${event.title.pl ?? event.id}`,
+      'Plan przygotowany na podstawie kart informacyjnych Urzedu Miasta Lublin.',
+      '',
+      '### Kroki',
+    ]
+
+    for (const [index, entry] of enriched.entries()) {
+      const step = entry.step
+      lines.push(`${index + 1}. **${step.title}** (${step.cardId})`)
+
+      if (step.office) {
+        const office = [step.office.nazwa]
+        if (step.office.adres) office.push(step.office.adres)
+        if (step.office.godziny_pracy) office.push(`godziny: ${step.office.godziny_pracy}`)
+        lines.push(`   - Miejsce: ${office.join(', ')}`)
+      }
+      if (step.prerequisites.length > 0) {
+        const prerequisites = step.prerequisites
+          .map((item) => `${item.nazwa} (${item.cardId})`)
+          .join(', ')
+        lines.push(`   - Najpierw zalatw: ${prerequisites}`)
+      }
+      if (step.externalOffices.length > 0) {
+        const offices = step.externalOffices.map((office) => office.label).join(', ')
+        lines.push(`   - Dokumenty spoza urzedu: ${offices}`)
+      }
+      if (step.url) {
+        lines.push(`   - Zrodlo: ${step.url}`)
+      }
+    }
+
+    if ((event.externalInfo ?? []).length > 0) {
+      lines.push('', '### Poza Urzedem Miasta')
+      for (const info of event.externalInfo ?? []) {
+        lines.push(`- **${info.label}**: ${info.note}`)
+      }
+    }
+
+    lines.push(
+      '',
+      'Jesli termin zalezy od daty zdarzenia, podaj te date w formacie RRRR-MM-DD, a plan obliczy dokladne terminy.',
+    )
+
+    return lines.join('\n')
   }
 
   // Builds the authoritative (Neo4j + seed) deadline candidates for an event.
@@ -281,6 +429,20 @@ export class PlanService {
     return text.length > MAX_CARD_TEXT ? text.slice(0, MAX_CARD_TEXT) : text
   }
 
+  private async translateAnswer(text: string, lang: string): Promise<string> {
+    try {
+      const translated = await withTimeout(
+        this.translate(text, lang),
+        env.LIFE_EVENT_TRANSLATION_TIMEOUT_MS,
+        'Life-event plan translation',
+      )
+      return translated.trim().length > 0 ? translated : text
+    } catch (error) {
+      console.error('Life-event plan translation unavailable; returning Polish answer', error)
+      return text
+    }
+  }
+
   private async translate(text: string, lang: string): Promise<string> {
     return this.ollamaService.complete(env.OLLAMA_TRANSLATION_MODEL, [
       { role: 'system', content: buildTranslationPrompt(languageName(lang)) },
@@ -291,6 +453,7 @@ export class PlanService {
 
 export const planService = new PlanService(
   new RetrievalService(),
+  servicesService,
   new DepartmentService(),
   graphService,
   lifeEventService,

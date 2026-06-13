@@ -1,16 +1,18 @@
-import ollama from 'ollama'
+import { Ollama } from 'ollama'
 import type { Response } from 'express'
 import { env } from '../config/env.js'
 import type { ChatMessage } from '../schemas/chat.schema.js'
 
 export class OllamaService {
+  private readonly client = new Ollama({ host: env.OLLAMA_BASE_URL })
+
   async complete(model: string, messages: ChatMessage[]) {
     // Stream internally and accumulate. A non-streaming call makes undici wait
     // for the entire (slow, CPU-bound) generation before any response headers
     // arrive, which trips UND_ERR_HEADERS_TIMEOUT on long answers. Streaming
     // delivers the first chunk almost immediately, so headers never time out.
     let fullResponse = ''
-    const stream = await ollama.chat({
+    const stream = await this.client.chat({
       model,
       messages,
       stream: true,
@@ -29,7 +31,7 @@ export class OllamaService {
 
   async streamChat(response: Response, model: string, messages: ChatMessage[]) {
     let fullResponse = ''
-    const stream = await ollama.chat({
+    const stream = await this.client.chat({
       model,
       messages,
       stream: true,

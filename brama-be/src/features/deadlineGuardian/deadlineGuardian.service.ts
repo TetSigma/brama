@@ -7,6 +7,7 @@
 // with status "unknown" and a precise missingInfo entry instead.
 
 import { env } from '../../config/env.js'
+import { withTimeout } from '../../lib/timeout.js'
 import type { OllamaService } from '../../services/ollama.service.js'
 import {
   buildDeadlineEvidence,
@@ -46,6 +47,8 @@ export type BuildDeadlinesInput = {
   lang?: string
   // Allow disabling the LLM pass (tests / no-Ollama environments).
   useLlm?: boolean
+  // Caps optional extraction so deadlines never block the whole response.
+  llmTimeoutMs?: number
   // Injectable "today" (YYYY-MM-DD) for deterministic scoring/tests.
   today?: string
 }
@@ -57,7 +60,10 @@ export class DeadlineGuardianService {
     const candidates = [...input.structuredCandidates]
 
     if (input.useLlm && input.evidenceChunks && input.evidenceChunks.length > 0) {
-      const extracted = await this.extractFromQdrant(input.evidenceChunks)
+      const extracted = await this.extractFromQdrant(
+        input.evidenceChunks,
+        input.llmTimeoutMs ?? env.DEADLINE_LLM_TIMEOUT_MS,
+      )
       candidates.push(...extracted)
     }
 
@@ -135,16 +141,23 @@ export class DeadlineGuardianService {
 
   // Calls Bielik/Qwen to extract deadline candidates from Qdrant chunks.
   // Resilient by design: any failure yields no candidates (never invents).
-  private async extractFromQdrant(chunks: EvidenceChunk[]): Promise<DeadlineCandidate[]> {
+  private async extractFromQdrant(
+    chunks: EvidenceChunk[],
+    timeoutMs: number,
+  ): Promise<DeadlineCandidate[]> {
     if (!this.ollamaService) {
       return []
     }
 
     try {
-      const raw = await this.ollamaService.complete(env.OLLAMA_CHAT_MODEL, [
-        { role: 'system', content: deadlineExtractionSystemPrompt },
-        { role: 'user', content: buildDeadlineEvidence(chunks) },
-      ])
+      const raw = await withTimeout(
+        this.ollamaService.complete(env.OLLAMA_CHAT_MODEL, [
+          { role: 'system', content: deadlineExtractionSystemPrompt },
+          { role: 'user', content: buildDeadlineEvidence(chunks) },
+        ]),
+        timeoutMs,
+        'Deadline LLM extraction',
+      )
       return parseLlmDeadlines(raw)
     } catch (error) {
       console.error('Deadline LLM extraction failed; skipping Qdrant deadlines', error)

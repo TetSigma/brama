@@ -51,7 +51,10 @@ export class GraphService {
 
   constructor() {
     this.driver = env.GRAPH_ENABLED
-      ? neo4j.driver(env.NEO4J_URI, neo4j.auth.basic(env.NEO4J_USER, env.NEO4J_PASSWORD))
+      ? neo4j.driver(env.NEO4J_URI, neo4j.auth.basic(env.NEO4J_USER, env.NEO4J_PASSWORD), {
+          connectionTimeout: env.GRAPH_QUERY_TIMEOUT_MS,
+          maxTransactionRetryTime: env.GRAPH_QUERY_TIMEOUT_MS,
+        })
       : null
   }
 
@@ -63,7 +66,11 @@ export class GraphService {
     const session = this.driver.session()
 
     try {
-      const result = await session.run(serviceGraphQuery, { cardId })
+      const result = await session.run(
+        serviceGraphQuery,
+        { cardId },
+        { timeout: env.GRAPH_QUERY_TIMEOUT_MS },
+      )
       const record = result.records[0]
       if (!record) {
         return null
