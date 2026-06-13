@@ -24,7 +24,17 @@ export const createApp = () => {
       credentials: true,
     }),
   )
-  app.use(compression())
+  app.use(
+    compression({
+      filter: (request, response) => {
+        if (request.path === '/api/chat') {
+          return false
+        }
+
+        return compression.filter(request, response)
+      },
+    }),
+  )
   app.use(express.json({ limit: '1mb' }))
   app.use(express.urlencoded({ extended: true, limit: '1mb' }))
   app.use(morgan(env.NODE_ENV === 'production' ? 'combined' : 'dev'))

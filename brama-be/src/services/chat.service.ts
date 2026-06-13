@@ -279,6 +279,10 @@ export class ChatService {
 
   private prepareStreamingResponse(response: Response) {
     response.setHeader('Content-Type', 'text/plain; charset=utf-8')
+    response.setHeader('Cache-Control', 'no-cache, no-transform')
+    response.setHeader('Connection', 'keep-alive')
+    response.setHeader('X-Accel-Buffering', 'no')
+    response.flushHeaders()
   }
 }
 

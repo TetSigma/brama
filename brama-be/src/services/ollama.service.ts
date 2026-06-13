@@ -34,6 +34,7 @@ export class OllamaService {
       if (token.length > 0) {
         fullResponse += token
         response.write(token)
+        response.flush?.()
       }
     }
 
