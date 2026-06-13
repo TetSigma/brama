@@ -4,15 +4,12 @@ import { createReadStream, readFileSync, mkdirSync } from "node:fs";
 import { createInterface } from "node:readline";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { env } from "../src/config/env.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.resolve(__dirname, "../../docs/bip_db");
 const DB_PATH = path.resolve(__dirname, "../data/brama.db");
 
-const QDRANT_URL = "http://localhost:6333";
-const OLLAMA_URL = "http://localhost:11434";
-const COLLECTION = "brama-services";
-const EMBED_MODEL = "mxbai-embed-large";
 const VECTOR_SIZE = 1024;
 const BATCH_SIZE = 20;
 
@@ -45,10 +42,10 @@ interface DepartmentRecord {
 // --- helpers ---
 
 async function embed(text: string): Promise<number[]> {
-  const res = await fetch(`${OLLAMA_URL}/api/embed`, {
+  const res = await fetch(`${env.OLLAMA_BASE_URL}/api/embed`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ model: EMBED_MODEL, input: text }),
+    body: JSON.stringify({ model: env.OLLAMA_EMBED_MODEL, input: text }),
   });
   if (!res.ok) throw new Error(`Ollama embed failed: ${res.status}`);
   const data = (await res.json()) as { embeddings: number[][] };
@@ -79,16 +76,16 @@ async function ingestServices(qdrant: QdrantClient): Promise<void> {
   console.log("→ Creating Qdrant collection...");
 
   try {
-    await qdrant.deleteCollection(COLLECTION);
+    await qdrant.deleteCollection(env.QDRANT_COLLECTION);
   } catch {
     // collection may not exist on first run
   }
 
-  await qdrant.createCollection(COLLECTION, {
+  await qdrant.createCollection(env.QDRANT_COLLECTION, {
     vectors: { size: VECTOR_SIZE, distance: "Cosine" },
   });
 
-  await qdrant.createPayloadIndex(COLLECTION, {
+  await qdrant.createPayloadIndex(env.QDRANT_COLLECTION, {
     field_name: "komorka",
     field_schema: "keyword",
   });
@@ -121,14 +118,17 @@ async function ingestServices(qdrant: QdrantClient): Promise<void> {
     count++;
 
     if (batch.length >= BATCH_SIZE) {
-      await qdrant.upsert(COLLECTION, { wait: true, points: batch.splice(0) });
+      await qdrant.upsert(env.QDRANT_COLLECTION, {
+        wait: true,
+        points: batch.splice(0),
+      });
     }
 
     process.stdout.write(`\r  ${count} / 389 embedded`);
   }
 
   if (batch.length > 0) {
-    await qdrant.upsert(COLLECTION, { wait: true, points: batch });
+    await qdrant.upsert(env.QDRANT_COLLECTION, { wait: true, points: batch });
   }
 
   console.log(`\n✓ ${count} services stored in Qdrant`);
@@ -202,7 +202,7 @@ function ingestDepartments(db: Database.Database): void {
 async function main(): Promise<void> {
   mkdirSync(path.resolve(__dirname, "../data"), { recursive: true });
 
-  const qdrant = new QdrantClient({ url: QDRANT_URL });
+  const qdrant = new QdrantClient({ url: env.QDRANT_URL });
   const db = new Database(DB_PATH);
   db.pragma("journal_mode = WAL");
 
