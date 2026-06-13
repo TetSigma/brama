@@ -48,9 +48,13 @@
   --color-secondary-active: #4d8d26;
   --color-secondary-contrast: var(--color-lublin-black);
   --color-info: var(--color-lublin-blue);
-  --color-success: var(--color-lublin-green);
+  /* Darker than the identity green (--color-lublin-green #73be46), which is only ~2:1
+     on white. This clears AA 4.5:1 as text and 3:1 for the white checkmark fill. */
+  --color-success: #2e7d32;
   --color-warning: var(--color-lublin-orange);
-  --color-danger: var(--color-lublin-red);
+  /* Darker than the identity red (--color-lublin-red #fa1414) so white-on-danger
+     and danger-text-on-white both clear WCAG AA 4.5:1. */
+  --color-danger: #cc0000;
   --color-focus: #004f8f;
 
   /* Typography */

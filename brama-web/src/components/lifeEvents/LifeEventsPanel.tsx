@@ -25,12 +25,20 @@ export function LifeEventsPanel() {
             disabled={isPending}
             onRun={({ eventId, group, message }) => run({ eventId, group, message, lang })}
           />
-          {error ? <UIText tone="danger">{t('lifeEvents.error')}</UIText> : null}
+          {error ? (
+            <UIText tone="danger" role="alert">
+              {t('lifeEvents.error')}
+            </UIText>
+          ) : null}
         </>
       ) : null}
 
       {isPending ? (
-        <UIText tone="muted" className="inline-flex items-center gap-[var(--space-2)]">
+        <UIText
+          tone="muted"
+          role="status"
+          className="inline-flex items-center gap-[var(--space-2)]"
+        >
           <Loader2 size={18} className="animate-spin" aria-hidden="true" /> {t('lifeEvents.loading')}
         </UIText>
       ) : null}

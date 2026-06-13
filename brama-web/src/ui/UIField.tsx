@@ -1,6 +1,9 @@
+import { Children, cloneElement, isValidElement } from 'react'
 import type {
+  HTMLAttributes,
   InputHTMLAttributes,
   LabelHTMLAttributes,
+  ReactElement,
   ReactNode,
   SelectHTMLAttributes,
   TextareaHTMLAttributes,
@@ -31,10 +34,25 @@ export function UIField({ children, className, description, error, htmlFor, labe
   const descriptionId = htmlFor && description ? `${htmlFor}-description` : undefined
   const errorId = htmlFor && error ? `${htmlFor}-error` : undefined
 
+  // Link the description/error to the control so assistive tech announces them.
+  const describedBy = [descriptionId, errorId].filter(Boolean).join(' ') || undefined
+  const control = isValidElement(children)
+    ? cloneElement(Children.only(children) as ReactElement<HTMLAttributes<HTMLElement>>, {
+        'aria-describedby':
+          [
+            (children.props as HTMLAttributes<HTMLElement>)['aria-describedby'],
+            describedBy,
+          ]
+            .filter(Boolean)
+            .join(' ') || undefined,
+        ...(error ? { 'aria-invalid': true } : {}),
+      })
+    : children
+
   return (
     <div className={cx('grid gap-[var(--space-2)]', className)}>
       <UILabel htmlFor={htmlFor}>{label}</UILabel>
-      {children}
+      {control}
       {description ? (
         <p
           className="m-0 text-[length:var(--font-size-sm)] text-[var(--color-text-muted)]"
