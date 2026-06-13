@@ -8,18 +8,6 @@ import { streamMockChat } from './chatMock'
 const USE_MOCK = import.meta.env.VITE_USE_MOCK_CHAT === 'true'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? ''
-const MIN_COMPLETE_TEXT_LENGTH = 8
-const MAX_STREAM_ATTEMPTS = 2
-
-class IncompleteChatResponseError extends Error {
-  readonly responseText: string
-
-  constructor(responseText: string) {
-    super('Chat response ended before a complete answer was received')
-    this.name = 'IncompleteChatResponseError'
-    this.responseText = responseText
-  }
-}
 
 type ChatRequestBody = {
   conversationId: string
@@ -58,17 +46,11 @@ function parseSseFrame(frame: string): ChatStreamEvent | null {
   return null
 }
 
-async function* streamPlainText(
-  response: Response,
-  attempt: number,
-): AsyncGenerator<ChatStreamEvent> {
+async function* streamPlainText(response: Response): AsyncGenerator<ChatStreamEvent> {
   const reader = response.body?.pipeThrough(new TextDecoderStream()).getReader()
   if (!reader) return
 
-  let receivedLength = 0
   let fullResponse = ''
-  let pendingText = ''
-  let hasFlushedPendingText = false
 
   try {
     while (true) {
@@ -77,34 +59,18 @@ async function* streamPlainText(
       if (!value) continue
 
       fullResponse += value
-      receivedLength += value.trim().length
-
-      if (hasFlushedPendingText) {
-        yield { type: 'token', delta: value }
-      } else {
-        pendingText += value
-        if (receivedLength >= MIN_COMPLETE_TEXT_LENGTH) {
-          hasFlushedPendingText = true
-          yield { type: 'token', delta: pendingText }
-          pendingText = ''
-        }
-      }
-    }
-
-    if (receivedLength > 0 && receivedLength < MIN_COMPLETE_TEXT_LENGTH) {
-      throw new IncompleteChatResponseError(fullResponse)
+      console.info('[chat] server response chunk', value)
+      yield { type: 'token', delta: value }
     }
   } finally {
     console.info('[chat] full server response', {
-      attempt,
-      complete: receivedLength === 0 || receivedLength >= MIN_COMPLETE_TEXT_LENGTH,
       length: fullResponse.length,
       response: fullResponse,
     })
   }
 }
 
-async function* streamSse(response: Response, attempt: number): AsyncGenerator<ChatStreamEvent> {
+async function* streamSse(response: Response): AsyncGenerator<ChatStreamEvent> {
   const reader = response.body?.pipeThrough(new TextDecoderStream()).getReader()
   if (!reader) return
 
@@ -117,6 +83,7 @@ async function* streamSse(response: Response, attempt: number): AsyncGenerator<C
       if (done) break
       buffer += value
       fullResponse += value
+      console.info('[chat] server response chunk', value)
 
       let boundary = buffer.indexOf('\n\n')
       while (boundary !== -1) {
@@ -135,8 +102,6 @@ async function* streamSse(response: Response, attempt: number): AsyncGenerator<C
     }
   } finally {
     console.info('[chat] full server response', {
-      attempt,
-      complete: true,
       length: fullResponse.length,
       response: fullResponse,
     })
@@ -144,9 +109,8 @@ async function* streamSse(response: Response, attempt: number): AsyncGenerator<C
 }
 
 /** Real streaming client for POST /api/chat. Supports plain text chunks and SSE frames. */
-async function* streamRealChatAttempt(
+async function* streamRealChat(
   input: SendChatInput,
-  attempt: number,
   signal?: AbortSignal,
 ): AsyncGenerator<ChatStreamEvent> {
   const response = await fetch(`${API_BASE}/api/chat`, {
@@ -162,42 +126,17 @@ async function* streamRealChatAttempt(
 
   const contentType = response.headers.get('content-type') ?? ''
   console.info('[chat] server response headers', {
-    attempt,
     contentType,
     status: response.status,
     url: response.url,
   })
 
   if (contentType.includes('text/event-stream')) {
-    yield* streamSse(response, attempt)
+    yield* streamSse(response)
     return
   }
 
-  yield* streamPlainText(response, attempt)
-}
-
-async function* streamRealChat(
-  input: SendChatInput,
-  signal?: AbortSignal,
-): AsyncGenerator<ChatStreamEvent> {
-  for (let attempt = 1; attempt <= MAX_STREAM_ATTEMPTS; attempt += 1) {
-    try {
-      yield* streamRealChatAttempt(input, attempt, signal)
-      return
-    } catch (error) {
-      const shouldRetry =
-        error instanceof IncompleteChatResponseError && attempt < MAX_STREAM_ATTEMPTS
-      console.warn('[chat] server response incomplete', {
-        attempt,
-        retrying: shouldRetry,
-        response: error instanceof IncompleteChatResponseError ? error.responseText : undefined,
-      })
-
-      if (!shouldRetry) {
-        throw error
-      }
-    }
-  }
+  yield* streamPlainText(response)
 }
 
 export function streamChat(
