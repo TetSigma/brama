@@ -8,12 +8,12 @@ The solution is designed for a hackathon proof of concept, using a Node.js backe
 
 ## 2. Main Goals
 
-* Provide accurate answers based on official city content.
-* Reduce hallucinations by grounding answers in retrieved documents.
-* Protect against prompt injection from user input or retrieved content.
-* Support source citations for transparency.
-* Run with a local or self-hosted LLM where possible.
-* Keep architecture simple enough for rapid hackathon delivery.
+- Provide accurate answers based on official city content.
+- Reduce hallucinations by grounding answers in retrieved documents.
+- Protect against prompt injection from user input or retrieved content.
+- Support source citations for transparency.
+- Run with a local or self-hosted LLM where possible.
+- Keep architecture simple enough for rapid hackathon delivery.
 
 ## 3. Proposed Architecture
 
@@ -46,19 +46,19 @@ The frontend provides the user interface for citizens or city staff.
 
 Main features:
 
-* Chat interface
-* Suggested example questions
-* Display of source citations
-* Confidence / “answer based on official sources” indicator
-* Fallback message when answer is not found
-* Optional admin page for uploading documents
+- Chat interface
+- Suggested example questions
+- Display of source citations
+- Confidence / “answer based on official sources” indicator
+- Fallback message when answer is not found
+- Optional admin page for uploading documents
 
 Recommended stack:
 
-* React
-* Vite or Next.js
-* Tailwind CSS
-* Simple chat UI component
+- React
+- Vite or Next.js
+- Tailwind CSS
+- Simple chat UI component
 
 ## 5. Node.js Backend
 
@@ -66,10 +66,10 @@ The backend is responsible for orchestration between the frontend, retrieval lay
 
 Recommended stack:
 
-* Node.js
-* Express.js or Fastify
-* LangChain.js or LlamaIndex.TS
-* REST API or WebSocket streaming
+- Node.js
+- Express.js or Fastify
+- LangChain.js or LlamaIndex.TS
+- REST API or WebSocket streaming
 
 Main backend endpoints:
 
@@ -84,15 +84,15 @@ GET  /api/health
 
 The knowledge base contains official city information such as:
 
-* Service descriptions
-* FAQs
-* Application procedures
-* Required documents
-* Department contacts
-* Opening hours
-* Forms and links
-* Local regulations
-* Emergency and non-emergency guidance
+- Service descriptions
+- FAQs
+- Application procedures
+- Required documents
+- Department contacts
+- Opening hours
+- Forms and links
+- Local regulations
+- Emergency and non-emergency guidance
 
 For the hackathon, the first version should use 20–50 high-quality documents or pages.
 
@@ -102,9 +102,9 @@ The system uses vector RAG as the main retrieval method.
 
 Recommended vector DB options:
 
-* Qdrant
-* Chroma
-* pgvector
+- Qdrant
+- Chroma
+- pgvector
 
 Recommended approach:
 
@@ -134,16 +134,16 @@ The local LLM generates answers using only the retrieved context.
 
 Recommended hackathon options:
 
-* Ollama
-* LM Studio
-* llama.cpp server
+- Ollama
+- LM Studio
+- llama.cpp server
 
 Candidate models:
 
-* Llama 3.1 / 3.2
-* Mistral
-* Qwen
-* Gemma
+- Llama 3.1 / 3.2
+- Mistral
+- Qwen
+- Gemma
 
 The LLM should not answer from general knowledge when city-specific facts are needed.
 
@@ -159,10 +159,10 @@ Main checks:
 
 Checks user messages for:
 
-* Prompt injection attempts
-* Requests to reveal system prompts
-* Attempts to bypass rules
-* Unsafe or unsupported topics
+- Prompt injection attempts
+- Requests to reveal system prompts
+- Attempts to bypass rules
+- Unsafe or unsupported topics
 
 ### 9.2 Retrieved Content Guard
 
@@ -181,10 +181,10 @@ Answer without context.
 
 Before returning the answer, verify:
 
-* The answer is supported by retrieved sources.
-* Important claims have citations.
-* The model does not invent procedures, dates, laws, fees, or contact details.
-* If the context is insufficient, the system responds with a safe fallback.
+- The answer is supported by retrieved sources.
+- Important claims have citations.
+- The model does not invent procedures, dates, laws, fees, or contact details.
+- If the context is insufficient, the system responds with a safe fallback.
 
 ### 9.4 Citation Check
 
@@ -215,14 +215,14 @@ Neo4j can be added later for structured relationships.
 
 Useful graph entities:
 
-* Service
-* Department
-* Form
-* Office
-* Regulation
-* Location
-* EligibilityRule
-* RequiredDocument
+- Service
+- Department
+- Form
+- Office
+- Regulation
+- Location
+- EligibilityRule
+- RequiredDocument
 
 Example relationships:
 
@@ -240,16 +240,16 @@ For the hackathon, Neo4j should be optional unless graph visualization is import
 
 Recommended MVP:
 
-* React chat UI
-* Node.js backend
-* Document ingestion script
-* Vector database
-* Local LLM integration
-* Source citations
-* Basic prompt-injection detection
-* Basic hallucination protection
-* 20–50 city service documents
-* 10–15 polished demo questions
+- React chat UI
+- Node.js backend
+- Document ingestion script
+- Vector database
+- Local LLM integration
+- Source citations
+- Basic prompt-injection detection
+- Basic hallucination protection
+- 20–50 city service documents
+- 10–15 polished demo questions
 
 ## 13. Example User Flow
 
@@ -284,25 +284,25 @@ Storage: PostgreSQL or simple JSON metadata for POC
 
 The POC is successful if it can:
 
-* Answer common city-service questions using official content.
-* Show sources for answers.
-* Refuse to answer when information is missing.
-* Detect simple prompt-injection attempts.
-* Avoid inventing fees, procedures, contacts, or deadlines.
-* Demonstrate a clear path to production.
+- Answer common city-service questions using official content.
+- Show sources for answers.
+- Refuse to answer when information is missing.
+- Detect simple prompt-injection attempts.
+- Avoid inventing fees, procedures, contacts, or deadlines.
+- Demonstrate a clear path to production.
 
 ## 16. Future Production Enhancements
 
 After the hackathon, the system can be extended with:
 
-* Admin approval workflow
-* User roles and permissions
-* Multi-language support
-* Audit logs
-* Feedback collection
-* Analytics dashboard
-* Neo4j knowledge graph
-* Human handoff to city staff
-* Integration with CRM or ticketing system
-* Scheduled document refresh
-* Stronger policy and compliance guardrails
+- Admin approval workflow
+- User roles and permissions
+- Multi-language support
+- Audit logs
+- Feedback collection
+- Analytics dashboard
+- Neo4j knowledge graph
+- Human handoff to city staff
+- Integration with CRM or ticketing system
+- Scheduled document refresh
+- Stronger policy and compliance guardrails

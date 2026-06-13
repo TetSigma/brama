@@ -1,0 +1,857 @@
+[
+  {
+    "nazwa": "Departament prezydenta",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": true
+  },
+  {
+    "nazwa": "Biuro centrum wspolpracy miedzynarodowej",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/biuro-centrum-wspolpracy-miedzynarodowej/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Krzysztof Stanowski",
+    "symbol": "WM",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Jana Gilasa 3, 20-109 Lublin",
+    "telefon": "81 466 6600",
+    "faks": "81 466 6601",
+    "email": "international@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura - Centrum Współpracy Międzynarodowej ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Biuro – Centrum Współpracy Międzynarodowej realizuje w szczególności zadania z zakresu:  kreowania, inicjowania, przygotowywania planów i koordynowania współpracy międzynarodowej miasta Lublin;  inicjowania i koordynowania współpracy miasta Lublin z instytucjami unijnymi i miastami partnerskimi;  współpracy z komórkami organizacyjnymi, stanowiskami pracy w departamentach oraz jednostkami organizacyjnymi w zakresie współpracy międzynarodowej i realizacji programów i projektów międzynarodowych przyczyniających się do rozwoju miasta Lublin oraz poprawy jakości życia mieszkańców;  promocji – we współpracy z Kancelarią Prezydenta – na arenie międzynarodowej miasta Lublin, jego potencjału gospodarczego, kulturalnego, turystycznego i akademickiego;  wspierania i upowszechniania idei samorządowej w ramach współpracy ze społecznościami lokalnymi i regionalnymi innych państw, w tym poprzez wymianę doświadczeń i dobrych praktyk w sferze funkcjonowania samorządu lokalnego oraz budowania społeczeństwa obywatelskiego;  wspierania międzynarodowej wymiany doświadczeń i dobrych praktyk w sferze funkcjonowania samorządu lokalnego i zarządzania miastem w oparciu o zasady dobrego rządzenia oraz sprzyjających budowaniu społeczeństwa obywatelskiego;  współpracy z innymi jednostkami samorządu terytorialnego, administracją rządową, organizacjami pozarządowymi i innymi instytucjami realizującymi programy i projekty międzynarodowe;  koordynowania wydawania i rozliczania delegacji zagranicznych pracowników Urzędu."
+    }
+  },
+  {
+    "nazwa": "Biuro bezpieczenstwa informacji",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/biuro-bezpieczenstwa-informacji/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Witold Przeszlakowski",
+    "symbol": "BI",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Kowalska 4, 20-115 Lublin, II piętro",
+    "telefon": "81 466 1770",
+    "faks": "81 466 1770",
+    "email": "bbi@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura Bezpieczeństwa Informacji ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Biuro Bezpieczeństwa Informacj i realizuje w szczególności zadania z zakresu:  kreowania, opracowywania i aktualizacji Systemu Zarządzania Bezpieczeństwem Informacji oraz nadzoru nad jego realizacją;  opracowywania zasad ochrony informacji chronionych przetwarzanych w każdej postaci, a także sprawowania kontroli nad przestrzeganiem i stosowaniem tych zasad;  współpracy z administratorami systemów teleinformatycznych w zakresie definiowania uprawnień dostępu do danych przetwarzanych w systemie teleinformatycznym i tradycyjnym;  inicjowania i podejmowania działań w zakresie ochrony informacji, w tym doskonalenia ochrony danych osobowych;  współpracy z komórkami organizacyjnymi i stanowiskami pracy w departamentach w zakresie: przygotowywanych i wdrażanych unormowań wewnętrznych w zakresie związanym z bezpieczeństwem informacji i przetwarzaniem danych osobowych, projektów umów, których realizacja może skutkować ujawnieniem informacji chronionych, zawieranych przez komórki organizacyjne i stanowiska pracy w departamentach;  uczestniczenia w przeprowadzaniu testów bezpieczeństwa systemu informatycznego;  prowadzenia rejestrów związanych z realizacją zadań z zakresu polityki bezpieczeństwa informacji i przetwarzania danych osobowych;  przeprowadzania inspekcji (sprawdzeń/audytów) z zakresu bezpieczeństwa informacji, w szczególności dotyczących danych osobowych;  koordynacji prowadzonej przez komórki organizacyjne i stanowiska pracy w departamentach analizy ryzyka bezpieczeństwa informacji;  wykonywania obowiązków Inspektora Ochrony Danych (IOD) dla Administratora Danych – Prezydenta Miasta Lublin, zgodnie z zapisami art. 39 Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych osobowych);  zapewnienia funkcji Inspektora Ochrony Danych (IOD) dla jednostek organizacyjnych Gminy Lublin zaliczanych do sektora finansów publicznych objętych wspólną obsługą na podstawie uchwały nr 516/XIII/2020 Rady Miasta Lublin z dnia 30 stycznia 2020 r. w sprawie wspólnej obsługi organizacyjno-administracyjnej jednostek organizacyjnych Gminy Lublin zaliczanych do sektora finansów publicznych z późn. zm.;  zarządzania incydentami cyberbezpieczeństwa zgłoszonymi przez pracowników Urzędu oraz przez jednostki organizacyjne."
+    }
+  },
+  {
+    "nazwa": "Biuro kadr",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/biuro-kadr/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Elżbieta Maciak",
+    "symbol": "KD",
+    "departament": "Departament Prezydenta",
+    "adres": "plac Litewski 1 p. 203, 20-080 Lublin",
+    "telefon": "81 466 1800",
+    "faks": "81 466 1801",
+    "email": "kadry@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura Kadr ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 – 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Biuro Kadr realizuje w szczególności zadania z zakresu:  rekrutacji, w tym naboru kandydatów na wolne stanowiska urzędnicze, w tym kierownicze stanowiska urzędnicze oraz wolne stanowiska kierowników jednostek organizacyjnych, z wyłączeniem szkół i placówek oświatowych oraz instytucji kultury;  prowadzenia spraw osobowych pracowników Urzędu i kierowników jednostek organizacyjnych, z wyłączeniem szkół i placówek oświatowych, w tym wyznaczania pracowników do służby przygotowawczej oraz organizowania uroczystości ślubowania;  rozliczania wynagrodzeń pracowników Urzędu, należności z tytułu umów cywilnoprawnych, diet radnych Rady oraz przewodniczących zarządów dzielnic i członków organów dzielnic, stypendiów, nagród Prezydenta oraz wynagrodzeń dla członków komisji powołanych przez Prezydenta ;  spraw związanych z ubezpieczeniem społecznym i zdrowotnym, podatkiem dochodowym od osób fizycznych dla pracowników Urzędu i osób niebędących pracownikami, a wykonujących zadania na rzecz Urzędu;  działalności socjalnej prowadzonej na rzecz pracowników, emerytów i rencistów Urzędu oraz ich rodzin;  podejmowania działań dotyczących oświadczeń majątkowych i oświadczeń o działalności gospodarczej złożonych przez osoby zobowiązane przepisami prawa;  prowadzenia spraw związanych z nadawaniem orderów i odznaczeń przez Prezydenta Rzeczypospolitej Polskiej dla pracowników Urzędu i kierowników jednostek organizacyjnych;  spraw związanych z obsługą pracowniczych planów kapitałowych."
+    }
+  },
+  {
+    "nazwa": "Biuro miejskiego rzecznika konsumentow",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/biuro-miejskiego-rzecznika-konsumentow/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Lidia Baran-Ćwirta",
+    "symbol": "MRK",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Spokojna 2, p. 282, 20-074 Lublin, II piętro",
+    "telefon": "81 466 1600",
+    "faks": "81 466 1601",
+    "email": "mrk@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura Miejskiego Rzecznika Konsumentów ustala się następujący czas pracy:   w poniedziałki zmianowy czas pracy w godzinach:   - I zmiana: 7.30 - 15.30  - II zmiana: 9.00 - 17.00   we wtorki, środy, czwartki i piątki w godzinach 7.30 - 15.30  zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).     Miejski Rzecznik Konsumentów udziela porad prawnych po wcześniejszym osobistym lub telefonicznym uzgodnieniu terminu.",
+      "Zakres działania": "Biuro Miejskiego Rzecznika Konsumentów realizuje w szczególności zadania z zakresu:  zapewnienia konsumentom bezpłatnego poradnictwa i informacji prawnej w zakresie ochrony ich interesów;  składania wniosków w sprawie stanowienia i zmiany przepisów prawa miejscowego w zakresie ochrony interesów konsumentów;  występowania do przedsiębiorców w sprawach ochrony praw i interesów konsumentów;  współdziałania z właściwymi miejscowo delegaturami Urzędu Ochrony Konkurencji i Konsumentów, organami Inspekcji Handlowej oraz organizacjami konsumenckimi;  wytaczania powództw na rzecz konsumentów oraz wstępowania do toczących się postępowań w sprawach o ochronę interesów konsumentów za ich zgodą."
+    }
+  },
+  {
+    "nazwa": "Biuro obslugi prawnej",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/biuro-obslugi-prawnej/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Zbigniew Dubiel",
+    "symbol": "BP",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Rynek 8, 20-111 Lublin, pok. 202 (II piętro)",
+    "telefon": "81 466 1550",
+    "faks": "81 466 1551",
+    "email": "radcy@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura Obsługi Prawnej ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Biuro Obsługi Prawnej realizuje w szczególności zadania z zakresu:  opiniowania i weryfikowania pod względem formalnoprawnym projektów: uchwał Rady, zarządzeń Prezydenta, umów oraz wewnętrznych przepisów dotyczących funkcjonowania Urzędu, jego komórek organizacyjnych i stanowisk pracy w departamentach;  udzielania opinii i porad prawnych w zakresie stosowania prawa organom miasta Lublin, komórkom organizacyjnym, stanowiskom pracy w departamentach oraz związkom zawodowym działającym w Urzędzie na ich wniosek;  uczestniczenia w rokowaniach, których celem jest nawiązanie, zmiana lub rozwiązanie stosunku cywilnoprawnego;  zastępstwa w sprawach sądowych;  sygnalizowania Prezydentowi, Zastępcom Prezydenta, Sekretarzowi i Skarbnikowi o spostrzeżonych nieprawidłowościach w zakresie stosowania prawa przez Urząd, stwierdzonych w czasie wykonywania zadań Biura, celem zapobieżenia naruszeniom obowiązującego prawa oraz proponowania właściwego postępowania w tych sprawach."
+    }
+  },
+  {
+    "nazwa": "Biuro rady miasta",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/biuro-rady-miasta/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Dorota Bartoszczyk",
+    "symbol": "BRM",
+    "departament": "Departament Prezydenta",
+    "adres": "plac Króla Władysława Łokietka 1, 20-109 Lublin",
+    "telefon": "81 466 1650",
+    "faks": "81 466 1651",
+    "email": "rada_miasta@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura Rady Miasta ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach: 7:30 - 15:30.  Dla pracowników wsp. ds. obsługi Rady Miasta w Biurze Rady Miasta ustala się zmianowy czas pracy od poniedziałku do piątku w godzinach: I zmiana: 7:30 - 15:30 II zmiana: 9:00 - 17:00 III zmiana: 11:00 - 19:00.  Dla pracowników wsp. ds. obsługi komisji Rady Miasta ustala się czas pracy w godzinach 11:00 - 19:00 w dniach posiedzeń komisji.  - zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Biuro Rady Miasta realizuje w szczególności zadania z zakresu:    obsługi techniczno-kancelaryjnej Rady, jej Komisji, klubów oraz Przewodniczącego Rady;  przygotowywania materiałów na sesje Rady;  przygotowywania materiałów z posiedzeń Rady: uchwał, postanowień, wniosków i opinii oraz przekazywanie ich Prezydentowi do realizacji;  udzielania pomocy technicznej, administracyjnej i organizacyjnej radnym Rady w sprawowaniu ich mandatu;  przygotowywania wyborów ławników do sądów powszechnych.",
+      "Opisy usług": "Biuro Rady Miasta"
+    }
+  },
+  {
+    "nazwa": "Kancelaria prezydenta",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/kancelaria-prezydenta/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Katarzyna Duma",
+    "symbol": "KP",
+    "departament": "Departament Prezydenta",
+    "adres": "plac Króla Władysława Łokietka 1, 20-109 Lublin",
+    "telefon": "81 466 1930",
+    "faks": "81 466 1931",
+    "email": "kancelaria@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Kancelarii Prezydenta ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach: 7:30 - 15:30    Dla pracowników referatu ds. obsługi sekretariatów w Kancelarii Prezydenta ustala się zmianowy czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach:  I zmiana: 7.00 – 15.00; II zmiana: 7.30 – 15.30; III zmiana: 9.00 – 17.00; IV zmiana: 12.00 – 20.00, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Kancelaria Prezydenta realizuje w szczególności zadania z zakresu:  reprezentacji i pełnienia funkcji protokolarnych Prezydenta i Zastępców Prezydenta;  organizacji i obsługi, we współpracy z komórkami organizacyjnymi i stanowiskami pracy w departamentach spotkań, wizyt, konferencji i posiedzeń z udziałem Prezydenta i Zastępców Prezydenta;  polityki informacyjnej oraz obsługi medialnej Urzędu;  komunikacji społecznej i public relations;  prowadzenia i redagowania elektronicznych serwisów informacyjnych Urzędu, w tym Biuletynu Informacji Publicznej i Intranetu;  koordynowania współpracy miasta Lublin z organami administracji rządowej, samorządowej oraz sektorem pozarządowym;  wspierania i upowszechniania idei samorządowej;  prowadzenia spraw stowarzyszeń, fundacji oraz związków komunalnych z udziałem miasta Lublin;  prowadzenia obsługi administracyjno-organizacyjnej Kolegium Prezydenta;  prowadzenia dokumentacji audiowizualnej wydarzeń z udziałem Prezydenta oraz organizowanych przez Kancelarię Prezydenta;  prowadzenia spraw związanych z przyznawaniem honorowych patronatów, tytułów i medali oraz przygotowywaniem pism okolicznościowych Prezydenta;  prowadzenia spraw związanych z działalnością Galerii Ratusz;  prowadzenia i koordynowania współpracy z jednostkami pomocniczymi;  obsługi administracyjno-kancelaryjnej sekretariatów Prezydenta, Zastępców Prezydenta i Sekretarza, dyrektorów departamentów;  budowania, zarządzania i promocji marki miasta Lublin;  współpracy z podmiotami zewnętrznymi przy przedsięwzięciach mających na celu realizację działań marketingowych w ramach marki miasta Lublin;  prowadzenia spraw związanych z rozpatrywaniem skarg, wniosków i petycji;  obsługi organizacyjnej i technicznej przyjęć mieszkańców przez Prezydenta, Zastępców Prezydenta i Sekretarza.",
+      "Opisy usług": "Kancelaria Prezydenta"
+    }
+  },
+  {
+    "nazwa": "Pion ochrony informacji niejawnych",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/pion-ochrony-informacji-niejawnych/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Tomasz Nowosad",
+    "symbol": "POIN",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Czechowska 19A p. 53 i 59a, 20-072 Lublin",
+    "telefon": "81 466 1750",
+    "faks": "81 466 1751",
+    "email": "niejawne@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Pionu Ochrony Informacji Niejawnych ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Pion Ochrony Informacji Niejawnych realizuje w szczególności zadania z zakresu:    zapewnienia ochrony informacji niejawnych, w tym ich ochrony fizycznej oraz prawidłowego obiegu materiałów niejawnych;  zapewnienia ochrony systemów i sieci teleinformatycznych, w których są wytwarzane, przetwarzane, przechowywane lub przekazywane informacje niejawne;  dokonywania okresowej kontroli ewidencji, materiałów i obiegu dokumentów niejawnych;  opracowywania planu ochrony informacji niejawnych i nadzorowania jego realizacji;  szkoleń pracowników oraz współpracy z komórkami organizacyjnymi i stanowiskami pracy w departamentach w zakresie pomocy w przestrzeganiu przepisów o ochronie informacji niejawnych."
+    }
+  },
+  {
+    "nazwa": "Samodzielne stanowisko pracy rzecznik prasowy prezydenta",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/samodzielne-stanowisko-pracy-rzecznik-prasowy-prezydenta/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Justyna Góźdź",
+    "symbol": "RZP",
+    "departament": "Departament Prezydenta",
+    "adres": "plac Króla Władysława Łokietka 1 p. 29, 20-109 Lublin",
+    "telefon": "81 466 2045",
+    "faks": "81 466 2046",
+    "email": "rzecznik_prasowy@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Na SSP Rzecznik Prasowy Prezydenta ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Samodzielne Stanowisko Pracy Rzecznik Prasowy Prezydenta realizuje w szczególności zadania z zakresu:    polityki informacyjnej Prezydenta;  kontaktów z mediami;  koordynowania debat publicznych Prezydenta;  opracowywania publikacji przedstawiających stanowisko Prezydenta w toczących się dyskusjach prasowych."
+    }
+  },
+  {
+    "nazwa": "Urzad stanu cywilnego",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/urzad-stanu-cywilnego/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Bartosz Głowacki",
+    "symbol": "USC",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Spokojna 2, p. 262, 20-074 Lublin, II piętro",
+    "telefon": "81 466 1500",
+    "faks": "81 466 1501",
+    "email": "usc@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Urzędzie Stanu Cywilnego dla pracowników zatrudnionych na wieloosobowych stanowiskach pracy ds. rejestracji urodzeń, ds. rejestracji małżeństw, ds. archiwum aktów stanu cywilnego, na stanowiskach pracy ds. rejestracji aktów zagranicznych i ds. zmiany imion i nazwisk ustala się następujący czas pracy:   od poniedziałku do piątku w godzinach 7:45 - 15:15 Dla pracowników wieloosobowego stanowiska pracy ds. rejestracji zgonów ustala się następujący czas pracy:    w poniedziałki zmianowy czas pracy w godzinach:   I zmiana: 7:45 - 15:15  II zmiana: 9:00 - 17:00 (dotyczy tylko rejestracji zgonów)    we wtorki, środy, czwartki, piątki i soboty w godzinach 7:45 - 15:15 Dla pracowników wieloosobowego stanowiska pracy ds. rejestracji małżeństw, w zakresie czynności związanych z uroczystym zawarciem małżeństwa, dniem pracy jest sobota w godzinach 9:00 – 17:00. – zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Urząd Stanu Cywilnego realizuje w szczególności zadania z zakresu:    rejestracji urodzeń, małżeństw i zgonów;  rejestracji zdarzeń mających wpływ na treść i ważność aktów stanu cywilnego;  wydawania odpisów aktów stanu cywilnego oraz udostępniania informacji na podstawie aktów stanu cywilnego i akt zbiorowych;  przechowywania i konserwacji ksiąg stanu cywilnego;  przyjmowania oświadczeń woli przewidzianych ustawą z dnia 25 lutego 1964 r. Kodeks rodzinny i opiekuńczy (Dz. U. z 2023 r. poz. 2809);  zmiany imion i nazwisk.",
+      "Opisy usług": "Urząd Stanu Cywilnego"
+    }
+  },
+  {
+    "nazwa": "Wieloosobowe stanowisko pracy do spraw rozwiazan systemowych ekspert prezydenta",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/wieloosobowe-stanowisko-pracy-do-spraw-rozwiazan-systemowych-ekspert-prezydenta/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "symbol": "RSE",
+    "departament": "Departament Prezydenta",
+    "sekcje": {
+      "Godziny pracy": "Na WSP ds. rozwiązań systemowych - Ekspert Prezydenta ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wieloosobowe Stanowisko Pracy ds. rozwiązań systemowych – Ekspert Prezydenta realizuje w szczególności zadania z zakresu:  wsparcia działań przy wypracowywaniu i podejmowaniu ważnych dla przyszłości miasta Lublin decyzji o charakterze systemowym;  proponowania wdrażania rozwiązań systemowych rozwoju miasta Lublin;  opracowywania programów i koncepcji o charakterze systemowym istotnych dla szeroko rozumianego interesu miasta Lublin, w ramach indywidualnych zleceń Prezydenta oraz koordynowania ich realizacji;  reprezentowania Prezydenta na spotkaniach o szczególnym znaczeniu dla rozwoju miasta Lublin."
+    }
+  },
+  {
+    "nazwa": "Wieloosobowe stanowisko pracy ds audytu wewnetrznego",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/wieloosobowe-stanowisko-pracy-ds-audytu-wewnetrznego/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "symbol": "AW",
+    "departament": "Departament Prezydenta",
+    "adres": "plac Litewski 1, pok. 104, 20-080 Lublin",
+    "telefon": "81 466 1862; 81 466 1880",
+    "email": "audyt@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wieloosobowego Stanowiska Pracy ds. audytu wewnętrznego ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wieloosobowe Stanowisko Pracy ds. audytu wewnętrznego realizuje w szczególności zadania z zakresu: 1) prowadzenia systematycznej oceny kontroli zarządczej we wszystkich obszarach działalności miasta Lublin; 2) sporządzania rocznych planów audytu wewnętrznego; 3) przeprowadzania i dokumentowania zadań audytowych we wszystkich obszarach działalności miasta Lublin; 4) sporządzania sprawozdań z wykonania planu audytu wewnętrznego."
+    }
+  },
+  {
+    "nazwa": "Wydzial bezpieczenstwa mieszkancow i zarzadzania kryzysowego",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/wydzial-bezpieczenstwa-mieszkancow-i-zarzadzania-kryzysowego/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Mirosław Sokal",
+    "symbol": "BM",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Lipowa 27, 20-020 Lublin",
+    "telefon": "81 466 1700",
+    "faks": "81 466 1701",
+    "email": "bezpieczenstwo@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Bezpieczeństwa Mieszkańców i Zarządzania Kryzysowego ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Bezpieczeństwa Mieszkańców i Zarządzania Kryzysowego realizuje w szczególności zadania z zakresu:  przewidywania i przeciwdziałania zagrożeniom naturalnym i technicznym, przygotowywania i realizacji programów dotyczących porządku publicznego i bezpieczeństwa mieszkańców oraz zapobiegania zagrożeniom życia i zdrowia ludzi;  planowania i realizacji przygotowań z zakresu obronności państwa zapewniających jego funkcjonowanie w razie zagrożenia bezpieczeństwa i w czasie wojny wykonywanych przez komórki organizacyjne, stanowiska pracy w departamentach i jednostki organizacyjne oraz przedsiębiorców wykonujących zadania obronne, dla których Prezydent jest organem założycielskim;  ochrony przeciwpożarowej, działań ratowniczych i porządkowo-ochronnych mających na celu ochronę życia, zdrowia, mienia i środowiska w budynkach, obiektach oraz na terenach należących do miasta Lublin;  koordynowania i kierowania działalnością w zakresie przygotowywania i realizacji przedsięwzięć ochrony ludności i obrony cywilnej;  przepisów ustawy z dnia 20 marca 2009 r. o bezpieczeństwie imprez masowych (Dz. U. z 2023 r. poz. 616) oraz ustawy z dnia 24 lipca 2015 r. Prawo o zgromadzeniach (Dz. U. z 2022 r. poz. 1389);  koordynowania i kierowania działalnością w zakresie planowania i realizacji przedsięwzięć z zakresu zarządzania kryzysowego;  koordynowania działalności funkcjonujących w mieście Lublin jednostek Ochotniczych Straży Pożarnych;  obsługi administracyjno-kancelaryjnej Komisji Bezpieczeństwa i Porządku Publicznego.  Wydział Bezpieczeństwa Mieszkańców i Zarządzania Kryzysowego sprawuje nadzór, w zakresie powierzonym przez Prezydenta, nad realizacją zadań wykonywanych przez Straż Miejską Miasta Lublin.  Wydział Bezpieczeństwa Mieszkańców i Zarządzania Kryzysowego, z upoważnienia Prezydenta, współpracuje i wykonuje czynności związane ze sprawowaniem przez Prezydenta zwierzchnictwa nad:  Komendą Miejską Policji;  Komendą Miejską Państwowej Straży Pożarnej.",
+      "Opisy usług": "Wydział Bezpieczeństwa Mieszkańców i Zarządzania Kryzysowego"
+    }
+  },
+  {
+    "nazwa": "Wydzial kontroli i nadzoru wlascicielskiego",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/wydzial-kontroli-i-nadzoru-wlascicielskiego/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Łukasz Mazur",
+    "symbol": "KNW",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Spokojna 2, 20-074 Lublin",
+    "telefon": "81 466 1850",
+    "faks": "81 466 1851",
+    "email": "nadzor@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Kontroli i Nadzoru Właścicielskiego ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 – 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Kontroli i Nadzoru Właścicielskiego realizuje w szczególności zadania z zakresu:  pozyskiwania danych spółek prawa handlowego oraz fundacji z udziałem miasta Lublin, w tym informacji w zakresie spraw organizacyjno-prawnych, majątkowych, finansowych, powiązań kapitałowych tych spółek oraz fundacji;  obsługi organu wykonawczego – Prezydenta w zakresie: a) pełnienia funkcji zgromadzenia wspólników w jednoosobowych spółkach prawa handlowego, b) zgromadzenia wspólników, walnego zgromadzenia w spółkach prawa handlowego, w których miasto Lublin posiada udziały lub akcje;  prowadzenia spraw związanych z nabywaniem lub ze sprzedażą akcji i udziałów miasta Lublin w spółkach prawa handlowego;  konsultacji dotyczących projektów realizowanych w spółkach w ramach partnerstwa publiczno-prywatnego;  przygotowywania analiz, informacji i raportów dotyczących spółek prawa handlowego oraz fundacji z udziałem miasta Lublin, a także innych podmiotów gospodarczych, z którymi miasto Lublin zamierza realizować wspólne przedsięwzięcia inwestycyjne;  analizy dokumentów przedkładanych przez członków rad nadzorczych desygnowanych do reprezentowania miasta Lublin w spółkach prawa handlowego oraz fundacjach z udziałem miasta Lublin;  przygotowywania lub opiniowania projektów statutów i ich zmian oraz umów spółek prawa handlowego i fundacji z udziałem miasta Lublin oraz innych dokumentów korporacyjnych spółek;  opracowywania regulaminów rokowań, przetargów, licytacji i konkursów w zakresie prowadzonych spraw;  sporządzania informacji o stanie mienia komunalnego i Skarbu Państwa, będącego we władaniu spółek prawa handlowego oraz fundacji z udziałem miasta Lublin;  współpracy przy tworzeniu strategii spółek z udziałem miasta Lublin;  przygotowywania raportów oraz prowadzenia innych spraw związanych z obejmowaniem przez miasto Lublin udziałów lub akcji w spółkach prawa handlowego;  przechowywania dokumentacji i uchwał organów spółek i fundacji w zakresie niezbędnym do sprawowania nadzoru właścicielskiego;  gospodarowania udziałami i akcjami Skarbu Państwa nabytymi na podstawie przepisów ustawy z dnia 20 sierpnia 1997 r. – Przepisy wprowadzające ustawę o Krajowym Rejestrze Sądowym (Dz. U. Nr 121 poz. 770 z późn. zm.), w tym wykonywania uprawnień, cofania i zbywania udziałów i akcji;  planowania i prowadzenia planowych i doraźnych kontroli w Urzędzie i jednostkach organizacyjnych oraz w podmiotach spoza sektora finansów publicznych, które korzystają ze środków budżetu miasta Lublin;  sporządzania sprawozdań z przeprowadzonych kontroli;  prowadzenia postępowania pokontrolnego;  przyjmowania i rozpatrywania przypadków nieprawidłowości. Dyrektor Wydziału Kontroli i Nadzoru Właścicielskiego, z upoważnienia Prezydenta, w zakresie związanym z wykonywaniem uprawnień właścicielskich, sprawuje nadzór nad: jednoosobowymi spółkami miasta Lublin, spółkami z udziałem miasta Lublin oraz fundacjami, w których Gmina Lublin jest fundatorem."
+    }
+  },
+  {
+    "nazwa": "Wydzial strategii i przedsiebiorczosci",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/wydzial-strategii-i-przedsiebiorczosci/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Mariusz Sagan",
+    "symbol": "SOI",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Spokojna 2, 20-074 Lublin, pok. 278, II piętro",
+    "telefon": "81 466 2500",
+    "faks": "81 466 2501",
+    "email": "biznes@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Strategii i Obsługi Inwestorów ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Strategii i Obsługi Inwestorów realizuje w szczególności zadania z zakresu:  opracowywania, we współpracy z komórkami organizacyjnymi, stanowiskami pracy w departamentach, jednostkami organizacyjnymi i podmiotami zewnętrznymi strategii rozwoju miasta Lublin oraz strategii, planów i programów sektorowych;  podejmowania działań na rzecz rozwoju gospodarczego miasta Lublin, wynikających ze strategii rozwoju miasta Lublin oraz innych przedsięwzięć gospodarczych;  inicjowania, prognozowania i koordynowania rozwoju społeczno-gospodarczego miasta Lublin;  monitorowania procesu wdrażania strategii rozwoju miasta oraz strategii, planów i programów sektorowych;  współpracy ze stowarzyszeniami, klastrami, organizacjami otoczenia biznesu, środowiskami gospodarczymi i naukowymi, w zakresie działań służących wdrażaniu strategii rozwoju miasta Lublin i rozwojowi potencjału gospodarczego i akademickiego miasta Lublin;  nawiązywania i utrzymywania kontaktów z inwestorami, w tym prowadzenia działań w zakresie pozyskiwania kapitału inwestycyjnego;  współpracy z podmiotami gospodarczymi, instytucjami i organizacjami w zakresie pozyskiwania inwestorów, w tym współpracy z Agencją Rozwoju Przemysłu Oddział w Mielcu, będącą zarządzającym obszarem miasta Lublin w ramach Polskiej Strefy Inwestycji;  gromadzenia i dystrybucji ofert inwestycyjnych;  koordynowania prac związanych z tworzeniem i funkcjonowaniem terenów aktywności gospodarczej w mieście Lublin;  uczestnictwa w procesie obsługi inwestorów zagranicznych i krajowych zainteresowanych podjęciem działalności inwestycyjnej;  udzielania bezpośredniej pomocy inwestorowi w procesie inwestycyjnym w sprawach administracyjnych należących do kompetencji Prezydenta;  udzielania informacji dotyczącej możliwości i warunków prowadzenia działalności gospodarczej i inwestycyjnej, w tym o możliwościach i warunkach uzyskania gruntów, budynków i lokali dla prowadzenia działalności gospodarczej oraz o programach pomocy publicznej w zakresie ulg podatkowych;  pobudzania aktywności gospodarczej mieszkańców miasta Lublin poprzez podejmowanie działań, takich jak udział w projektach regionalnych oraz międzynarodowych, realizowanie projektów autorskich skierowanych do lubelskich przedsiębiorców oraz oferowanie możliwości uczestnictwa w programach rozwojowych;  promocji strategii rozwoju miasta Lublin oraz promocji potencjału gospodarczego i akademickiego miasta Lublin;  udziału w targach, misjach gospodarczych, spotkaniach branżowych i innych wydarzeniach związanych z działalnością Wydziału."
+    }
+  },
+  {
+    "nazwa": "Wydzial sportu i turystyki",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-prezydenta/wydzial-sportu-i-turystyki/",
+    "departament_slug": "departament-prezydenta",
+    "is_departament": false,
+    "kierownik": "Jarosław Daniewski",
+    "symbol": "ST",
+    "departament": "Departament Prezydenta",
+    "adres": "ul. Filaretów 44 p. 207, 20-609 Lublin",
+    "telefon": "81 466 3800",
+    "faks": "81 466 3801",
+    "email": "sport@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Sportu i Turystyki ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Sportu  i Turystyki realizuje w szczególności zadania z zakresu:  polityki miasta Lublin w zakresie sportu, turystyki i wypoczynku, w tym wypoczynku dzieci i młodzieży;  prowadzenia ewidencji uczniowskich klubów sportowych, ewidencji klubów sportowych działających w formie stowarzyszenia, których statuty nie przewidują prowadzenia działalności gospodarczej, ewidencji obiektów świadczących usługi hotelarskie oraz ewidencji pól biwakowych;  nadzoru nad działalnością klubów sportowych, związków sportowych, stowarzyszeń oraz fundacji działających w zakresie kultury fizycznej i nad działalnością innych obiektów, w których świadczone są usługi hotelarskie oraz pól biwakowych;  tworzenia, przekształcania i likwidacji instytucji sportu podległych miastu Lublin;  planowania środków budżetowych na finansowanie zadań miasta Lublin w zakresie sportu, turystyki i wypoczynku realizowanych przez podmioty prowadzące działalność pożytku publicznego, spraw związanych ze zlecaniem zadań w tym zakresie oraz nadzoru nad wydatkowaniem środków finansowych przekazanych podmiotom z budżetu miasta Lublin, w tym prowadzenia postępowań administracyjnych o zwrot dotacji;  organizacji i współorganizacji wydarzeń sportowych, w tym w zakresie sportu szkolnego i młodzieżowego oraz wypoczynku dzieci i młodzieży;  prowadzenia spraw związanych z przyznawaniem stypendiów i nagród za osiągnięcia w dziedzinie sportu;  inicjowania działań mających na celu popularyzację miejskich obiektów sportowych oraz przygotowywania i opiniowania projektów o charakterze strategicznym i kierunkowym w obszarze ich wykorzystania;  współpracy z Radą Sportu oraz organizacjami pozarządowymi w zakresie sportu;  prowadzenia spraw związanych z promocją miasta Lublin poprzez sport i turystykę;  podejmowania działań na rzecz rozwoju turystyki w mieście Lublin, wynikających ze Strategii Miasta Lublin;  opracowywania, we współpracy z komórkami organizacyjnymi, referatami w departamentach, stanowiskami pracy w departamentach i jednostkami organizacyjnymi oraz instytucjami zewnętrznymi, projektów strategii rozwoju sportu i turystyki oraz programów i planów związanych z rozwojem sportu i turystyki w mieście Lublin;  realizacji programów i projektów sprzyjających rozwojowi turystyki w mieście Lublin oraz pozyskiwania na ten cel środków finansowych;  tworzenia, promocji i rozwoju produktów turystycznych;  koordynowania prac związanych z tworzeniem i rozwijaniem oraz podnoszeniem jakości oferty turystycznej w mieście Lublin;  współpracy z branżą turystyczną, stowarzyszeniami, klastrami, organizacjami turystycznymi, środowiskami gospodarczymi i naukowymi w zakresie działań służących rozwojowi turystycznemu miasta Lublin.",
+      "Opisy usług": "Wydział Sportu i Turystyki"
+    }
+  },
+  {
+    "nazwa": "Departament inwestycji i rozwoju",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": true
+  },
+  {
+    "nazwa": "Biuro miejskiego konserwatora zabytkow i rewitalizacji",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/biuro-miejskiego-konserwatora-zabytkow-i-rewitalizacji/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Hubert Mącik",
+    "symbol": "MKZ",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "ul. Spokojna 2, I piętro, p. 112, 20-074 Lublin",
+    "telefon": "81 466 2650",
+    "faks": "81 466 2651",
+    "email": "zabytki@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura Miejskiego Konserwatora Zabytków i Rewitalizacji ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r. ).",
+      "Zakres działania": "Biuro Miejskiego Konserwatora Zabytków i Rewitalizacji realizuje zadania z zakresu ochrony zabytków i opieki nad zabytkami oraz dobrami kultury współczesnej oraz zadania z zakresu rewitalizacji, w szczególności w zakresie:  planowania dziedzictwa kulturowego miasta Lublin we współpracy z komórkami organizacyjnymi, stanowiskami pracy w departamentach, jednostkami organizacyjnymi i społecznością lokalną;  koordynowania zarządzania dziedzictwem kulturowym miasta Lublin, w tym krajobrazem kulturowym na obszarze miasta Lublin;  kształtowania świadomości wartości dziedzictwa kulturowego miasta Lublin poprzez działania edukacyjne i promocyjne;  prowadzenia gminnej ewidencji zabytków;  koordynowania działań związanych z kulturą przestrzeni;  prowadzenia ochrony zabytków i opieki nad zabytkami w zakresie zleconym przez Wojewodę Lubelskiego;  prowadzenia spraw związanych z udzielaniem dotacji, w tym o zwrot dotacji, na prace konserwatorskie, restauratorskie lub roboty budowlane przy zabytku wpisanym do rejestru;  prowadzenia działań związanych z opracowywaniem analiz i diagnoz służących wypracowaniu rekomendacji, mierników i wytycznych do przygotowania programu rewitalizacji;  przygotowywania opracowań i analiz służących wyznaczeniu obszaru zdegradowanego, obszaru rewitalizacji oraz Specjalnej Strefy Rewitalizacji;  przygotowywania, aktualizacji, zarządzania oraz monitoringu wdrażania programu rewitalizacji;  przygotowywania i koordynowania procesu rewitalizacji, w tym współpracy z interesariuszami rewitalizacji;  przygotowywania oceny aktualności i stopnia realizacji programu rewitalizacji;  prowadzenia i koordynowania partycypacji społecznej dotyczącej procesu rewitalizacji;  planowania i realizacji programów edukacyjnych i kampanii informacyjnych wspierających proces rewitalizacji;  prowadzenia – we współpracy z Kancelarią Prezydenta – działań informacyjno-promocyjnych w zakresie rewitalizacji;  współpracy z jednostkami samorządu terytorialnego, administracją rządową w zakresie przygotowania, koordynowania i tworzenia warunków do prowadzenia procesu rewitalizacji.",
+      "Opisy usług": "Biuro Miejskiego Konserwatora Zabytków i Rewitalizacji"
+    }
+  },
+  {
+    "nazwa": "Wydzial architektury i budownictwa",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wydzial-architektury-i-budownictwa/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Magdalena Zbiciak",
+    "symbol": "AB",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "ul. Wieniawska 14 p. 906, 20-071 Lublin",
+    "telefon": "81 466 2200",
+    "faks": "81 466 2201",
+    "email": "architektura@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Architektury i Budownictwa ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Architektury i Budownictwa realizuje w szczególności zadania z zakresu:    kompetencji organu administracji architektoniczno-budowlanej wynikających z ustawy z dnia 7 lipca 1994 r. Prawo budowlane (Dz. U. z 2024 r. poz. 725 i 834) i innych ustaw, w szczególności:   uprawniania inwestorów do wykonywania robót budowlanych na podstawie pozwolenia na budowę lub zgłoszenia,  wydawania decyzji o rozbiórce obiektów,  wydawania decyzji o zezwoleniu na realizację inwestycji drogowej (ZRID),  wydawania zaświadczeń,  prowadzenia postępowań egzekucyjnych w zakresie egzekucji środków niepieniężnych;    prowadzenia spraw wynikających z ustawy z dnia 5 lipca 2018 r. o ułatwieniach w przygotowaniu i realizacji inwestycji mieszkaniowych oraz inwestycji towarzyszących (Dz. U. z 2024 r. poz. 195), z zastrzeżeniem § 54 pkt 8 Regulaminu Organizacyjnego Urzędu Miasta Lublin;  wnioskowania i przygotowywania poleceń Prezydenta dla Powiatowego Inspektora Nadzoru Budowlanego w Lublinie w przypadku bezpośredniego zagrożenia życia lub zdrowia ludzi związanych z budową, utrzymaniem lub rozbiórką obiektów budowlanych.",
+      "Opisy usług": "Wydział Architektury i Budownictwa"
+    }
+  },
+  {
+    "nazwa": "Wydzial funduszy europejskich",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wydzial-funduszy-europejskich/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Bernadeta Krzysztofik",
+    "symbol": "FE",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "ul. Peowiaków 13, 20-007 Lublin",
+    "telefon": "81 466 2800",
+    "faks": "81 466 2801",
+    "email": "fundusze@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Funduszy Europejskich ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Funduszy Europejskich realizuje w szczególności zadania z zakresu:    monitorowania ustawodawstwa w zakresie warunków i kryteriów pozyskiwania środków finansowych pochodzących z zewnętrznych źródeł finansowania;  współpracy i utrzymywania kontaktów z podmiotami zewnętrznymi w zakresie przygotowania, opiniowania i wdrażania dokumentów programowych oraz w ramach przygotowania, realizacji, wdrażania, rozliczenia i sprawozdawczości projektów finansowanych z zewnętrznych źródeł finansowania oraz efektywnego wykorzystania szans rozwojowych wynikających z członkostwa w Unii Europejskiej;  monitorowania, koordynacji i współpracy z komórkami organizacyjnymi, stanowiskami pracy w departamentach, jednostkami organizacyjnymi i instytucjami partnerskimi na etapie identyfikacji, przygotowania, realizacji i wdrażania projektów finansowanych z zewnętrznych źródeł finansowania;  inicjowania i identyfikacji projektów możliwych do dofinansowania z zewnętrznych źródeł finansowania;  pozyskiwania zewnętrznych źródeł finansowania na realizację projektów;  rozliczania i sprawozdawczości projektów finansowanych z zewnętrznych źródeł finansowania;  pracy w zespołach powołanych przez Prezydenta do przygotowania, realizacji, wdrażania i rozliczania projektów finansowanych z zewnętrznych źródeł finansowania oraz do opracowania dokumentów strategicznych miasta Lublin;  współpracy z komórkami organizacyjnymi, stanowiskami pracy w departamentach i jednostkami organizacyjnymi w zakresie monitorowania i aktualizacji planu wydatków i dochodów budżetu miasta Lublin oraz wieloletniej prognozy finansowej w zakresie zgodności z podpisanymi umowami o dofinansowanie i złożonymi wnioskami aplikacyjnymi, w ramach projektów finansowanych z zewnętrznych źródeł finansowania;  promocji projektów finansowanych z zewnętrznych źródeł finansowania – we współpracy z Kancelarią Prezydenta;  redagowania strony internetowej www.fundusze.lublin.eu oraz elektronicznych serwisów informacyjnych Urzędu w obszarze dotyczącym projektów finansowanych z zewnętrznych źródeł finansowania."
+    }
+  },
+  {
+    "nazwa": "Wydzial geodezji",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wydzial-geodezji/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Albert Wójcik",
+    "symbol": "GD",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "ul.Wieniawska 14 p. 518, 20-071 Lublin",
+    "telefon": "81 466 2100",
+    "faks": "81 466 2101",
+    "email": "geodezja@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Geodezji ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Geodezji realizuje w szczególności zadania z zakresu:  regulowania stanów prawnych nieruchomości komunalnych i Skarbu Państwa, komunalizacji i powiatyzacji mienia Skarbu Państwa, rozgraniczania nieruchomości, podziału nieruchomości, składania wniosków wieczystoksięgowych dotyczących nieruchomości komunalnych i Skarbu Państwa;  nabywania i zamiany nieruchomości gminnych, powiatowych i Skarbu Państwa w związku z realizacją inwestycji publicznych;  nabywania, zamiany, wywłaszczania i ograniczania praw rzeczowych dotyczących gruntów przeznaczonych w planach zagospodarowania przestrzennego pod inwestycje publiczne i ustalania odszkodowania;  wykonywania prawa pierwokupu gminy;  prowadzenia i udostępniania państwowego zasobu geodezyjnego i kartograficznego, obsługi zgłaszanych prac geodezyjnych, uwierzytelniania dokumentów opracowanych na podstawie wykonanych prac geodezyjnych;  prowadzenia narad koordynacyjnych dotyczących usytuowania projektowanych sieci uzbrojenia terenu;  prowadzenia spraw związanych z regulacją stosunków własnościowych między Państwem a podmiotami wyznaniowymi;  prowadzenia i udostępniania bazy danych: ewidencji gruntów i budynków (EGiB), rejestru cen nieruchomości (RCN), ewidencji miejscowości, ulic i adresów (EMUiA), geodezyjnej ewidencji sieci uzbrojenia terenu (GESUT), bazy danych obiektów topograficznych o szczegółowości zapewniającej tworzenie standardowych opracowań kartograficznych w skalach 1:500-1:5000 (BDOT500), bazy danych szczegółowych osnów geodezyjnych (BDSOG);  powszechnej taksacji nieruchomości;  opłat adiacenckich z tytułu scaleń i podziału, podziału nieruchomości i budowy urządzeń infrastruktury;  scaleń i podziałów nieruchomości;  ewidencji gospodarstw rolnych, rolnictwa, leśnictwa, łowiectwa i wędkarstwa, ochrony gruntów oraz aktualizacji gleboznawczej klasyfikacji gruntów;  przestrzegania standardów przetwarzania, przesyłania i udostępniania danych geodezyjnych;  zapewnienia bezpieczeństwa i archiwizacji danych geodezyjnych.",
+      "Opisy usług": "Wydział Geodezji"
+    }
+  },
+  {
+    "nazwa": "Wydzial gospodarowania mieniem i energia",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wydzial-gospodarowania-mieniem-i-energia/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Agnieszka Mochol-Dul",
+    "symbol": "GME",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "ul. Wieniawska 14 p. 701, 20-071 Lublin",
+    "telefon": "81 466 2700",
+    "faks": "81 466 2701",
+    "email": "mienie@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Gospodarowania Mieniem i Energią ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7.30 - 15.30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Gospodarowania Mieniem i Energią realizuje w szczególności zadania z zakresu:  gospodarowania nieruchomościami gminnymi, powiatowymi i Skarbu Państwa w zakresie nabywania nieruchomości, sprzedaży, oddawania w użytkowanie wieczyste, przekształceń prawa użytkowania wieczystego w prawo własności, ustanawiania ograniczonych praw rzeczowych, trwałego zarządu, dzierżawy, użyczenia, najmu, zamiany oraz nadzoru i kontroli nad właściwym wykonywaniem tych umów;  ewidencjonowania nieruchomości komunalnych i Skarbu Państwa oraz prowadzenia innych spraw z zakresu gospodarowania zasobem;  wykonywania uprawnień właścicielskich związanych z własnością lokali mieszkalnych, lokali użytkowych, garaży oraz udziałów gminy i Skarbu Państwa;  przeprowadzania zwrotów nieruchomości;  udzielania informacji dotyczącej bieżącej oferty gminy w zakresie gospodarowania nieruchomościami oraz promocji ofert nieruchomości przeznaczonych do zbycia;  współpracy ze wspólnotami mieszkaniowymi;  prowadzenia ewidencji ilościowo-wartościowej mienia gminy, powiatu oraz Skarbu Państwa;  sporządzania informacji o stanie mienia;  inicjowania oraz monitorowania działań przewidzianych do realizacji w Planie gospodarki niskoemisyjnej dla miasta Lublin;  opiniowania rozwiązań do miejscowych planów zagospodarowania przestrzennego w zakresie zaopatrzenia w energię;  wskazywania obszarów podnoszenia efektywności energetycznej na terenie Gminy Lublin poprzez edukację i informację;  organizacji i prowadzenia usług doradztwa energetycznego dla mieszkańców miasta Lublin;  przygotowywania i aktualizacji audytów efektywności energetycznej budynków użyteczności publicznej stanowiących własność Gminy Lublin;  prowadzenia spraw związanych z zakupem energii elektrycznej i gazu ziemnego wysokometanowego na potrzeby Gminy Lublin;  prowadzenia spraw związanych z zakupem ciepła systemowego oraz dostawy wody i odprowadzania ścieków na potrzeby Urzędu. Wydział Gospodarowania Mieniem i Energią, w zakresie powierzonym przez Prezydenta, sprawuje nadzór nad Zarządem Nieruchomości Komunalnych w Lublinie."
+    }
+  },
+  {
+    "nazwa": "Wydzial ochrony srodowiska",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wydzial-ochrony-srodowiska/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Marta Smal-Chudzik",
+    "symbol": "OŚ",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "ul. Tomasza Zana 38, 20-601 Lublin, I piętro",
+    "telefon": "81 466 2600",
+    "faks": "81 466 2601",
+    "email": "srodowisko@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Ochrony Środowiska ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r..)",
+      "Zakres działania": "Wydział Ochrony Środowiska realizuje w szczególności zadania z zakresu:  pozwoleń na wytwarzanie odpadów oraz zezwoleń na zbieranie i przetwarzanie odpadów;  usuwania odpadów przemysłowych i remontowo-budowlanych z miejsc nieprzeznaczonych do ich magazynowania;  usuwania azbestu z terenu miasta Lublin od osób fizycznych i wspólnot mieszkaniowych;  gospodarki wodno-ściekowej i gospodarki wodnej;  monitorowania realizacji Krajowego Programu Oczyszczania Ścieków ⁠Komunalnych dla strefy aglomeracja lubelska;  rejestracji jachtów i sprzętu pływającego służącego do połowu ryb;  geologii;  ochrony powietrza;  tworzenia i udziału w przygotowywaniu projektów, planów, programów z zakresu ochrony środowiska;  realizacji Programu Ograniczania Niskiej Emisji dla miasta Lublin;  monitorowania realizacji Programu Ochrony Powietrza dla strefy aglomeracja lubelska;  przygotowywania i nadzoru nad realizacją Programu Ochrony Środowiska dla miasta Lublin;  p rowadzenia  edukacji  ekologicznej  z  zakresu  ochrony  powietrza i gospodarki odpadami;   prowadzenia rejestru działalności regulowanej;  prowadzenia spraw związanych z powierzeniem zadania własnego Gminy Lublin w zakresie budowy, utrzymania i eksploatacji instalacji komunalnej do przetwarzania odpadów komunalnych;  prowadzenia ewidencji finansowo-księgowej w zakresie dochodów z tytułu ⁠opłaty za gospodarowanie odpadami komunalnymi;  sporządzania sprawozdań finansowych, budżetowych i w zakresie operacji ⁠finansowych oraz przygotowania danych do opracowywania analiz;  prowadzenia ewidencji właścicieli nieruchomości w zakresie realizacji ⁠obowiązku składania deklaracji o wysokości opłaty za gospodarowanie ⁠odpadami komunalnymi;  prowadzenia postępowań dotyczących określenia wysokości opłaty za gospodarowanie odpadami komunalnymi;  prowadzenia kontroli właścicieli nieruchomości w zakresie realizacji obowiązków określonych w ustawie z dnia 13 września 1996 r. o utrzymaniu ⁠czystości i porządku w gminach (Dz. U. z 2024 r. poz. 399);  prowadzenia kontroli przedsiębiorców odbierających odpady komunalne od ⁠właścicieli nieruchomości;  nadzoru nad realizacją przez podmioty odbierające odpady komunalne usług ⁠zleconych przez Gminę Lublin;  prowadzenia postępowań w sprawach o zwrot dotacji udzielonych podmiotom ⁠spoza sektora finansów publicznych w zakresie zadań Wydziału.",
+      "Opisy usług": "Wydział Ochrony Środowiska"
+    }
+  },
+  {
+    "nazwa": "Wydzial planowania",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wydzial-planowania/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Małgorzata Żurkowska",
+    "symbol": "PL",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "ul. Wieniawska 14 p. 1102, 20-071 Lublin",
+    "telefon": "81 466 2300",
+    "faks": "81 466 2301",
+    "email": "planowanie@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Planowania ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Planowania realizuje w szczególności zadania z zakresu:  kształtowania i prowadzenia polityki przestrzennej poprzez planowanie i prognozowanie rozwoju przestrzennego miasta Lublin, sporządzania projektów miejscowych planów zagospodarowania przestrzennego dla obszaru miasta Lublin oraz sporządzania projektu studium uwarunkowań i kierunków zagospodarowania przestrzennego miasta Lublin;  kształtowania ładu przestrzennego dla terenów nieposiadających miejscowego planu zagospodarowania przestrzennego w zakresie: a) wydawania decyzji o lokalizacji inwestycji celu publicznego, b) wydawania decyzji o warunkach zabudowy;  opracowywania propozycji do projektów miejscowych planów zagospodarowania przestrzennego oraz studium uwarunkowań i kierunków zagospodarowania przestrzennego w zakresie dotyczącym zagospodarowania doliny rzeki Bystrzycy wraz z dopływami oraz wąwozów i suchych dolin;  wydawania wypisów i wyrysów z miejscowych planów zagospodarowania przestrzennego;  dokonywania analizy zmian w zagospodarowaniu przestrzennym miasta Lublin oraz oceny postępów w opracowywaniu planów miejscowych w nawiązaniu do ustaleń studium i wniosków w sprawie sporządzenia lub zmiany planu miejscowego;  prowadzenia spraw dotyczących zmiany wartości nieruchomości w związku z uchwalaniem lub zmianą miejscowych planów zagospodarowania przestrzennego;  prowadzenia spraw związanych z określaniem lokalnych standardów urbanistycznych.",
+      "Opisy usług": "Wydział Planowania"
+    }
+  },
+  {
+    "nazwa": "Wydzial zarzadzania ruchem drogowym i mobilnoscia",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wydzial-zarzadzania-ruchem-drogowym-i-mobilnoscia/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Arkadiusz Niezgoda",
+    "symbol": "ZR",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "ul. Krochmalna 13i, 20-401 Lublin",
+    "telefon": "81 466 29 50",
+    "faks": "81 466 29 51",
+    "email": "zrim@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Zarządzania Ruchem Drogowym i Mobilnością ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Zarządzania Ruchem Drogowym i Mobilnością realizuje w szczególności zadania z zakresu:  inicjowania i koordynowania działań miasta Lublin w zakresie doskonalenia rozwiązań komunikacyjnych;  wykonywania czynności należących do organu zarządzającego ruchem;  rozpatrywania projektów organizacji ruchu oraz wniosków dotyczących zmian organizacji ruchu;  opracowywania lub zlecania do opracowania projektów organizacji ruchu uwzględniających wnioski wynikające z przeprowadzonych analiz organizacji i bezpieczeństwa ruchu;  zatwierdzania organizacji ruchu na podstawie złożonych projektów;  przekazywania zatwierdzonych projektów organizacji ruchu do realizacji;  przechowywania projektów organizacji ruchu i prowadzenie ich ewidencji;  opiniowania geometrii dróg w projektach budowlanych;  prowadzenia kontroli prawidłowości zastosowania i funkcjonowania znaków drogowych, sygnalizacji świetlnej oraz urządzeń bezpieczeństwa ruchu drogowego oraz ich zgodności z zatwierdzoną organizacją ruchu;  współpracy w zakresie organizacji ruchu i jego bezpieczeństwa z innymi organami zarządzającymi ruchem, zarządami dróg i kolei, Policją, Strażą Miejską Miasta Lublin oraz innymi podmiotami;  przeprowadzania kontroli w zakresie prawidłowości zastosowania i funkcjonowania wszystkich znaków drogowych, urządzeń sygnalizacji świetlnej, urządzeń sygnalizacji dźwiękowej i urządzeń bezpieczeństwa ruchu drogowego umieszczonych na drogach publicznych oraz na drogach wewnętrznych, dla których podmiotem zarządzającym jest Prezydent, położonych w granicach administracyjnych miasta Lublin;  sprawdzania warunków pracy skrzyżowań z sygnalizacją świetlną poprzez pomiary natężenia ruchu i badania efektywności przyjętych rozwiązań organizacyjnych i programowych oraz wprowadzanie ewentualnych zmian;  wprowadzania tymczasowych zakazów lub ograniczenia w ruchu w przypadku zdarzeń, w wyniku których może nastąpić zagrożenie bezpieczeństwa ruchu drogowego;  wydawania zezwoleń na wykorzystanie dróg w sposób szczególny;  budowy i prowadzenia obsługi systemów zarządzania i sterowania ruchem, sterowania ruchem za pomocą znaków świetlnych, znaków o zmiennej treści i innych zmiennych elementów;  koordynowania polityki rowerowej i pieszej miasta Lublin;  inicjowania i monitorowania działań mających na celu rozwój komunikacji rowerowej i pieszej, w tym działań na rzecz likwidacji prawnych i architektonicznych barier w rozwoju komunikacji rowerowej i pieszej;  opracowywania projektów i propozycji rozwiązań usprawniających organizację oraz bezpieczeństwo ruchu rowerowego i pieszego;  opiniowania projektów budowy, przebudowy i remontów dróg z uwzględnieniem potrzeb niechronionych uczestników ruchu;  prowadzenia postępowań administracyjnych w sprawach o zwrot dotacji udzielonych podmiotom spoza sektora finansów publicznych w zakresie zadań Wydziału;  realizacji zadań związanych z systemem wypożyczalni rowerowych;  nadzorowania operatorów systemu Lubelskiego Roweru Miejskiego;  koordynowania i wspierania działań na rzecz rozwoju elektromobilności;  rozpatrywania wniosków oraz wydawania identyfikatorów i zezwoleń uprawniających do wjazdu w strefę objętą zakazem ruchu na terenie Starego Miasta oraz na terenie ul. Krakowskie Przedmieście, od placu Łokietka do ul. Kapucyńskiej w Lublinie.",
+      "Opisy usług": "Wydział Zarządzania Ruchem Drogowym i Mobilnością"
+    }
+  },
+  {
+    "nazwa": "Wydzial zieleni i gospodarki komunalnej",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wydzial-zieleni-i-gospodarki-komunalnej/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Blanka Rdest",
+    "symbol": "GK",
+    "adres": "ul. Tomasza Zana 38 p. 710, 20-601 Lublin",
+    "telefon": "81 466 3100",
+    "faks": "81 466 3101",
+    "email": "komunalna@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Zieleni i Gospodarki Komunalnej ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7.30 - 15.30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Zieleni i Gospodarki Komunalnej realizuje w szczególności zadania z zakresu:  prowadzenia spraw dotyczących ustalania opłat za usługi wodne za zmniejszenie naturalnej retencji terenowej;  realizacji Programu ochrony zasobów wodnych dla miasta Lublina wraz z zasadami udzielania dotacji celowej;  wydawania zezwoleń dotyczących usuwania drzew i krzewów oraz naliczania opłat;  kontroli realizacji wydawanych zezwoleń, odbiorów rekompensacyjnych i zamiennych;  ustalania kar za usuwanie drzew i krzewów bez wymaganego zezwolenia;  ocen oddziaływania na środowisko;  ochrony przed polami elektromagnetycznymi;  ochrony przed hałasem;  planowania i zarządzania terenami zieleni w mieście Lublin i utrzymania zieleni;  ochrony drzew i terenów cennych przyrodniczo;  utrzymania estetyki terenów i likwidacji dzikich wysypisk śmieci na terenach należących do miasta Lublin i Skarbu Państwa w obrębie granic administracyjnych miasta Lublin;  utrzymania gminnych obiektów: zdrojów ulicznych, publicznych fontann, tężni solnych, punktów poboru wody na cele przeciwpożarowe oraz utrzymania wodociągów wiejskich;  utrzymania placów zabaw, urządzeń rekreacji, siłowni zewnętrznych;  eksploatacji i utrzymania sieci i urządzeń elektroenergetycznych i oświetleniowych przyjętych na stan Wydziału;  utrzymania wybiegów dla psów;  utrzymania koszy ulicznych;  wydawania zgody na zajęcie Placu Litewskiego;  utrzymania słupów ogłoszeniowych, gablot i altan poza pasem drogowym oraz oczyszczania terenów;  utrzymania i eksploatacji szaletów miejskich;  utrzymania oraz zarządzania cmentarzami;  utrzymania obiektów grobownictwa wojennego i miejsc pamięci narodowej;  edukacji klimatycznej i przyrodniczej;  ochrony zwierząt;  przygotowania i nadzoru nad realizacją Programu opieki nad zwierzętami bezdomnymi i zapobiegania bezdomności zwierząt;  przygotowywania oraz aktualizacji planów działań w zakresie zmian klimatu oraz adaptacji do tych zmian;  utrzymania oraz remontów i napraw umożliwiających bieżące funkcjonowanie miejskiej sieci kanalizacji deszczowej, kanałów otwartych oraz zbiorników retencyjnych stanowiących przedłużenie sieci kanalizacji deszczowej na terenie miasta Lublin w zakresie sprawowanej pieczy Wydziału;  utrzymania i remontów przepompowni w zakresie sprawowanej pieczy Wydziału.",
+      "Opisy usług": "Wydział Zieleni i Gospodarki Komunalnej"
+    }
+  },
+  {
+    "nazwa": "Referat ds zamowien publicznych",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/referat-ds-zamowien-publicznych/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "kierownik": "Zbigniew Barczak",
+    "symbol": "ZP",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "adres": "plac Litewski 1 p. 3, 20-080 Lublin",
+    "telefon": "81 466 3000",
+    "faks": "81 466 3001",
+    "email": "zamowienia@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Referatu ds. Zamówień Publicznych ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Referat ds. Zamówień Publicznych realizuje w szczególności zadania z zakresu:  zarządzania procesem planowania, przygotowywania i przeprowadzania postępowań o udzielenie zamówień publicznych w Urzędzie;  tworzenia, opiniowania i zatwierdzania dokumentacji postępowania o udzielenie zamówienia publicznego;  koordynowania czynności komórek organizacyjnych, referatów w departamentach, stanowisk pracy w departamentach związanych z realizacją zamówień publicznych w Urzędzie;  opracowywania rocznego planu zamówień Urzędu i prowadzenia sprawozdawczości dotyczącej zamówień publicznych;  prowadzenia czynności związanych z postępowaniem odwoławczym;  przekazywania do publikacji ogłoszeń dotyczących zamówień publicznych;  prowadzenia rejestru udzielonych zamówień publicznych oraz zbioru dokumentacji dotyczącej realizowanych zamówień publicznych;  udziału w pracach komisji przetargowych;  obsługi technicznej komisji przetargowych i sądów konkursowych;  reprezentowania kierownika zamawiającego w postępowaniach związanych z udzielaniem zamówień publicznych oraz w sprawach związanych z wnoszeniem środków ochrony prawnej."
+    }
+  },
+  {
+    "nazwa": "Wieloosobowe stanowisko pracy ds strategicznych analiz inwestycyjnych i ekonomicznych",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-inwestycji-i-rozwoju/wieloosobowe-stanowisko-pracy-ds-strategicznych-analiz-inwestycyjnych-i-ekonomicznych/",
+    "departament_slug": "departament-inwestycji-i-rozwoju",
+    "is_departament": false,
+    "symbol": "AI",
+    "departament": "Departament Inwestycji i Rozwoju",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wieloosobowego Stanowiska Pracy ds. strategicznych analiz inwestycyjnych i ekonomicznych ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).  Wieloosobowe Stanowisko Pracy ds. strategicznych analiz inwestycyjnych i ekonomicznych realizuje w szczególności zadania z zakresu:  wykonywania analiz strategicznych przedsięwzięć gospodarczych, które zamierza potencjalnie realizować Gmina Lublin oraz opiniowanie przedmiotowych analiz wykonanych przez zewnętrzne podmioty na zlecenie Gminy Lublin;  sporządzania analiz ekonomiczno-finansowych projektów inwestycyjnych i nieinwestycyjnych rozważanych do realizacji przez Gminę Lublin;  szacowania kosztu kapitału niezbędnego do przeprowadzenia przez Gminę Lublin strategicznych projektów o charakterze inwestycyjnym lub nieinwestycyjnym;  opracowywania analiz ekonomiczno-finansowych w zakresie wykonywanych zadań o charakterze użyteczności publicznej i dotyczących prowadzonej przez Gminę Lublin działalności w poszczególnych sferach gospodarek wykraczających poza jej zadania własne;  współpracy z Wydziałem Strategii i Obsługi Inwestorów w zakresie formułowania celów długoterminowych, opracowywania oraz wdrażania strategii Gminy Lublin.”;"
+    }
+  },
+  {
+    "nazwa": "Departament spraw spolecznych",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-spraw-spolecznych/",
+    "departament_slug": "departament-spraw-spolecznych",
+    "is_departament": true
+  },
+  {
+    "nazwa": "Wydzial ds osob niepelnosprawnych",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-spraw-spolecznych/wydzial-ds-osob-niepelnosprawnych/",
+    "departament_slug": "departament-spraw-spolecznych",
+    "is_departament": false,
+    "kierownik": "Joanna Olszewska",
+    "symbol": "ON",
+    "departament": "Departament Spraw Społecznych",
+    "adres": "ul. Tomasza Zana 38 (niski parter), 20-601 Lublin",
+    "telefon": "81 466 3083, 81 466 3080",
+    "faks": "81 466 3081",
+    "email": "ion@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału ds. Osób Niepełnosprawnych ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30  W Wydziale ds. Osób Niepełnosprawnych - Ośrodek Informacji Osób Niepełnosprawnych ustala się następujący czas pracy: od poniedziałku do piątku w godzinach 8:00 - 16:00  – zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).    Ośrodek Informacji Osób Niepełnosprawnych  20-601 Lublin ul. Tomasza Zana 38   tel. : 81 466 3083, 81 466 3080  fax : 81 466 3081  e-mail : //<![CDATA[ SendTo(' ', '', 'oion', 'lublin.eu', ' oion // lublin.eu'); //]]>",
+      "Zakres działania": "Wydział ds. Osób Niepełnosprawnych realizuje w szczególności zadania z zakresu:  realizowania zadań w ramach Programu działań miasta Lublin na rzecz mieszkańców z niepełnosprawnościami, w tym zlecania zadań organizacjom pozarządowym;  współpracy z Państwowym Funduszem Rehabilitacji Osób Niepełnosprawnych w zakresie projektów kierowanych do organizacji i instytucji;  współpracy z instytucjami i organizacjami pozarządowymi działającymi na rzecz osób z niepełnosprawnościami w zakresie identyfikacji problemów i analizy potrzeb środowisk mieszkańców miasta Lublin z niepełnosprawnościami;  podejmowania i koordynowania działań zmierzających do ograniczenia skutków niepełnosprawności i barier utrudniających osobom z niepełnosprawnościami funkcjonowanie w społeczeństwie, w tym opiniowania projektów rozwiązań w tym zakresie;  opracowywania projektów służących poprawie warunków życia i integracji społecznej osób z niepełnosprawnościami;  opiniowania aktów prawnych, w tym projektów uchwał Rady i zarządzeń Prezydenta dotyczących warunków życia i funkcjonowania osób z niepełnosprawnościami;  udzielania informacji o rodzajach i warunkach pomocy świadczonej dla osób z niepełnosprawnościami;  działania na rzecz budowania dialogu, partnerstwa, integracji i współpracy pomiędzy organizacjami pozarządowymi działającymi w sferze zadań społecznych, inicjatywami społecznymi, władzami lokalnymi i innymi podmiotami działającymi na rzecz osób z niepełnosprawnościami;  prowadzenia spraw związanych z udzielaniem dotacji, w tym o zwrot dotacji, podmiotom spoza sektora finansów publicznych w zakresie zadań Wydziału."
+    }
+  },
+  {
+    "nazwa": "Wydzial inicjatyw i programow spolecznych",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-spraw-spolecznych/wydzial-inicjatyw-i-programow-spolecznych/",
+    "departament_slug": "departament-spraw-spolecznych",
+    "is_departament": false,
+    "kierownik": "Sławomir Skowronek",
+    "symbol": "IPS",
+    "departament": "Departament Spraw Społecznych",
+    "adres": "ul. Leszczyńskiego 23, 20-068 Lublin",
+    "telefon": "81 466 3050",
+    "email": "wips@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Wydziale Inicjatyw i Programów Społecznych ustala się zmianowy czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach: I zmiana: 7.30 – 15.30; II zmiana: 12.00 – 20.00.   Dla wyznaczonych pracowników Wydziału Inicjatyw i Programów Społecznych dniem pracy może być sobota w godzinach 8.00 – 16.00  – zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Inicjatyw i Programów Społecznych realizuje w szczególności zadania z zakresu:  współpracy z instytucjami i organizacjami pozarządowymi działającymi w zakresie identyfikacji problemów i analizy potrzeb środowisk mieszkańców miasta Lublin w sferze spraw społecznych;  opracowywania programów służących poprawie warunków życia i integracji społecznej mieszkańców miasta Lublin;  opiniowania aktów prawnych, w tym projektów uchwał Rady i zarządzeń Prezydenta dotyczących zakresu zadania Wydziału;  działania na rzecz budowania dialogu, partnerstwa, integracji i współpracy pomiędzy organizacjami pozarządowymi działającymi w sferze zadań społecznych, inicjatywami społecznymi, władzami lokalnymi i innymi podmiotami działającymi na rzecz seniorów;  koordynowania działań w zakresie polityki społecznej, w tym działań na rzecz rodziny i seniorów;  działania na rzecz aktywizacji społecznej i zawodowej kobiet;  wnioskowania w sprawach tworzenia, przekształcania i likwidacji podległych miastu Lublin jednostek pomocy społecznej;  wyznaczania podmiotów, w których wykonywana jest kara ograniczenia wolności oraz praca społecznie użyteczna;  prowadzenia spraw związanych z udzielaniem dotacji, w tym o zwrot dotacji, podmiotom spoza sektora finansów publicznych w zakresie zadań Wydziału. Wydział Inicjatyw i Programów Społecznych sprawuje nadzór, w zakresie powierzonym przez Prezydenta, nad realizacją zadań wykonywanych przez podległe miastu Lublin jednostki organizacyjne, w zakresie niezastrzeżonym przepisami prawa do kompetencji Rady i innych organów administracji publicznej:  Miejskim Ośrodkiem Pomocy Rodzinie w Lublinie;  Miejskim Urzędem Pracy w Lublinie.",
+      "Opisy usług": "Wydział Inicjatyw i Programów Społecznych"
+    }
+  },
+  {
+    "nazwa": "Wydzial zdrowia i profilaktyki",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-spraw-spolecznych/wydzial-zdrowia-i-profilaktyki/",
+    "departament_slug": "departament-spraw-spolecznych",
+    "is_departament": false,
+    "kierownik": "Barbara Danieluk",
+    "symbol": "WZP",
+    "departament": "Departament Spraw Społecznych",
+    "adres": "ul. Spokojna 2, p.214, 20-074 Lublin, II pięto",
+    "telefon": "81 466 3400",
+    "faks": "81 466 3401",
+    "email": "zdrowie@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Zdrowia i Profilaktyki ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Zdrowia i Profilaktyki realizuje w szczególności zadania z zakresu:  inicjowania i koordynowania spraw związanych z ochroną i promocją zdrowia;  prowadzenia spraw związanych z realizacją programów polityki zdrowotnej;  realizacji zadań związanych z profilaktyką i rozwiązywaniem problemów uzależnień wynikających z gminnego programu profilaktyki i rozwiązywania problemów alkoholowych oraz przeciwdziałania narkomanii;  realizacji zadań związanych z przeciwdziałaniem przemocy w rodzinie wynikających z gminnego programu profilaktyki i rozwiązywania problemów alkoholowych oraz przeciwdziałania narkomanii;  obsługi Komisji Rozwiązywania Problemów Alkoholowych w Lublinie;  wnioskowania w sprawach tworzenia, przekształcania i likwidacji podległych miastu Lublin jednostek organizacyjnych ochrony zdrowia;  wydawania decyzji w sprawach przekazywania zwłok do celów naukowych;  prowadzenia spraw związanych z opieką nad dziećmi do lat 3, w tym sprawowania nadzoru i udzielania dotacji podmiotom niepublicznym prowadzącym żłobki i kluby dziecięce;  prowadzenia postępowań administracyjnych w sprawach o zwrot dotacji udzielonych podmiotom spoza sektora finansów publicznych w zakresie zadań Wydziału;  prowadzenia spraw związanych z ponoszeniem przez powiat kosztów za wyżywienie i zakwaterowanie dzieci pozbawionych opieki i wychowania rodziców, umieszczonych przez sąd w zakładzie opiekuńczo-leczniczym, w zakładzie pielęgnacyjno-opiekuńczym lub w zakładzie rehabilitacji leczniczej. Wydział Zdrowia i Profilaktyki sprawuje nadzór, w zakresie powierzonym przez Prezydenta, nad realizacją zadań wykonywanych przez podległe miastu Lublin jednostki organizacyjne, w zakresie niezastrzeżonym przepisami prawa do kompetencji Rady i innych organów administracji publicznej:  Miejskim Zespołem Żłobków w Lublinie;  Ośrodkiem Leczenia Uzależnień Samodzielnym Publicznym Zakładem Opieki Zdrowotnej w Lublinie.",
+      "Opisy usług": "Wydział Zdrowia i Profilaktyki"
+    }
+  },
+  {
+    "nazwa": "Wydzial swiadczen",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-spraw-spolecznych/wydzial-swiadczen/",
+    "departament_slug": "departament-spraw-spolecznych",
+    "is_departament": false,
+    "kierownik": "Aneta Łońska",
+    "symbol": "WS",
+    "departament": "Departament Spraw Społecznych",
+    "adres": "ul. Zemborzycka 88-92, 20-445 Lublin",
+    "telefon": "81 466 6800",
+    "email": "swiadczenia@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Wydziale Świadczeń ustala się następujący czas pracy:   w poniedziałki zmianowy czas pracy w godzinach:   - I zmiana: 7.30 – 15.30,  - II zmiana: 9.00 – 17.00;   we wtorki, środy, czwartki i piątki w godzinach 7.30 – 15.30.   – zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r. z późn. zm.).",
+      "Zakres działania": "Wydział Świadczeń realizuje w szczególności zadania z zakresu:  prowadzenia spraw dotyczących przyznawania dodatków mieszkaniowych i dodatków energetycznych oraz refundacji kwoty odpowiadającej podatkowi VAT wynikającej z opłaconej faktury dokumentującej dostarczenie paliw gazowych do odbiorcy paliw gazowych w gospodarstwie domowym;  prowadzenia spraw dotyczących przyznawania dopłat pokrywających część czynszu za najem mieszkania;  prowadzenia spraw wynikających z ustawy z dnia 7 września 2007 r. o pomocy osobom uprawnionym do alimentów (Dz. U. z 2026 r. poz. 79), związanych z ustalaniem prawa do świadczeń z funduszu alimentacyjnego, przyznawaniem i wypłacaniem świadczeń z funduszu alimentacyjnego oraz podejmowania działań wobec dłużników alimentacyjnych;  prowadzenia spraw wynikających z ustawy z dnia 28 listopada 2003 r. o świadczeniach rodzinnych (Dz. U. z 2025 r. poz. 1208 oraz z 2026 r. poz. 203) związanych z ustaleniem prawa do świadczeń rodzinnych, przyznawaniem i wypłacaniem świadczeń rodzinnych;  prowadzenia spraw wynikających z ustawy z dnia 4 kwietnia 2014 r. o ustaleniu i wypłacie zasiłków dla opiekunów (Dz. U. z 2024 r. poz. 246), związanych ustalaniem prawa do zasiłków dla opiekunów, przyznawaniem i wypłacaniem zasiłków dla opiekunów;  realizacji zadania wynikającego z ustawy z dnia 4 listopada 2016 r. o wsparciu kobiet w ciąży i rodzin „Za życiem” (Dz. U. z 2024 r. poz. 1829) dotyczącego ustalania prawa i wypłaty jednorazowego świadczenia z tytułu urodzenia dziecka, u którego zdiagnozowano ciężkie i nieodwracalne upośledzenia albo nieuleczalną chorobę zagrażającą jego życiu, które powstały w prenatalnym rozwoju dziecka lub w czasie porodu;  prowadzenia postępowań administracyjnych w sprawach o nienależnie pobrane świadczenia;  wykonywania obowiązków wierzyciela Prezydenta w postępowaniu egzekucyjnym w administracji;  wykonywania obowiązków wierzyciela miasta Lublin w sądowym postępowaniu egzekucyjnym;  udzielania klientom informacji w zakresie obowiązujących aktów prawnych regulujących postępowania w sprawie przyznawania świadczeń, w tym o rodzajach świadczeń i warunkach ich otrzymania."
+    }
+  },
+  {
+    "nazwa": "Miejski zespol do spraw orzekania o niepelnosprawnosci",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-spraw-spolecznych/miejski-zespol-do-spraw-orzekania-o-niepelnosprawnosci/",
+    "departament_slug": "departament-spraw-spolecznych",
+    "is_departament": false,
+    "kierownik": "Katarzyna Fus",
+    "symbol": "MZON",
+    "departament": "Departament Spraw Społecznych",
+    "adres": "ul. Magnoliowa 2, 20-143 Lublin",
+    "telefon": "81 466 3460",
+    "faks": "81 466 3461",
+    "email": "mzon@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Miejski Zespół do Spraw Orzekania o Niepełnosprawności przyjmuje osoby zainteresowane w:   poniedziałek od 9.00 do 17.00  wtorek - piątek od 7.30 do 15.30 – zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Miejski Zespół do Spraw Orzekania o Niepełnosprawności realizuje zadania z zakresu prowadzenia spraw związanych z wydawaniem orzeczeń o niepełnosprawności, wydawaniem legitymacji osoby niepełnosprawnej oraz wydawaniem kart parkingowych dla osób niepełnosprawnych i placówek, a w szczególności:    przyjmowania wniosków w sprawie wydania orzeczenia o niepełnosprawności i kompletowanie wszelkiej dokumentacji niezbędnej do wydania orzeczenia;  rozpatrywania spraw przez członków zespołów orzekających i wydawania orzeczeń o niepełnosprawności oraz orzeczeń o znacznym, umiarkowanym i lekkim stopniu niepełnosprawności, a także orzeczeń o wskazaniach do ulg i uprawnień;  wystawiania legitymacji osoby niepełnosprawnej na podstawie składanych wniosków wraz z orzeczeniami o niepełnosprawności i stopniu niepełnosprawności;  przygotowywania sprawozdań z bieżącej realizacji zadań i przekazywania ich do Wojewódzkiego Zespołu do Spraw Orzekania o Niepełnosprawności oraz Prezydenta;  współpracy z przedstawicielami administracji rządowej, Biurem Pełnomocnika Rządu do Spraw Osób Niepełnosprawnych, przedstawicielami administracji samorządowej i miejskimi jednostkami organizacyjnymi, a także innymi organami orzecznictwa rentowego w zakresie realizowanych zadań;  wprowadzania danych osób z niepełnosprawnościami do Elektronicznego Krajowego Systemu Monitoringu Orzekania o Niepełnosprawności;  wydawania kart parkingowych dla osób niepełnosprawnych oraz placówek.",
+      "Opisy usług": "Miejski Zespół do Spraw Orzekania o Niepełnosprawności"
+    }
+  },
+  {
+    "nazwa": "Departament kultury i partycypacji",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-kultury-i-partycypacji/",
+    "departament_slug": "departament-kultury-i-partycypacji",
+    "is_departament": true
+  },
+  {
+    "nazwa": "Biuro partycypacji spolecznej",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-kultury-i-partycypacji/biuro-partycypacji-spolecznej/",
+    "departament_slug": "departament-kultury-i-partycypacji",
+    "is_departament": false,
+    "kierownik": "Piotr Choroś",
+    "symbol": "PS",
+    "departament": "Departament Kultury i Partycypacji",
+    "adres": "ul. Jana Gilasa 3, 20-109 Lublin",
+    "telefon": "81 466 2550",
+    "email": "partycypacja@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura Partycypacji Społecznej ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Biuro Partycypacji Społecznej realizuje w szczególności zadania z zakresu:  kreowania polityki partnerstwa społecznego;  prowadzenia spraw i zadań dotyczących partycypacji społecznej mieszkańców miasta Lublin;  organizacji, wspierania i określania zasad procesu konsultacji dla komórek organizacyjnych, stanowisk pracy w departamentach i jednostek organizacyjnych;  organizacji procesu budżetu obywatelskiego oraz monitorowania jego realizacji;  zarządzania projektami wybranymi do realizacji w procesie budżetu obywatelskiego i realizowanymi przez komórki organizacyjne, stanowiska pracy w departamentach i jednostki organizacyjne;  zarządzania i organizacji procesu naboru wniosków oraz koordynowania i monitorowania realizacji zadań publicznych w trybie inicjatywy lokalnej;  prowadzenia postępowań administracyjnych w sprawach o zwrot dotacji udzielonych podmiotom spoza sektora finansów publicznych w zakresie zadań Biura;  koordynowania współpracy miasta Lublin z organizacjami pozarządowymi;  współdziałania z komórkami organizacyjnymi, stanowiskami pracy w departamentach i jednostkami organizacyjnymi w zakresie współpracy z organizacjami pozarządowymi, w szczególności w zakresie udzielania dotacji na realizację zadań publicznych;  inicjowania i współorganizowania szkoleń dotyczących w szczególności budowania społeczeństwa obywatelskiego oraz podnoszenia jakości pracy organizacji pozarządowych w sferze zadań publicznych, pozyskiwania środków pozabudżetowych;  koordynowania polityki miasta Lublin w zakresie równego traktowania, w tym przeciwdziałania dyskryminacji."
+    }
+  },
+  {
+    "nazwa": "Biuro polityki mlodziezowej",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-kultury-i-partycypacji/biuro-polityki-mlodziezowej-/",
+    "departament_slug": "departament-kultury-i-partycypacji",
+    "is_departament": false,
+    "kierownik": "Agnieszka Parol-Górna",
+    "symbol": "BPM",
+    "departament": "Departament Kultury i Partycypacji",
+    "adres": "ul. Peowiaków 11, 20-007 Lublin",
+    "telefon": "81 466 2565",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Biura Polityki Młodzieżowej ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Biuro Polityki Młodzieżowej realizuje w szczególności zadania z zakresu:  identyfikowania, pozyskiwania i aktywizowania partnerów do współpracy oraz mobilizowania społeczności lokalnych do rozwiązywania wyzwań w zakresie pracy z młodzieżą;  nawiązywania i rozwijania współpracy z różnymi podmiotami krajowymi i zagranicznymi, w tym z organizacjami pozarządowymi, działającymi w środowiskach młodzieżowych, aktywnymi w obszarze aktywizacji społecznej młodzieży oraz wymiany informacji, projektów i doświadczeń zdobytych przy ich realizacji;  zapewnienia źródeł bieżącego dopływu informacji z zakresu problematyki młodzieży poprzez prowadzenie i zlecanie sondaży i badań oraz bliską współpracę z ośrodkami prowadzącymi działalność naukowo-badawczą i monitoring zjawisk społecznych w ramach posiadanych środków finansowych;  realizacji programów dla młodzieży: rozwijających umiejętności społeczne, wspierających włączanie do demokratycznego współdecydowania, kształtujących postawy obywatelskie, wzmacniających kompetencje medialne i kulturotwórcze, wpisujących się w ideę uczenia się przez całe życie;  organizowania konferencji, sympozjów, warsztatów i spotkań dla środowisk pracujących z młodzieżą, poświęconych szeroko rozumianej problematyce młodzieżowej;  realizowania i koordynowania polityki młodzieżowej przyjętej uchwałą Rady;  współpracy z komórkami organizacyjnymi wykonującymi zadania określone w dokumencie polityki młodzieżowej w zakresie prowadzenia sprawozdawczości z realizacji zapisów dokumentu."
+    }
+  },
+  {
+    "nazwa": "Wydzial kultury",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-kultury-i-partycypacji/wydzial-kultury/",
+    "departament_slug": "departament-kultury-i-partycypacji",
+    "is_departament": false,
+    "kierownik": "Magdalena Zaręba-Opalińska",
+    "symbol": "KL",
+    "departament": "Departament Kultury i Partycypacji",
+    "adres": "ul. Złota 2, 20-112 Lublin, II piętro",
+    "telefon": "81 466 3700",
+    "faks": "81 466 3701",
+    "email": "kultura@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Kultury ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Kultury realizuje zadania dotyczące miejskiej polityki kulturalnej, w szczególności zadania z zakresu:  udziału w przygotowywaniu i wdrażaniu strategicznych koncepcji rozwoju kultury w mieście Lublin;  współpracy ze środowiskami twórczymi, instytucjami kultury, organizacjami społeczno-kulturalnymi i edukacyjnymi, podmiotami wspierającymi oraz innymi podmiotami realizującymi zadania w zakresie kultury;  prowadzenia rejestru miejskich instytucji kultury oraz spraw dotyczących ich tworzenia, przekształcania i likwidacji;  planowania środków budżetowych na realizację zadań miasta Lublin w zakresie kultury oraz prowadzi związaną z tym sprawozdawczość;  zlecania zadań w zakresie kultury oraz kontroli prawidłowość wydatkowania środków finansowych przekazanych z budżetu miasta Lublin na ich realizację, w tym prowadzenie postępowań administracyjnych o zwrot dotacji;  prowadzenia spraw związanych z przyznawaniem stypendiów artystycznych, nagród miasta Lublin w dziedzinie kultury oraz nagradzania pracowników, animatorów i twórców kultury;  stymulowania procesów rozwoju sektora kultury w mieście Lublin, w tym: przygotowywania i realizacji nieinwestycyjnych projektów kulturalnych i związanych z nimi projektów i programów miejskich oraz pozyskiwania na nie środków europejskich i innych bezzwrotnych, współpracy z instytucjami kultury w zakresie przygotowywania nieinwestycyjnych projektów kulturalnych i pozyskiwania na ich realizację środków europejskich i innych bezzwrotnych, uczestniczenia w procesie inicjowania i opiniowania projektów inwestycji w infrastrukturę kulturalną miasta Lublin, a także organizacji szkoleń i zarządzania informacją;  prowadzenia międzynarodowej współpracy kulturalnej oraz wspierania współpracy międzynarodowej instytucji kultury miasta Lublin;  prowadzenia spraw związanych z promocją miasta Lublin poprzez kulturę i współpracy z instytucjami kultury prowadzonymi przez miasto Lublin w zakresie promocji ich oferty kulturalnej;  realizacji projektów i programów kulturalnych angażujących do współpracy jednostki różnych sektorów, w tym twórców, instytucje kultury, szkoły i uczelnie wyższe, placówki badawcze, organizacje pozarządowe oraz podmioty gospodarcze;  wspierania działań z zakresu edukacji kulturalnej;  prowadzenia spraw związanych ze współpracą z podmiotami gospodarczymi, instytucjami otoczenia biznesu oraz instytucjami nauki i kultury w zakresie realizowanych przez nie zadań wspierających przedsiębiorczość i kreatywność;  prowadzenia spraw związanych z tworzeniem warunków do rozwoju przemysłów kreatywnych. Wydział Kultury, w zakresie powierzonym przez Prezydenta, sprawuje nadzór nad realizacją zadań wykonywanych przez instytucje kultury prowadzone przez miasto Lublin.",
+      "Opisy usług": "Wydział Kultury"
+    }
+  },
+  {
+    "nazwa": "Departament oswiaty i wychowania",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-oswiaty-i-wychowania/",
+    "departament_slug": "departament-oswiaty-i-wychowania",
+    "is_departament": true
+  },
+  {
+    "nazwa": "Wydzial oswiaty i wychowania",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-oswiaty-i-wychowania/wydzial-oswiaty-i-wychowania/",
+    "departament_slug": "departament-oswiaty-i-wychowania",
+    "is_departament": false,
+    "kierownik": "Iwona Nowakowska",
+    "symbol": "OW",
+    "departament": "Departament Oświaty i Wychowania",
+    "adres": "ul. Narutowicza 37/39 p. 215, 20-016 Lublin",
+    "telefon": "81 466 3900",
+    "faks": "81 466 3901",
+    "email": "oswiata@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Oświaty i Wychowania ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Oświaty i Wychowania realizuje w szczególności zadania z zakresu:  prowadzenia spraw dotyczących ustalania sieci publicznych przedszkoli, oddziałów przedszkolnych i szkół, granic obwodów publicznych szkół podstawowych, określania terenu działania publicznych poradni psychologiczno-pedagogicznych oraz spraw związanych z zakładaniem, reorganizacją i likwidacją przedszkoli, oddziałów przedszkolnych, szkół podstawowych, szkół ponadpodstawowych, szkół artystycznych oraz innych placówek publicznych;  prowadzenia spraw dotyczących działalności publicznych przedszkoli, szkół podstawowych, szkół ponadpodstawowych i szkół artystycznych, a także placówek kształcenia ustawicznego oraz centrów kształcenia zawodowego, poradni psychologiczno-pedagogicznych, specjalnych ośrodków szkolno-wychowawczych, młodzieżowego ośrodka socjoterapii, burs i internatów oraz młodzieżowych domów kultury, w zakresie zapewnienia im utrzymania oraz kadrowych i organizacyjnych warunków działania, w tym zapewnienia bezpiecznych i higienicznych warunków nauki, wychowania i opieki oraz realizacji innych zadań statutowych;  inicjowania i koordynowania prac związanych z przygotowaniem rozwiązań dotyczących priorytetowych zagadnień polityki edukacyjnej miasta Lublin;  zatwierdzenia na dany rok szkolny arkuszy organizacyjnych prowadzonych przez miasto Lublin przedszkoli, szkół i placówek oświatowych;  prowadzenia spraw związanych z wykonywaniem czynności z zakresu prawa pracy w stosunku do dyrektorów przedszkoli, szkół i placówek oświatowych;  prowadzenia spraw związanych z awansem nauczycieli na stopień nauczyciela mianowanego;  zapewniania uczniom posiadającym orzeczenie o potrzebie kształcenia specjalnego odpowiedniej formy kształcenia;  prowadzenia spraw związanych z kontrolą spełniania obowiązku nauki przez młodzież zamieszkałą na terenie miasta Lublin;  nadzoru nad działalnością przedszkoli, szkół i placówek oświatowych w zakresie spraw organizacyjnych, kadrowych, finansowych i administracyjno-gospodarczych;  inicjowania prac związanych z aplikowaniem o środki zagraniczne na realizację projektów z zakresu oświaty i wychowania oraz koordynowania spraw związanych z wdrażaniem i rozliczaniem projektów;  prowadzenia spraw związanych z aplikowaniem o środki na realizację programów rządowych, wdrażaniem programów oraz udzielaniem świadczeń pomocy materialnej dla uczniów;  realizacji i obsługi miejskich programów stypendialnych na rzecz uczniów oraz absolwentów szkół ponadpodstawowych;  ewidencjonowania jednostek systemu oświaty prowadzonych przez podmioty inne niż miasto Lublin, udzielania i rozliczania dotacji dla tych jednostek, w tym prowadzenia spraw o zwrot dotacji pobranych nienależnie lub w nadmiernej wysokości niebędących następstwem kontroli prowadzonych przez Wydział Kontroli i Nadzoru Właścicielskiego;  wydawania zezwoleń na założenie szkoły lub placówki publicznej prowadzonej przez osobę prawną inną niż jednostka samorządu terytorialnego lub osobę fizyczną;  kształtowania polityki w zakresie standaryzacji sposobu gospodarowania budynkami i pomieszczeniami wykorzystywanymi na realizację celów oświatowych;  sprawowania nadzoru merytorycznego nad Lubelskim Centrum Ekonomiczno-Administracyjnym Oświaty;  prowadzenia spraw dotyczących współpracy z młodzieżą oraz obsługą administracyjno-biurową Młodzieżowej Rady Miasta Lublin. Wydział Oświaty i Wychowania, w zakresie powierzonym przez Prezydenta, sprawuje nadzór nad realizacją zadań wykonywanych przez podległe miastu Lublin jednostki organizacyjne realizujące zadania w dziedzinie oświaty i wychowania w zakresie merytorycznym i organizacyjnym, niezastrzeżonym przepisami prawa dla innych podmiotów.",
+      "Opisy usług": "Wydział Oświaty i Wychowania"
+    }
+  },
+  {
+    "nazwa": "Pelnomocnik prezydenta miasta lublin ds rozwoju miejskiego systemu doskonalenia zawodowego nauczycieli",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-oswiaty-i-wychowania/pelnomocnik-prezydenta-miasta-lublin-ds-rozwoju-miejskiego-systemu-doskonalenia-zawodowego-nauczycieli/",
+    "departament_slug": "departament-oswiaty-i-wychowania",
+    "is_departament": false,
+    "symbol": "DN",
+    "departament": "Departament Oświaty i Wychowania",
+    "sekcje": {
+      "Zakres działania": "Samodzielne Stanowisko Pracy – Pełnomocnik Prezydenta Miasta Lublin ds. rozwoju miejskiego systemu doskonalenia zawodowego nauczycieli realizuje w szczególności zadania z zakresu:  przygotowywania analiz i wniosków w sprawach związanych z doskonaleniem zawodowym nauczycieli w szkołach i placówkach miasta Lublin;  ewaluacji doskonalenia zawodowego nauczycieli w mieście Lublin;  realizacji zadań strategicznych miasta Lublin w zakresie tworzenia miejskiego systemu rozwoju kompetencji kadr dydaktycznych m. in. w zakresie rozwoju kompetencji metodycznych oraz kształcenia kompetencji przyszłości, kompetencji społecznych, obywatelskich;  diagnozowania potrzeb w zakresie doskonalenia zawodowego nauczycieli oraz opracowywania priorytetów doskonalenia zawodowego nauczycieli;  pozyskiwania partnerów oraz organizowania wydarzeń wspierających doskonalenie zawodowe nauczycieli."
+    }
+  },
+  {
+    "nazwa": "Departament organizacji i administracji",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": true
+  },
+  {
+    "nazwa": "Biuro obslugi kancelaryjnej",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/biuro-obslugi-kancelaryjnej/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": false,
+    "kierownik": "Iwona Woźniak",
+    "symbol": "OK",
+    "departament": "Departament Organizacji i Administracji",
+    "adres": "ul. Spokojna 2 p. 511, 20-074 Lublin",
+    "telefon": "81 466 1250",
+    "faks": "81 466 1251",
+    "email": "bok@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Biurze Obsługi Kancelaryjnej pracownicy zatrudnieni na wieloosobowym stanowisku pracy - goniec wykonują swoje czynności od poniedziałku do piątku pomiędzy godzinami 7.30 - 20.00.  Dla pozostałych pracowników Biura Obsługi Kancelaryjnej ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7.30 - 15.30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Biuro Obsługi Kancelaryjnej realizuje w szczególności zadania z zakresu:  zarządzania i administrowania w Urzędzie, w jednostkach organizacyjnych oświatowych oraz w innych miejskich jednostkach organizacyjnych teleinformatycznymi systemami obsługi spraw i dokumentów, pełniącymi funkcję systemów elektronicznego zarządzania dokumentacją, zwanymi dalej „Systemami EZD”, dla spraw realizowanych w ramach elektronicznego zarządzania dokumentacją oraz informatycznych systemów wspomagających dla spraw prowadzonych tradycyjnie;  obsługi w systemie teleinformatycznym wpływających w ramach KSeF na konto Gminy Lublin ustrukturyzowanych faktur oraz ich rozdziału do właściwych jednostek organizacyjnych, w tym do Urzędu, a w ramach Urzędu do komórek organizacyjnych, referatów w departamentach lub stanowisk pracy w departamentach;  monitorowania zmian przepisów prawa i rozwiązań informatycznych dotyczących zarządzania dokumentacją, procesów w administracji publicznej (e‑administracji), wymagań dla Systemów EZD oraz zgłaszania potrzeb dostosowywania procedur wewnętrznych, wdrażania nowych funkcjonalności Systemów EZD lub ich integracji oraz aktualizowania normatywów kancelaryjno-archiwalnych Urzędu i JOW w związku z nowymi rozwiązaniami prawnymi lub technologicznymi;  opracowywania i wdrażania standardów, procedur oraz instrukcji zapewniających właściwy tryb postępowania i wykorzystywania przez użytkowników funkcjonalności dostępnych w Systemach EZD dla zapewnienia prawidłowego zarządzania dokumentacją;  współpracy przy wdrażaniu integracji Systemów EZD z innymi systemami informatycznymi lub aplikacjami, w tym operatora pocztowego (celem elektronizacji dokumentowania wysyłki), ze środowiskiem doręczeń elektronicznych lub innymi publicznymi środkami komunikacji elektronicznej, służącymi do elektronicznego doręczania dokumentów;  współpracy przy wdrażaniu w komórkach organizacyjnych i stanowiskach pracy w departamentach informatycznych systemów lub aplikacji dziedzinowych, jeżeli służyć one mają dokumentowaniu czynności kancelaryjnych lub obowiązek dokumentowania w nich przebiegu załatwiania spraw dla określonych rodzajów dokumentacji wynika z przepisów szczególnych;  współpracy z koordynatorem czynności kancelaryjnych w bieżącym nadzorowaniu prawidłowości wykonywania czynności kancelaryjnych, w szczególności w zakresie doboru klas z wykazu akt do prowadzonych spraw, właściwego zakładania spraw i prowadzenia akt spraw w Urzędzie oraz doradzania i instruktażu w tym zakresie pracownikom Urzędu;  prowadzenia składu chronologicznego „OK – Skład chronologiczny” dla dokumentacji nieelektronicznej stanowiącej akta spraw prowadzonych w Urzędzie w systemie elektronicznego zarządzania dokumentacją (EZD) na zasadach określonych odrębnym zarządzeniem Prezydenta;  obsługi wpływającej do kancelarii ogólnej Urzędu korespondencji w postaci tradycyjnej i elektronicznej poprzez rejestrowanie przesyłek w elektronicznym systemie obsługi spraw i dokumentów Urzędu oraz ich rozdział do komórek organizacyjnych i stanowisk pracy w departamentach;  zapewnienia ekspediowania urzędowych przesyłek wychodzących poprzez operatora pocztowego lub organizowania doręczania korespondencji przez pracowników Urzędu oraz nadzór nad prawidłową realizacją doręczeń;  obsługi doręczeń zastępczych zlecanych przez sądy, organy administracji publicznej, urzędy skarbowe lub inne uprawnione instytucje publiczne oraz przekazywanie informacji wnoszącym o sposobie realizacji doręczenia zastępczego;  podawania do publicznej wiadomości na urzędowej Elektronicznej Tablicy Ogłoszeń (ETO) ogłoszeń, informacji, zawiadomień od uprawnionych organów, instytucji publicznych i podmiotów, prowadzenia urzędowego rejestru ogłoszeń oraz potwierdzania terminów publikacji na ETO stronom i podmiotom uprawnionym."
+    }
+  },
+  {
+    "nazwa": "Biuro obslugi mieszkancow",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/biuro-obslugi-mieszkancow/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": false,
+    "kierownik": "Monika Artymiak",
+    "symbol": "OM",
+    "departament": "Departament Organizacji i Administracji",
+    "adres": "ul. Wieniawska 14, 20-071 Lublin, I piętro",
+    "telefon": "81 466 1017",
+    "faks": "81 466 1001",
+    "email": "kontakt@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Biurze Obsługi Mieszkańców ustala się następujący czas pracy:   w poniedziałki zmianowy czas pracy w godzinach:   I zmiana: 7:30 - 15:30  II zmiana: 9:00 - 17:00   we wtorki, środy, czwartki i piątki czas pracy w godzinach: 7:30 - 15:30,",
+      "Zakres działania": "Biuro Obsługi Mieszkańców realizuje w szczególności zadania z zakresu:  obsługi informacyjnej, merytorycznej i kancelaryjnej klientów w zakresie zadań należących do właściwości komórek organizacyjnych i stanowisk pracy w departamentach;  obsługi informacyjnej klientów w zakresie zadań należących do właściwości jednostek organizacyjnych;  współpracy z komórkami organizacyjnymi i stanowiskami pracy w departamentach w zakresie bieżącej pracy w celu zapewnienia obsługi informacyjnej, merytorycznej i kancelaryjnej klientów;  współpracy z jednostkami organizacyjnymi w zakresie bieżącej pracy w celu zapewnienia obsługi informacyjnej klientów;  obsługi klientów w zakresie wydawania i przyjmowania wniosków oraz wydawania dokumentów zgodnie z obowiązującymi w Urzędzie procedurami;  zarządzania procesem obsługi kart informacyjnych;  określania i wdrażania standardów obsługi klientów."
+    }
+  },
+  {
+    "nazwa": "Wieloosobowe stanowisko pracy ds bezpieczenstwa i higieny pracy",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/wieloosobowe-stanowisko-pracy-ds-bezpieczenstwa-i-higieny-pracy/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": false,
+    "symbol": "BHP",
+    "departament": "Departament Organizacji i Administracji",
+    "adres": "ul. Spokojna 2 p. 222, 20-074 Lublin",
+    "telefon": "81 466 2048, 81 466 2049",
+    "faks": "81 466 2047",
+    "email": "wsp.bhp@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Na WSP ds. Bezpieczeństwa i Higieny Pracy ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wieloosobowe Stanowisko Pracy ds. Bezpieczeństwa i Higieny Pracy realizuje w szczególności zadania z zakresu opracowywania i wdrażania procedur w celu zapewnienia przestrzegania w Urzędzie przepisów oraz zasad bezpieczeństwa i higieny pracy."
+    }
+  },
+  {
+    "nazwa": "Wydzial informatyki i telekomunikacji",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/wydzial-informatyki-i-telekomunikacji/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": false,
+    "kierownik": "Grzegorz Hunicz",
+    "symbol": "IT",
+    "departament": "Departament Organizacji i Administracji",
+    "adres": "ul. Okopowa 11 p. 10, 20-022 Lublin",
+    "telefon": "81 466 1100",
+    "email": "informatyka@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Wydziale Informatyki i Telekomunikacji ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Informatyki i Telekomunikacji realizuje w szczególności zadania z zakresu:  informatyzacji Urzędu, przygotowywania i realizacji projektów teleinformatycznych;  zapewnienia, zarządzania i utrzymywania: sprzętu komputerowego, serwerów, oprogramowania, łączności telefonicznej, dostępu do sieci transmisji danych i głosu, usług sieciowych oraz systemów zintegrowanych dla komórek organizacyjnych i stanowisk pracy w departamentach;  administrowania elektronicznymi serwisami informacyjnymi Urzędu;  budowy miejskiej szerokopasmowej sieci szkieletowej oraz przyłączania komórek organizacyjnych, stanowisk pracy w departamentach i jednostek organizacyjnych;  wdrażania i nadzorowania stosowania standardów i procedur w zakresie systemów teleinformatycznych w komórkach organizacyjnych, na stanowiskach pracy w departamentach i w jednostkach organizacyjnych;  zapewnienia legalności stosowanego oprogramowania oraz bezpieczeństwa systemów teleinformatycznych w komórkach organizacyjnych i na stanowiskach pracy w departamentach;  wdrażania i utrzymywania systemów zintegrowanych w komórkach organizacyjnych i na stanowiskach pracy w departamentach;  zapewnienia komórkom organizacyjnym, stanowiskom pracy w departamentach i jednostkom organizacyjnym możliwości publikacji treści w elektronicznych serwisach informacyjnych Urzędu;  prowadzenia ewidencji ilościowo-wartościowej sprzętu i sieci teleinformatycznych oraz wartości niematerialnych i prawnych;  zapewnienia ciągłości pracy systemów teleinformatycznych w komórkach organizacyjnych i stanowiskach pracy w departamentach;  wdrażania i stosowania zasad bezpieczeństwa teleinformatycznego w komórkach organizacyjnych i stanowiskach pracy w departamentach;  prowadzenia obsługi informatycznej jednostek organizacyjnych w zakresie określonym w uchwałach Rady. Wydział Informatyki i Telekomunikacji sprawuje nadzór nad informatyzacją komórek organizacyjnych, stanowisk pracy w departamentach i jednostek organizacyjnych przyłączanych do miejskiej szerokopasmowej sieci szkieletowej. Wydział Informatyki i Telekomunikacji planuje, wdraża i sprawuje nadzór nad standaryzacją systemów teleinformatycznych w komórkach organizacyjnych, stanowiskach pracy w departamentach i jednostkach organizacyjnych."
+    }
+  },
+  {
+    "nazwa": "Wydzial komunikacji",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/wydzial-komunikacji/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": false,
+    "kierownik": "Andrzej Borowski",
+    "symbol": "KM",
+    "departament": "Departament Organizacji i Administracji",
+    "adres": "ul. Czechowska 19A p. 62, 20-072 Lublin",
+    "telefon": "81 466 3200",
+    "faks": "81 466 3201",
+    "email": "komunikacja@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Wydziale Komunikacji ustala się następujący czas pracy:   w poniedziałki w godzinach: 9:00 - 17:00,  we wtorki, środy, czwartki i piątki: w godzinach: 7:30 - 15:30.   Godziny przyjęć klientów:   poniedziałek od 9:15 do 16.30,  wtorek, środa, czwartek, piątek od 7:45 do 14:30.  – zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Komunikacji realizuje w szczególności zadania z zakresu:  rejestracji i oznaczania pojazdów, dopuszczania ich do ruchu oraz prowadzenia postępowań i wydawania decyzji administracyjnych w tym zakresie;  prowadzenia ewidencji zarejestrowanych pojazdów i ich aktualizacji;  wydawania uprawnień do kierowania pojazdami w ruchu krajowym i międzynarodowym oraz prowadzenia postępowań związanych z korzystaniem z tych uprawnień;  wydawania licencji na zarobkowy i niezarobkowy przewóz osób i rzeczy oraz zaświadczeń dla przedsiębiorców na wykonywanie przewozów we własnym zakresie;  kontroli podmiotów, którym wydano licencje, zezwolenia lub zaświadczenia w zakresie przestrzegania prawa i warunków określonych w tych dokumentach;  wydawania decyzji i prowadzenia postępowań związanych z badaniami technicznymi pojazdów, szkolenia kierowców i instruktorów nauki jazdy oraz nadzór i kontrola w tym zakresie;  prowadzenia postępowań w zakresie nakładania administracyjnych kar pieniężnych za naruszenie przepisów o profesjonalnej rejestracji pojazdów;  prowadzenia postępowań w zakresie nakładania administracyjnych kar pieniężnych za naruszenie obowiązku rejestracji pojazdu lub obowiązku zawiadomienia starosty o nabyciu lub zbyciu pojazdu.",
+      "Opisy usług": "Wydział Komunikacji"
+    }
+  },
+  {
+    "nazwa": "Wydzial organizacji urzedu",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/wydzial-organizacji-urzedu/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": false,
+    "kierownik": "Małgorzata Mach-Dudek",
+    "symbol": "OR",
+    "departament": "Departament Organizacji i Administracji",
+    "adres": "ul. Dolna 3 Maja 5 p. 102, 20-079 Lublin",
+    "telefon": "81 466 1200",
+    "faks": "81 466 1201",
+    "email": "organizacja@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Wydziale Organizacji Urzędu ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Organizacji Urzędu realizuje zadania z zakresu organizacji i funkcjonowania Urzędu, w szczególności:  koordynowania działań z zakresu systemu kontroli zarządczej, w tym zarządzania ryzykiem;  koordynowania działań z zakresu systemu zarządzania jakością, w tym wewnętrznego auditu jakości w Urzędzie;  prowadzenia archiwum Urzędu oraz archiwum zlikwidowanych jednostek organizacyjnych miasta Lublin;  prowadzenia rejestrów zarządzeń Prezydenta oraz upoważnień i pełnomocnictw udzielanych przez Prezydenta;  udzielania nieodpłatnej pomocy prawnej oraz świadczenia nieodpłatnego poradnictwa obywatelskiego;  prowadzenia postępowań administracyjnych w sprawach o zwrot dotacji przez podmioty spoza sektora finansów publicznych w zakresie zadań związanych z udzielaniem nieodpłatnej pomocy prawnej oraz świadczeniem nieodpłatnego poradnictwa obywatelskiego;  edukacji prawnej mającej na celu zwiększenie świadomości prawnej społeczeństwa;  planowania i organizacji zakupów towarów i usług niezbędnych do utrzymania i funkcjonowania komórek organizacyjnych, stanowisk pracy w departamentach oraz prowadzenia spraw zintegrowanych dostaw towarów, usług i ubezpieczeń majątku miasta Lublin;  organizacji transportu wewnętrznego i zewnętrznego na potrzeby Urzędu;  administrowania budynkami i lokalami Urzędu;  zarządzania zasobami ludzkimi w zakresie: szkoleń, staży, praktyk i ocen okresowych pracowników Urzędu;  koordynowania realizacji służby przygotowawczej;  koordynowania wydawania i rozliczania delegacji krajowych dla pracowników Urzędu;  koordynowania wypłaty ryczałtu pracownikowi wykonującemu pracę zdalną, o której mowa w art. 67 18 ustawy z dnia 26 czerwca 1974 r. Kodeks pracy;  koordynowania czynności wynikających ze współpracy Prezydenta z Radą w zakresie przekazywania projektów uchwał Rady, opinii i wniosków Komisji Rady, interpelacji i zapytań radnych Rady;  przekazywania uchwał Rady organom nadzoru;  sporządzania sprawozdań statystycznych dla Głównego Urzędu Statystycznego oraz koordynowania w Urzędzie obowiązków sprawozdawczych w ramach programu badań statystycznych statystyki publicznej na dany rok;  prowadzenia ewidencji ilościowej oraz wartościowej majątku stanowiącego wyposażenie Urzędu (z wyłączeniem ewidencji sprzętu teleinformatycznego);  prowadzenia biura rzeczy znalezionych.",
+      "Opisy usług": "Wydział Organizacji Urzędu"
+    }
+  },
+  {
+    "nazwa": "Wydzial spraw administracyjnych",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/wydzial-spraw-administracyjnych/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": false,
+    "kierownik": "Andrzej Szerlak",
+    "symbol": "SA",
+    "departament": "Departament Organizacji i Administracji",
+    "adres": "ul. Spokojna 2, p. 220, 20-074 Lublin, II piętro",
+    "telefon": "81 466 3500",
+    "faks": "81 466 3501",
+    "email": "administracja@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Wydziale Spraw Administracyjnych ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7.30 - 15.30, z wyjątkiem pracowników zatrudnionych w referacie informacji i obsługi przedsiębiorców, dla których ustala się następujący czas pracy: 1) w poniedziałki zmianowy czas pracy w godzinach: a) I zmiana: 7.30 – 15.30, b) II zmiana: 9.00 – 17.00; 2) we wtorki, środy, czwartki i piątki w godzinach: 7.30 – 15.30.  Dla pracowników Wydziału Spraw Administracyjnych świadczących pracę w Biurze Obsługi Mieszkańców w ramach współpracy z Biurem Obsługi Mieszkańców ustala się następujący czas pracy: 1) w poniedziałki zmianowy czas pracy w godzinach: a) I zmiana: 7.30 – 15.30, b) II zmiana: 9.00 – 17.00; 2) we wtorki, środy, czwartki i piątki w godzinach 7.30 – 15.30.  - zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).  Godziny przyjęć klientów znajdują się w zakładce Godziny pracy i przyjęć Klientów Urzędu Miasta Lublin .",
+      "Zakres działania": "Wydział Spraw Administracyjnych realizuje w szczególności zadania z zakresu:    ewidencji ludności oraz zadań wynikających z prowadzenia Powszechnego Elektronicznego Systemu Ewidencji Ludności PESEL;  wydawania dowodów osobistych;  wydawania decyzji administracyjnych w sprawach: ewidencji ludności i dowodów osobistych oraz o ujęciu lub odmowie ujęcia w Centralnym Rejestrze Wyborców;  nadzoru nad działalnością stowarzyszeń i fundacji, z zastrzeżeniem § 65 pkt 3 Regulaminu Organizacyjnego Urzędu Miasta Lublin;  nieodpłatnego poświadczania, na wniosek osób zainteresowanych lub organu rentowego, własnoręczności lub autentyczności podpisów na oświadczeniach i formularzach rentowych wymaganych do uzyskania lub pobierania rent lub innych świadczeń z instytucji zagranicznych;  prowadzenia obsługi przedsiębiorców, w szczególności w ramach Centralnej Ewidencji i Informacji o Działalności Gospodarczej;  prowadzenia spraw związanych ze sprzedażą napojów alkoholowych oraz nadzoru nad realizacją dochodów i wydatków budżetu w tym zakresie;  używania nazwy i herbu miasta Lublin w znakach towarowych;  rejestracji i kwalifikacji wojskowej;  prowadzenia spraw wynikających z ustawy z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. z 2023 r. poz. 1124 z późn. zm.).",
+      "Opisy usług": "Wydział Spraw Administracyjnych"
+    }
+  },
+  {
+    "nazwa": "Wydzial spraw mieszkaniowych",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-organizacji-i-administracji/wydzial-spraw-mieszkaniowych/",
+    "departament_slug": "departament-organizacji-i-administracji",
+    "is_departament": false,
+    "kierownik": "Ewa Lipińska",
+    "symbol": "WSM",
+    "departament": "Departament Organizacji i Administracji",
+    "adres": "ul. Peowiaków 13, 20-007 Lublin",
+    "telefon": "81 466 3300",
+    "faks": "81 466 3301",
+    "email": "mieszkania@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "W Wydziale Spraw Mieszkaniowych ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7.30 - 15.30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r. z późn. zm.).    Przyjęcia mieszkańców przez Dyrektora Wydziału Spraw Mieszkaniowych  Zapisy na przyjęcia mieszkańców przez Dyrektora Wydziału Spraw Mieszkaniowych odbywają się w każdy wtorek o godzinie 7:30 w siedzibie Wydziału Spraw Mieszkaniowych ul. Peowiaków 13 pokój numer 12 SEKRETARIAT. Należy okazać numer toczącej się sprawy mieszkaniowej lub określić przedmiot spotkania i zapisać się w kolejności przybycia, następnie od godziny 8:00 Dyrektor rozpoczyna przyjęcia z mieszkańcami.",
+      "Zakres działania": "Wydział Spraw Mieszkaniowych realizuje w szczególności zadania z zakresu:    opracowywania wieloletniego programu gospodarowania mieszkaniowym zasobem miasta Lublin;  gospodarowania zasobem mieszkaniowym miasta Lublin poprzez wydawanie skierowań do zawarcia umów najmu lokali i tymczasowych pomieszczeń, zamian mieszkań, wyrażenia zgody na podnajem lokalu, ustalania prawa do najmu zamieszkiwanego lokalu oraz realizacji wyroków sądowych w sprawach mieszkaniowych;  współpracy z Zarządem Nieruchomości Komunalnych w Lublinie w zakresie realizacji polityki gospodarowania mieszkaniowym zasobem komunalnym i regulowania stanów prawnych lokali mieszkalnych;  współpracy z Towarzystwem Budownictwa Społecznego „Nowy Dom” w zakresie gospodarowania zasobem mieszkaniowym Towarzystwa;  repatriacji i aktywizacji zawodowej repatriantów;  obsługi Społecznej Komisji Mieszkaniowej.",
+      "Opisy usług": "Wydział Spraw Mieszkaniowych"
+    }
+  },
+  {
+    "nazwa": "Departament finansow",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-finansow/",
+    "departament_slug": "departament-finansow",
+    "is_departament": true
+  },
+  {
+    "nazwa": "Wydzial budzetu i ksiegowosci",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-finansow/wydzial-budzetu-i-ksiegowosci/",
+    "departament_slug": "departament-finansow",
+    "is_departament": false,
+    "kierownik": "Mariusz Turczyn",
+    "symbol": "BK",
+    "departament": "Departament Finansów",
+    "adres": "ul. Wieniawska 14 p. 314, 20-071 Lublin",
+    "telefon": "81 466 1300",
+    "faks": "81 466 1301",
+    "email": "budzet@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Budżetu i Księgowości ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.)",
+      "Zakres działania": "Wydział Budżetu i Księgowości realizuje w szczególności zadania z zakresu:    opracowania projektu budżetu miasta Lublin;  przygotowywania projektów uchwał Rady i zarządzeń Prezydenta dotyczących zmian w budżecie miasta Lublin;  współpracy z jednostkami organizacyjnymi w zakresie planowania i wykonania budżetu miasta Lublin;  przygotowania i opracowania wieloletniej prognozy finansowej;  opracowywania projektów uchwał Rady i zarządzeń Prezydenta w sprawie wieloletniej prognozy finansowej oraz jej zmiany;  współpracy w zakresie planowania i wykonywania dochodów i wydatków z organami administracji rządowej i samorządowej w zakresie zadań zleconych i zadań realizowanych na podstawie umów i porozumień;  bieżącej analizy dochodów i wydatków oraz analizy zobowiązań pieniężnych wynikających z zawieranych umów;  prowadzenia ewidencji finansowo-księgowej budżetu miasta Lublin obejmującej: dochody i wydatki budżetu, dochody skarbu państwa, przychody i rozchody w zakresie kredytów, pożyczek i obligacji oraz sporządzania sprawozdawczości finansowej i budżetowej;  prowadzenia ewidencji finansowo-księgowej Urzędu obejmującej: dochody i wydatki budżetu realizowane przez Urząd, dochody Skarbu Państwa, zakładowy fundusz świadczeń socjalnych, sumy depozytowe, środki trwałe, wartości niematerialne i prawne oraz sporządzania sprawozdawczości finansowej i budżetowej;  dokonywania wstępnej kontroli operacji gospodarczych i finansowych zgodnie z planem finansowym Urzędu;  wykonywania dyspozycji środkami pieniężnymi;  pozyskiwania środków w postaci kredytów, pożyczek i emitowanych papierów wartościowych w bankach krajowych i zagranicznych w celu zapewnienia finansowania zadań ujętych w budżecie miasta Lublin;  monitorowania długu miasta Lublin;  koordynowania prac związanych z przygotowaniem i opracowaniem sprawozdania rocznego o przebiegu wykonania budżetu miasta Lublin;  koordynowania prac związanych z przygotowaniem i opracowanie informacji o kształtowaniu się wieloletniej prognozy finansowej;  obsługi płatności bezgotówkowych dokonywanych kartą płatniczą.",
+      "Opisy usług": "Wydział Budżetu i Księgowości"
+    }
+  },
+  {
+    "nazwa": "Wydzial podatkow",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-finansow/wydzial-podatkow/",
+    "departament_slug": "departament-finansow",
+    "is_departament": false,
+    "kierownik": "Anna Chmielewska",
+    "symbol": "PE",
+    "departament": "Departament Finansów",
+    "adres": "ul. Wieniawska 14 p. 217, 20-071 Lublin",
+    "telefon": "81 466 1400",
+    "faks": "81 466 1401",
+    "email": "podatki@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Podatków ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.). .",
+      "Zakres działania": "Wydział Podatków realizuje w szczególności zadania z zakresu:    opracowywania polityki w zakresie podatków i opłat lokalnych;  przygotowywania projektów uchwał Rady w sprawach dotyczących podatków i opłat lokalnych, opłaty skarbowej oraz programów pomocy publicznej w zakresie podatków i opłat lokalnych;  ustalania i określania wysokości zobowiązania podatkowego w zakresie podatków i opłat lokalnych oraz opłaty skarbowej;  poboru podatków i opłat lokalnych oraz opłaty skarbowej, a także dokonywania zabezpieczeń wykonania zobowiązań z tych tytułów;  wydawania interpretacji podatkowych w zakresie podatków i opłat lokalnych oraz opłaty skarbowej;  rozliczania inkasentów opłaty skarbowej;  prowadzenia ewidencji księgowej w zakresie podatków i opłat lokalnych oraz opłaty skarbowej;  sporządzania sprawozdań z zakresu realizowanych zadań, w tym z dochodów z tytułu podatków i opłat lokalnych, opłaty skarbowej oraz pomocy publicznej;  udzielania ulg w spłacie zobowiązań podatkowych w zakresie podatków i opłat lokalnych oraz opłaty skarbowej;  współpracy z urzędami skarbowymi w sprawach dotyczących udzielania ulg w spłacie należności z tytułu podatków i opłat stanowiących dochody jednostek samorządu terytorialnego a pobieranych przez urzędy skarbowe;  wydawania zaświadczeń o pomocy de minimis oraz innych zaświadczeń potwierdzających stan faktyczny i prawny z zakresu wykonywanych zadań.",
+      "Opisy usług": "Wydział Podatków"
+    }
+  },
+  {
+    "nazwa": "Wydzial egzekucji",
+    "url": "https://bip.lublin.eu/urzad-miasta-lublin/struktura-organizacyjna/departament-finansow/wydzial-egzekucji/",
+    "departament_slug": "departament-finansow",
+    "is_departament": false,
+    "kierownik": "Elżbieta Mazurek",
+    "symbol": "EG",
+    "departament": "Departament Finansów",
+    "adres": "ul. Wieniawska 14 p. 401, 20-071 Lublin",
+    "telefon": "81 466 1450",
+    "faks": "81 466 1451",
+    "email": "egzekucja@lublin.eu",
+    "sekcje": {
+      "Godziny pracy": "Dla pracowników Wydziału Egzekucji ustala się czas pracy w cyklu tygodniowym od poniedziałku do piątku w godzinach 7:30 - 15:30, zgodnie z Regulaminem Pracy Urzędu Miasta Lublin, stanowiącym załącznik do zarządzenia nr 50/6/2012 Prezydenta Miasta Lublin z dnia 18 czerwca 2012 r. (j.t. Obwieszczenie Prezydenta Miasta Lublin z dnia 5 listopada 2025 r.).",
+      "Zakres działania": "Wydział Egzekucji realizuje w szczególności zadania z zakresu:  prowadzenia postępowań egzekucyjnych należności pieniężnych, dla których organem właściwym do ustalania lub określania i pobierania jest Prezydent;  stosowania środków egzekucyjnych;  udzielania ulg w spłacie kosztów egzekucyjnych;  prowadzenia ewidencji tytułów wykonawczych;  współpracy z komórkami organizacyjnymi, stanowiskami pracy w departamentach i jednostkami organizacyjnymi w zakresie prowadzonego postępowania egzekucyjnego;  współpracy w zakresie egzekucji łącznej z naczelnikami urzędów skarbowych i komornikami sądowymi;  wnioskowania o zastosowanie środka egzekucyjnego w postaci egzekucji z nieruchomości oraz ułamkowej części nieruchomości oraz użytkowania wieczystego w postępowaniach egzekucyjnych w administracji należności pieniężnych prowadzonych w Wydziale Egzekucji;  windykacji należności o charakterze cywilnoprawnym.",
+      "Opisy usług": "Wydział Egzekucji"
+    }
+  }
+]
