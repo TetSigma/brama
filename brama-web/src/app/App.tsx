@@ -1,11 +1,18 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
+import { Menu, X } from 'lucide-react'
 import { GlassCard } from 'react-glass-ui'
 import heroImage from '@/assets/lublin-civic-platform.png'
 import { UIButton, uiButtonClass } from '@/ui'
 import { persistLanguage } from '@/localization'
 import { languageCodes, languageFlags, languageNames, type LanguageCode } from '@/localization/resources'
+
+const navLinks = [
+  { id: 'platform', href: '#platform' },
+  { id: 'services', href: '#services' },
+  { id: 'trust', href: '#trust' },
+] as const
 
 const serviceAreas = ['documents', 'appointments', 'benefits', 'transport'] as const
 const platformFeatures = ['guided', 'local', 'handoff'] as const
@@ -20,24 +27,27 @@ function getStoredHighContrastPreference() {
   }
 }
 
-function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() =>
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-  )
+function useMediaQuery(query: string) {
+  const [matches, setMatches] = useState(() => window.matchMedia(query).matches)
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const mediaQuery = window.matchMedia(query)
 
     function handleChange() {
-      setPrefersReducedMotion(mediaQuery.matches)
+      setMatches(mediaQuery.matches)
     }
 
+    handleChange()
     mediaQuery.addEventListener('change', handleChange)
 
     return () => mediaQuery.removeEventListener('change', handleChange)
-  }, [])
+  }, [query])
 
-  return prefersReducedMotion
+  return matches
+}
+
+function usePrefersReducedMotion() {
+  return useMediaQuery('(prefers-reduced-motion: reduce)')
 }
 
 function useTypewriter(words: readonly string[], prefersReducedMotion: boolean) {
@@ -84,6 +94,7 @@ function App() {
   const { i18n, t } = useTranslation()
   const prefersReducedMotion = usePrefersReducedMotion()
   const [usesHighContrast, setUsesHighContrast] = useState(getStoredHighContrastPreference)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const currentLanguage =
     languageCodes.find((languageCode) => i18n.resolvedLanguage?.startsWith(languageCode)) ?? 'en'
   const typewriterWords = useMemo(
@@ -108,6 +119,22 @@ function App() {
       return
     }
   }, [usesHighContrast])
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isMenuOpen])
 
   function handleLanguageChange(language: LanguageCode) {
     persistLanguage(language)
@@ -143,23 +170,25 @@ function App() {
             <span>Brama</span>
           </a>
           <nav className="site-nav" aria-label={t('navigation.mainLabel')}>
-            <a href="#platform">{t('navigation.platform')}</a>
-            <a href="#services">{t('navigation.services')}</a>
-            <a href="#trust">{t('navigation.trust')}</a>
+            {navLinks.map((link) => (
+              <a key={link.id} href={link.href}>
+                {t(`navigation.${link.id}`)}
+              </a>
+            ))}
           </nav>
           <div className="header-actions">
             <Link className={uiButtonClass({ variant: 'primary', size: 'sm' })} to="/chat">
               {t('navigation.assistant')}
             </Link>
             <button
-              aria-pressed={usesHighContrast}
-              className="contrast-toggle"
-              onClick={() => setUsesHighContrast((currentValue) => !currentValue)}
+              aria-controls="mobile-menu"
+              aria-expanded={isMenuOpen}
+              aria-label={t('navigation.mainLabel')}
+              className="menu-toggle"
+              onClick={() => setIsMenuOpen((currentValue) => !currentValue)}
               type="button"
             >
-              {usesHighContrast
-                ? t('accessibility.highContrastOn')
-                : t('accessibility.highContrastOff')}
+              {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
             </button>
             <div className="language-switcher">
               <label className="visually-hidden" htmlFor="language-select">
@@ -181,7 +210,35 @@ function App() {
             </div>
           </div>
         </GlassCard>
+        <nav
+          aria-label={t('navigation.mainLabel')}
+          className="mobile-menu"
+          data-open={isMenuOpen}
+          id="mobile-menu"
+        >
+          {navLinks.map((link) => (
+            <a key={link.id} href={link.href} onClick={() => setIsMenuOpen(false)}>
+              {t(`navigation.${link.id}`)}
+            </a>
+          ))}
+        </nav>
       </header>
+
+      <button
+        role="switch"
+        aria-checked={usesHighContrast}
+        aria-label={usesHighContrast
+          ? t('accessibility.highContrastOn')
+          : t('accessibility.highContrastOff')}
+        className="contrast-switch contrast-switch--floating"
+        onClick={() => setUsesHighContrast((currentValue) => !currentValue)}
+        type="button"
+      >
+        <span className="contrast-switch__label">{t('accessibility.highContrastOff')}</span>
+        <span className="contrast-switch__track">
+          <span className="contrast-switch__thumb" />
+        </span>
+      </button>
 
       <main className="site-shell" id="main-content" tabIndex={-1}>
       <section className="hero-section" id="top" aria-labelledby="hero-title">
