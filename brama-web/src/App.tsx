@@ -8,6 +8,15 @@ import { languageCodes, languageFlags, languageNames, type LanguageCode } from '
 const serviceAreas = ['documents', 'appointments', 'benefits', 'transport'] as const
 const platformFeatures = ['guided', 'local', 'handoff'] as const
 const processSteps = ['ask', 'review', 'continue'] as const
+const contrastStorageKey = 'brama.highContrast'
+
+function getStoredHighContrastPreference() {
+  try {
+    return window.localStorage.getItem(contrastStorageKey) === 'true'
+  } catch {
+    return false
+  }
+}
 
 function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(() =>
@@ -72,6 +81,7 @@ function useTypewriter(words: readonly string[], prefersReducedMotion: boolean) 
 function App() {
   const { i18n, t } = useTranslation()
   const prefersReducedMotion = usePrefersReducedMotion()
+  const [usesHighContrast, setUsesHighContrast] = useState(getStoredHighContrastPreference)
   const currentLanguage =
     languageCodes.find((languageCode) => i18n.resolvedLanguage?.startsWith(languageCode)) ?? 'en'
   const typewriterWords = useMemo(
@@ -87,13 +97,26 @@ function App() {
     description?.setAttribute('content', t('meta.description'))
   }, [t])
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = usesHighContrast ? 'high-contrast' : ''
+
+    try {
+      window.localStorage.setItem(contrastStorageKey, String(usesHighContrast))
+    } catch {
+      return
+    }
+  }, [usesHighContrast])
+
   function handleLanguageChange(language: LanguageCode) {
     persistLanguage(language)
     void i18n.changeLanguage(language)
   }
 
   return (
-    <main className="site-shell">
+    <>
+      <a className="skip-link" href="#main-content">
+        {t('accessibility.skipToContent')}
+      </a>
       <header className="site-header" aria-label={t('navigation.headerLabel')}>
         <a className="brand-mark" href="#top" aria-label={t('navigation.homeLabel')}>
           <span className="brand-gate" aria-hidden="true" />
@@ -104,7 +127,16 @@ function App() {
           <a href="#services">{t('navigation.services')}</a>
           <a href="#trust">{t('navigation.trust')}</a>
         </nav>
-        <div className="language-switcher">
+        <div className="header-actions">
+          <button
+            aria-pressed={usesHighContrast}
+            className="contrast-toggle"
+            onClick={() => setUsesHighContrast((currentValue) => !currentValue)}
+            type="button"
+          >
+            {usesHighContrast ? t('accessibility.highContrastOn') : t('accessibility.highContrastOff')}
+          </button>
+          <div className="language-switcher">
           <label className="visually-hidden" htmlFor="language-select">
             {t('navigation.languageLabel')}
           </label>
@@ -117,13 +149,15 @@ function App() {
           >
             {languageCodes.map((languageCode) => (
               <option key={languageCode} value={languageCode}>
-                {languageFlags[languageCode]}
+                {languageFlags[languageCode]} {languageNames[languageCode]}
               </option>
             ))}
           </select>
+          </div>
         </div>
       </header>
 
+      <main className="site-shell" id="main-content" tabIndex={-1}>
       <section className="hero-section" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">{t('hero.eyebrow')}</p>
@@ -185,14 +219,14 @@ function App() {
           <p className="eyebrow">{t('trust.eyebrow')}</p>
           <h2 id="trust-title">{t('trust.title')}</h2>
         </div>
-        <div className="process-list" aria-label={t('trust.processLabel')}>
+        <ol className="process-list" aria-label={t('trust.processLabel')}>
           {processSteps.map((step, index) => (
-            <div className="process-step" key={step}>
+            <li className="process-step" key={step}>
               <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
               <p>{t(`trust.steps.${step}`)}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       <section className="cta-section" aria-labelledby="cta-title">
@@ -201,6 +235,7 @@ function App() {
         <UIButton href="#top">{t('cta.action')}</UIButton>
       </section>
     </main>
+    </>
   )
 }
 

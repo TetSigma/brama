@@ -5,6 +5,11 @@ const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   PORT: z.coerce.number().int().positive().default(4000),
   CORS_ORIGIN: z.string().default('http://localhost:5173'),
+  CHAT_DATABASE_PATH: z.string().default('./data/chats.db'),
+  OLLAMA_CHAT_MODEL: z
+    .string()
+    .default('hf.co/speakleash/Bielik-11B-v2.3-Instruct-GGUF:Q4_K_M'),
+  OLLAMA_TRANSLATION_MODEL: z.string().default('qwen2.5:7b'),
 })
 
 const parsedEnv = envSchema.safeParse(process.env)
