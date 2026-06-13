@@ -1,0 +1,3029 @@
+{
+  "summary": {
+    "total_services": 389,
+    "services_with_dependencies": 92,
+    "external_office_hits": {
+      "US": 25,
+      "ZUS": 19,
+      "MOPR": 15,
+      "KRUS": 12,
+      "PUP": 12
+    },
+    "internal_doc_hits": {
+      "warunki_zabudowy": 18,
+      "pozwolenie_budowa": 15,
+      "odpis_aktu": 15,
+      "wypis_mpzp": 15,
+      "zaswiadczenie_zameldowanie": 7,
+      "wypis_ewidencja_gruntow": 6
+    },
+    "producers_resolved": {
+      "odpis_aktu": 1,
+      "wypis_ewidencja_gruntow": 2,
+      "wypis_mpzp": 4,
+      "warunki_zabudowy": 3,
+      "pozwolenie_budowa": 3,
+      "zaswiadczenie_zameldowanie": 4
+    }
+  },
+  "services": [
+    {
+      "id": "MKZ-009",
+      "nazwa": "Wniosek o udzielenie dotacji celowej na prace konserwatorskie, restauratorskie lub roboty budowlane przy zabytku wpisanym do rejestru zabytków lub ujętym w gminnej ewidencji zabytków, położonym na obszarze miasta Lublin",
+      "komorka": "Biuro Miejskiego Konserwatora Zabytków i Rewitalizacji",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/biuro-miejskiego-konserwatora-zabytkow-i-rewitalizacji/wniosek-o-udzielenie-dotacji-celowej-na-prace-konserwatorskie-restauratorskie-lub-roboty-budowlane-przy-zabytku-wpisanym-do-rejestru-zabytkow-polozonym-na-terenie-miasta-lublin,10,22912,2,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…nia na roboty budowlane (o ile jest wymagane przepisami prawa). Kopia pozwolenia na budowę (o ile jest wymagane przepisami prawa). Kopia projektu budowlanego lu…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MZON-008",
+      "nazwa": "Wydawanie legitymacji dokumentującej niepełnosprawność lub stopień niepełnosprawności",
+      "komorka": "Miejski Zespół do Spraw Orzekania o Niepełnosprawności",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/miejski-zespol-do-spraw-orzekania-o-niepelnosprawnosci/wydawanie-legitymacji-dokumentujacej-niepelnosprawnosc-lub-stopien-niepelnosprawnosci,8,22917,2,2.html",
+      "requires_external_doc": [
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…zepisami prawa w szczególności: Policji, Straży Miejskiej, Miejskiemu Ośrodkowi Pomocy Rodzinie. Ponadto mogą być one ujawnione podmiotom, z którymi Administrator za…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "MZON-009",
+      "nazwa": "Wydawanie mLegitymacji ON",
+      "komorka": "Miejski Zespół do Spraw Orzekania o Niepełnosprawności",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/miejski-zespol-do-spraw-orzekania-o-niepelnosprawnosci/wydawanie-mlegitymacji-on,9,22917,2.html",
+      "requires_external_doc": [
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…zepisami prawa w szczególności: Policji, Straży Miejskiej, Miejskiemu Ośrodkowi Pomocy Rodzinie. Ponadto mogą być one ujawnione podmiotom, z którymi Administrator za…"
+        }
+      ],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…mLegitymacji ON - wersja bez kropkowanych linii. Dokumenty do wglądu: Odpis skrócony aktu urodzenia osoby niepełnosprawnej. Sposób i miejsce składania dokumentów: Osobiś…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MZON-002",
+      "nazwa": "Wydawanie orzeczeń o niepełnosprawności",
+      "komorka": "Miejski Zespół do Spraw Orzekania o Niepełnosprawności",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/miejski-zespol-do-spraw-orzekania-o-niepelnosprawnosci/wydawanie-orzeczen-o-niepelnosprawnosci,6,22917,2,1.html",
+      "requires_external_doc": [
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…one są do ich otrzymania przepisami prawa w szczególności: Miejskiemu Ośrodkowi Pomocy Rodzinie w Lublinie, Wojewódzkiemu Zespołowi do Spraw Orzekania o Niepełnospra…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "MZON-001",
+      "nazwa": "Wydawanie orzeczeń o stopniu niepełnosprawności",
+      "komorka": "Miejski Zespół do Spraw Orzekania o Niepełnosprawności",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/miejski-zespol-do-spraw-orzekania-o-niepelnosprawnosci/wydawanie-orzeczen-o-stopniu-niepelnosprawnosci,3,22917,2,1.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…anów (Komisji do Spraw Inwalidztwa i Zatrudnienia, lekarza orzecznika ZUS, Powiatowego (Miejskiego, Wojewódzkiego) Zespołu do Spraw Orzekania o…"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "…do Spraw Orzekania o (Stopniu) Niepełnosprawności, ponadto orzeczenia KRUS, MON i MSWiA itp.). Sposób i miejsce składania dokumentów: Osobiście …"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…one są do ich otrzymania przepisami prawa w szczególności: Miejskiemu Ośrodkowi Pomocy Rodzinie w Lublinie, Wojewódzkiemu Zespołowi do Spraw Orzekania o Niepełnospra…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "MZON-003",
+      "nazwa": "Wydawanie orzeczeń o wskazaniach do ulg i uprawnień",
+      "komorka": "Miejski Zespół do Spraw Orzekania o Niepełnosprawności",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/miejski-zespol-do-spraw-orzekania-o-niepelnosprawnosci/wydawanie-orzeczen-o-wskazaniach-do-ulg-i-uprawnien,5,22917,2,1.html",
+      "requires_external_doc": [
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…one są do ich otrzymania przepisami prawa w szczególności: Miejskiemu Ośrodkowi Pomocy Rodzinie w Lublinie, Wojewódzkiemu Zespołowi do Spraw Orzekania o Niepełnospra…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "USC-005",
+      "nazwa": "Nadanie dziecku nazwiska przysługującego dzieciom z aktualnego małżeństwa matki/ojca",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/dziecko/nadanie-dziecku-nazwiska-przyslugujacego-dzieciom-z-aktualnego-malzenstwa-matkiojca,3,22919,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…olity - Dz. U. z 2025 r. poz. 594, z późn. zm.). Czynności powiązane: Odpis aktu urodzenia. Klauzula informacyjna dotycząca ochrony danych osobowych: Klauzula i…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-004",
+      "nazwa": "Powrót osoby rozwiedzionej do nazwiska noszonego przed zawarciem małżeństwa",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/malzenstwo/powrot-osoby-rozwiedzionej-do-nazwiska-noszonego-przed-zawarciem-malzenstwa,2,22920,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "… w którym figuruje akt małżeństwa, kierownikowi USC należy przedłożyć odpis aktu małżeństwa z adnotacją o jego rozwiązaniu lub wyrok rozwodowy z klauzulą określa…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-008",
+      "nazwa": "Rejestracja dziecka",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/dziecko/rejestracja-dziecka,2,22919,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "… miejsce odbioru dokumentów: Przy rejestracji dziecka wydawany jest 1 odpis skrócony aktu urodzenia (wolny od opłaty skarbowej). Termin złożenia: Zgłosić urodzenie dziec…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-019",
+      "nazwa": "Rejestracja rozwodu orzeczonego w Unii Europejskiej",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/malzenstwo/rejestracja-rozwodu-orzeczonego-w-unii-europejskiej,3,22920,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…nosi 11 zł (+ 22 zł, jeżeli wnioskodawca jednocześnie prosi o wydanie odpisu skróconego aktu małżeństwa z adnotacją o rozwodzie). Numer rachunku bankowego: Urząd Miasta Lubl…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-011",
+      "nazwa": "Rejestracja zgonu",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/zgon/rejestracja-zgonu,1,22921,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…od opłaty skarbowej. Przy rejestracji zgonu wydawany jest 1 bezpłatny odpis skrócony aktu zgonu, każdy następny odpis podlega opłacie skarbowej: odpis skrócony 22 zł…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-002",
+      "nazwa": "Sprostowanie aktu",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/akty-stanu-cywilnego/sprostowanie-aktu,2,22922,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…olity - Dz. U. z 2025 r. poz. 594, z późn. zm.). Czynności powiązane: Odpis aktu urodzenia, małżeństwa, zgonu. Klauzula informacyjna dotycząca ochrony danych os…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-017",
+      "nazwa": "Transkrypcja aktu zagranicznego (umiejscowienie aktu)",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/akty-stanu-cywilnego/transkrypcja-aktu-zagranicznego-umiejscowienie-aktu,8,22922,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…sanie (umiejscowienie) zagranicznego aktu zgonu. Wymagane załączniki: odpis zupełny aktu urodzenia, małżeństwa lub zgonu wydany przez zagraniczny urząd przechowujący ak…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-003",
+      "nazwa": "Uzupełnienie aktu",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/akty-stanu-cywilnego/uzupelnienie-aktu,1,22922,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…olity - Dz. U. z 2025 r. poz. 594, z późn. zm.). Czynności powiązane: Odpis aktu urodzenia, małżeństwa, zgonu Klauzula informacyjna dotycząca ochrony danych oso…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-012",
+      "nazwa": "Zawarcie małżeństwa w USC - ślub cywilny",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/malzenstwo/zawarcie-malzenstwa-w-usc-slub-cywilny,6,22920,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…. rejestracji małżeństw. Sposób i miejsce odbioru dokumentów: Wydanie odpisu aktu małżeństwa następuje po sporządzeniu aktu małżeństwa w rejestrze stanu cywilnego…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-015",
+      "nazwa": "Zaświadczenie do ślubu konkordatowego",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/malzenstwo/zaswiadczenie-do-slubu-konkordatowego,4,22920,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…tów: poniedziałek, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Odpisy aktu małżeństwa - osobiście w Urzędzie Stanu Cywilnego właściwym ze względu na miejsc…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-016",
+      "nazwa": "Zaświadczenie o zdolności prawnej do zawarcia małżeństwa za granicą",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/malzenstwo/zaswiadczenie-o-zdolnosci-prawnej-do-zawarcia-malzenstwa-za-granica,5,22920,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "… cywilnego lub polskim konsulacie. Konsulowi należy dodatkowo złożyć: odpis aktu urodzenia, odpis aktu małżeństwa z adnotacją o jego rozwiązaniu (ustaniu uniewa…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "USC-010",
+      "nazwa": "Zmiana imienia (imion) dziecka",
+      "komorka": "Urząd Stanu Cywilnego",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/urzad-stanu-cywilnego/dziecko/zmiana-imienia-imion-dziecka,1,22919,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…olity - Dz. U. z 2025 r. poz. 594, z późn. zm.). Czynności powiązane: Odpis aktu urodzenia. Klauzula informacyjna dotycząca ochrony danych osobowych: Klauzula i…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-008",
+      "nazwa": "Pozwolenie na budowę",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/pozwolenie-na-budowe,21,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "… postaci papierowej w 3 egzemplarzach albo w postaci elektronicznej), decyzja o warunkach zabudowy i zagospodarowania terenu - jeżeli jest ona wymagana zgodnie z przepi…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…Usługa: Pozwolenie na budowę. Numer karty informacyjnej: AB-008. Komórka załatwiająca sprawę: Wydz…",
+          "produced_by": [
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-010",
+      "nazwa": "Przeniesienie pozwolenia na budowę",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/przeniesienie-pozwolenia-na-budowe,1,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…Usługa: Przeniesienie pozwolenia na budowę. Numer karty informacyjnej: AB-010. Komórka załatwiająca sprawę: Wydz…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-032",
+      "nazwa": "Przygotowanie inwestycji mieszkaniowych oraz inwestycji towarzyszących",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/przygotowanie-inwestycji-mieszkaniowych-oraz-inwestycji-towarzyszacych,26,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…nia opublikowania uchwały w wojewódzkim dzienniku urzędowym decyzja o pozwoleniu na budowę inwestycji mieszkaniowej nie stała się ostateczna. Podstawa prawna: A…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-033",
+      "nazwa": "Wniosek o przeniesienie praw i obowiązków wynikających ze zgłoszenia, wobec którego organ nie wniósł sprzeciwu",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/wniosek-o-przeniesienie-praw-i-obowiazkow-wynikajacych-ze-zgloszenia-wobec-ktorego-organ-nie-wniosl-sprzeciwu,32,22924,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…ej zgody, kopia zgłoszenia budowy i robót budowlanych niewymagających pozwolenia na budowę, dziennik budowy (do wglądu). Dokumenty do wglądu: Dowód osobisty prz…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-016",
+      "nazwa": "Wniosek o wydanie decyzji o niezbędności wejścia do sąsiedniego budynku, lokalu lub na teren sąsiedniej nieruchomości",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/wniosek-o-wydanie-decyzji-o-niezbednosci-wejscia-do-sasiedniego-budynku-lokalu-lub-na-teren-sasiedniej-nieruchomosci,14,22924,2,4.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…iego budynku, lokalu lub na teren sąsiedniej nieruchomości: decyzja o pozwoleniu na budowę, zgłoszenie zamiaru prowadzenia robót, nakaz wykonania robót, inne do…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-014",
+      "nazwa": "Wniosek o wydanie zaświadczenia o samodzielności lokali",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/wniosek-o-wydanie-zaswiadczenia-o-samodzielnosci-lokali,16,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_ewidencja_gruntow",
+          "document": "Wypis / wyrys z ewidencji gruntów i budynków",
+          "evidence": "…ie zaświadczenia o samodzielności lokali. Wymagane załączniki: mapa - wyrys z ewidencji gruntów z zaznaczeniem położenia lokali (budynku) oraz pomieszczeń…",
+          "produced_by": [
+            {
+              "id": "GD-006",
+              "nazwa": "Wydawanie wypisów i wyrysów z operatu ewidencyjnego",
+              "komorka": "Wydział Geodezji",
+              "primary": true
+            },
+            {
+              "id": "GD-008",
+              "nazwa": "Pisma dotyczące spraw związanych z prowadzeniem ewidencji gruntów, budynków i lokali",
+              "komorka": "Wydział Geodezji",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…Usługa: Wniosek o wydanie zaświadczenia o samodzielności lokali. Numer karty informacyjnej: AB-014. Komórka załatwiająca sprawę: Wydział Architektury i Budownictwa. Wymagane wnioski: AB-014-01 - wniosek o wydanie zaświadczenia o samodzielności lokali. Wymagane załączniki: mapa - wyrys z ewidencji gruntów z zaznaczeniem położenia lokali (budynku) oraz pomieszczeń przynależnych znajdujących się poza budynkiem, w którym znajdują się samodzielne lokale, rzuty odpowiednich kondygnacji budynku wchodzących w skład zatwierdzonego projektu budowlanego z zaznaczeniem lokali i pomieszczeń przynależnych, z zamieszczonym oświadczeniem osoby uprawnionej o ich zgodności z aktualnym stanem oraz opis zawierający wyszczególnienie pomieszczeń wchodzących w skład lokali, w przypadku braku dokumentacji technicznej budynku inwentaryzacja budowlana sporządzona zgodnie z wymogami przepisów prawa budowlanego, z zaznaczeniem lokali i pomieszczeń przynależnych oraz opis zawierający wyszczególnienie pomieszczeń wchodzących w skład lokali, kopia pozwolenia na użytkowanie bądź dokumentu potwierdzającego przyjęcia bez sprzeciwu zawiadomienia o zakończeniu budowy budynku, dokumenty umożliwiające potwierdzenie przesłanek samodzielności lokalu, o których mowa w ust. 1a-2 ustawy o własności lokali (udostępnione organowi administracji publicznej na czas trwania postępowania w sprawie wydania zaświadczenia): decyzja o pozwoleniu na budowę, zatwierdzony projekt budowlany, decyzja o ustaleniu warunków zabudowy i zagospodarowania terenu, zawiadomienie o nadaniu numeru porządkowego budynku uzyskane w Wydziale Geodezji UM Lublin (w przypadku noworealizowanych budynków), pełnomocnictwo udzielone osobie działającej w imieniu wnioskodawcy (oryginał lub jego odpis urzędowo poświadczony). Dokumenty do wglądu: Dowód osobisty przy odbiorze dokumentu. Sposób i miejsce składania dokumentów: Osobiście: Biuro Obsługi Mieszkańców ul. Wieniawska 14, stanowisko nr 9 lub 10 (I piętro) 20-071 Lublin tel. 81 466 1029 tel. 81 466 1030 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Filaretów 44 20-609 Lublin tel. 81 466 1010 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Kleeberga 12a 20-243 Lublin tel. 81 466 1070 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Szaserów 13-15 20-553 Lublin tel. 81 466 1044 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Nowy Świat 38 20-418 Lublin tel. 81 466 1080, 81 466 1081 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Zemborzycka 88-92 20-445 Lublin tel. 81 466 1020 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Za pośrednictwem poczty: Wydział Architektury i Budownictwa ul. Wieniawska 14 20-071 Lublin Elektronicznie, na adres do doręczeń elektronicznych Urzędu Miasta Lublin: AE:PL-40073-96065-RTJAF-25 z wykorzystaniem opcji \"Napisz wiadomość\" oraz opatrzenia wiadomości podpisem elektronicznym. Szczegóły o sposobie korzystania z systemu e-Doręczeń znajdują się w Serwisie Rzeczypospolitej Polskiej gov.pl Wymagane opłaty: za wydanie zaświadczenia o samodzielności każdego lokalu - 17 zł, opłata skarbowa za złożenie dokumentu stwierdzającego udzielenie pełnomocnictwa (z opłaty zwolnione są pełnomocnictwa udzielone: małżonkowi, wstępnemu, zstępnemu lub rodzeństwu albo gdy mocodawcą jest podmiot zwolniony od opłaty skarbowej) - 17 zł. Numer rachunku bankowego: Urząd Miasta Lublin Bank Pekao S.A. V/O Lublin 95 1240 2092 9329 9200 0620 0000 Wpłat można dokonać: Za pośrednictwem systemu bankowości elektronicznej. Bez dodatkowych opłat i prowizji we wszystkich placówkach Banku Pekao S.A. zlokalizowanych w granicach administracyjnych miasta Lublin. Bez dodatkowych opłat i prowizji (gotówką, przy użyciu kart płatniczych, za pośrednictwem płatności mobilnych) w punkcie kasowym Banku Pekao S.A. znajdującym się w budynku Urzędu Miasta Lublin: ul. Wieniawska 14 (I piętro) w godzinach: poniedziałek od 07:45 do 16:30, wtorek, środa, czwartek, piątek od 07:45 do 15:00, Bez dodatkowych opłat i prowizji gotówką oraz przy użyciu kart płatniczych w opłatomatach: ul. Wieniawska 14 (I piętro) w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Filaretów 44 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Kleeberga 12a w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Szaserów 13-15 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Nowy Świat 38 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Czechowska 19A (I piętro) w godzinach: poniedziałek od 09:15 do 16:30, wtorek, środa, czwartek, piątek od 07:45 do 14:30. Sposób i miejsce odbioru dokumentów: Osobiście lub osoba upoważniona (po dokonaniu opłaty na podstawie wystawionego rachunku): Wydział Architektury i Budownictwa ul. Wieniawska 14 20-071 Lublin tel. 81 466 2272 tel. 81 466 2273 Godziny przyjęć interesantów: poniedziałek, wtorek, środa, czwartek, piątek od 07:30 do 15:30. Elektronicznie, na adres doręczeń elektronicznych, jeśli wnioskodawca taki adres posiada. Za pośrednictwem poczty na adres podany przez wnioskodawcę, za zwrotnym potwierdzeniem odbioru. Termin załatwienia sprawy: 7 dni. Tryb odwoławczy: Odmowa wydania zaświadczenia, bądź zaświadczenia o treści żądanej przez wnioskodawcę następuje w drodze postanowienia, na które służy zażalenie do Samorządowego Kolegium Odwoławczego w terminie 7 dni od dnia jego doręczenia. Zażalenie należy złożyć za pośrednictwem Prezydenta Miasta Lublin, zgodnie z opisem w pozycji: \"Sposób i miejsce składania dokumentów\". Informacje dodatkowe: Ustanowienie odrębnej własności samodzielnego lokalu (z zastrzeżeniem art. 2 ust. 1b ustawy o własności lokali) następuje zgodnie z ustaleniami miejscowego planu zagospodarowania przestrzennego albo treścią decyzji o warunkach zabudowy i zagospodar…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…oleniu na budowę, zatwierdzony projekt budowlany, decyzja o ustaleniu warunków zabudowy i zagospodarowania terenu, zawiadomienie o nadaniu numeru porządkoweg…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…czas trwania postępowania w sprawie wydania zaświadczenia): decyzja o pozwoleniu na budowę, zatwierdzony projekt budowlany, decyzja o ustaleniu warunków zabudow…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-018",
+      "nazwa": "Wydanie i rejestracja dziennika budowy",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/wydanie-i-rejestracja-dziennika-budowy,3,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…zy odbiorze dziennika budowy: dokument tożsamości, oryginał decyzji o pozwolenie na budowę/rozbiórkę w przypadku pozwolenia na budowę/rozbiórkę lub projekt budo…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-028",
+      "nazwa": "Zgłoszenie budowy lub przebudowy budynku mieszkalnego jednorodzinnego",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/zgloszenie-budowy-lub-przebudowy-budynku-mieszkalnego-jednorodzinnego,8,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…ść sprzeciw w drodze decyzji. Potwierdzeniem braku sprzeciwu może być zaświadczenie wydane przez organ lub oświadczenie inwestora w powyższym zakresie. Do budowy wolno stojących, nie więcej niż dwukondygnacyjnych budynków mieszkalnych jednorodzinnych o powierzchni zabudowy do 70 m2, których obszar oddziaływania mieści się w całości na działce lub działkach, na których zostały zaprojektowane, a budowa jest prowadzona w celu zaspokojenia własnych potrzeb mieszkaniowych inwestora, inwestor może przystąpić od razu po doręczeniu organowi administracji architektoniczno-budowlanej takiego zgłoszenia. Tryb odwoławczy: W razie wniesienia przez organ sprzeciwu do wnioskowanego zgłoszenia stronom przysługuje prawo wniesienia odwołania od decyzji w terminie 14 dni od daty jej doręczenia do Wojewody Lubelskiego (ul. Spokojna 4, 20-074 Lublin), za pośrednictwem organu który wydał decyzję. Odwołanie należy złożyć zgodnie z opisem w pozycji: \"Sposób i miejsce składania dokumentów\". Informacje dodatkowe: Wniosek dotyczy wolno stojących budynków mieszkalnych jednorodzinnych, których obszar oddziaływania mieści się w całości na działce lub działkach, na których zostały zaprojektowane. Sprawa załatwiana jest na zasadzie tzw. milczącej zgody - brak reakcji organu w terminie 21 dni od daty wpływu zgłoszenia oznacza zgodę organu na wykonanie robót budowlanych objętych zgłoszeniem. Potwierdzeniem braku sprzeciwu może być zaświadczenie wydane przez organ. Organ umieszcza na stronie Biuletynu Informacji Publicznej na okres nie krótszy niż 30 dni i nie dłuższy niż 60 dni w terminie 3 dni od dnia: doręczenia zgłoszenia - informację o dokonaniu zgłoszenia, zawierającą imię i nazwisko albo nazwę inwestora oraz adres i opis projektowanego obiektu, wniesienia sprzeciwu - informację o dacie jego wniesienia, upływu terminu na wniesienie sprzeciwu - informację o braku wniesienia sprzeciwu. Zgodnie z art. 30 ust. 5 przed upływem 21-dniowego terminu wskazanego na wniosku, organ może wnieść sprzeciw w drodze decyzji. W razie konieczności uzupełnienia zgłoszenia właściwy organ nakłada na zgłaszającego, w drodze postanowienia, obowiązek uzupełnienia, w określonym terminie, brakujących dokumentów, a w przypadku ich nieuzupełnienia, wnosi sprzeciw w drodze decyzji. Organ może nałożyć w drodze decyzji obowiązek uzyskania pozwolenia na wykonanie określonego obiektu lub robót budowlanych, jeżeli ich realizacja może naruszać ustalenia miejscowego planu zagospodarowania przestrzennego lub spowodować: zagrożenie bezpieczeństwa ludzi lub mi…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…erowej w 3 egzemplarzach albo 1 egzemplarz w postaci elektronicznej), decyzja o warunkach zabudowy i zagospodarowania terenu - jeżeli jest ona wymagana zgodnie z przepi…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-012",
+      "nazwa": "Zgłoszenie budowy lub wykonywania innych robót budowlanych",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/zgloszenie-budowy-lub-wykonywania-innych-robot-budowlanych,11,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…ść sprzeciw w drodze decyzji. Potwierdzeniem braku sprzeciwu może być zaświadczenie wydane przez organ lub oświadczenie inwestora w powyższym zakresie. Tryb odwoławczy: W razie wniesienia przez organ sprzeciwu do wnioskowanego zgłoszenia stronom przysługuje prawo wniesienia odwołania od decyzji w terminie 14 dni od daty jej doręczenia do Wojewody Lubelskiego (ul. Spokojna 4, 20-074 Lublin), za pośrednictwem organu który wydał decyzję. Odwołanie należy złożyć zgodnie z opisem w pozycji: \"Sposób i miejsce składania dokumentów\". W trakcie biegu terminu do wniesienia odwołania strona może zrzec się prawa do wniesienia odwołania wobec organu administracji publicznej, który wydał decyzję. Z dniem doręczenia organowi administracji publicznej oświadczenia o zrzeczeniu się prawa do wniesienia odwołania przez ostatnią ze stron postępowania, decyzja staje się ostateczna i prawomocna. Informacje dodatkowe: Zgłoszenia należy dokonać przed terminem zamierzonego rozpoczęcia robót budowlanych. Organ administracji architektoniczno - budowlanej, w terminie 21 dni od dnia doręczenia zgłoszenia może, w drodze decyzji, wnieść sprzeciw. Do wykonywania robót budowlanych można przystąpić, jeżeli organ nie wniósł sprzeciwu w tym terminie. Wcześniejsze przystąpienie do robót budowlanych objętych zgłoszeniem jest dopuszczalne, w sytuacji wydania przez organ zaświadczenia stwierdzającego brak podstaw do wniesienia sprzeciwu. W przypadku nierozpoczęcia wykonywania robót budowlanych przed upływem 3 lat od określonego w zgłoszeniu terminu ich rozpoczęcia, rozpoczęcie tych robót może nastąpić po dokonaniu ponownego zgłoszenia. W razie konieczności uzupełnienia zgłoszenia organ administracji architektoniczno - budowlanej nakłada na zgłaszającego, w drodze postanowienia, obowiązek uzupełnienia, w określonym terminie, brakujących dokumentów, a w przypadku ich nieuzupełnienia - wnosi sprzeciw w drodze decyzji. Organ wnosi sprzeciw, jeżeli: zgłoszenie dotyczy budowy lub wykonywania robót budowlanych objętych obowiązkiem uzyskania pozwolenia na budowę, budowa lub wykonywanie robót budowlanych objętych zgłoszeniem narusza ustalenia miejscowego planu zagospodarowania przestrzennego, decyzji o warunkach zabudowy, inne akta prawa miejscowego lub inne przepisy, zgłoszenie dotyczy budowy tymczasowego obiektu budowlanego (niepołączonego trwale z gruntem i przewidzianego do rozbiórki lub przeniesienia w inne miejsce nie później niż przed upływem 180 dni) - w miejscu, w którym obiekt taki istnieje. Za dzień wniesienia sprzeciwu uznaje się dzień nadania decyzji w placówce pocztowej operatora wyznaczonego w rozumieniu art. 3 pkt 13 ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe (Dz. U. z 2020 r. poz. 1041) albo w przypadku, o którym mowa w art. 39 Kodeksu postępowania administracyjnego, dzień wprowadzenia do systemu teleinformatycznego. Organ może nałożyć w drodze decyzji obowiązek uzyskania pozwolenia na wykonanie obiektu budowlanego lub prowadzenie robót budowlanych objętych obowiązkiem zgłoszenia, jeśli ich realizacja może naruszać ustalenia miejscowego planu zagospodarowania przestrzennego, decyzji o warunkach zabudowy lub spowodować: zagrożen…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…lanego: odpowiednie szkice, rysunki obrazujące zamierzenie budowlane, decyzja o warunkach zabudowy i zagospodarowania terenu, jeżeli jest ona wymagana zgodnie z przepis…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…dowy lub wykonywania robót budowlanych objętych obowiązkiem uzyskania pozwolenia na budowę, budowa lub wykonywanie robót budowlanych objętych zgłoszeniem narusz…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-031",
+      "nazwa": "Zgłoszenie budowy sieci wodociągowych, kanalizacyjnych, cieplnych, telekomunikacyjnych, gazowych o ciśnieniu roboczym nie wyższym niż 0,5 MPa, elektroenergetycznych obejmujących napięcie znamionowe nie wyższe niż 1 kV, stacji transformatorowych",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/zgloszenie-budowy-sieci-wodociagowych-kanalizacyjnych-cieplnych-telekomunikacyjnych-elektroenergetycznych-obejmujacych-napiecie-znamionowe-nie-wyzsze-niz-1-kv-stacji-transformatorowych,22,22924,2,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…ę sporządzającą projekt i posiadającą stosowne uprawnienia budowlane, zaświadczenie projektanta (projektantów) o wpisie na listę członków właściwej izby samorządu zawodowego aktualne na dzień opracowania projektu budowlanego, ostateczna decyzja o warunkach zabudowy i zagospodarowania terenu wydana dla planowanej inwestycji (w przypadku braku miejscowego planu zagospodarowania przestrzennego), o ile jest wymagana na podstawie przepisów ustawy z dnia 27 marca 2003 r. o planowaniu i zagospodarowaniu przestrzennym (Dz. U. z 2021 r. poz. 741 z późn. zm.), decyzja o środowiskowych uwarunkowaniach - art. 72 ust. 3 ustawy z dnia 3 października 2008 r o udostępnianiu informacji o środowisku i jego ochronie, udziale społeczeństwa w ochronie środowiska oraz o ocenach oddziaływania na środowisko, zgoda wodnoprawna, jeżeli jest wymagana ustawą z dnia 20 lipca 2017 r. - Prawo wodne, pozwolenie właściwego wojewódzkiego konserwatora zabytków na prowadzenie robót budowlanych na obszarze wpisanym do rejestru zabytków - art. 29 ust. 4 pkt 2 ustawy z dnia 7 lipca 1994 r. - Prawo budowlane, w związku z art. 36 ust. 1 pkt 1 i 2 oraz ust. 8 ustawy z dnia 23 lipca 2003 r. o ochronie zabytków i opiece nad zabytkami, dowód uiszczenia opłaty skarbowej, o której mowa w ustawie z dnia 16 listopada 2006 o opłacie skarbowej z tytułu dokonania zgłoszenia, pełnomocnictwo udzielone osobie działającej w imieniu inwestora (oryginał lub jego odpis urzędowo poświadczony), dowód potwierdzający dokonanie opłaty skarbowej z tytułu pełnomocnictwa, dokument potwierdzający sposób reprezentacji inwestora (np. wypis z KRS, umowa spółki, fundacji, uchwała o powołaniu zarządu wspólnoty), wykaz działek w przypadku braku miejsca w części III zgłoszenia. Dokumenty do wglądu: Dowód osobisty, bądź inny dokument potwierdzający tożsamość, w sytuacji osobistego odbioru dokumentacji dotyczącej zgłoszenia. Sposób i miejsce składania dokumentów: Osobiście: Biuro Obsługi Mieszkańców ul. Wieniawska 14, stanowisko nr 9 lub 10 (I piętro) 20-071 Lublin tel. 81 466 1029 tel. 81 466 1030 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Za pośrednictwem poczty: Wydział Architektury i Budownictwa ul. Wieniawska 14 20-071 Lublin Istnieje możliwość wypełnienia i przesłania zgłoszenia wraz z dokumentami w formie elektronicznej za pomocą serwisu e-budownictwo (oficjalnej rządowej aplikacji do składania wniosków w procesie budowlanym) pod adresem e-budownictwo.gunb.gov.pl Wymagane opłaty: Opłata skarbowa za złożenie dokumentu stwierdzającego udzielenie pełnomocnictwa - 17 zł. Przyjęcie zgłoszenia dotyczącego budowy sieci, o których mowa w art. 29 ust. 1 pkt 2 ustawy Prawo budowlane: o długości powyżej 1 kilometra - 2143 zł, o długości do 1 kilometra - 105 zł. Przyjęcie zgłoszenia dotyczącego przebudowy, o której mowa w art. 29 ust. 3 pkt 1 ustawy Prawo budowlane - 50 % stawki określonej powyżej. Numer rachunku bankowego: Urząd Miasta Lublin Bank Pekao S.A. V/O Lublin 95 1240 2092 9329 9200 0620 0000 Wpłat można dokonać: Za pośrednictwem systemu bankowości elektronicznej. Bez dodatkowych opłat i prowizji we wszystkich placówkach Banku Pekao S.A. zlokalizowanych w granicach administracyjnych miasta Lublin. Bez dodatkowych opłat i prowizji (gotówką, przy użyciu kart płatniczych, za pośrednictwem płatności mobilnych) w punkcie kasowym Banku Pekao S.A. znajdującym się w budynku Urzędu Miasta Lublin: ul. Wieniawska 14 (I piętro) w godzinach: poniedziałek od 07:45 do 16:30, wtorek, środa, czwartek, piątek od 07:45 do 15:00, Bez dodatkowych opłat i prowizji gotówką oraz przy użyciu kart płatniczych w opłatomatach: ul. Wieniawska 14 (I piętro) w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Filaretów 44 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Kleeberga 12a w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Szaserów 13-15 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Nowy Świat 38 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Czechowska 19A (I piętro) w godzinach: poniedziałek od 09:15 do 16:30, wtorek, środa, czwartek, piątek od 07:45 do 14:30. Sposób i miejsce odbioru dokumentów: Osobiście lub osoba upoważniona (po dokonaniu opłaty z tytułu pełnomocnictwa): Wydział Architektury i Budownictwa ul. Wieniawska 14 20-071 Lublin tel. 81 466 2200 Godziny przyjęć interesantów: poniedziałek, wtorek, środa, czwartek, piątek od 07:30 do 15:30. Za pośrednictwem poczty na adres podany przez wnioskodawcę za zwrotnym potwierdzeniem odbioru. Termin załatwienia sprawy: Sprawa załatwiana jest na zasadzie tzw. milczącej zgody - brak reakcji organu w terminie 21 dni od daty wpływu zgłoszenia oznacza zgodę na wykonanie robót budowlanych objętych zgłoszeniem. Przed upływem ww. terminu, organ może wnieść sprzeciw w drodze decyzji. Potwierdzeniem braku sprzeciwu może być zaświadczenie wydane przez organ lub oświadczenie inwestora w powyższym zakresie. Tryb odwoławczy: W razie wniesienia przez organ sprzeciwu do wnioskowanego zgłoszenia stronom przysługuje prawo wniesienia odwołania od decyzji w terminie 14 dni od daty jej doręczenia do Wojewody Lubelskiego (ul. Spokojna 4, 20-074 Lublin), za pośrednictwem organu który wydał decyzję. Odwołanie należy złożyć zgodnie z opisem w pozycji: \"Sposób i miejsce składania dokumentów\". W trakcie biegu terminu do wniesienia odwołania strona może zrzec się prawa do wniesienia odwołania wobec organu administracji publicznej, który wydał decyzję. Z dniem doręczenia organowi administracji publicznej oświadczenia o zrzeczeniu się prawa do wniesienia odwołania przez ostatnią ze stron postępowania, decyzja staje się ostateczna i prawomocna. Informacje dodatkowe: Zgłoszenia należy dokonać przed terminem zamierzonego rozpoczęcia robót budowlanych. Organ administracji architektoniczno - budowlanej, w terminie 21 dni od dnia doręczenia zgłoszenia może, w drodze decyzji, wnieść sprzeciw. Do wykonywania robót budowlanych można przystąpić, jeżeli organ nie wniósł sprzeciwu w tym terminie. Wcześniejsze przystąpienie do robót budowlanych objętych zgłoszeniem jest dopuszczalne, w sytuacji wydania przez organ zaświadczenia stwierdzającego brak podstaw do wniesienia sprzeciwu. W przypadku nierozpoczęcia wykonywania robót budowlanych przed upływem 3 lat od określonego w zgłoszeniu terminu ich rozpoczęcia, rozpoczęcie tych robót może nastąpić po dokonaniu ponownego zgłoszenia. W razie konieczności uzupełnienia zgłoszenia organ administracji architektoniczno - budowlanej nakłada na zgłaszającego, w drodze postanowienia, obowiązek uzupełnienia, w określonym terminie, brakujących dokumentów, a w przypadku ich nieuzupełnienia - wnosi sprzeciw w drodze decyzji. Organ wnosi sprzeciw, jeżeli: zgłoszenie dotyczy budowy lub wykonywania robót budowlanych objętych obowiązkiem uzyskania pozwolenia na budowę, budowa lub wykonywanie robót budowlanych objętych zgłoszeniem narusza ustalenia miejscowego planu zagospodarowania przestrzennego, decyzji o warunkach zabudowy, inne akta prawa miejscowego lub inne przepisy, zgłoszenie dotyczy budowy tymczasowego obiektu budowlanego (niepołączonego trwale z gruntem i przewidzianego do rozbiórki lub przeniesienia w inne miejsce nie później niż przed upływem 180 dni) - w miejscu, w którym obiekt taki istnieje. Za dzień wniesienia sprzeciwu uznaje się dzień nadania decyzji w placówce pocztowej operatora wyznaczonego w rozumieniu art. 3 pkt 13 ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe (Dz. U. z 2020 r. poz. 1041) albo w przypadku, o którym mowa w art. 39 Kodeksu postępowania administracyjnego, dzień wprowadzenia do systemu teleinformatycznego. Organ może nałożyć w drodze decyzji obowiązek uzyskania pozwolenia na wykonanie obiektu budowlanego lub prowadzenie robót budowlanych objętych obowiązkiem zgłoszenia, jeśli ich realizacja może naruszać ustalenia miejscowego planu zagospodarowania przestrzennego, decyzji o warunkach zabudowy lub spowodować: zagrożen…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…dowego aktualne na dzień opracowania projektu budowlanego, ostateczna decyzja o warunkach zabudowy i zagospodarowania terenu wydana dla planowanej inwestycji (w przypad…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…dowy lub wykonywania robót budowlanych objętych obowiązkiem uzyskania pozwolenia na budowę, budowa lub wykonywanie robót budowlanych objętych zgłoszeniem narusz…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-013",
+      "nazwa": "Zgłoszenie zmiany sposobu użytkowania obiektu budowlanego lub jego części",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/zgloszenie-zmiany-sposobu-uzytkowania-obiektu-budowlanego-lub-jego-czesci,12,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…o posiadanym prawie do dysponowania nieruchomością na cele budowlane, zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego albo decyzja o warunkach zabudowy i zagospodarowania terenu, w przypadku braku obowiązującego miejscowego planu zagospodarowania przestrzennego, ekspertyza techniczna wykonana przez osobę posiadającą uprawnienia budowlane bez ograniczeń w odpowiedniej specjalności, dokumenty poświadczające posiadanie przez projektantów wymaganych prawem uprawnień, tj. decyzja potwierdzająca posiadanie właściwych uprawnień i zaświadczenie o wpisie do właściwej izby samorządu zawodowego (aktualne na dzień opracowania ekspertyzy), pozwolenia, uzgodnienia lub opinie wymagane odrębnymi przepisami, w szczególności decyzja o środowiskowych uwarunkowaniach, zgodnie z art. 72 ust. 3 ustawy z dnia 03.10.2008 r. o udostępnianiu informacji o środowisku i jego ochronie, udziale społeczeństwa w ochronie środowiska oraz o ocenach oddziaływania na środowisko, ekspertyza rzeczoznawcy do spraw zabezpieczeń przeciwpożarowych (w przypadku zmiany sposobu użytkowania obiektu budowlanego lub jego części, polegającej na podjęciu lub zaniechaniu w obiekcie budowlanym lub jego części działalności zmieniającej warunki bezpieczeństwa pożarowego), pełnomocnictwo udzielone osobie działającej w imieniu inwestora (oryginał lub jego odpis urzędowo poświadczony), dokument potwierdzający sposób reprezentacji inwestora (np. wypis z KRS, umowa spółki, fundacji, uchwała o powołaniu zarządu wspólnoty). Dokumenty do wglądu: Dowód osobisty przy odbiorze dokumentu. Sposób i miejsce składania dokumentów: Osobiście: Biuro Obsługi Mieszkańców ul. Wieniawska 14, stanowisko nr 9 lub 10 (I piętro) 20-071 Lublin tel. 81 466 1029 tel. 81 466 1030 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Filaretów 44 20-609 Lublin tel. 81 466 1010 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Kleeberga 12a 20-243 Lublin tel. 81 466 1070 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Szaserów 13-15 20-553 Lublin tel. 81 466 1044 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Nowy Świat 38 20-418 Lublin tel. 81 466 1080, 81 466 1081 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Biuro Obsługi Mieszkańców ul. Zemborzycka 88-92 20-445 Lublin tel. 81 466 1020 Godziny przyjęć interesantów: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15. Za pośrednictwem poczty: Wydział Architektury i Budownictwa ul. Wieniawska 14 20-071 Lublin Istnieje możliwość wypełnienia i przesłania zgłoszenia wraz z dokumentami w formie elektronicznej za pomocą serwisu e-budownictwo (oficjalnej rządowej aplikacji do składania wniosków w procesie budowlanym) pod adresem e-budownictwo.gunb.gov.pl Wymagane opłaty: Opłata skarbowa za złożenie dokumentu stwierdzającego udzielenie pełnomocnictwa (z opłaty zwolnione są pełnomocnictwa udzielone: małżonkowi, wstępnemu, zstępnemu lub rodzeństwu albo gdy mocodawcą jest podmiot zwolniony od opłaty skarbowej) - 17 zł. Numer rachunku bankowego: Urząd Miasta Lublin Bank Pekao S.A. V/O Lublin 95 1240 2092 9329 9200 0620 0000 Wpłat można dokonać: Za pośrednictwem systemu bankowości elektronicznej. Bez dodatkowych opłat i prowizji we wszystkich placówkach Banku Pekao S.A. zlokalizowanych w granicach administracyjnych miasta Lublin. Bez dodatkowych opłat i prowizji (gotówką, przy użyciu kart płatniczych, za pośrednictwem płatności mobilnych) w punkcie kasowym Banku Pekao S.A. znajdującym się w budynku Urzędu Miasta Lublin: ul. Wieniawska 14 (I piętro) w godzinach: poniedziałek od 07:45 do 16:30, wtorek, środa, czwartek, piątek od 07:45 do 15:00, Bez dodatkowych opłat i prowizji gotówką oraz przy użyciu kart płatniczych w opłatomatach: ul. Wieniawska 14 (I piętro) w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Filaretów 44 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Kleeberga 12a w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Szaserów 13-15 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Nowy Świat 38 w godzinach: poniedziałek od 07:45 do 16:45, wtorek, środa, czwartek, piątek od 07:45 do 15:15, ul. Czechowska 19A (I piętro) w godzinach: poniedziałek od 09:15 do 16:30, wtorek, środa, czwartek, piątek od 07:45 do 14:30. Sposób i miejsce odbioru dokumentów: Osobiście lub osoba upoważniona (po dokonaniu opłaty na podstawie wystawionego rachunku): Wydział Architektury i Budownictwa ul. Wieniawska 14 20-071 Lublin tel. 81 466 2272 tel. 81 466 2273 Godziny przyjęć interesantów: poniedziałek, wtorek, środa, czwartek, piątek od 07:30 do 15:30. Elektronicznie, na adres doręczeń elektronicznych, jeśli wnioskodawca taki adres posiada. Za pośrednictwem poczty na adres podany przez wnioskodawcę, za zwrotnym potwierdzeniem odbioru. Termin załatwienia sprawy: Sprawa załatwiana jest na zasadzie tzw. milczącej zgody - brak reakcji organu w terminie 30 dni od daty wpływu zgłoszenia oznacza zgodę na dokonanie zmiany sposobu użytkowania budynku lub jego części objętych zgłoszeniem. Przed upływem ww. terminu 30 dni, organ może wnieść sprzeciw w drodze decyzji. Potwierdzeniem braku sprzeciwu może być zaświadczenie wydane przez organ lub oświadczenie inwestora w powyższym zakresie. Tryb odwoławczy: W przypadku decyzji organu o wniesieniu sprzeciwu w sprawie zmiany sposobu użytkowania, zgłaszającemu przysługuje prawo wniesienia odwołania. Odwołanie wnosi się do Wojewody Lubelskiego, w terminie 14 dni od daty jej doręczenia za pośrednictwem organu, który wydał decyzję. Odwołanie należy złożyć zgodnie z opisem w pozycji: \"Sposób i miejsce składania dokumentów\". W trakcie biegu terminu do wniesienia odwołania strona może zrzec się prawa do wniesienia odwołania wobec organu administracji publicznej, który wydał decyzję. Z dniem doręczenia organowi administracji publicznej oświadczenia o zrzeczeniu się prawa do wniesienia odwołania przez ostatnią ze stron postępowania, decyzja staje się ostateczna i prawomocna. Informacje dodatkowe: Zgłoszenia zmiany sposobu użytkowania należy dokonać przed dokonaniem zmiany sposobu użytkowania obiektu budowlanego lub jego części. Zmiana sposobu użytkowania może nastąpić, jeżeli w terminie 30 dni, od dnia doręczenia zgłoszenia, właściwy organ, nie wniesie sprzeciwu w drodze decyzji i nie później niż po upływie 2 lat od doręczenia zgłoszenia. Dokonanie zgłoszenia zmiany sposobu użytkowania obiektu po zmianie sposobu użytkowania obiektu budowlanego lub jego części nie wywołuje skutków prawnych. Organ przed upływem terminu 30 dni od dnia wpływu zgłoszenia może, w drodze decyzji, wnieść sprzeciw przeciwko zamierzonej zmianie sposobu użytkowania obiektu budowlanego lub jego części, jeżeli: wymaga wykonania robót budowlanych objętych obowiązkiem uzyskania pozwolenia na budowę, narusza ustalenia miejscowego planu zagospodarowania przestrzennego i innych aktów prawa miejscowego albo decyzji o warunkach zabudowy i zagospodarowania terenu, w przypadku braku obowiązującego miejscowego planu zagospodarowania przestrzennego, może spowodować niedopuszczalne: zagrożenia bezpiecze…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…obowiązującego miejscowego planu zagospodarowania przestrzennego albo decyzja o warunkach zabudowy i zagospodarowania terenu, w przypadku braku obowiązującego miejscowe…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…li: wymaga wykonania robót budowlanych objętych obowiązkiem uzyskania pozwolenia na budowę, narusza ustalenia miejscowego planu zagospodarowania przestrzennego …",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AB-009",
+      "nazwa": "Zmiana pozwolenia na budowę",
+      "komorka": "Wydział Architektury i Budownictwa",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-architektury-i-budownictwa/zmiana-pozwolenia-na-budowe,13,22924,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…erowej w 3 egzemplarzach albo 1 egzemplarz w postaci elektronicznej), decyzja o warunkach zabudowy i zagospodarowania terenu - jeżeli jest ona wymagana zgodnie z przepi…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…Usługa: Zmiana pozwolenia na budowę. Numer karty informacyjnej: AB-009. Komórka załatwiająca sprawę: Wydz…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GD-016",
+      "nazwa": "Ograniczenie sposobu korzystania z nieruchomości",
+      "komorka": "Wydział Geodezji",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-geodezji/inwestycje/ograniczenia-praw-rzeczowych,1,22935,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_ewidencja_gruntow",
+          "document": "Wypis / wyrys z ewidencji gruntów i budynków",
+          "evidence": "…prowadzono lub nie zostało zakończone postępowanie spadkowe. Aktualny wypis i wyrys z ewidencji gruntów i budynków. Odpis z księgi wieczystej albo zaświadczenie o stanie p…",
+          "produced_by": [
+            {
+              "id": "GD-006",
+              "nazwa": "Wydawanie wypisów i wyrysów z operatu ewidencyjnego",
+              "komorka": "Wydział Geodezji",
+              "primary": true
+            },
+            {
+              "id": "GD-008",
+              "nazwa": "Pisma dotyczące spraw związanych z prowadzeniem ewidencji gruntów, budynków i lokali",
+              "komorka": "Wydział Geodezji",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…lokalizacji inwestycji celu publicznego z załącznikiem graficznym lub wypis i wyrys z miejscowego planu zagospodarowania przestrzennego. Mapa z rejestrem nieruchomości z oznaczeniem obszaru …",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GD-035",
+      "nazwa": "Podział nieruchomości w trybie art. 93 lub art. 94 Ustawy o gospodarce nieruchomościami",
+      "komorka": "Wydział Geodezji",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-geodezji/podzialy-i-rozgraniczanie/podzial-nieruchomosci-w-trybie-art-93-lub-art-94-ustawy-o-gospodarce-nieruchomosciami,3,22933,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "… sierpnia 1997 r. o gospodarce nieruchomościami), decyzji o ustaleniu warunków zabudowy /gdy brak ww. planu/ (art. 94 ust. 1 ustawy o gospodarce nieruchomośc…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GD-036",
+      "nazwa": "Podział nieruchomości w trybie art. 95 Ustawy o gospodarce nieruchomościami",
+      "komorka": "Wydział Geodezji",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-geodezji/podzialy-i-rozgraniczanie/podzial-nieruchomosci-w-trybie-art-95-ustawy-o-gospodarce-nieruchomosciami,5,22933,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…agospodarowania Przestrzennego lub niezależnie od decyzji o ustaleniu warunków zabudowy: Geodezyjny operat podziału nieruchomości sporządzony przez uprawnion…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GD-023",
+      "nazwa": "Potwierdzenie stażu pracy w indywidualnym gospodarstwie rolnym do pracowniczego stażu pracy",
+      "komorka": "Wydział Geodezji",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-geodezji/rolnictwo/potwierdzenie-stazu-pracy-w-indywidualnym-gospodarstwie-rolnym-do-pracowniczego-stazu-pracy,2,22936,2,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…być przeprowadzony przed organem orzekającym merytorycznie w sprawie (ZUS, KRUS, zakład pracy), a nie przed organem właściwym do wydania zaświa…"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "…rzeprowadzony przed organem orzekającym merytorycznie w sprawie (ZUS, KRUS, zakład pracy), a nie przed organem właściwym do wydania zaświadczeni…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "GD-031",
+      "nazwa": "Udostępnienie nieruchomości",
+      "komorka": "Wydział Geodezji",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-geodezji/inwestycje/udostepnienie-nieruchomosci,7,22935,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_ewidencja_gruntow",
+          "document": "Wypis / wyrys z ewidencji gruntów i budynków",
+          "evidence": "…prowadzono lub nie zostało zakończone postępowanie spadkowe. Aktualny wypis i wyrys z ewidencji gruntów i budynków. Odpis księgi wieczystej albo zaświadczenie o stanie pra…",
+          "produced_by": [
+            {
+              "id": "GD-006",
+              "nazwa": "Wydawanie wypisów i wyrysów z operatu ewidencyjnego",
+              "komorka": "Wydział Geodezji",
+              "primary": true
+            },
+            {
+              "id": "GD-008",
+              "nazwa": "Pisma dotyczące spraw związanych z prowadzeniem ewidencji gruntów, budynków i lokali",
+              "komorka": "Wydział Geodezji",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GD-032",
+      "nazwa": "Wywłaszczenie nieruchomości",
+      "komorka": "Wydział Geodezji",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-geodezji/inwestycje/wywlaszczenie-nieruchomosci,10,22935,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_ewidencja_gruntow",
+          "document": "Wypis / wyrys z ewidencji gruntów i budynków",
+          "evidence": "…prowadzono lub nie zostało zakończone postępowanie spadkowe. Aktualny wypis i wyrys z ewidencji gruntów i budynków. Odpis z księgi wieczystej albo zaświadczenie o stanie p…",
+          "produced_by": [
+            {
+              "id": "GD-006",
+              "nazwa": "Wydawanie wypisów i wyrysów z operatu ewidencyjnego",
+              "komorka": "Wydział Geodezji",
+              "primary": true
+            },
+            {
+              "id": "GD-008",
+              "nazwa": "Pisma dotyczące spraw związanych z prowadzeniem ewidencji gruntów, budynków i lokali",
+              "komorka": "Wydział Geodezji",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…lokalizacji inwestycji celu publicznego z załącznikiem graficznym lub wypis i wyrys z miejscowego planu zagospodarowania przestrzennego. Mapa z rejestrem nieruchomości z oznaczeniem obszaru …",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GD-024",
+      "nazwa": "Zezwolenie na wyłączenie gruntów z produkcji rolniczej, zwane dalej \"wyłączeniem gruntów\"",
+      "komorka": "Wydział Geodezji",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-geodezji/rolnictwo/zezwolenie-na-wylaczenie-gruntow-z-produkcji-rolniczej-zwane-dalej-wylaczeniem-gruntow,5,22936,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…dukcji rolniczej. Wymagane załączniki: ostateczna decyzja o ustaleniu warunków zabudowy w przypadku braku miejscowego planu zagospodarowania przestrzennego d…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "… (tekst jednolity - Dz. U. z 2023 r. poz. 2111). Czynności powiązane: Pozwolenie na budowę. Klauzula informacyjna dotycząca ochrony danych osobowych: Na podstaw…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GME-013",
+      "nazwa": "Bonifikata od opłat rocznych z tytułu użytkowania wieczystego nieruchomości przeznaczonych lub wykorzystywanych na cele mieszkaniowe",
+      "komorka": "Wydział Gospodarowania Mieniem i Energią",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-gospodarowania-mieniem-i-energia/uzytkowanie-wieczyste/bonifikata-od-oplat-rocznych-z-tytulu-uzytkowania-wieczystego-nieruchomosci-gminy-lublinskarbu-panstwa-przeznaczonych-lub-wykorzystywanych-na-cele-mieszkaniowe,2,22946,2,3.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…być wnoszona w formie: zaświadczenia z zakładu pracy, zaświadczenia z ZUS, KRUS, zaświadczenia z uczelni, zaświadczenia z Urzędu Skarbowego, za…"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "…noszona w formie: zaświadczenia z zakładu pracy, zaświadczenia z ZUS, KRUS, zaświadczenia z uczelni, zaświadczenia z Urzędu Skarbowego, zaświadc…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…, zaświadczenia z ZUS, KRUS, zaświadczenia z uczelni, zaświadczenia z Urzędu Skarbowego, zaświadczenia z Urzędu Pracy, przedstawienia druku PIT 11, 40a lub i…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…dczenia z uczelni, zaświadczenia z Urzędu Skarbowego, zaświadczenia z Urzędu Pracy, przedstawienia druku PIT 11, 40a lub innych dokumentów o wysokości d…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "GM-019",
+      "nazwa": "Dzierżawa/najem nieruchomości",
+      "komorka": "Wydział Gospodarowania Mieniem i Energią",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-gospodarowania-mieniem-i-energia/dzierzawy/dzierzawanajem-nieruchomosci,1,22943,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…magane wnioski: GM-019-01 - wniosek o dzierżawę. Wymagane załączniki: wypis i wyrys z planu zagospodarowania przestrzennego lub decyzja o ustaleniu warunków zabudowy, w przypadku…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…wyrys z planu zagospodarowania przestrzennego lub decyzja o ustaleniu warunków zabudowy, w przypadku wniosku o ponowną dzierżawę - opinia z Wydziału Architek…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GME-025",
+      "nazwa": "Przekształcenie prawa użytkowania wieczystego gruntów zabudowanych na cele mieszkaniowe w prawo własności tych gruntów na podstawie ustawy z dnia 20 lipca 2018 r.",
+      "komorka": "Wydział Gospodarowania Mieniem i Energią",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-gospodarowania-mieniem-i-energia/uzytkowanie-wieczyste/przeksztalcenie-prawa-uzytkowania-wieczystego-gruntow-zabudowanych-na-cele-mieszkaniowe-w-prawo-wlasnosci-tych-gruntow-na-podstawie-ustawy-z-dnia-20-lipca-2018-r-,10,22946,2,3.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "… ostatnich lat obrotowych (np. księga przychodów i rozchodów, decyzje urzędu skarbowego w przypadku rozliczania się w formie karty podatkowej, PIT-36) oraz s…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "GME-015",
+      "nazwa": "Sprzedaż garaży stanowiących własność Gminy Lublin",
+      "komorka": "Wydział Gospodarowania Mieniem i Energią",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-gospodarowania-mieniem-i-energia/sprzedazwykup/sprzedaz-garazy-stanowiacych-wlasnosc-gminy-lublin,1,22947,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_ewidencja_gruntow",
+          "document": "Wypis / wyrys z ewidencji gruntów i budynków",
+          "evidence": "… najemców, uzyskaniu zaświadczenia o samodzielności lokalu, uzyskaniu wypisu z ewidencji gruntów i budynków przez nabywcę, sporządzenie protokołu uzgodnień, sporząd…",
+          "produced_by": [
+            {
+              "id": "GD-006",
+              "nazwa": "Wydawanie wypisów i wyrysów z operatu ewidencyjnego",
+              "komorka": "Wydział Geodezji",
+              "primary": true
+            },
+            {
+              "id": "GD-008",
+              "nazwa": "Pisma dotyczące spraw związanych z prowadzeniem ewidencji gruntów, budynków i lokali",
+              "komorka": "Wydział Geodezji",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GME-028",
+      "nazwa": "Sprzedaż nieruchomości gruntowej na rzecz użytkownika wieczystego nieruchomości Gminy Lublin",
+      "komorka": "Wydział Gospodarowania Mieniem i Energią",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-gospodarowania-mieniem-i-energia/uzytkowanie-wieczyste/sprzedaz-nieruchomosci-gruntowej-na-rzecz-uzytkownika-wieczystego-nieruchomosci-gminy-lublin,12,22946,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "… nie podlega opłacie skarbowej dokonanie czynności urzędowej, wydanie zaświadczenia i zezwolenia (pozwolenie, koncesji) albo złożenie dokumentu stwierdzającego udzielenie pełnomocnictwa lub prokury albo jego odpisu, wypisu lub kopii w sprawach załatwianych na podstawie ustawy z dnia 21 sierpnia 1997 r. o gospodarce nieruchomościami. Sposób i miejsce odbioru dokumentów: Osobiście (po uprzednim telefonicznym uzgodnieniu): Wydział Gospodarowania Mieniem i Energią ul. Wieniawska 14 (VIII piętro, pokój nr 817) - dotyczy nieruchomości Gminy Lublin 20-071 Lublin tel. 81 466 2742 Godziny przyjęć interesantów: poniedziałek, wtorek, środa, czwartek, piątek od 07:30 do 15:30. Za pośrednictwem poczty na adres wskazany we wniosku. Informacje dodatkowe: Na podstawie art. 32 ustawy z dnia 21 sierpnia 1997 r., o gospodarce nieruchomościami użytkownik wieczysty może wystąpić z wnioskiem o sprzedaż nieruchomości gruntowej stanowiącej własność Gminy Lublin lub Skarbu Państwa. W przypadku, gdy nieruchomość jest przedmiotem współużytkowania wieczystego, z wnioskiem o sprzedaż prawa własności muszą wystąpić wszyscy współużytkownicy wieczyści. Do sprzedaży przeznacza się nieruchomości, które zostały zagospodarowane zgodnie z celem wynikającym z umowy, decyzji, przepisu prawa lub innego dokumentu, na podstawie którego została oddana w użytkowanie wieczyste. W przypadku gdy cel nie został określony - sposób korzystania jest zgodny z postanowieniami miejscowego planu zagospodarowania przestrzennego, a w przypadku braku planu ze studium uwarunkowań i ki…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…uwarunkowań i kierunków zagospodarowania przestrzennego lub z treścią decyzji o warunkach zabudowy i zagospodarowania przestrzennego. Wyłączeniu ze sprzedaży podlegają …",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GME-023",
+      "nazwa": "Ustalenie innego terminu zapłaty opłaty rocznej z tytułu użytkowania wieczystego",
+      "komorka": "Wydział Gospodarowania Mieniem i Energią",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-gospodarowania-mieniem-i-energia/uzytkowanie-wieczyste/ustalenie-innego-terminu-zaplaty-oplaty-rocznej-z-tytulu-uzytkowania-wieczystego,5,22946,2,3.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "… ostatnich lat obrotowych (np. księga przychodów i rozchodów, decyzje urzędu skarbowego w przypadku rozliczania się w formie karty podatkowej, PIT-36) oraz s…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "KL-007",
+      "nazwa": "Nagroda Artystyczna Miasta Lublin",
+      "komorka": "Wydział Kultury",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-kultury/nagroda-artystyczna-miasta-lublin,2,22965,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…ożemy prosić o inne dane, takie jak numer rachunku bankowego czy dane urzędu skarbowego, w którym się Pani/Pan rozlicza, które nie mają wpływu na przyznanie …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "KL-011",
+      "nazwa": "Nagroda Miasta Lublin dla Mecenasa Kultury",
+      "komorka": "Wydział Kultury",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-kultury/nagroda-miasta-lublin-dla-mecenasa-kultury,6,22965,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…ożemy prosić o inne dane, takie jak numer rachunku bankowego czy dane urzędu skarbowego, w którym się Pani/Pan rozlicza, które nie mają wpływu na przyznanie …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "KL-009",
+      "nazwa": "Nagroda Miasta Lublin za Całokształt Działalności",
+      "komorka": "Wydział Kultury",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-kultury/nagroda-miasta-lublin-za-caloksztalt-dzialalnosci,4,22965,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…ożemy prosić o inne dane, takie jak numer rachunku bankowego czy dane urzędu skarbowego, w którym się Pani/Pan rozlicza, które nie mają wpływu na przyznanie …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "KL-008",
+      "nazwa": "Nagroda Miasta Lublin za Upowszechnianie Kultury",
+      "komorka": "Wydział Kultury",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-kultury/nagroda-miasta-lublin-za-upowszechnianie-kultury,3,22965,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…ożemy prosić o inne dane, takie jak numer rachunku bankowego czy dane urzędu skarbowego, w którym się Pani/Pan rozlicza, które nie mają wpływu na przyznanie …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "KL-010",
+      "nazwa": "Nagroda Okolicznościowa",
+      "komorka": "Wydział Kultury",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-kultury/nagrody-okolicznosciowe,5,22965,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…ożemy prosić o inne dane, takie jak numer rachunku bankowego czy dane urzędu skarbowego, w którym się Pani/Pan rozlicza, które nie mają wpływu na przyznanie …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "OŚ-028",
+      "nazwa": "Zezwolenie na przetwarzanie odpadów",
+      "komorka": "Wydział Ochrony Środowiska",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-ochrony-srodowiska/odpady-przemyslowe/zezwolenie-na-przetwarzanie-odpadow,3,22970,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "… Wymagane załączniki: 1) decyzja o środowiskowych uwarunkowaniach; 2) decyzja o warunkach zabudowy i zagospodarowania terenu; 3) zaświadczenia o niekaralności: a) zaświ…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OŚ-009",
+      "nazwa": "Zgłoszenie eksploatacji przydomowej oczyszczalni ścieków",
+      "komorka": "Wydział Ochrony Środowiska",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-ochrony-srodowiska/gospodarka-wodna/zgloszenie-eksploatacji-przydomowej-oczyszczalni-sciekow,3,22967,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…inna), kopia pisma o przyjęciu zgłoszenia robót budowlanych lub kopia pozwolenia na budowę, oświadczenie inwestora/wykonawcy potwierdzające realizację inwestycj…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OŚ-034",
+      "nazwa": "Złożenie wniosku o ulgę w spłacie zobowiązań podatkowych z tytułu opłaty za gospodarowanie odpadami komunalnymi",
+      "komorka": "Wydział Ochrony Środowiska",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-ochrony-srodowiska/odpady-komunalne/zlozenie-wniosku-o-ulge-w-splacie-zobowiazan-podatkowych-z-tytulu-oplaty-za-gospodarowanie-odpadami-komunalnymi,10,22969,2,2.html",
+      "requires_external_doc": [
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…łatnika (np. zdarzenia losowe, stan zdrowia, korzystanie z Miejskiego Ośrodka Pomocy Rodzinie, stopień orzeczenia o niepełnosprawności i inne). Sposób i miejsce sk…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "OR-007",
+      "nazwa": "Staż w Urzędzie Miasta Lublin",
+      "komorka": "Wydział Organizacji Urzędu",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-organizacji-urzedu/staz-w-urzedzie-miasta-lublin,4,22977,2,1.html",
+      "requires_external_doc": [
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…lin występuje z wnioskiem o organizację stażu do wskazanego w podaniu Urzędu Pracy. Klauzula informacyjna dotycząca ochrony danych osobowych: Na podstaw…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "OW-003",
+      "nazwa": "Udzielanie pomocy materialnej o charakterze socjalnym dla uczniów i słuchaczy zamieszkałych na terenie miasta Lublin - stypendia szkolne, zasiłki szkolne",
+      "komorka": "Wydział Oświaty i Wychowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-oswiaty-i-wychowania/udzielanie-pomocy-materialnej-o-charakterze-socjalnym-dla-uczniow-i-sluchaczy-zamieszkalych-na-terenie-miasta-lublin,1,22978,2,3.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…ę o formie opodatkowania oraz na podstawie dowodu opłacenia składek w Zakładzie Ubezpieczeń Społecznych. Przyjmuje się, że z 1 ha przeliczeniowego uzyskuje się dochód miesię…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "… osób fizycznych ustala się na podstawie zaświadczenia wydanego przez naczelnika właściwego urzędu skarbowego, zawierającego informację o wysokości: 1) przychodu; 2) kosztów uzysk…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "PL-014",
+      "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+      "komorka": "Wydział Planowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-planowania/przeniesienie-decyzji-o-warunkach-zabudowy,16,22979,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…Usługa: Przeniesienie decyzji o warunkach zabudowy. Numer karty informacyjnej: PL-014. Komórka załatwiająca sprawę: Wydz…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PL-013",
+      "nazwa": "Ustalenie lokalizacji inwestycji celu publicznego",
+      "komorka": "Wydział Planowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-planowania/ustalenie-lokalizacji-inwestycji-celu-publicznego,13,22979,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…01 - wniosek o ustalenie lokalizacji inwestycji celu publicznego albo warunków zabudowy. Wymagane załączniki: Mapa zasadnicza obejmująca teren, którego wnios…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PL-012",
+      "nazwa": "Ustalenie warunków zabudowy",
+      "komorka": "Wydział Planowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-planowania/ustalenie-warunkow-zabudowy,12,22979,2,1.html",
+      "requires_external_doc": [
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "…inie, w której położone jest gospodarstwo i inne (np. ubezpieczenie w KRUS, podatek rolny, dopłaty unijne itp.). Inne. Dokumenty do wglądu: Dowó…"
+        }
+      ],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…Usługa: Ustalenie warunków zabudowy. Numer karty informacyjnej: PL-012. Komórka załatwiająca sprawę: Wydz…",
+          "produced_by": [
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PL-015",
+      "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+      "komorka": "Wydział Planowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-planowania/uzupelnienie-brakow-wniosku-o-wydanie-decyzji-o-warunkach-zabudowy-i-lokalizacji-inwestycji-celu-publicznego,20,22979,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…Usługa: Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego. Numer karty informacyjnej:…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PL-008",
+      "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+      "komorka": "Wydział Planowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-planowania/wypis-i-wyrys-z-miejscowego-planu-zagospodarowania-przestrzennego-lub-studium-uwarunkowan-i-kierunkow-zagospodarowania-przestrzennego,10,22979,2,3.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…Usługa: Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania P…",
+          "produced_by": [
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PL-009",
+      "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+      "komorka": "Wydział Planowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-planowania/zaswiadczenie-dotyczace-terenu-w-przypadku-braku-miejscowego-planu-zagospodarowania-przestrzennego,9,22979,2,3.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…Usługa: Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego). Numer karty informacyjnej: PL-009. Komórka załatwiająca sprawę: Wydział Planowania. Wymagane wnioski: PL-009-01 - wniosek o wydanie zaświadczenia dotyczącego terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego). UWAGA: We wniosku należy wymienić wszystkie wnioskow…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PL-011",
+      "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+      "komorka": "Wydział Planowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-planowania/zaswiadczenie-o-zgodnosci-budowy-z-ustaleniami-obowiazujacego-miejscowego-planu-zagospodarowania-przestrzennego,24,22979,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…Usługa: Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego. Numer karty informacyjnej: PL-011. Komórka załatwiająca sprawę: Wydział Planowania. Wymagane wnioski: PL-011-01 - wniosek o wydanie zaświadczenia o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego. Wymagane załączniki: mapa sytuacyjna działki(-ek) z z…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PL-010",
+      "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+      "komorka": "Wydział Planowania",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-planowania/zaswiadczenie-o-zgodnosci-zamierzonej-zmiany-sposobu-uzytkowania-obiektu-budowlanego-lub-jego-czesci-z-ustaleniami-obowiazujacego-miejscowego-planu-zagospodarowania-przestrzennego,2,22979,2,3.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…Usługa: Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego. Numer karty informacyjnej: PL-010. Komórka załatwiająca sprawę: Wydział Planowania. Wymagane wnioski: PL-010-01 - wniosek o wydanie zaświadczenia o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego. Wymagane załączniki: mapa sytuacyjna działki(-ek)z za…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PE-043",
+      "nazwa": "Złożenie wniosku o odroczenie terminu płatności / rozłożenie na raty / umorzenie zobowiązania z tytułu podatków i opłat lokalnych przez podatnika będącego przedsiębiorcą",
+      "komorka": "Wydział Podatków",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-podatkow/zaleglosci-podatkowesplata-zobowiazan/zlozenie-wniosku-o-odroczenie-terminu-platnosci-rozlozenie-na-raty-umorzenie-zobowiazania-z-tytulu-podatkow-i-oplat-lokalnych-przez-podatnika-bedacego-przedsiebiorca,8,22989,2,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "… ostatnich lat obrotowych (np. księga przychodów i rozchodów, decyzje urzędu skarbowego w przypadku rozliczania się w formie karty podatkowej, PIT-36) oraz s…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "ST-015",
+      "nazwa": "Zaszeregowanie obiektu hotelarskiego do rodzaju pole biwakowe",
+      "komorka": "Wydział Sportu i Turystyki",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-sportu-i-turystyki/ewidencja-turystyczna/zaszeregowanie-obiektu-hotelarskiego-do-rodzaju-pole-biwakowe,1,29004,2,1.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "pozwolenie_budowa",
+          "document": "Pozwolenie na budowę",
+          "evidence": "…stawy z dnia 7 lipca 1994 r. - Prawo budowlane - ostateczna decyzja o pozwoleniu na budowę wraz z zaświadczeniem właściwego organu administracji architektoniczn…",
+          "produced_by": [
+            {
+              "id": "AB-008",
+              "nazwa": "Pozwolenie na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": true
+            },
+            {
+              "id": "AB-009",
+              "nazwa": "Zmiana pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            },
+            {
+              "id": "AB-010",
+              "nazwa": "Przeniesienie pozwolenia na budowę",
+              "komorka": "Wydział Architektury i Budownictwa",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SA-102",
+      "nazwa": "Rejestr Danych Kontaktowych (RDK)",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/dowod-osobisty/rejestr-danych-kontaktowych-rdk,47,22993,2,1.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…iałalność leczniczą w rozumieniu przepisów o działalności leczniczej, Zakłady Ubezpieczeń Społecznych oraz Kasy Rolniczego Ubezpieczenia Społecznego, Narodowy Fundusz Zdro…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "SA-090",
+      "nazwa": "Rejestracja działalności gospodarczej (wpis do CEIDG)",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/ewidencja-dzialalnosci-gospodarczej/rejestracja-dzialalnosci-gospodarczej-wpis-do-ceidg,4,22996,2,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…rzedsiębiorca może zgłosić siebie i członków rodziny do ubezpieczeń w ZUS za pośrednictwem CEIDG. W tym celu należy wraz z wnioskiem CEIDG-1 zł…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…eń rozpoczęcia sprzedaży towarów lub świadczenia usług objętych VAT w Urzędzie Skarbowym składa druk zgłoszeniowy VAT-R. Rejestracji kasy fiskalnej należy dok…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "SA-109",
+      "nazwa": "Wielojęzyczny formularz standardowy - wydawany do zaświadczenia o zameldowaniu na pobyt stały lub czasowy",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/wydawanie-zaswiadczen-i-udostepnianie-danych/wielojezyczny-formularz-standardowy-wydawany-do-zaswiadczenia-o-zameldowaniu-na-pobyt-staly-lub-czasowy,3,23003,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "zaswiadczenie_zameldowanie",
+          "document": "Zaświadczenie o zameldowaniu / dane z rejestru mieszkańców (PESEL)",
+          "evidence": "…Usługa: Wielojęzyczny formularz standardowy - wydawany do zaświadczenia o zameldowaniu na pobyt stały lub czasowy. Numer karty informacyjnej: SA-109. Komó…",
+          "produced_by": [
+            {
+              "id": "SA-019",
+              "nazwa": "Udostępnianie danych z rejestru mieszkańców Lublina oraz rejestru PESEL",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-064",
+              "nazwa": "Udostępnienie informacji o danych przetwarzanych w Centralnym Rejestrze Wyborców",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-070",
+              "nazwa": "Wniosek o udostępnienie danych w trybie jednostkowym z Rejestru Dowodów Osobistych",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SA-063",
+      "nazwa": "Wniosek o skreślenie wyborcy z Centralnego Rejestru Wyborców - dotyczy obywateli Unii Europejskiej niebędących obywatelami polskimi oraz obywateli Zjednoczonego Królestwa Wielkiej Brytanii i Irlandii Północnej",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/rejestr-wyborcow/skreslenie-z-rejestru-wyborcow,3,23002,2,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "zaswiadczenie_zameldowanie",
+          "document": "Zaświadczenie o zameldowaniu / dane z rejestru mieszkańców (PESEL)",
+          "evidence": "…rców, zmianę miejsca głosowania oraz wzoru i sposobu ewidencjonowania zaświadczeń o prawie do głosowania (Dz. U. z 2023 r. poz. 1495). Klauzula informacyjna dotycząca ochrony danych osobowych: Klauzula informacyjna dotycząca przetwarzania danych osobowych na podstawie obowiązku prawnego ciążącego na Administratorze (przetwarzanie danych osobowych na podstawie ustawy z dnia 5 stycznia 2011 r. Kodeks wyborczy) TOŻSAMOŚĆ ADMINISTRATORA - Administratorem jest Prezydent Miasta Lublin, pl. Króla Władysława Łokietka 1, 20-109 Lublin. DANE KONTAKTOWE ADMINISTRATORA - Z Administratorem – Prezydentem Miasta Lublin można się skontaktować pisemnie na adres siedziby Administratora: Plac Króla Władysława Łokietka 1, 20-109 Lublin. DANE KONTAKTOWE INSPEKTORA OCHRONY DANYCH - Administrator – Prezydent Miasta Lublin wyznaczył inspektora ochrony danych, z którym może się Pani/Pan skontaktować poprzez e-mail: lub pisemnie na adres Administratora danych. Z inspektorem ochrony danych można się kontaktować we wszystkich sprawach dotyczących przetwarzania danych osobowych oraz korzystania z praw związanych z przetwarzaniem danych. CELE PRZETWARZANIA I PODSTAWA PRAWNA - Pani/Pana dane będą przetwarzane w celu wypełnienia obowiązków prawnych ciążących na administratorze, tj. na podstawie ustawy z dnia 5 stycznia 2011 r. Kodeks wyborczy (Dz. U. z 2018 r. poz. 754, z późn. zm.). Pani/Pana dane będą przetwarzane w celu wykonania zadań związanych z organizacją i przeprowadzeniem wyborów w Gminie Lublin, w tym: prowadzenia i aktualizacji rejestru wyborców Gminy Lublin, sporządzenia spisów wyborców uprawnionych do głosowania. ODBIORCY DANYCH - Pani/Pana dane osobowe mogą być udostępniane uprawnionym organom władzy publicznej, podmiotom wykonującym zadania publiczne lub działającym na zlecenie organów władzy publicznej, w celach i zakresie wynikającym z przepisów ustawy Kodeks wyborczy i innych powszechnie obowiązujących przepisów prawa. Pani/Pana dane osobowe są wprowadzane do systemu informatycznego „Wsparcie Organów Wyborczych prowadzonego przez Krajowe Biuro Wyborcze, ul. Wiejska 10, Warszawa. Pani/Pana dane osobowe mogą być przekazane podmiotom przetwarzającym, dostawcom usług IT, którym Administrator powierzył wyraźnym poleceniem przetwarzanie danych umową. OKRES PRZECHOWYWANIA DANYCH - Pani/Pana dane osobowe będą przetwarzane do momentu zakończenia realizacji celów przetwarzania, w zakresie wynikającym z przepisów ustawy Kodeks wyborczy i innych powszechnie obowiązujących przepisów prawa. PRAWA PODMIOTÓW DANYCH - Przysługuje Pani/Panu: prawo dostępu do Pani/Pana danych, w tym prawo do uzyskania kopii danych osobowych podlegających przetwarzaniu, prawo żądania sprostowania danych osobowych w przypadku, gdy dane są nieprawidłowe, prawo żądania usunięcia danych osobowych w przypadku, gdy dane nie są już niezbędne do celów, dla których zostały zebrane, gdy dane są przetwarzane niezgodnie z prawem lub gdy dane osobowe muszą być usunięte w celu wywiązania się z obowiązku wynikającego z przepisu prawa, prawo żądania ograniczenia przetwarzania w przypadku, gdy osoba, której dane dotyczą kwestionuje ich prawidłowość; gdy przetwarzanie jest niezgodne z prawem, a osoba, której dane dotyczą sprzeciwia się usunięciu danych, żądając w zamian ograniczenia ich wykorzystywania; gdy administrator nie potrzebuje już danych do celów przetwarzania, ale są one niezbędne osobie, której dotyczą do ustalenia, dochodzenia lub obrony roszczeń; gdy osoba, której dane dotyczą, wniosła sprzeciw wobec przetwarzania danych, do czasu ustalenia czy prawnie uzasadnione podstawy po stronie administratora są nadrzędne wobec podstaw sprzeciwu. PRAWO DO PRZENOSZENIA DANYCH I PRAWO DO SPRZECIWU - Ze względu na fakt, że przesłanką przetwarzania danych osobowych jest wypełnienie obowiązków prawnych ciążących na administratorze, nie przysługuje Pani/Panu prawo do przenoszenia danych oraz prawo do sprzeciwu. PRAWO WNIESIENIA SKARGI DO ORGANU NADZORCZEGO - Przysługuje Pani/Panu również prawo wniesienia skargi do organu nadzorczego zajmującego się ochroną danych osobowych w państwie członkowskim Pani/Pana zwykłego pobytu, miejsca pracy lub miejsca popełnienia domniemanego naruszenia. INFORMACJE O ZAMIARZE PRZEKAZANIA DANYCH OSOBOWYCH DO PAŃSTWA TRZECIEGO LUB ORGANIZACJI MIĘDZYNARODOWEJ - Pani/Pana dane osobowe nie trafią poza Europejski Obszar Gospodarczy. INFORMACJE O ZAUTOMATYZOWANYM PODEJMOWANIU DECYZJI, W TYM O PROFILOWANIU - Pani/Pana dane osobowe mogą być przetwarzane w sposób zautomatyzowany. Pani/Pana dane osobowe nie będą podlegać profilowaniu. ŹRÓDŁO POCHODZENIA DANYCH OSOBOWYCH - Pani/Pana dane przetwarzane są przez organ gminy z rejestru mieszkańców oraz na podstawie złożonych w gminie wniosków. INFORMACJA O DOBROWOLN…",
+          "produced_by": [
+            {
+              "id": "SA-019",
+              "nazwa": "Udostępnianie danych z rejestru mieszkańców Lublina oraz rejestru PESEL",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-064",
+              "nazwa": "Udostępnienie informacji o danych przetwarzanych w Centralnym Rejestrze Wyborców",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-070",
+              "nazwa": "Wniosek o udostępnienie danych w trybie jednostkowym z Rejestru Dowodów Osobistych",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-109",
+              "nazwa": "Wielojęzyczny formularz standardowy - wydawany do zaświadczenia o zameldowaniu na pobyt stały lub czasowy",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SA-104",
+      "nazwa": "Wniosek o ujęcie w stałym obwodzie głosowania - dotyczy obywateli Unii Europejskiej niebędących obywatelami polskimi oraz obywateli Zjednoczonego Królestwa Wielkiej Brytanii i Irlandii Północnej",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/rejestr-wyborcow/wniosek-o-ujecie-w-stalym-obwodzie-glosowania-dotyczy-obywateli-unii-europejskiej-niebedacych-obywatelami-polskimi-oraz-obywateli-zjednoczonego-krolestwa-wielkiej-brytanii-i-irlandii-polnocnej,8,23002,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…lefon) w której są twoje dane, fakt rozliczania podatku dochodowego w Urzędzie Skarbowym właściwym dla miejsca zamieszkania, potwierdzenie uczęszczania dzieci…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "SA-020",
+      "nazwa": "Wniosek o ujęcie w stałym obwodzie głosowania - dotyczy obywateli polskich",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/rejestr-wyborcow/wpisanie-do-rejestru-wyborcow-w-czesci-ab,2,23002,2,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…lefon) w której są twoje dane, fakt rozliczania podatku dochodowego w Urzędzie Skarbowym właściwym dla miejsca zamieszkania, potwierdzenie uczęszczania dzieci…"
+        }
+      ],
+      "requires_internal_service": [
+        {
+          "doc_key": "zaswiadczenie_zameldowanie",
+          "document": "Zaświadczenie o zameldowaniu / dane z rejestru mieszkańców (PESEL)",
+          "evidence": "…rców, zmianę miejsca głosowania oraz wzoru i sposobu ewidencjonowania zaświadczeń o prawie do głosowania (Dz. U. z 2023 r. poz. 1495). Klauzula informacyjna dotycząca ochrony danych osobowych: Klauzula informacyjna dotycząca przetwarzania danych osobowych na podstawie obowiązku prawnego ciążącego na Administratorze (przetwarzanie danych osobowych na podstawie ustawy z dnia 5 stycznia 2011 r. Kodeks wyborczy) TOŻSAMOŚĆ ADMINISTRATORA - Administratorem jest Prezydent Miasta Lublin, pl. Króla Władysława Łokietka 1, 20-109 Lublin. DANE KONTAKTOWE ADMINISTRATORA - Z Administratorem – Prezydentem Miasta Lublin można się skontaktować pisemnie na adres siedziby Administratora: Plac Króla Władysława Łokietka 1, 20-109 Lublin. DANE KONTAKTOWE INSPEKTORA OCHRONY DANYCH - Administrator – Prezydent Miasta Lublin wyznaczył inspektora ochrony danych, z którym może się Pani/Pan skontaktować poprzez e-mail: lub pisemnie na adres Administratora danych. Z inspektorem ochrony danych można się kontaktować we wszystkich sprawach dotyczących przetwarzania danych osobowych oraz korzystania z praw związanych z przetwarzaniem danych. CELE PRZETWARZANIA I PODSTAWA PRAWNA - Pani/Pana dane będą przetwarzane w celu wypełnienia obowiązków prawnych ciążących na administratorze, tj. na podstawie ustawy z dnia 5 stycznia 2011 r. Kodeks wyborczy (Dz. U. z 2018 r. poz. 754, z późn. zm.). Pani/Pana dane będą przetwarzane w celu wykonania zadań związanych z organizacją i przeprowadzeniem wyborów w Gminie Lublin, w tym: prowadzenia i aktualizacji rejestru wyborców Gminy Lublin, sporządzenia spisów wyborców uprawnionych do głosowania. ODBIORCY DANYCH - Pani/Pana dane osobowe mogą być udostępniane uprawnionym organom władzy publicznej, podmiotom wykonującym zadania publiczne lub działającym na zlecenie organów władzy publicznej, w celach i zakresie wynikającym z przepisów ustawy Kodeks wyborczy i innych powszechnie obowiązujących przepisów prawa. Pani/Pana dane osobowe są wprowadzane do systemu informatycznego „Wsparcie Organów Wyborczych prowadzonego przez Krajowe Biuro Wyborcze, ul. Wiejska 10, Warszawa. Pani/Pana dane osobowe mogą być przekazane podmiotom przetwarzającym, dostawcom usług IT, którym Administrator powierzył wyraźnym poleceniem przetwarzanie danych umową. OKRES PRZECHOWYWANIA DANYCH - Pani/Pana dane osobowe będą przetwarzane do momentu zakończenia realizacji celów przetwarzania, w zakresie wynikającym z przepisów ustawy Kodeks wyborczy i innych powszechnie obowiązujących przepisów prawa. PRAWA PODMIOTÓW DANYCH - Przysługuje Pani/Panu: prawo dostępu do Pani/Pana danych, w tym prawo do uzyskania kopii danych osobowych podlegających przetwarzaniu, prawo żądania sprostowania danych osobowych w przypadku, gdy dane są nieprawidłowe, prawo żądania usunięcia danych osobowych w przypadku, gdy dane nie są już niezbędne do celów, dla których zostały zebrane, gdy dane są przetwarzane niezgodnie z prawem lub gdy dane osobowe muszą być usunięte w celu wywiązania się z obowiązku wynikającego z przepisu prawa, prawo żądania ograniczenia przetwarzania w przypadku, gdy osoba, której dane dotyczą kwestionuje ich prawidłowość; gdy przetwarzanie jest niezgodne z prawem, a osoba, której dane dotyczą sprzeciwia się usunięciu danych, żądając w zamian ograniczenia ich wykorzystywania; gdy administrator nie potrzebuje już danych do celów przetwarzania, ale są one niezbędne osobie, której dotyczą do ustalenia, dochodzenia lub obrony roszczeń; gdy osoba, której dane dotyczą, wniosła sprzeciw wobec przetwarzania danych, do czasu ustalenia czy prawnie uzasadnione podstawy po stronie administratora są nadrzędne wobec podstaw sprzeciwu. PRAWO DO PRZENOSZENIA DANYCH I PRAWO DO SPRZECIWU - Ze względu na fakt, że przesłanką przetwarzania danych osobowych jest wypełnienie obowiązków prawnych ciążących na administratorze, nie przysługuje Pani/Panu prawo do przenoszenia danych oraz prawo do sprzeciwu. PRAWO WNIESIENIA SKARGI DO ORGANU NADZORCZEGO - Przysługuje Pani/Panu również prawo wniesienia skargi do organu nadzorczego zajmującego się ochroną danych osobowych w państwie członkowskim Pani/Pana zwykłego pobytu, miejsca pracy lub miejsca popełnienia domniemanego naruszenia. INFORMACJE O ZAMIARZE PRZEKAZANIA DANYCH OSOBOWYCH DO PAŃSTWA TRZECIEGO LUB ORGANIZACJI MIĘDZYNARODOWEJ - Pani/Pana dane osobowe nie trafią poza Europejski Obszar Gospodarczy. INFORMACJE O ZAUTOMATYZOWANYM PODEJMOWANIU DECYZJI, W TYM O PROFILOWANIU - Pani/Pana dane osobowe mogą być przetwarzane w sposób zautomatyzowany. Pani/Pana dane osobowe nie będą podlegać profilowaniu. ŹRÓDŁO POCHODZENIA DANYCH OSOBOWYCH - Pani/Pana dane przetwarzane są przez organ gminy z rejestru mieszkańców oraz na podstawie złożonych w gminie wniosków. INFORMACJA O DOBROWOLN…",
+          "produced_by": [
+            {
+              "id": "SA-019",
+              "nazwa": "Udostępnianie danych z rejestru mieszkańców Lublina oraz rejestru PESEL",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-064",
+              "nazwa": "Udostępnienie informacji o danych przetwarzanych w Centralnym Rejestrze Wyborców",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-070",
+              "nazwa": "Wniosek o udostępnienie danych w trybie jednostkowym z Rejestru Dowodów Osobistych",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-109",
+              "nazwa": "Wielojęzyczny formularz standardowy - wydawany do zaświadczenia o zameldowaniu na pobyt stały lub czasowy",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SA-006",
+      "nazwa": "Wydawanie zaświadczeń z dokumentacji dowodów osobistych oraz z Rejestru Dowodów Osobistych",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/wydawanie-zaswiadczen-i-udostepnianie-danych/wydawanie-zaswiadczen-z-dokumentacji-dowodow-osobistych-oraz-z-rejestru-dowodow-osobistych,9,22993,2,4.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "… potwierdzający interes prawny w uzyskaniu zaświadczenia (np. pismo z ZUS żądające wyjaśnienia przyczyn rozbieżności w dokumentacji dowodowej, …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "SA-069",
+      "nazwa": "Zameldowanie cudzoziemca na pobyt czasowy",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/zameldowania-i-wymeldowania/zameldowanie-cudzoziemca-na-pobyt-czasowy,2,22994,2,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "zaswiadczenie_zameldowanie",
+          "document": "Zaświadczenie o zameldowaniu / dane z rejestru mieszkańców (PESEL)",
+          "evidence": "…- Dz. U. z 2022 r. poz. 2070). Czynności powiązane: W celu otrzymania zaświadczenia o zameldowaniu na pobyt czasowy należy zapoznać się z kartą informacyjną SA-018 \"W…",
+          "produced_by": [
+            {
+              "id": "SA-019",
+              "nazwa": "Udostępnianie danych z rejestru mieszkańców Lublina oraz rejestru PESEL",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-064",
+              "nazwa": "Udostępnienie informacji o danych przetwarzanych w Centralnym Rejestrze Wyborców",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-070",
+              "nazwa": "Wniosek o udostępnienie danych w trybie jednostkowym z Rejestru Dowodów Osobistych",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-109",
+              "nazwa": "Wielojęzyczny formularz standardowy - wydawany do zaświadczenia o zameldowaniu na pobyt stały lub czasowy",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SA-013",
+      "nazwa": "Zameldowanie cudzoziemca na pobyt stały",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/zameldowania-i-wymeldowania/zameldowanie-cudzoziemca-na-pobyt-staly,12,22994,2,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "zaswiadczenie_zameldowanie",
+          "document": "Zaświadczenie o zameldowaniu / dane z rejestru mieszkańców (PESEL)",
+          "evidence": "…dopełniająca obowiązku zameldowania na pobyt stały otrzymuje z urzędu zaświadczenie o zameldowaniu na pobyt stały, ważne do chwili zmiany miejsca zameldowania oraz po…",
+          "produced_by": [
+            {
+              "id": "SA-019",
+              "nazwa": "Udostępnianie danych z rejestru mieszkańców Lublina oraz rejestru PESEL",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-064",
+              "nazwa": "Udostępnienie informacji o danych przetwarzanych w Centralnym Rejestrze Wyborców",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-070",
+              "nazwa": "Wniosek o udostępnienie danych w trybie jednostkowym z Rejestru Dowodów Osobistych",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-109",
+              "nazwa": "Wielojęzyczny formularz standardowy - wydawany do zaświadczenia o zameldowaniu na pobyt stały lub czasowy",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SA-009",
+      "nazwa": "Zameldowanie obywatela polskiego na pobyt czasowy trwający ponad 3 miesiące",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/zameldowania-i-wymeldowania/zameldowanie-obywatela-polskiego-na-pobyt-czasowy-trwajacy-ponad-3-miesiace,11,22994,2,3.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "zaswiadczenie_zameldowanie",
+          "document": "Zaświadczenie o zameldowaniu / dane z rejestru mieszkańców (PESEL)",
+          "evidence": "…- Dz. U. z 2022 r. poz. 2070). Czynności powiązane: W celu otrzymania zaświadczenia o zameldowaniu na pobyt czasowy należy zapoznać się z kartą informacyjną SA-018 \"W…",
+          "produced_by": [
+            {
+              "id": "SA-019",
+              "nazwa": "Udostępnianie danych z rejestru mieszkańców Lublina oraz rejestru PESEL",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-064",
+              "nazwa": "Udostępnienie informacji o danych przetwarzanych w Centralnym Rejestrze Wyborców",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-070",
+              "nazwa": "Wniosek o udostępnienie danych w trybie jednostkowym z Rejestru Dowodów Osobistych",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-109",
+              "nazwa": "Wielojęzyczny formularz standardowy - wydawany do zaświadczenia o zameldowaniu na pobyt stały lub czasowy",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SA-007",
+      "nazwa": "Zameldowanie obywatela polskiego na pobyt stały",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/zameldowania-i-wymeldowania/zameldowanie-obywatela-polskiego-na-pobyt-staly,10,22994,2,3.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "zaswiadczenie_zameldowanie",
+          "document": "Zaświadczenie o zameldowaniu / dane z rejestru mieszkańców (PESEL)",
+          "evidence": "…dopełniająca obowiązku zameldowania na pobyt stały otrzymuje z urzędu zaświadczenie o zameldowaniu na pobyt stały, ważne do chwili zmiany miejsca zameldowania. Podsta…",
+          "produced_by": [
+            {
+              "id": "SA-019",
+              "nazwa": "Udostępnianie danych z rejestru mieszkańców Lublina oraz rejestru PESEL",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-064",
+              "nazwa": "Udostępnienie informacji o danych przetwarzanych w Centralnym Rejestrze Wyborców",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-070",
+              "nazwa": "Wniosek o udostępnienie danych w trybie jednostkowym z Rejestru Dowodów Osobistych",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            },
+            {
+              "id": "SA-109",
+              "nazwa": "Wielojęzyczny formularz standardowy - wydawany do zaświadczenia o zameldowaniu na pobyt stały lub czasowy",
+              "komorka": "Wydział Spraw Administracyjnych",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SA-092",
+      "nazwa": "Zawieszenie działalności gospodarczej",
+      "komorka": "Wydział Spraw Administracyjnych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-administracyjnych/ewidencja-dzialalnosci-gospodarczej/zawieszenie-dzialalnosci-gospodarczej,6,22996,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…łki cywilnej należy odrębnie zgłosić do Urzędu Statystycznego oraz do Naczelnika Urzędu Skarbowego. UWAGA! Wszelkie czynności związane z wpisem do Centralnej Ewidencji …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-037",
+      "nazwa": "Aktywizacja zawodowa repatriantów",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/repatriacja/aktywizacja-zawodowa-repatriantow,3,23013,2.html",
+      "requires_external_doc": [
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…ych Świadczeń Pracowniczych, zaświadczenie z Miejskiego i Powiatowego Urzędu Pracy w Lublinie, iż pracodawca dotrzymał warunków innych umów zawartych z …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-026",
+      "nazwa": "Nadmetraż",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/lokale-mieszkalne-socjalne-i-zakladowe/nadmetraz,3,23006,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…erających renty, emerytury bez dodatków - (odcinki wypłat ew. decyzja ZUS, KRUS lub zaświadczenie), w przypadku rent i emerytur z dodatkami - d…"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "…cych renty, emerytury bez dodatków - (odcinki wypłat ew. decyzja ZUS, KRUS lub zaświadczenie), w przypadku rent i emerytur z dodatkami - decyzja…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…by prowadzącej działalność gospodarczą lub zaświadczenie wydane przez naczelnika właściwego urzędu skarbowego, natomiast w przypadku działalności podlegającej opodatkowaniu na pod…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…iezależnie od podmiotu, który je wypłaca - zaświadczenie z właściwego urzędu pracy potwierdzające obecny status oraz załącznik potwierdzający otrzymywan…"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…ób otrzymujących świadczenie rodzicielskie - oświadczenie lub decyzja MOPR, w przypadku zwrotu ulgi prorodzinnej, otrzymanych darowizn, sprzedaż…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-031",
+      "nazwa": "Najem lokalu do remontu z mieszkaniowego zasobu miasta",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/lokale-mieszkalne-socjalne-i-zakladowe/najem-lokalu-do-remontu-z-mieszkaniowego-zasobu-miasta,2,23006,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…wych, w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla …"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "… w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla bezrob…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…by prowadzącej działalność gospodarczą lub zaświadczenie wydane przez naczelnika właściwego urzędu skarbowego, natomiast w przypadku działalności podlegającej opodatkowaniu na pod…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…finansowane ze środków Unii Europejskiej - zaświadczenie z właściwego urzędu pracy potwierdzające obecny status oraz załącznik potwierdzający otrzymywan…"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…obierających świadczenie z funduszu alimentacyjnego - zaświadczenie z MOPR oraz zaświadczenie od komornika o wysokości wyegzekwowanej kwoty lub …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-030",
+      "nazwa": "Najem lokalu po śmierci najemcy - dotyczy osób, które pozostały w lokalu po śmierci najemcy, jeżeli są jego powinowatymi w linii prostej lub osobami, dla których najemca był wstępnym i stanowił rodzinę zastępczą",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/lokale-mieszkalne-socjalne-i-zakladowe/najem-lokalu-po-smierci-najemcy-dotyczy-osob-ktore-pozostaly-w-lokalu-po-smierci-najemcy-jezeli-sa-jego-powinowatymi-w-linii-prostej-lub-osobami-dla-ktorych-najemca-byl-wstepnym-i-stanowil-rodzine-zastepcza,4,23007,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…wych, w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla …"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "… w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla bezrob…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…by prowadzącej działalność gospodarczą lub zaświadczenie wydane przez naczelnika właściwego urzędu skarbowego, natomiast w przypadku działalności podlegającej opodatkowaniu na pod…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…finansowane ze środków Unii Europejskiej - zaświadczenie z właściwego urzędu pracy potwierdzające obecny status oraz załącznik potwierdzający otrzymywan…"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…obierających świadczenie z funduszu alimentacyjnego - zaświadczenie z MOPR oraz zaświadczenie od komornika o wysokości wyegzekwowanej kwoty lub …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-023",
+      "nazwa": "Najem lokalu z mieszkaniowego zasobu miasta - składanie dokumentów pod kątem opracowywanych wykazów osób zakwalifikowanych do zawarcia umowy najmu lokalu z mieszkaniowego zasobu miasta Lublin",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/lokale-mieszkalne-socjalne-i-zakladowe/najem-lokalu-z-mieszkaniowego-zasobu-miasta,5,23006,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…wych, w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla …"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "… w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla bezrob…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…by prowadzącej działalność gospodarczą lub zaświadczenie wydane przez naczelnika właściwego urzędu skarbowego, natomiast w przypadku działalności podlegającej opodatkowaniu na pod…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…finansowane ze środków Unii Europejskiej - zaświadczenie z właściwego urzędu pracy potwierdzające obecny status oraz załącznik potwierdzający otrzymywan…"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…obierających świadczenie z funduszu alimentacyjnego - zaświadczenie z MOPR oraz zaświadczenie od komornika o wysokości wyegzekwowanej kwoty lub …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-024",
+      "nazwa": "Przedłużenie umowy najmu socjalnego lokalu i tymczasowego pomieszczenia",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/lokale-mieszkalne-socjalne-i-zakladowe/przedluzanie-umow-najmu-lokali-socjalnych,4,23006,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…wych; w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS; w przypadku osób bezrobotnych lub otrzymujących stypendia dla …"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "… w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS; w przypadku osób bezrobotnych lub otrzymujących stypendia dla bezrob…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…by prowadzącej działalność gospodarczą lub zaświadczenie wydane przez naczelnika właściwego urzędu skarbowego, natomiast w przypadku działalności podlegającej opodatkowaniu na pod…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…finansowane ze środków Unii Europejskiej - zaświadczenie z właściwego urzędu pracy potwierdzające obecny status oraz załącznik potwierdzający otrzymywan…"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…rzypadku osób otrzymujących świadczenie rodzicielskie - zaświadczenie MOPR; w przypadku zwrotu ulgi prorodzinnej, otrzymanych darowizn, sprzedaż…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-012",
+      "nazwa": "Przywrócenie tytułu prawnego do lokalu",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/lokale-mieszkalne-socjalne-i-zakladowe/przywrocenie-tytulu-prawnego-do-lokalu,12,23006,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…wych, w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla …"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "… w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla bezrob…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…by prowadzącej działalność gospodarczą lub zaświadczenie wydane przez naczelnika właściwego urzędu skarbowego, natomiast w przypadku działalności podlegającej opodatkowaniu na pod…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…finansowane ze środków Unii Europejskiej - zaświadczenie z właściwego urzędu pracy potwierdzające obecny status oraz załącznik potwierdzający otrzymywan…"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…obierających świadczenie z funduszu alimentacyjnego - zaświadczenie z MOPR oraz zaświadczenie od komornika o wysokości wyegzekwowanej kwoty lub …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-019",
+      "nazwa": "Zamiana lokalu z urzędu",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/zamiany/zamiana-lokalu-z-urzedu,1,23010,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…wych, w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla …"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "… w przypadku osób pobierających renty, emerytury - zaświadczenie ZUS, KRUS, w przypadku osób bezrobotnych lub otrzymujących stypendia dla bezrob…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…by prowadzącej działalność gospodarczą lub zaświadczenie wydane przez naczelnika właściwego urzędu skarbowego, natomiast w przypadku działalności podlegającej opodatkowaniu na pod…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…finansowane ze środków Unii Europejskiej - zaświadczenie z właściwego urzędu pracy potwierdzające obecny status oraz załącznik potwierdzający otrzymywan…"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…obierających świadczenie z funduszu alimentacyjnego - zaświadczenie z MOPR oraz zaświadczenie od komornika o wysokości wyegzekwowanej kwoty lub …"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WSM-029",
+      "nazwa": "Zwrot części kosztów remontu lokalu repatrianta w miejscu jego osiedlenia się",
+      "komorka": "Wydział Spraw Mieszkaniowych",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-spraw-mieszkaniowych/repatriacja/zwrot-czesci-kosztow-remontu-lokalu-repatrianta-w-miejscu-jego-osiedlenia-sie,2,23013,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…y potwierdzające wykonanie remontu przez repatrianta, zaświadczenie z Urzędu Skarbowego dotyczące składanych zeznań podatkowych, zaświadczenie z Miejskiego O…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…ublinie o wysokości otrzymanych świadczeń, zaświadczenie z Miejskiego Urzędu Pracy o figurowaniu w ewidencji, informacja o posiadanych nieruchomościach …"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…o dotyczące składanych zeznań podatkowych, zaświadczenie z Miejskiego Ośrodka Pomocy Rodzinie w Lublinie o wysokości otrzymanych świadczeń, zaświadczenie z Miejski…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WZP-020",
+      "nazwa": "Opinia o spełnieniu warunków sanitarno-lokalowych przez klub dziecięcy",
+      "komorka": "Wydział Zdrowia i Profilaktyki",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-zdrowia-i-profilaktyki/wpis-do-rejestru-zlobkow-i-klubow-dzieciecych/opinia-o-spelnieniu-warunkow-sanitarno-lokalowych-przez-klub-dzieciecy,3,23021,2,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…ec którego organ nadzoru budowlanego w terminie nie wniósł sprzeciwu. Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego (uzyskane w Wydziale Planowania Urzędu Miasta Lublin) lub w przypadku braku miejscowego planu zagospodarowania przestrzennego decyzję o warunkach zabudowy i zagospodarowania terenu…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "doc_key": "warunki_zabudowy",
+          "document": "Decyzja o warunkach zabudowy",
+          "evidence": "…b w przypadku braku miejscowego planu zagospodarowania przestrzennego decyzję o warunkach zabudowy i zagospodarowania terenu (uzyskaną w Wydziale Architektury i Budowni…",
+          "produced_by": [
+            {
+              "id": "PL-012",
+              "nazwa": "Ustalenie warunków zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-014",
+              "nazwa": "Przeniesienie decyzji o warunkach zabudowy",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            },
+            {
+              "id": "PL-015",
+              "nazwa": "Uzupełnienie braków wniosku o wydanie decyzji o warunkach zabudowy i lokalizacji inwestycji celu publicznego",
+              "komorka": "Wydział Planowania",
+              "primary": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GK-026",
+      "nazwa": "Wydawanie decyzji o środowiskowych uwarunkowaniach",
+      "komorka": "Wydział Zieleni i Gospodarki Komunalnej",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-zieleni-i-gospodarki-komunalnej/decyzje-srodowiskowe/wydawanie-decyzji-o-srodowiskowych-uwarunkowaniach,1,28879,2.html",
+      "requires_external_doc": [],
+      "requires_internal_service": [
+        {
+          "doc_key": "wypis_ewidencja_gruntow",
+          "document": "Wypis / wyrys z ewidencji gruntów i budynków",
+          "evidence": "…menty wymagane do uzyskania decyzji środowiskowej: mapa ewidencyjna i wypis z Ewidencji gruntów ( Wydział Geodezji ). Dodatkowo: wypis i wyrys z Miejscowego Planu …",
+          "produced_by": [
+            {
+              "id": "GD-006",
+              "nazwa": "Wydawanie wypisów i wyrysów z operatu ewidencyjnego",
+              "komorka": "Wydział Geodezji",
+              "primary": true
+            },
+            {
+              "id": "GD-008",
+              "nazwa": "Pisma dotyczące spraw związanych z prowadzeniem ewidencji gruntów, budynków i lokali",
+              "komorka": "Wydział Geodezji",
+              "primary": false
+            }
+          ]
+        },
+        {
+          "doc_key": "wypis_mpzp",
+          "document": "Wypis i wyrys z miejscowego planu zagospodarowania przestrzennego",
+          "evidence": "…dencyjna i wypis z Ewidencji gruntów ( Wydział Geodezji ). Dodatkowo: wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego ( Wydział Planowania ). Klauzula informacyjna dotycząc…",
+          "produced_by": [
+            {
+              "id": "PL-008",
+              "nazwa": "Wypis i wyrys z Miejscowego Planu Zagospodarowania Przestrzennego lub Studium Uwarunkowań i Kierunków Zagospodarowania Przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-009",
+              "nazwa": "Zaświadczenie dotyczące terenu (w przypadku braku Miejscowego Planu Zagospodarowania Przestrzennego)",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-011",
+              "nazwa": "Zaświadczenie o zgodności budowy z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            },
+            {
+              "id": "PL-010",
+              "nazwa": "Zaświadczenie o zgodności zamierzonego sposobu użytkowania obiektu budowlanego lub jego części z ustaleniami obowiązującego miejscowego planu zagospodarowania przestrzennego",
+              "komorka": "Wydział Planowania",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WS-009",
+      "nazwa": "Dodatki mieszkaniowe",
+      "komorka": "Wydział Świadczeń",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-swiadczen/dodatki-mieszkaniowe,30,29003,2,3.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…erających renty, emerytury bez dodatków - (odcinki wypłat ew. decyzja ZUS, KRUS lub zaświadczenie), w przypadku rent i emerytur z dodatkami - d…"
+        },
+        {
+          "office": "KRUS",
+          "label": "Kasa Rolniczego Ubezpieczenia Społecznego (KRUS)",
+          "evidence": "…cych renty, emerytury bez dodatków - (odcinki wypłat ew. decyzja ZUS, KRUS lub zaświadczenie), w przypadku rent i emerytur z dodatkami - decyzja…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…by prowadzącej działalność gospodarczą lub zaświadczenie wydane przez naczelnika właściwego urzędu skarbowego, natomiast w przypadku działalności podlegającej opodatkowaniu na pod…"
+        },
+        {
+          "office": "PUP",
+          "label": "Powiatowy Urząd Pracy",
+          "evidence": "…iezależnie od podmiotu, który je wypłaca - zaświadczenie z właściwego urzędu pracy potwierdzające obecny status oraz załącznik potwierdzający otrzymywan…"
+        },
+        {
+          "office": "MOPR",
+          "label": "Miejski Ośrodek Pomocy Rodzinie (MOPR)",
+          "evidence": "…ób otrzymujących świadczenie rodzicielskie - oświadczenie lub decyzja MOPR, w przypadku zwrotu ulgi prorodzinnej, otrzymanych darowizn, sprzedaż…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WS-004",
+      "nazwa": "Jednorazowa zapomoga z tytułu urodzenia się dziecka",
+      "komorka": "Wydział Świadczeń",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-swiadczen/jednorazowa-zapomoga-z-tytulu-urodzenia-sie-dziecka,16,29003,2.html",
+      "requires_external_doc": [
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…odowym od osób fizycznych, każdego członka rodziny, udzielanych przez naczelnika właściwego urzędu skarbowego, zawierających dane o wysokości: dochodu, składek na ubezpieczenia sp…"
+        }
+      ],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…ub rodzica dziecka - w przypadku osoby samotnie wychowującej dziecko, odpis zupełny aktu urodzenia dziecka - w przypadku gdy ojciec jest nieznany, odpis prawomocnego or…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WS-001",
+      "nazwa": "Zasiłek pielęgnacyjny",
+      "komorka": "Wydział Świadczeń",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-swiadczen/zasilek-pielegnacyjny,2,29003,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…ie przepisów prawa – np. ministrowi właściwemu do spraw rodziny, LUW, ZUS. podmiotom, z którymi Administrator zawarł umowę na świadczenie usług…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WS-005",
+      "nazwa": "Zasiłek rodzinny i dodatki do zasiłku rodzinnego",
+      "komorka": "Wydział Świadczeń",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-swiadczen/zasilek-rodzinny-i-dodatki-do-zasilku-rodzinnego,17,29003,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…ie przepisów prawa – np. ministrowi właściwemu do spraw rodziny, LUW, ZUS. podmiotom, z którymi Administrator zawarł umowę na świadczenie usług…"
+        },
+        {
+          "office": "US",
+          "label": "Urząd Skarbowy",
+          "evidence": "…odowym od osób fizycznych, każdego członka rodziny, udzielanych przez naczelnika właściwego urzędu skarbowego, zawierających dane o wysokości: dochodu, składek na ubezpieczenia sp…"
+        }
+      ],
+      "requires_internal_service": [
+        {
+          "doc_key": "odpis_aktu",
+          "document": "Odpis aktu stanu cywilnego (urodzenia / małżeństwa / zgonu)",
+          "evidence": "…ub rodzica dziecka - w przypadku osoby samotnie wychowującej dziecko, odpis zupełny aktu urodzenia dziecka - w przypadku gdy ojciec jest nieznany, odpis prawomocnego or…",
+          "produced_by": [
+            {
+              "id": "USC-001",
+              "nazwa": "Odpis aktu urodzenia, małżeństwa, zgonu",
+              "komorka": "Urząd Stanu Cywilnego",
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WS-006",
+      "nazwa": "Świadczenie pielęgnacyjne",
+      "komorka": "Wydział Świadczeń",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-swiadczen/swiadczenie-pielegnacyjne,19,29003,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…zeń przyznanych w Wydziale Świadczeń na rachunek bankowy, WS-006-06 - ZUS ZUA - ubezpieczenie społeczne + zdrowotne, WS-006-07 - ZUS ZZA - ubez…"
+        }
+      ],
+      "requires_internal_service": []
+    },
+    {
+      "id": "WS-002",
+      "nazwa": "Świadczenie rodzicielskie",
+      "komorka": "Wydział Świadczeń",
+      "url": "https://bip.lublin.eu/e-urzad/opisy-uslug/wydzial-swiadczen/swiadczenie-rodzicielskie,14,29003,2.html",
+      "requires_external_doc": [
+        {
+          "office": "ZUS",
+          "label": "Zakład Ubezpieczeń Społecznych (ZUS)",
+          "evidence": "…ie przepisów prawa – np. ministrowi właściwemu do spraw rodziny, LUW, ZUS. podmiotom, z którymi Administrator zawarł umowę na świadczenie usług…"
+        }
+      ],
+      "requires_internal_service": []
+    }
+  ]
+}
