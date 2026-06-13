@@ -30,6 +30,11 @@ const envSchema = z.object({
     .enum(["true", "false"])
     .default("true")
     .transform((value) => value === "true"),
+  GOOGLE_MAPS_API_KEY: z.string().optional(),
+  MAPS_ENABLED: z
+    .enum(["true", "false"])
+    .default("true")
+    .transform((value) => value === "true"),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
