@@ -65,6 +65,13 @@ const officeholderUnsupportedMessages: Record<string, string> = {
     'such as where to submit an application, required documents, or fees.',
 }
 
+const generationFallbackMessages: Record<string, string> = {
+  pl:
+    'Nie udało mi się teraz wygenerować opisu odpowiedzi. Poniżej pokazuję jednak dane usługi z lokalnej bazy Urzędu Miasta Lublin.',
+  en:
+    'I could not generate the written answer right now. I am still showing the service details from the local City of Lublin database below.',
+}
+
 function refusalFor(lang: string): string {
   return refusalMessages[lang] ?? refusalFallback
 }
@@ -282,7 +289,8 @@ export class ChatService {
     if (request.lang === 'pl') {
       this.prepareStreamingResponse(response)
       response.write(envelope)
-      const answer = await this.ollamaService.streamChat(
+      const answer = await this.streamGeneratedText(
+        request,
         response,
         env.OLLAMA_CHAT_MODEL,
         messages,
@@ -297,10 +305,15 @@ export class ChatService {
     const targetLanguage = languageName(request.lang)
     this.prepareStreamingResponse(response)
     response.write(envelope)
-    const output = await this.ollamaService.streamChat(response, env.OLLAMA_TRANSLATION_MODEL, [
-      { role: 'system', content: buildTranslationPrompt(targetLanguage) },
-      { role: 'user', content: answerPolish },
-    ])
+    const output = await this.streamGeneratedText(
+      request,
+      response,
+      env.OLLAMA_TRANSLATION_MODEL,
+      [
+        { role: 'system', content: buildTranslationPrompt(targetLanguage) },
+        { role: 'user', content: answerPolish },
+      ],
+    )
     return { answerPolish, output }
   }
 
@@ -511,6 +524,29 @@ export class ChatService {
       { role: 'system', content: buildTranslationPrompt(targetLanguage) },
       { role: 'user', content: text },
     ])
+  }
+
+  private async streamGeneratedText(
+    request: ChatRequest,
+    response: Response,
+    model: string,
+    messages: ChatMessage[],
+  ): Promise<string> {
+    try {
+      const output = await this.ollamaService.streamChat(response, model, messages)
+      if (output.trim().length > 0) {
+        return output
+      }
+
+      console.error(`Ollama ${model} returned an empty chat response`)
+    } catch (error) {
+      console.error(`Ollama ${model} stream failed`, error)
+    }
+
+    const fallback = localized(generationFallbackMessages, request.lang)
+    response.write(fallback)
+    response.flush?.()
+    return fallback
   }
 
   private buildSystemPrompt(context: string, tags: ContextualTag[]) {
