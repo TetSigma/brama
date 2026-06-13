@@ -7,6 +7,7 @@ import { RoleModeSwitch } from '@/components/RoleModeSwitch'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { useChatSessionStore } from '@/contexts/chatSessionStore'
 import { useUIStore } from '@/contexts/uiStore'
+import { LifeEventsPanel } from '@/components/lifeEvents/LifeEventsPanel'
 
 const BACKDROP =
   'fixed inset-0 -z-10 pointer-events-none ' +
@@ -90,6 +91,7 @@ export function ChatPage() {
                 )
               })}
             </ul>
+            <LifeEventsPanel />
           </div>
         ) : (
           <ChatThread messages={messages} onAsk={send} />
