@@ -155,6 +155,33 @@ Transition logic optionally expressed with a state-machine library (**XState**) 
 
 ---
 
+## D12. User feedback & product-improvement metrics — **DECIDED: lightweight in-app feedback + event metrics**
+
+**Question.** How do we know whether answers and processes actually help citizens, and what should we improve next?
+
+**Decision.** Add a **lightweight feedback + metrics mechanism** so the product can be measured and improved, not just demoed.
+
+1. **Per-answer feedback (copilot).** Each copilot answer carries a thumbs-up/down control and an optional one-line comment. A down-vote optionally asks a reason (wrong / not grounded / incomplete / off-topic). Stored with the answer's question, retrieved source IDs/citations, role mode, and language so a bad answer is traceable to its retrieval.
+2. **Per-step feedback (process).** Each step in the journey stepper exposes a quick "was this step clear?" signal, capturing where citizens get stuck in a cross-department process.
+3. **Implicit event metrics.** Log anonymous interaction events — question asked, route taken (RAG / structured / both), fallback shown ("not enough information"), citation present/absent, process started / step completed / step abandoned, language and role mode, latency. These are the **product-improvement signals**, distinct from explicit thumbs.
+4. **Storage.** A `feedback` table and an `event` table in **SQLite** (D7) — same store, no new infrastructure. Keyed to answer/process-instance/step where applicable.
+5. **Metrics surface.** A simple read-only metrics view (counts + rates) computed by SQL over the two tables: answer satisfaction rate, fallback rate, citation-coverage rate, top down-voted questions, step abandonment by step/department, language/role-mode breakdown. Office-worker mode (D11) is the natural home for this dashboard.
+
+**Key metrics (the improvement loop).**
+- **Answer satisfaction** = up-votes / rated answers.
+- **Grounding/citation coverage** = answers with citations / factual answers.
+- **Fallback rate** = "not enough information" responses / total (gap = missing knowledge to ingest, ties back to D2/D3).
+- **Process completion / abandonment** per step and department (where to streamline, ties back to D9/D10).
+- **Down-voted question clusters** → the prioritized backlog for new documents and capabilities.
+
+**Rationale.** Closes the loop on the leading theme ("save time for both sides"): metrics show *where* time is lost and which answers fail. The fallback rate and down-voted clusters directly drive what to ingest next (D2/D3); step abandonment drives which process to streamline (D9/D10). It is cheap — two SQLite tables and SQL aggregates, no analytics service — and aligns with the production roadmap item "Feedback collection / Analytics dashboard" (`arhcitecture.md` §16), pulled forward in minimal form.
+
+**Scope guardrail (hackathon).** Feedback capture (1–3) is **in scope** and easy to demo. The metrics dashboard (5) is **OPTIONAL** — if time is short, ship capture + a couple of headline numbers rather than a full dashboard.
+
+**Privacy.** Events are **anonymous** — no PII, no citizen identity beyond an opaque session/instance reference. Free-text comments are treated as untrusted input (same trust level as user content per §9).
+
+---
+
 ## Judging-criteria alignment (motyw przewodni)
 
 | # | Criterion | How the stack addresses it | Primary decision |
@@ -188,4 +215,5 @@ Transition logic optionally expressed with a state-machine library (**XState**) 
 | Answer LLM | Ollama + **Bielik** (11B, 4.5B fallback) | **DECIDED** |
 | Translation model | Ollama + **Qwen2.5** (Polish → other langs) | **DECIDED** |
 | Guardrails | All four, grounding-first | **DECIDED** |
+| Feedback & metrics | In-app feedback + event metrics in SQLite; dashboard optional | **DECIDED** |
 | Backend/Frontend | **Express** + React/Vite/Tailwind | **DECIDED** |
