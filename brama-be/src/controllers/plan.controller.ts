@@ -8,8 +8,8 @@ export const createLifeEventPlan = async (
   next: NextFunction,
 ) => {
   try {
-    const { message, lang, group, eventId } = request.body
-    const plan = await planService.buildPlan(message, lang, group, eventId)
+    const { message, lang, group, eventId, userContext } = request.body
+    const plan = await planService.buildPlan(message, lang, group, eventId, userContext)
 
     if (!plan) {
       // Not a recognised life event — tell the client to use /api/chat instead.

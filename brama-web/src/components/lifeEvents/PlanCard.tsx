@@ -3,6 +3,7 @@ import { Check, ChevronDown, Clock, ExternalLink, MapPin, Phone } from 'lucide-r
 import { useTranslation } from 'react-i18next'
 import type { LifeEventPlan, PlanStep } from '@/@types/plan'
 import { Markdown } from '@/components/Markdown'
+import { DeadlineGuardian } from '@/features/deadlineGuardian/DeadlineGuardian'
 import { UIBadge, UIButton, UICard, UIHeading, UIText } from '@/ui'
 
 type Props = {
@@ -116,6 +117,12 @@ export function PlanCard({ plan }: Props) {
       </UIHeading>
 
       <Markdown>{plan.answer}</Markdown>
+
+      <DeadlineGuardian
+        deadlines={plan.deadlines}
+        missingInfo={plan.missingInfo}
+        summary={plan.deadlineSummary}
+      />
 
       <div>
         <UIText weight="semibold" className="mb-[var(--space-2)]">

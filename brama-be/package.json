@@ -12,6 +12,7 @@
     "geocode": "tsx scripts/geocode-departments.ts",
     "build:templates": "tsx scripts/build-templates.ts",
     "lint": "eslint .",
+    "test": "node --import tsx --test \"src/**/*.test.ts\"",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {

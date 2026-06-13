@@ -1,0 +1,51 @@
+{
+  "moving_to_lublin": [
+    {
+      "relatedServiceId": "OŚ-033",
+      "title": "Deklaracja o wysokości opłaty za gospodarowanie odpadami komunalnymi",
+      "shortLabel": "waste declaration",
+      "relativeRule": "within 14 days after moving",
+      "anchorField": "movedDate",
+      "requiredAction": "Złóż deklarację śmieciową w Urzędzie Miasta Lublin (Wydział Ochrony Środowiska).",
+      "consequence": "Brak deklaracji w terminie może skutkować naliczeniem opłaty z urzędu wraz z odsetkami."
+    },
+    {
+      "relatedServiceId": "SA-007",
+      "title": "Zameldowanie na pobyt stały lub czasowy",
+      "shortLabel": "address registration",
+      "relativeRule": "within 30 days after moving",
+      "anchorField": "movedDate",
+      "requiredAction": "Dokonaj zameldowania w Wydziale Spraw Administracyjnych Urzędu Miasta Lublin.",
+      "consequence": "Niedopełnienie obowiązku meldunkowego w terminie jest wykroczeniem."
+    }
+  ],
+  "lost_documents": [
+    {
+      "relatedServiceId": "SA-076",
+      "title": "Zgłoszenie utraty lub uszkodzenia dowodu osobistego",
+      "shortLabel": "lost document report",
+      "relativeRule": "as soon as possible",
+      "requiredAction": "Zgłoś utratę dowodu osobistego niezwłocznie, aby unieważnić dokument.",
+      "consequence": "Zwłoka zwiększa ryzyko wykorzystania dokumentu przez osoby trzecie."
+    },
+    {
+      "relatedServiceId": "SA-075",
+      "title": "Wniosek o wydanie nowego dowodu osobistego",
+      "shortLabel": "replacement application",
+      "relativeRule": "no fixed deadline",
+      "requiredAction": "Złóż wniosek o wydanie nowego dowodu osobistego.",
+      "consequence": "Brak ważnego dokumentu tożsamości utrudnia załatwianie spraw urzędowych."
+    }
+  ],
+  "starting_business": [
+    {
+      "relatedServiceId": "SA-090",
+      "title": "Wpis do CEIDG (Centralna Ewidencja i Informacja o Działalności Gospodarczej)",
+      "shortLabel": "CEIDG registration",
+      "relativeRule": "before starting business activity",
+      "anchorField": "businessStartDate",
+      "requiredAction": "Złóż wniosek o wpis do CEIDG przed rozpoczęciem działalności gospodarczej.",
+      "consequence": "Prowadzenie działalności bez wpisu do CEIDG jest niezgodne z prawem."
+    }
+  ]
+}

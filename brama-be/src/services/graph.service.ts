@@ -6,6 +6,11 @@ export type ServiceNode = {
   nazwa: string
   komorka: string
   url: string
+  // Deadline metadata consumed by the Deadline Guardian feature. Both optional:
+  // `deadline` is an exact YYYY-MM-DD date, `deadlineRule` a relative rule
+  // (e.g. "within 14 days after moving"). Absent on most service nodes.
+  deadline?: string | null
+  deadlineRule?: string | null
 }
 
 export type OfficeNode = {
@@ -35,7 +40,7 @@ const serviceGraphQuery = `
   OPTIONAL MATCH (s)-[:REQUIRES_EXTERNAL]->(x:ExternalOffice)
   WITH s, o, collect(DISTINCT { code: x.code, label: x.label }) AS externals
   OPTIONAL MATCH (s)-[rp:REQUIRES_PRIOR]->(p:Service)
-  RETURN s { .card_id, .nazwa, .komorka, .url } AS service,
+  RETURN s { .card_id, .nazwa, .komorka, .url, .deadline, .deadlineRule } AS service,
          o { .symbol, .nazwa, .adres, .telefon, .email, .departament, .hours } AS office,
          externals AS externals,
          collect(DISTINCT p { .card_id, .nazwa, .komorka, document: rp.document }) AS prerequisites

@@ -1,12 +1,40 @@
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { env } from '../config/env.js'
+import {
+  DeadlineGuardianService,
+  type EvidenceChunk,
+} from '../features/deadlineGuardian/deadlineGuardian.service.js'
+import type {
+  DeadlineCandidate,
+  DeadlineItem,
+  UserContext,
+  UserContextKey,
+} from '../features/deadlineGuardian/deadlineGuardian.types.js'
+import {
+  EVENT_PRIMARY_ANCHOR,
+  inferUserContext,
+} from '../features/deadlineGuardian/deadlineGuardian.utils.js'
 import { buildTranslationPrompt, languageName } from '../lib/translation.js'
 import { DepartmentService, type Department } from './department.service.js'
-import { graphService, type GraphService } from './graph.service.js'
+import { graphService, type GraphService, type ServiceNode } from './graph.service.js'
 import { lifeEventService, type ExternalInfo, type LifeEventService } from './life-event.service.js'
 import { OllamaService } from './ollama.service.js'
 import { RetrievalService } from './retrieval.service.js'
 
 const MAX_CARD_TEXT = 1500
+
+// Seed deadlines per life event (stand-in for structured Neo4j deadline data).
+type SeedDeadline = {
+  relatedServiceId: string
+  title: string
+  shortLabel?: string
+  date?: string
+  relativeRule?: string
+  anchorField?: UserContextKey
+  requiredAction?: string
+  consequence?: string
+}
 
 const planSystemPrompt =
   'Jestes asystentem Urzedu Miasta Lublin. Na podstawie WYLACZNIE ponizszych ' +
@@ -31,7 +59,7 @@ export type PlanStep = {
   externalOffices: { code: string; label: string }[]
 }
 
-type EnrichedStep = { step: PlanStep; text: string }
+type EnrichedStep = { step: PlanStep; text: string; service: ServiceNode | null }
 
 export type LifeEventPlan = {
   lifeEvent: string
@@ -39,18 +67,26 @@ export type LifeEventPlan = {
   confidence: number
   plan: PlanStep[]
   externalInfo: ExternalInfo[]
+  deadlines: DeadlineItem[]
+  deadlineSummary: string
   missingInfo: string[]
   answer: string
 }
 
 export class PlanService {
+  private readonly deadlineGuardian: DeadlineGuardianService
+  private readonly deadlineSeed: Record<string, SeedDeadline[]>
+
   constructor(
     private readonly retrievalService: RetrievalService,
     private readonly departmentService: DepartmentService,
     private readonly graphService: GraphService,
     private readonly lifeEventService: LifeEventService,
     private readonly ollamaService: OllamaService,
-  ) {}
+  ) {
+    this.deadlineGuardian = new DeadlineGuardianService(ollamaService)
+    this.deadlineSeed = this.loadDeadlineSeed()
+  }
 
   // Returns null when the message isn't a recognised life event — the caller
   // then falls back to the normal single-service chat flow.
@@ -59,6 +95,7 @@ export class PlanService {
     lang: string,
     group?: string,
     eventId?: string,
+    userContext?: UserContext,
   ): Promise<LifeEventPlan | null> {
     const classification = eventId
       ? { eventId, score: 1 }
@@ -86,13 +123,26 @@ export class PlanService {
 
     const answer = lang === 'pl' ? answerPolish : await this.translate(answerPolish, lang)
 
+    // Deadline Guardian: detect deadlines, resolve dates, score urgency.
+    const guardian = await this.deadlineGuardian.build({
+      structuredCandidates: this.buildDeadlineCandidates(event.id, enriched),
+      evidenceChunks: this.buildEvidenceChunks(enriched),
+      userContext: inferUserContext(message, event.id, userContext ?? {}),
+      lang,
+      useLlm: env.DEADLINE_LLM_ENABLED,
+    })
+
+    const baseMissing = event.groups && !group ? ['citizenship_status'] : []
+
     return {
       lifeEvent: event.id,
       title: event.title[lang] ?? event.title.pl ?? event.id,
       confidence: classification.score,
       plan: enriched.map((entry) => entry.step),
       externalInfo: event.externalInfo ?? [],
-      missingInfo: event.groups && !group ? ['citizenship_status'] : [],
+      deadlines: guardian.deadlines,
+      deadlineSummary: guardian.summary,
+      missingInfo: [...new Set([...baseMissing, ...guardian.missingInfo])],
       answer,
     }
   }
@@ -111,6 +161,7 @@ export class PlanService {
 
       steps.push({
         text: hit.text,
+        service: graph?.service ?? null,
         step: {
           cardId,
           title: hit.nazwa,
@@ -126,6 +177,71 @@ export class PlanService {
     }
 
     return steps
+  }
+
+  // Builds the authoritative (Neo4j + seed) deadline candidates for an event.
+  private buildDeadlineCandidates(eventId: string, enriched: EnrichedStep[]): DeadlineCandidate[] {
+    const byCard = new Map(enriched.map((entry) => [entry.step.cardId, entry]))
+    const anchor = EVENT_PRIMARY_ANCHOR[eventId]
+    const candidates: DeadlineCandidate[] = []
+
+    // 1) Deadlines stored directly on Neo4j service nodes.
+    for (const entry of enriched) {
+      const service = entry.service
+      if (!service || (!service.deadline && !service.deadlineRule)) {
+        continue
+      }
+      candidates.push({
+        title: entry.step.title,
+        relatedServiceId: entry.step.cardId,
+        sourceType: 'neo4j',
+        sourceRef: entry.step.url || undefined,
+        officialLink: entry.step.url || undefined,
+        date: service.deadline ?? undefined,
+        relativeRule: service.deadlineRule ?? undefined,
+        anchorField: service.deadlineRule ? anchor : undefined,
+      })
+    }
+
+    // 2) Seed deadlines (structured demo data) enriched with the service URL.
+    for (const seed of this.deadlineSeed[eventId] ?? []) {
+      const entry = byCard.get(seed.relatedServiceId)
+      candidates.push({
+        title: seed.title,
+        shortLabel: seed.shortLabel,
+        relatedServiceId: seed.relatedServiceId,
+        sourceType: 'neo4j',
+        sourceRef: entry?.step.url || undefined,
+        officialLink: entry?.step.url || undefined,
+        date: seed.date,
+        relativeRule: seed.relativeRule,
+        anchorField: seed.anchorField,
+        requiredAction: seed.requiredAction,
+        consequence: seed.consequence,
+      })
+    }
+
+    return candidates
+  }
+
+  // Maps enriched steps to Qdrant evidence chunks for LLM deadline extraction.
+  private buildEvidenceChunks(enriched: EnrichedStep[]): EvidenceChunk[] {
+    return enriched.map((entry) => ({
+      serviceId: entry.step.cardId,
+      title: entry.step.title,
+      text: this.clamp(entry.text),
+      sourceRef: entry.step.url || undefined,
+    }))
+  }
+
+  private loadDeadlineSeed(): Record<string, SeedDeadline[]> {
+    try {
+      const path = resolve(process.cwd(), env.DEADLINES_SEED_PATH)
+      return JSON.parse(readFileSync(path, 'utf8')) as Record<string, SeedDeadline[]>
+    } catch (error) {
+      console.error('life_event_deadlines.json unavailable; seed deadlines disabled', error)
+      return {}
+    }
   }
 
   private buildEvidence(externalInfo: ExternalInfo[], enriched: EnrichedStep[]): string {
