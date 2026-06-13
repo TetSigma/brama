@@ -7,6 +7,7 @@ import { env } from './config/env.js'
 import { errorHandler } from './middleware/error-handler.js'
 import { notFoundHandler } from './middleware/not-found-handler.js'
 import { chatRouter } from './routes/chat.js'
+import { graphRouter } from './routes/graph.js'
 import { healthRouter } from './routes/health.js'
 
 export const createApp = () => {
@@ -27,6 +28,7 @@ export const createApp = () => {
   app.use(morgan(env.NODE_ENV === 'production' ? 'combined' : 'dev'))
 
   app.use('/api', chatRouter)
+  app.use('/api/graph', graphRouter)
   app.use('/health', healthRouter)
 
   app.use(notFoundHandler)

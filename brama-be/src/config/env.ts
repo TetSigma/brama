@@ -21,6 +21,13 @@ const envSchema = z.object({
     .enum(["true", "false"])
     .default("true")
     .transform((value) => value === "true"),
+  NEO4J_URI: z.string().default("bolt://localhost:7687"),
+  NEO4J_USER: z.string().default("neo4j"),
+  NEO4J_PASSWORD: z.string().default("password"),
+  GRAPH_ENABLED: z
+    .enum(["true", "false"])
+    .default("true")
+    .transform((value) => value === "true"),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);

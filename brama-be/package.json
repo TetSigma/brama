@@ -8,6 +8,7 @@
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
     "ingest": "tsx scripts/ingest.ts",
+    "ingest:graph": "tsx scripts/ingest-graph.ts",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
@@ -20,6 +21,7 @@
     "express": "^5.2.1",
     "helmet": "^8.1.0",
     "morgan": "^1.10.1",
+    "neo4j-driver": "^5.28.0",
     "ollama": "^0.6.3",
     "zod": "^4.1.13"
   },

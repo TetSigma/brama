@@ -84,10 +84,20 @@ REMOTE_APP_DIR="$(printf '%q' "$DEPLOY_PATH")"
 REMOTE_SERVICE="$(printf '%q' "$DEPLOY_SERVICE")"
 REMOTE_HEALTH_URL="$(printf '%q' "$HEALTH_URL")"
 
+# Runtime secrets are excluded from rsync (--exclude '.env'), so upsert them
+# into the server-side brama-be/.env here. Skipped when the value is unset.
+ENV_PROVISION=""
+if [[ -n "${NEO4J_PASSWORD:-}" ]]; then
+  log "Provisioning NEO4J_PASSWORD into server brama-be/.env"
+  ENV_PROVISION="touch brama-be/.env
+grep -q '^NEO4J_PASSWORD=' brama-be/.env && sed -i 's|^NEO4J_PASSWORD=.*|NEO4J_PASSWORD=${NEO4J_PASSWORD}|' brama-be/.env || echo 'NEO4J_PASSWORD=${NEO4J_PASSWORD}' >> brama-be/.env"
+fi
+
 "${SSH_COMMAND[@]}" "$SSH_TARGET" "
 set -Eeuo pipefail
 
 cd ${REMOTE_APP_DIR}
+${ENV_PROVISION}
 HUSKY=0 npm install
 npm run build -w brama-be
 sudo systemctl restart ${REMOTE_SERVICE}
