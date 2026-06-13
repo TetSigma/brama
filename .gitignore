@@ -1,5 +1,10 @@
 node_modules
 dist
 .env
+.env.deploy
 .devenv
 .DS_Store
+
+# generated data — never commit
+brama-be/data/
+qdrant_storage/

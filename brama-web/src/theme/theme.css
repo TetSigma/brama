@@ -39,9 +39,9 @@
   --color-text-muted: var(--color-neutral-600);
   --color-text-subtle: var(--color-neutral-500);
   --color-text-inverse: var(--color-neutral-0);
-  --color-primary: var(--color-lublin-red);
-  --color-primary-hover: #d90000;
-  --color-primary-active: #b80000;
+  --color-primary: #c90000;
+  --color-primary-hover: #a90000;
+  --color-primary-active: #850000;
   --color-primary-contrast: var(--color-lublin-white);
   --color-secondary: var(--color-lublin-green);
   --color-secondary-hover: #5fa733;
@@ -51,7 +51,7 @@
   --color-success: var(--color-lublin-green);
   --color-warning: var(--color-lublin-orange);
   --color-danger: var(--color-lublin-red);
-  --color-focus: var(--color-lublin-blue);
+  --color-focus: #004f8f;
 
   /* Typography */
   --font-sans: "Noto Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -97,7 +97,7 @@
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
   --shadow-md: 0 8px 24px rgb(0 0 0 / 0.12);
   --shadow-lg: 0 18px 48px rgb(0 0 0 / 0.16);
-  --focus-ring: 0 0 0 3px rgb(0 105 180 / 0.28);
+  --focus-ring: 0 0 0 4px rgb(0 79 143 / 0.32);
   --glass-surface: rgb(255 255 255 / 0.62);
   --glass-surface-strong: rgb(255 255 255 / 0.78);
   --glass-border: rgb(255 255 255 / 0.72);

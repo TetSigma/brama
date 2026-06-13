@@ -47,6 +47,11 @@ export const resources = {
           worker: 'Official',
         },
       },
+      accessibility: {
+        skipToContent: 'Skip to main content',
+        highContrastOff: 'High contrast',
+        highContrastOn: 'High contrast on',
+      },
       hero: {
         eyebrow: 'AI assistance for Lublin city services',
         title: 'Brama for Lublin services',
@@ -219,6 +224,11 @@ export const resources = {
           senior: 'Senior',
           worker: 'Urzędnik',
         },
+      },
+      accessibility: {
+        skipToContent: 'Przejdź do głównej treści',
+        highContrastOff: 'Wysoki kontrast',
+        highContrastOn: 'Wysoki kontrast włączony',
       },
       hero: {
         eyebrow: 'Wsparcie AI dla usług miejskich Lublina',
@@ -393,6 +403,11 @@ export const resources = {
           worker: 'Agent',
         },
       },
+      accessibility: {
+        skipToContent: 'Aller au contenu principal',
+        highContrastOff: 'Contraste élevé',
+        highContrastOn: 'Contraste élevé activé',
+      },
       hero: {
         eyebrow: 'Assistance IA pour les services municipaux de Lublin',
         title: 'Brama pour les services de Lublin',
@@ -565,6 +580,11 @@ export const resources = {
           senior: 'Senior',
           worker: 'Funcionario',
         },
+      },
+      accessibility: {
+        skipToContent: 'Saltar al contenido principal',
+        highContrastOff: 'Alto contraste',
+        highContrastOn: 'Alto contraste activado',
       },
       hero: {
         eyebrow: 'Asistencia con IA para los servicios municipales de Lublin',
@@ -739,6 +759,11 @@ export const resources = {
           worker: 'Úředník',
         },
       },
+      accessibility: {
+        skipToContent: 'Přejít na hlavní obsah',
+        highContrastOff: 'Vysoký kontrast',
+        highContrastOn: 'Vysoký kontrast zapnutý',
+      },
       hero: {
         eyebrow: 'Asistence AI pro městské služby Lublinu',
         title: 'Brama pro služby Lublinu',
@@ -911,6 +936,11 @@ export const resources = {
           senior: 'Літні',
           worker: 'Службовець',
         },
+      },
+      accessibility: {
+        skipToContent: 'Перейти до основного вмісту',
+        highContrastOff: 'Високий контраст',
+        highContrastOn: 'Високий контраст увімкнено',
       },
       hero: {
         eyebrow: 'AI-підтримка для міських послуг Любліна',
