@@ -1317,12 +1317,6 @@ h3 {
   -webkit-backdrop-filter: none;
 }
 
-/* The .site-header wrapper has vertical padding and square corners; once it gets
-   an opaque HC background that shows as a padded white box around the rounded
-   card. Hug the card shape instead (match the off-state pill, no extra padding). */
-[data-theme='high-contrast'] .site-header {
-  border-radius: var(--radius-pill);
-}
 
 [data-theme='high-contrast'] .cta-section {
   color: var(--color-text-inverse);
