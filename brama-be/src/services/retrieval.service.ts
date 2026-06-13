@@ -72,6 +72,22 @@ export class RetrievalService {
 
   // Embeds via the same Ollama endpoint and model as scripts/ingest.ts, so
   // query vectors and stored document vectors live in the same space.
+  // Fetch a single service card by its exact card_id (no vector search).
+  async getByCardId(cardId: string): Promise<RetrievalHit | null> {
+    try {
+      const result = await this.client.scroll(env.QDRANT_COLLECTION, {
+        filter: { must: [{ key: 'card_id', match: { value: cardId } }] },
+        with_payload: true,
+        limit: 1,
+      })
+      const point = result.points[0]
+      return point ? this.toHit(point.payload) : null
+    } catch (error) {
+      console.error('getByCardId failed', error)
+      return null
+    }
+  }
+
   private async embed(text: string): Promise<number[]> {
     const response = await fetch(`${env.OLLAMA_BASE_URL}/api/embed`, {
       method: 'POST',

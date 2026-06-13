@@ -1,0 +1,80 @@
+[
+  {
+    "id": "moving_to_lublin",
+    "title": {
+      "pl": "Przeprowadzka do Lublina",
+      "en": "Moving to Lublin",
+      "uk": "Переїзд до Любліна"
+    },
+    "keywords": "przeprowadzka przeprowadzilem sie zamieszkalem nowy mieszkaniec moved to lublin moving new resident relocate pereihav pereyizd",
+    "services": [
+      "SA-007",
+      "SA-077",
+      "OŚ-033"
+    ],
+    "groups": {
+      "ukrainian_temp_protection": [
+        "SA-013",
+        "SA-103",
+        "OŚ-033"
+      ],
+      "foreigner": [
+        "SA-013",
+        "SA-077",
+        "OŚ-033"
+      ]
+    },
+    "externalInfo": [
+      {
+        "label": "Ubezpieczenie zdrowotne (NFZ)",
+        "note": "Rejestracja do ubezpieczenia zdrowotnego prowadzona jest przez NFZ/ZUS, poza Urzedem Miasta Lublin."
+      },
+      {
+        "label": "Bilety i karta komunikacji miejskiej (ZTM Lublin)",
+        "note": "Bilety i karty komunikacji miejskiej obsluguje ZTM Lublin, poza Urzedem Miasta Lublin."
+      }
+    ]
+  },
+  {
+    "id": "lost_documents",
+    "title": {
+      "pl": "Utrata dokumentow",
+      "en": "Lost documents",
+      "uk": "Втрата документів"
+    },
+    "keywords": "zgubilem stracilem utrata dokumentow skradziono dowod osobisty lost stolen documents id card zahubyv dokumenty",
+    "services": [
+      "SA-076",
+      "SA-075",
+      "SA-107"
+    ],
+    "externalInfo": [
+      {
+        "label": "Zastrzezenie w banku oraz zgloszenie na Policji",
+        "note": "W razie kradziezy dokumentow zglos sprawe rowniez w banku i na Policji - poza Urzedem Miasta Lublin."
+      }
+    ]
+  },
+  {
+    "id": "starting_business",
+    "title": {
+      "pl": "Zalozenie dzialalnosci gospodarczej",
+      "en": "Starting a business",
+      "uk": "Відкриття бізнесу"
+    },
+    "keywords": "dzialalnosc gospodarcza wlasna firma zalozyc firme ceidg start a business self employed company vidkryty biznes",
+    "services": [
+      "SA-090"
+    ],
+    "externalInfo": [
+      {
+        "label": "ZUS - ubezpieczenia spoleczne",
+        "note": "Zgloszenie do ubezpieczen spolecznych odbywa sie w ZUS."
+      },
+      {
+        "label": "Urzad Skarbowy - podatki",
+        "note": "Forma opodatkowania i sprawy VAT prowadzi Urzad Skarbowy."
+      }
+    ]
+  }
+]

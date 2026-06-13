@@ -1,5 +1,5 @@
 import neo4j, { type Driver, type Session } from "neo4j-driver";
-import { existsSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { env } from "../src/config/env.js";
@@ -50,12 +50,6 @@ interface DependencyRecord {
 
 interface DependencyFile {
   services: DependencyRecord[];
-}
-
-interface LifeEventRecord {
-  name: string;
-  description?: string;
-  services: string[];
 }
 
 // --- helpers ---
@@ -185,29 +179,6 @@ async function loadDependencies(session: Session): Promise<{ prior: number; exte
   return { prior: priorEdges.length, external: externalEdges.length };
 }
 
-async function loadLifeEvents(session: Session): Promise<number> {
-  const file = path.join(DATA_DIR, "life_events.json");
-  if (!existsSync(file)) {
-    return 0;
-  }
-
-  const events = readJson<LifeEventRecord[]>("life_events.json");
-
-  await run(
-    session,
-    `UNWIND $rows AS row
-     MERGE (l:LifeEvent { name: row.name })
-     SET l.description = row.description
-     WITH l, row
-     UNWIND row.services AS cardId
-     MATCH (s:Service { card_id: cardId })
-     MERGE (l)-[:NEEDS]->(s)`,
-    { rows: events },
-  );
-
-  return events.length;
-}
-
 // --- main ---
 
 async function setupConstraints(session: Session): Promise<void> {
@@ -256,13 +227,6 @@ async function main(): Promise<void> {
 
     const { prior, external } = await loadDependencies(session);
     console.log(`✓ ${prior} REQUIRES_PRIOR + ${external} REQUIRES_EXTERNAL edges`);
-
-    const lifeEvents = await loadLifeEvents(session);
-    console.log(
-      lifeEvents > 0
-        ? `✓ ${lifeEvents} LifeEvent nodes`
-        : "• life_events.json not found — skipped (optional)",
-    );
 
     console.log("\nDone. Neo4j service dependency graph ready.");
   } finally {
