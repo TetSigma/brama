@@ -11,7 +11,7 @@ const envSchema = z.object({
   DEPARTMENTS_DATABASE_PATH: z.string().default("./data/brama.db"),
   OLLAMA_CHAT_MODEL: z
     .string()
-    .default("hf.co/speakleash/Bielik-11B-v2.3-Instruct-GGUF:Q4_K_M"),
+    .default("SpeakLeash/bielik-4.5b-v3.0-instruct:Q8_0"),
   OLLAMA_TRANSLATION_MODEL: z.string().default("qwen2.5:7b"),
   OLLAMA_BASE_URL: z.string().default("http://localhost:11434"),
   OLLAMA_EMBED_MODEL: z.string().default("bge-m3:latest"),
