@@ -182,6 +182,24 @@ Transition logic optionally expressed with a state-machine library (**XState**) 
 
 ---
 
+## D13. Accessibility standard — **DECIDED: WCAG 2.1 Level AA**
+
+**Question.** What accessibility bar do we hold the frontend to?
+
+**Decision.** Target **WCAG 2.1 Level AA** across the React frontend (D6/D11). This is not optional polish — it is mandated by the audience: a **Polish city-office** product is a public-sector service, and the **senior role mode** (D11) exists precisely to serve users with low vision, low digital literacy, or motor difficulty. WCAG 2.1 AA is also the legal baseline for EU/Polish public-sector sites (EU Directive 2016/2102, transposed into Polish law).
+
+**What this means concretely (hackathon-demoable subset):**
+- **Perceivable** — text contrast ≥ 4.5:1 (≥ 3:1 for large text and UI components); never color alone to convey state in the journey stepper (done/current/blocked also use icon + label); all meaningful images/icons have text alternatives.
+- **Operable** — full keyboard navigation (stepper, cards, language/role toggles, chat input); visible focus indicators; target sizes comfortable in senior mode; no keyboard traps.
+- **Understandable** — plain language (already a senior-mode goal); `lang` attribute set and updated by the multi-language toggle (D11/D6); consistent navigation; clear, programmatically associated error/validation messages on forms and the document checklist.
+- **Robust** — semantic HTML + ARIA where needed; the interactive process graph (D11) exposes an accessible text/list fallback so it isn't a visual-only feature; live regions announce streamed answers and step transitions.
+
+**Cross-references.** Reinforces **D11** (senior mode is the accessibility-first surface; the three role modes are the audience-fit mechanism) and constrains **D6/D11** UI work. Feedback controls from **D12** must themselves meet AA (labeled, keyboard-reachable).
+
+**Scope guardrail (hackathon).** Hold the **hero process + copilot flow** (the demo path) to AA and verify it (keyboard pass + contrast check + a screen-reader smoke test). Full-app conformance audit and a formal accessibility statement are **production roadmap**, not hackathon scope.
+
+---
+
 ## Judging-criteria alignment (motyw przewodni)
 
 | # | Criterion | How the stack addresses it | Primary decision |
@@ -216,4 +234,5 @@ Transition logic optionally expressed with a state-machine library (**XState**) 
 | Translation model | Ollama + **Qwen2.5** (Polish → other langs) | **DECIDED** |
 | Guardrails | All four, grounding-first | **DECIDED** |
 | Feedback & metrics | In-app feedback + event metrics in SQLite; dashboard optional | **DECIDED** |
+| Accessibility | WCAG 2.1 Level AA (demo path verified; full audit = production) | **DECIDED** |
 | Backend/Frontend | **Express** + React/Vite/Tailwind | **DECIDED** |
