@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MapPin, Navigation, Phone } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { UIButton } from '@/ui'
@@ -31,7 +31,7 @@ export function PlaceBlock({ kind, address, phone, hours, lat, lng }: Props) {
     ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}`
     : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destination)}`
 
-  const buildRoute = useCallback(() => {
+  function buildRoute() {
     setError(false)
     if (!navigator.geolocation) {
       setError(true)
@@ -48,12 +48,24 @@ export function PlaceBlock({ kind, address, phone, hours, lat, lng }: Props) {
         setLocating(false)
       },
     )
-  }, [])
+  }
 
-  // Try to build the route as soon as the card appears.
+  // Build the route as soon as the card appears (state set only from async callbacks).
   useEffect(() => {
-    buildRoute()
-  }, [buildRoute])
+    if (!navigator.geolocation) return
+    let cancelled = false
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        if (!cancelled) setOrigin(`${position.coords.latitude},${position.coords.longitude}`)
+      },
+      () => {
+        if (!cancelled) setError(true)
+      },
+    )
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   return (
     <section className={BLOCK} aria-label={label}>
