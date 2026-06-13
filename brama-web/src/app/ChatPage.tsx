@@ -30,7 +30,7 @@ export function ChatPage() {
     >
       <div aria-hidden="true" className={BACKDROP} />
 
-      <header className="sticky top-[var(--space-3)] z-10 w-[min(70vw,44rem)] mx-auto py-[var(--space-3)]">
+      <header className="site-header chat-header">
         <GlassCard
           className="site-header__glass"
           contentClassName="site-header__content"

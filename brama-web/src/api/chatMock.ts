@@ -86,7 +86,7 @@ export async function* streamMockChat(
   await delay(120)
   yield { type: 'blocks', blocks: MOCK_BLOCKS }
 
-  const answerId = `${_input.sessionId}-answer-${MOCK_PROSE.length}`
+  const answerId = `${_input.conversationId}-answer-${MOCK_PROSE.length}`
   yield { type: 'meta', answerId, grounded: true }
   yield { type: 'done' }
 }

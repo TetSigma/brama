@@ -32,7 +32,7 @@ export function useChat() {
 
       try {
         for await (const event of streamChat({
-          sessionId,
+          conversationId: sessionId,
           message,
           role,
           lang: i18n.resolvedLanguage ?? 'pl',

@@ -27,7 +27,7 @@ export function LanguageSwitcher() {
       >
         {languageCodes.map((languageCode) => (
           <option key={languageCode} value={languageCode}>
-            {languageFlags[languageCode]}
+            {languageFlags[languageCode]} {languageNames[languageCode]}
           </option>
         ))}
       </select>

@@ -159,10 +159,16 @@ a {
   position: sticky;
   top: var(--space-3);
   z-index: 10;
-  /* Match the chat header exactly: viewport-relative, same cap, centered, same top spacing. */
-  width: min(70vw, 44rem);
+  width: min(calc(100% - clamp(2rem, 4vw, 4rem)), var(--container-lg));
   margin: 0 auto;
   padding: var(--space-3) 0;
+}
+
+.chat-header {
+  --chat-header-width: min(calc(100vw - clamp(2rem, 4vw, 4rem)), var(--container-lg));
+
+  width: var(--chat-header-width);
+  margin-inline: calc((100% - var(--chat-header-width)) / 2);
 }
 
 /* GlassCard is the surface; header is just the sticky positioning wrapper.
@@ -184,12 +190,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-4);
+  gap: clamp(var(--space-3), 2vw, var(--space-5));
+  min-width: 0;
   width: 100%;
 }
 
 .brand-mark {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: var(--space-3);
   color: var(--color-text);
@@ -212,13 +220,20 @@ a {
 
 .site-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: clamp(var(--space-3), 3vw, var(--space-6));
+  justify-content: center;
+  gap: clamp(var(--space-2), 1.4vw, var(--space-4));
+  min-width: 0;
 }
 
 .site-nav a {
-  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 16px;
   border: 1px solid #ffffff;
   border-radius: 20px;
   background: transparent;
@@ -227,7 +242,7 @@ a {
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
   transition: all 0.25s ease;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .site-nav a:hover {
@@ -239,7 +254,13 @@ a {
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: var(--space-3);
+  gap: clamp(var(--space-2), 1.4vw, var(--space-3));
+  min-width: 0;
+}
+
+.header-actions .ui-button {
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .contrast-toggle {
@@ -256,6 +277,7 @@ a {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .contrast-toggle:hover {
@@ -431,7 +453,7 @@ h3 {
 
 .hero-visual {
   position: relative;
-  min-height: min(58vw, 39rem);
+  height: clamp(31rem, 45vw, 39rem);
   overflow: hidden;
   border: var(--border-width-sm) solid rgb(255 255 255 / 0.78);
   border-radius: 12rem 12rem var(--radius-3) var(--radius-3);
@@ -445,6 +467,19 @@ h3 {
   backdrop-filter: blur(22px) saturate(1.34);
   -webkit-backdrop-filter: blur(22px) saturate(1.34);
   animation: visual-in 900ms var(--easing-standard) 160ms both;
+}
+
+.hero-glass {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: inherit;
+}
+
+.hero-glass__content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+  border-radius: inherit;
 }
 
 .hero-visual::before,
@@ -479,7 +514,6 @@ h3 {
 .hero-visual img {
   width: 100%;
   height: 100%;
-  min-height: inherit;
   object-fit: cover;
   display: block;
 }
@@ -819,11 +853,70 @@ h3 {
   }
 }
 
+@media (max-width: 72rem) {
+  .site-header__content {
+    flex-wrap: wrap;
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+    justify-content: flex-start;
+    gap: var(--space-2);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    scroll-snap-type: inline proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 56rem) {
   .site-header {
-    top: var(--space-3);
-    width: calc(100% - var(--space-6));
-    margin-top: var(--space-3);
+    top: var(--space-2);
+    width: calc(100% - var(--space-4));
+    padding: var(--space-2) 0;
+  }
+
+  .chat-header {
+    --chat-header-width: calc(100vw - var(--space-4));
+
+    width: var(--chat-header-width);
+  }
+
+  .site-header__content {
+    gap: var(--space-2);
+    padding: var(--space-3) !important;
+  }
+
+  .brand-mark {
+    gap: var(--space-2);
+    font-size: var(--font-size-md);
+  }
+
+  .brand-gate {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .site-nav a {
+    min-height: 2.5rem;
+    padding: 0 var(--space-3);
   }
 
   .hero-section,
@@ -858,29 +951,22 @@ h3 {
   }
 }
 
-@media (max-width: 42rem) {
-  .site-header__content {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .site-nav {
-    width: 100%;
-    justify-content: space-between;
-  }
-
+@media (max-width: 60rem) {
   .header-actions {
-    width: 100%;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: stretch;
   }
 
+  .header-actions .ui-button {
+    flex: 1 1 8rem;
+  }
+
   .contrast-toggle {
-    width: 100%;
+    flex: 1 1 11rem;
   }
 
   .language-switcher {
-    width: 100%;
+    flex: 1 1 11rem;
     justify-content: stretch;
   }
 
@@ -891,6 +977,48 @@ h3 {
 }
 
 @media (max-width: 42rem) {
+  .site-header__content {
+    align-items: stretch;
+  }
+
+  .brand-mark {
+    align-self: flex-start;
+  }
+
+  .header-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .header-actions > a {
+    grid-column: 1 / -1;
+  }
+
+  .header-actions > a,
+  .contrast-toggle,
+  .language-switcher {
+    flex-basis: auto;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .contrast-toggle,
+  .language-select {
+    padding-inline: var(--space-2);
+  }
+
+  .language-select {
+    padding-right: var(--space-6);
+  }
+
+  .site-nav {
+    margin: 0 calc(var(--space-3) * -1);
+    width: calc(100% + var(--space-6));
+    flex-basis: calc(100% + var(--space-6));
+    padding-inline: var(--space-3);
+  }
 
   h1 {
     font-size: clamp(2.65rem, 15vw, 4.4rem);

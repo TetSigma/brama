@@ -22,7 +22,7 @@ export type ChatStreamEvent =
   | { type: 'done' }
 
 export type SendChatInput = {
-  sessionId: string
+  conversationId: string
   message: string
   role: RoleMode
   lang: string
