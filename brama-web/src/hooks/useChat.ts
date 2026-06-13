@@ -18,7 +18,7 @@ type SendInput = {
  * Network goes through React Query (mutation); streamed state lands in the session store.
  */
 export function useChat() {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const role = useUIStore((state) => state.role)
   const sessionId = useChatSessionStore((state) => state.sessionId)
   const isStreaming = useChatSessionStore((state) => state.isStreaming)
@@ -40,6 +40,7 @@ export function useChat() {
         addUserMessage(message)
       }
       const assistantId = startAssistantMessage()
+      let receivedTextLength = 0
 
       try {
         for await (const event of streamChat({
@@ -51,6 +52,7 @@ export function useChat() {
           action,
         })) {
           if (event.type === 'token') {
+            receivedTextLength += event.delta.trim().length
             appendToken(assistantId, event.delta)
           } else if (event.type === 'blocks') {
             setBlocks(assistantId, parseBlocks(event.blocks))
@@ -58,6 +60,13 @@ export function useChat() {
             setGrounded(assistantId, event.grounded)
           }
         }
+      } catch (error) {
+        const recoveryMessage =
+          receivedTextLength > 0
+            ? `\n\n${t('error.errorMessage')}`
+            : t('error.errorMessage')
+        appendToken(assistantId, recoveryMessage)
+        throw error
       } finally {
         finishAssistantMessage(assistantId)
       }

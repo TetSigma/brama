@@ -13,39 +13,13 @@ import {
 import { graphService, type GraphService, type ServiceGraph } from './graph.service.js'
 import { OllamaService } from './ollama.service.js'
 import { RetrievalService, type RetrievalHit } from './retrieval.service.js'
+import { buildTranslationPrompt, languageName } from '../lib/translation.js'
 
 const systemPrompt =
   'Jestes asystentem Urzedu Miasta ' +
   'Lublin. Odpowiadaj po polsku, ' +
   'rzeczowo i uprzejmie. Jesli nie ' +
   'znasz odpowiedzi, powiedz to wprost.'
-
-const languageNames: Record<string, string> = {
-  en: 'English',
-  fr: 'French',
-  es: 'Spanish',
-  cs: 'Czech',
-  uk: 'Ukrainian',
-  ru: 'Russian',
-  de: 'German',
-}
-
-const translationSystemPrefix =
-  'You are a professional translator ' +
-  'for a government office. ' +
-  "Translate the user's text into "
-
-const translationSystemSuffix =
-  '. Output only the translation, nothing else. ' +
-  'Keep these VERBATIM in their original Polish form - do NOT translate, ' +
-  'transliterate or alter them: names of offices and institutions ' +
-  '(e.g. Wydzial Komunikacji, Urzad Miasta Lublin, ZUS, USC), ' +
-  'names of documents, applications and forms together with their codes ' +
-  '(e.g. MKZ-009, AB-008), street and building addresses ' +
-  '(ul., al., plac, pok., + numbers), postal codes, room numbers, ' +
-  'phone numbers, e-mail addresses, URLs and bank account numbers. ' +
-  'Translate only the surrounding explanatory text and preserve the meaning ' +
-  'exactly. Do not add, omit, explain or answer anything.'
 
 const ragInstruction =
   '\n\nOdpowiadaj wylacznie na podstawie ' +
@@ -128,6 +102,14 @@ type CachedAnswer = {
   answerPolish: string
   output: string
   expiresAt: number
+}
+
+// Cap each retrieved card so the prompt leaves generation headroom inside the
+// model's context window (full BIP cards carry long boilerplate).
+const MAX_CARD_TEXT = 1400
+
+function clampCard(text: string): string {
+  return text.length > MAX_CARD_TEXT ? text.slice(0, MAX_CARD_TEXT) : text
 }
 
 export class ChatService {
@@ -254,10 +236,10 @@ export class ChatService {
     const answerPolish = await this.ollamaService.complete(env.OLLAMA_CHAT_MODEL, messages)
     this.historyService.addMessage(request.conversationId, 'assistant', answerPolish)
 
-    const targetLanguage = languageNames[request.lang] ?? request.lang
+    const targetLanguage = languageName(request.lang)
     this.prepareStreamingResponse(response)
     const output = await this.ollamaService.streamChat(response, env.OLLAMA_TRANSLATION_MODEL, [
-      { role: 'system', content: this.buildTranslationPrompt(targetLanguage) },
+      { role: 'system', content: buildTranslationPrompt(targetLanguage) },
       { role: 'user', content: answerPolish },
     ])
     return { answerPolish, output }
@@ -394,7 +376,7 @@ export class ChatService {
     } else {
       polish = `Podaj: ${label}.`
     }
-    return lang === 'pl' ? polish : this.translate(polish, languageNames[lang] ?? lang)
+    return lang === 'pl' ? polish : this.translate(polish, languageName(lang))
   }
 
   // Turns a raw AcroForm field name (often nested/cryptic) into a readable label.
@@ -440,13 +422,9 @@ export class ChatService {
 
   private async translate(text: string, targetLanguage: string) {
     return this.ollamaService.complete(env.OLLAMA_TRANSLATION_MODEL, [
-      { role: 'system', content: this.buildTranslationPrompt(targetLanguage) },
+      { role: 'system', content: buildTranslationPrompt(targetLanguage) },
       { role: 'user', content: text },
     ])
-  }
-
-  private buildTranslationPrompt(targetLanguage: string) {
-    return translationSystemPrefix + targetLanguage + translationSystemSuffix
   }
 
   private buildSystemPrompt(context: string) {
@@ -465,7 +443,7 @@ export class ChatService {
       return ''
     }
 
-    const services = hits.map((hit) => hit.text).join('\n\n---\n\n')
+    const services = hits.map((hit) => clampCard(hit.text)).join('\n\n---\n\n')
     const offices = this.collectOffices(hits)
     const dependencies = await this.collectDependencies(hits)
 
@@ -571,6 +549,10 @@ export class ChatService {
 
   private prepareStreamingResponse(response: Response) {
     response.setHeader('Content-Type', 'text/plain; charset=utf-8')
+    response.setHeader('Cache-Control', 'no-cache, no-transform')
+    response.setHeader('Connection', 'keep-alive')
+    response.setHeader('X-Accel-Buffering', 'no')
+    response.flushHeaders()
   }
 }
 

@@ -11,6 +11,7 @@ import { documentsRouter } from './routes/documents.js'
 import { graphRouter } from './routes/graph.js'
 import { healthRouter } from './routes/health.js'
 import { mapsRouter } from './routes/maps.js'
+import { planRouter } from './routes/plan.js'
 
 export const createApp = () => {
   const app = express()
@@ -24,7 +25,17 @@ export const createApp = () => {
       credentials: true,
     }),
   )
-  app.use(compression())
+  app.use(
+    compression({
+      filter: (request, response) => {
+        if (request.path === '/api/chat') {
+          return false
+        }
+
+        return compression.filter(request, response)
+      },
+    }),
+  )
   app.use(express.json({ limit: '1mb' }))
   app.use(express.urlencoded({ extended: true, limit: '1mb' }))
   app.use(morgan(env.NODE_ENV === 'production' ? 'combined' : 'dev'))
@@ -33,6 +44,7 @@ export const createApp = () => {
   app.use('/api/graph', graphRouter)
   app.use('/api/maps', mapsRouter)
   app.use('/api/documents', documentsRouter)
+  app.use('/api/life-event-plan', planRouter)
   app.use('/health', healthRouter)
 
   app.use(notFoundHandler)
