@@ -17,7 +17,7 @@ const BACKDROP =
 
 export function ChatPage() {
   const { t } = useTranslation()
-  const { send, isStreaming } = useChat()
+  const { send, startFill, isStreaming } = useChat()
   const messages = useChatSessionStore((state) => state.messages)
   const role = useUIStore((state) => state.role)
 
@@ -97,7 +97,7 @@ export function ChatPage() {
       </section>
 
       <footer className="sticky bottom-0 pt-[var(--space-3)] pb-[var(--space-5)] bg-[linear-gradient(0deg,var(--color-background)_70%,transparent)]">
-        <ChatComposer onSend={send} disabled={isStreaming} />
+        <ChatComposer onSend={send} onStartFill={startFill} disabled={isStreaming} />
       </footer>
     </main>
   )

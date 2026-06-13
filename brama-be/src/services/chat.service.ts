@@ -3,6 +3,13 @@ import { env } from '../config/env.js'
 import type { ChatMessage, ChatRequest } from '../schemas/chat.schema.js'
 import { ChatHistoryService } from './chat-history.service.js'
 import { DepartmentService, type Department } from './department.service.js'
+import {
+  DocumentService,
+  documentService,
+  type DocumentField,
+  type DocumentRecord,
+  type FillSession,
+} from './document.service.js'
 import { graphService, type GraphService, type ServiceGraph } from './graph.service.js'
 import { OllamaService } from './ollama.service.js'
 import { RetrievalService, type RetrievalHit } from './retrieval.service.js'
@@ -70,6 +77,49 @@ function refusalFor(lang: string): string {
   return refusalMessages[lang] ?? refusalFallback
 }
 
+// Appended to the system prompt when a document is attached: tell the model to
+// explain the form (grounded in DOKUMENT + INFORMACJE) and offer guided fill.
+const documentInstruction =
+  '\n\nUzytkownik przeslal formularz (sekcja DOKUMENT ponizej). ' +
+  'Wyjasnij krok po kroku, jak go wypelnic: co oznaczaja poszczegolne pola ' +
+  'i co nalezy w nich wpisac. Jesli w sekcji INFORMACJE sa wymagane zalaczniki, ' +
+  'oplaty, termin lub miejsce zlozenia - podaj je. Na koncu zaproponuj, ze mozesz ' +
+  'pomoc wypelnic ten formularz krok po kroku.\n\nDOKUMENT:\n'
+
+const fillCompleteMessages: Record<string, string> = {
+  pl: 'Gotowe! Wypelnilem formularz na podstawie Twoich odpowiedzi. Sprawdz go przed zlozeniem i pobierz ponizej.',
+  en: 'Done! I filled in the form from your answers. Please review it before submitting and download it below.',
+  uk: 'Готово! Я заповнив форму на основі ваших відповідей. Перевірте її перед поданням і завантажте нижче.',
+  ru: 'Готово! Я заполнил форму на основе ваших ответов. Проверьте её перед подачей и скачайте ниже.',
+  de: 'Fertig! Ich habe das Formular anhand Ihrer Antworten ausgefuellt. Bitte pruefen Sie es vor dem Einreichen und laden Sie es unten herunter.',
+  fr: 'Terminé ! J’ai rempli le formulaire à partir de vos réponses. Veuillez le vérifier avant de le soumettre et le télécharger ci-dessous.',
+  es: '¡Listo! He rellenado el formulario con tus respuestas. Revísalo antes de enviarlo y descárgalo abajo.',
+}
+
+const fillCancelledMessages: Record<string, string> = {
+  pl: 'Przerwalem wypelnianie formularza. Mozesz zaczac od nowa, kiedy chcesz.',
+  en: 'I stopped filling in the form. You can start again whenever you like.',
+  uk: 'Я зупинив заповнення форми. Ви можете почати знову, коли захочете.',
+  ru: 'Я остановил заполнение формы. Вы можете начать заново в любой момент.',
+  de: 'Ich habe das Ausfuellen des Formulars gestoppt. Sie koennen jederzeit neu beginnen.',
+  fr: 'J’ai arrêté de remplir le formulaire. Vous pouvez recommencer quand vous voulez.',
+  es: 'He detenido el rellenado del formulario. Puedes empezar de nuevo cuando quieras.',
+}
+
+const fillNoFieldsMessages: Record<string, string> = {
+  pl: 'Ten dokument nie zawiera pol formularza, ktore moglbym automatycznie wypelnic. Moge natomiast wyjasnic, jak go wypelnic recznie.',
+  en: 'This document has no form fields I can fill automatically. I can still explain how to complete it by hand.',
+  uk: 'У цьому документі немає полів форми, які я міг би заповнити автоматично. Я можу пояснити, як заповнити його вручну.',
+  ru: 'В этом документе нет полей формы, которые я мог бы заполнить автоматически. Я могу объяснить, как заполнить его вручную.',
+  de: 'Dieses Dokument hat keine Formularfelder, die ich automatisch ausfuellen kann. Ich kann aber erklaeren, wie man es von Hand ausfuellt.',
+  fr: 'Ce document ne contient aucun champ de formulaire que je puisse remplir automatiquement. Je peux toutefois expliquer comment le remplir à la main.',
+  es: 'Este documento no tiene campos de formulario que pueda rellenar automáticamente. Aun así, puedo explicar cómo completarlo a mano.',
+}
+
+function localized(map: Record<string, string>, lang: string): string {
+  return map[lang] ?? map.en ?? map.pl ?? ''
+}
+
 const CACHE_TTL_MS = 60 * 60 * 1000
 const CACHE_MAX_ENTRIES = 500
 
@@ -87,6 +137,7 @@ export class ChatService {
     private readonly retrievalService: RetrievalService,
     private readonly departmentService: DepartmentService,
     private readonly graphService: GraphService,
+    private readonly documentService: DocumentService,
   ) {}
 
   private readonly responseCache = new Map<string, CachedAnswer>()
@@ -99,7 +150,32 @@ export class ChatService {
     this.historyService.clearHistory(conversationId)
   }
 
+  // Routes a turn to the right mode. Order matters: explicit fill actions win,
+  // then an in-flight questionnaire, then a freshly attached document, then
+  // ordinary RAG chat.
   async handleChat(request: ChatRequest, response: Response) {
+    if (request.action === 'fill:cancel') {
+      return this.handleFillCancel(request, response)
+    }
+    if (request.action === 'fill:start' && request.documentId) {
+      return this.handleFillStart(request, response, request.documentId)
+    }
+
+    const activeSession = this.documentService.getActiveSession(request.conversationId)
+    if (activeSession) {
+      return this.handleFillAnswer(request, response, activeSession)
+    }
+
+    if (request.documentId) {
+      return this.handleDocumentExplain(request, response, request.documentId)
+    }
+
+    return this.handleNormalChat(request, response)
+  }
+
+  // --- Ordinary RAG chat (unchanged behavior: cache + scope-guard refusal) ---
+
+  private async handleNormalChat(request: ChatRequest, response: Response) {
     // Captured before adding the current turn, so a cold off-topic question
     // can be refused while follow-ups in an active chat are let through.
     const hadHistory = this.historyService.getHistory(request.conversationId).length > 0
@@ -140,9 +216,27 @@ export class ChatService {
     }
 
     const context = await this.buildContext(retrieval.hits)
+    const { answerPolish, output } = await this.streamAnswer(
+      request,
+      response,
+      this.buildSystemPrompt(context),
+    )
 
-    const bielikMessages: ChatMessage[] = [
-      { role: 'system', content: this.buildSystemPrompt(context) },
+    if (cacheKey && retrieval.status === 'grounded') {
+      this.setCached(cacheKey, { userPolish, answerPolish, output })
+    }
+  }
+
+  // Shared generation: stream Bielik directly for Polish, otherwise generate in
+  // Polish and stream the translation. Appends the assistant turn to history and
+  // returns both the Polish answer (for the cache/history) and the streamed output.
+  private async streamAnswer(
+    request: ChatRequest,
+    response: Response,
+    systemContent: string,
+  ): Promise<{ answerPolish: string; output: string }> {
+    const messages: ChatMessage[] = [
+      { role: 'system', content: systemContent },
       ...this.historyService.getHistory(request.conversationId),
     ]
 
@@ -151,17 +245,13 @@ export class ChatService {
       const answer = await this.ollamaService.streamChat(
         response,
         env.OLLAMA_CHAT_MODEL,
-        bielikMessages,
+        messages,
       )
-
       this.historyService.addMessage(request.conversationId, 'assistant', answer)
-      if (cacheKey && retrieval.status === 'grounded') {
-        this.setCached(cacheKey, { userPolish, answerPolish: answer, output: answer })
-      }
-      return
+      return { answerPolish: answer, output: answer }
     }
 
-    const answerPolish = await this.ollamaService.complete(env.OLLAMA_CHAT_MODEL, bielikMessages)
+    const answerPolish = await this.ollamaService.complete(env.OLLAMA_CHAT_MODEL, messages)
     this.historyService.addMessage(request.conversationId, 'assistant', answerPolish)
 
     const targetLanguage = languageNames[request.lang] ?? request.lang
@@ -170,10 +260,182 @@ export class ChatService {
       { role: 'system', content: this.buildTranslationPrompt(targetLanguage) },
       { role: 'user', content: answerPolish },
     ])
+    return { answerPolish, output }
+  }
 
-    if (cacheKey && retrieval.status === 'grounded') {
-      this.setCached(cacheKey, { userPolish, answerPolish, output })
+  // --- Document explain ----------------------------------------------------
+
+  private async handleDocumentExplain(
+    request: ChatRequest,
+    response: Response,
+    documentId: string,
+  ) {
+    const record = this.documentService.getById(documentId)
+    if (!record) {
+      // Document expired / unknown — fall back to ordinary chat.
+      return this.handleNormalChat(request, response)
     }
+
+    const userPolish =
+      request.lang === 'pl' ? request.message : await this.translate(request.message, 'Polish')
+    this.historyService.addMessage(request.conversationId, 'user', userPolish)
+
+    // RAG still enriches the answer (fees, office, attachments) but never gates:
+    // the attached document is itself the in-scope context.
+    const retrieval = await this.retrievalService.retrieve(userPolish, {
+      komorka: request.komorka,
+    })
+    const ragContext = await this.buildContext(retrieval.hits)
+
+    await this.streamAnswer(request, response, this.buildDocumentPrompt(ragContext, record))
+  }
+
+  private buildDocumentPrompt(ragContext: string, record: DocumentRecord): string {
+    let prompt = systemPrompt
+    if (ragContext.length > 0) {
+      prompt += ragInstruction + ragContext
+    }
+    return prompt + documentInstruction + this.buildDocumentSection(record)
+  }
+
+  private buildDocumentSection(record: DocumentRecord): string {
+    let section = record.text.slice(0, env.DOCUMENT_CONTEXT_CHARS)
+    if (record.fields.length > 0) {
+      const fieldList = record.fields
+        .map((field) => `- ${this.humanizeField(field.name)} (${field.type})`)
+        .join('\n')
+      section += `\n\nPOLA FORMULARZA:\n${fieldList}`
+    }
+    return section
+  }
+
+  // --- Conversational fill (deterministic state machine) -------------------
+
+  private async handleFillStart(
+    request: ChatRequest,
+    response: Response,
+    documentId: string,
+  ) {
+    const record = this.documentService.getById(documentId)
+    const firstField = record?.fields[0]
+    if (!record || !firstField) {
+      return this.writeMessage(request, response, localized(fillNoFieldsMessages, request.lang))
+    }
+
+    this.documentService.startSession(request.conversationId, documentId)
+    const question = await this.fieldQuestion(firstField, request.lang)
+    this.writeMessage(request, response, question)
+  }
+
+  private async handleFillAnswer(
+    request: ChatRequest,
+    response: Response,
+    session: FillSession,
+  ) {
+    const record = this.documentService.getById(session.documentId)
+    if (!record) {
+      this.documentService.closeSession(session.id, 'cancelled')
+      return this.handleNormalChat(request, response)
+    }
+
+    const fields = record.fields
+    const currentField = fields[session.currentIndex]
+    const answer = request.message.trim()
+
+    // Values come only from the user — the LLM never fabricates field content (D14).
+    if (currentField && answer.length > 0) {
+      session.answers[currentField.name] = answer
+      this.historyService.addMessage(request.conversationId, 'user', answer)
+    }
+    session.currentIndex += 1
+
+    const nextField = fields[session.currentIndex]
+    if (nextField) {
+      this.documentService.saveSessionProgress(session)
+      const question = await this.fieldQuestion(nextField, request.lang)
+      this.writeMessage(request, response, question)
+      return
+    }
+
+    // Every field collected → fill the AcroForm and hand back a download link.
+    this.documentService.saveSessionProgress(session)
+    await this.documentService.fillPdf(session.documentId, session.answers)
+    this.documentService.closeSession(session.id, 'done')
+
+    const confirmation = localized(fillCompleteMessages, request.lang)
+    const downloadBlock = {
+      type: 'downloadForm',
+      forms: [{ name: record.filename, url: this.downloadUrl(response, record.id) }],
+    }
+
+    this.prepareSseResponse(response)
+    this.writeSse(response, 'token', { delta: confirmation })
+    this.writeSse(response, 'blocks', { blocks: [downloadBlock] })
+    this.writeSse(response, 'done')
+    this.historyService.addMessage(request.conversationId, 'assistant', confirmation)
+  }
+
+  private handleFillCancel(request: ChatRequest, response: Response) {
+    const session = this.documentService.getActiveSession(request.conversationId)
+    if (session) {
+      this.documentService.closeSession(session.id, 'cancelled')
+    }
+    this.writeMessage(request, response, localized(fillCancelledMessages, request.lang))
+  }
+
+  // Builds the next question for a field, translated into the user's language.
+  private async fieldQuestion(field: DocumentField, lang: string): Promise<string> {
+    const label = this.humanizeField(field.name)
+    let polish: string
+    if (field.type === 'checkbox') {
+      polish = `Czy zaznaczyc pole "${label}"? Odpowiedz: tak lub nie.`
+    } else if (field.options && field.options.length > 0) {
+      polish = `Podaj: ${label}. Dostepne opcje: ${field.options.join(', ')}.`
+    } else {
+      polish = `Podaj: ${label}.`
+    }
+    return lang === 'pl' ? polish : this.translate(polish, languageNames[lang] ?? lang)
+  }
+
+  // Turns a raw AcroForm field name (often nested/cryptic) into a readable label.
+  private humanizeField(name: string): string {
+    const leaf = name.split(/[.\]]/).filter(Boolean).pop() ?? name
+    const cleaned = leaf
+      .replace(/\[\d+\]/g, '')
+      .replace(/[_-]+/g, ' ')
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .trim()
+    if (cleaned.length === 0) {
+      return name
+    }
+    return cleaned.charAt(0).toUpperCase() + cleaned.slice(1)
+  }
+
+  private downloadUrl(response: Response, documentId: string): string {
+    const request = response.req
+    const host = request.get('host') ?? `localhost:${env.PORT}`
+    return `${request.protocol}://${host}/api/documents/${documentId}/download`
+  }
+
+  // Writes a non-streamed assistant message as plain text and records it in history.
+  private writeMessage(request: ChatRequest, response: Response, message: string) {
+    this.prepareStreamingResponse(response)
+    response.write(message)
+    this.historyService.addMessage(request.conversationId, 'assistant', message)
+  }
+
+  private prepareSseResponse(response: Response) {
+    response.setHeader('Content-Type', 'text/event-stream; charset=utf-8')
+    response.setHeader('Cache-Control', 'no-cache, no-transform')
+    response.setHeader('Connection', 'keep-alive')
+  }
+
+  private writeSse(response: Response, event: string, data?: unknown) {
+    response.write(`event: ${event}\n`)
+    if (data !== undefined) {
+      response.write(`data: ${JSON.stringify(data)}\n`)
+    }
+    response.write('\n')
   }
 
   private async translate(text: string, targetLanguage: string) {
@@ -318,4 +580,5 @@ export const chatService = new ChatService(
   new RetrievalService(),
   new DepartmentService(),
   graphService,
+  documentService,
 )

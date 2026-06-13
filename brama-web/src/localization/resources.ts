@@ -130,6 +130,15 @@ export const resources = {
         send: 'Send',
         rolesLabel: 'User mode',
         brandHome: 'Brama — home',
+        document: {
+          attach: 'Attach a PDF form',
+          uploading: 'Uploading document…',
+          attached: 'Attached',
+          remove: 'Remove document',
+          error: 'Could not upload the document. Please try a text-based PDF.',
+          fillWithMe: 'Fill it with me',
+          cancelFill: 'Cancel filling',
+        },
         blocks: {
           documents: 'Required documents',
           fee: 'Fee',
@@ -308,6 +317,15 @@ export const resources = {
         send: 'Wyślij',
         rolesLabel: 'Tryb użytkownika',
         brandHome: 'Brama — strona główna',
+        document: {
+          attach: 'Załącz formularz PDF',
+          uploading: 'Wysyłanie dokumentu…',
+          attached: 'Załączono',
+          remove: 'Usuń dokument',
+          error: 'Nie udało się wgrać dokumentu. Spróbuj plik PDF z warstwą tekstową.',
+          fillWithMe: 'Wypełnij ze mną',
+          cancelFill: 'Przerwij wypełnianie',
+        },
         blocks: {
           documents: 'Wymagane dokumenty',
           fee: 'Opłata',

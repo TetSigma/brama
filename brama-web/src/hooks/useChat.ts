@@ -1,9 +1,17 @@
 import { useMutation } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
+import type { ChatAction } from '@/@types/chat'
 import { useUIStore } from '@/contexts/uiStore'
 import { useChatSessionStore } from '@/contexts/chatSessionStore'
 import { streamChat } from '@/api/chatClient'
 import { parseBlocks } from '@/api/blocks'
+
+type SendInput = {
+  message: string
+  action?: ChatAction
+  // Control turns (fill:start / fill:cancel) have no user-visible bubble.
+  silent?: boolean
+}
 
 /**
  * Domain hook: owns the chat send + stream loop. UI components call `send(text)`.
@@ -17,7 +25,7 @@ export function useChat() {
   const store = useChatSessionStore
 
   const mutation = useMutation({
-    mutationFn: async (message: string) => {
+    mutationFn: async ({ message, action, silent }: SendInput) => {
       const {
         addUserMessage,
         startAssistantMessage,
@@ -25,9 +33,12 @@ export function useChat() {
         setBlocks,
         setGrounded,
         finishAssistantMessage,
+        attachedDocument,
       } = store.getState()
 
-      addUserMessage(message)
+      if (!silent) {
+        addUserMessage(message)
+      }
       const assistantId = startAssistantMessage()
 
       try {
@@ -36,6 +47,8 @@ export function useChat() {
           message,
           role,
           lang: i18n.resolvedLanguage ?? 'pl',
+          documentId: attachedDocument?.id,
+          action,
         })) {
           if (event.type === 'token') {
             appendToken(assistantId, event.delta)
@@ -55,7 +68,15 @@ export function useChat() {
     send: (message: string) => {
       const trimmed = message.trim()
       if (!trimmed || isStreaming) return
-      mutation.mutate(trimmed)
+      mutation.mutate({ message: trimmed })
+    },
+    startFill: () => {
+      if (isStreaming) return
+      mutation.mutate({ message: '', action: 'fill:start', silent: true })
+    },
+    cancelFill: () => {
+      if (isStreaming) return
+      mutation.mutate({ message: '', action: 'fill:cancel', silent: true })
     },
     isStreaming,
     error: mutation.error,

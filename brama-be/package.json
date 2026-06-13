@@ -10,10 +10,12 @@
     "ingest": "tsx scripts/ingest.ts",
     "ingest:graph": "tsx scripts/ingest-graph.ts",
     "geocode": "tsx scripts/geocode-departments.ts",
+    "build:templates": "tsx scripts/build-templates.ts",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
     "@qdrant/js-client-rest": "^1.18.0",
     "better-sqlite3": "^12.10.0",
     "compression": "^1.8.1",
@@ -22,8 +24,11 @@
     "express": "^5.2.1",
     "helmet": "^8.1.0",
     "morgan": "^1.10.1",
+    "multer": "^2.1.1",
     "neo4j-driver": "^5.28.0",
     "ollama": "^0.6.3",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5",
     "zod": "^4.1.13"
   },
   "devDependencies": {
@@ -33,6 +38,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.1.0",
     "@types/node": "^24.12.3",
     "eslint": "^10.3.0",
     "globals": "^17.6.0",

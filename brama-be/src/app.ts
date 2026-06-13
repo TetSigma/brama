@@ -7,6 +7,7 @@ import { env } from './config/env.js'
 import { errorHandler } from './middleware/error-handler.js'
 import { notFoundHandler } from './middleware/not-found-handler.js'
 import { chatRouter } from './routes/chat.js'
+import { documentsRouter } from './routes/documents.js'
 import { graphRouter } from './routes/graph.js'
 import { healthRouter } from './routes/health.js'
 import { mapsRouter } from './routes/maps.js'
@@ -31,6 +32,7 @@ export const createApp = () => {
   app.use('/api', chatRouter)
   app.use('/api/graph', graphRouter)
   app.use('/api/maps', mapsRouter)
+  app.use('/api/documents', documentsRouter)
   app.use('/health', healthRouter)
 
   app.use(notFoundHandler)

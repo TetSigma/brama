@@ -21,9 +21,22 @@ export type ChatStreamEvent =
   | { type: 'meta'; answerId: string; grounded: boolean }
   | { type: 'done' }
 
+/** Control signal for the conversational document-fill flow. */
+export type ChatAction = 'fill:start' | 'fill:cancel'
+
 export type SendChatInput = {
   conversationId: string
   message: string
   role: RoleMode
   lang: string
+  /** Set when a PDF is attached — switches the backend into explain/fill mode. */
+  documentId?: string
+  action?: ChatAction
+}
+
+/** A PDF the user attached to the current conversation. */
+export type AttachedDocument = {
+  id: string
+  filename: string
+  hasFormFields: boolean
 }

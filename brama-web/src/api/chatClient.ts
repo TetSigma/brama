@@ -13,6 +13,8 @@ type ChatRequestBody = {
   conversationId: string
   lang: string
   message: string
+  documentId?: string
+  action?: SendChatInput['action']
 }
 
 function toRequestBody(input: SendChatInput): ChatRequestBody {
@@ -20,6 +22,8 @@ function toRequestBody(input: SendChatInput): ChatRequestBody {
     conversationId: input.conversationId,
     lang: input.lang,
     message: input.message,
+    ...(input.documentId ? { documentId: input.documentId } : {}),
+    ...(input.action ? { action: input.action } : {}),
   }
 }
 

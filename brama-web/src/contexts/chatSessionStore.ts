@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import type { AnswerBlock } from '@/api/blocks'
-import type { ChatMessage } from '@/@types/chat'
+import type { AttachedDocument, ChatMessage } from '@/@types/chat'
 
 let counter = 0
 /** Stable id without Date.now()/Math.random() for predictable rendering. */
@@ -13,12 +13,14 @@ type ChatSessionState = {
   sessionId: string
   messages: ChatMessage[]
   isStreaming: boolean
+  attachedDocument: AttachedDocument | null
   addUserMessage: (text: string) => void
   startAssistantMessage: () => string
   appendToken: (id: string, delta: string) => void
   setBlocks: (id: string, blocks: AnswerBlock[]) => void
   setGrounded: (id: string, grounded: boolean) => void
   finishAssistantMessage: (id: string) => void
+  setAttachedDocument: (document: AttachedDocument | null) => void
   reset: () => void
 }
 
@@ -26,6 +28,7 @@ export const useChatSessionStore = create<ChatSessionState>((set) => ({
   sessionId: nextId('session'),
   messages: [],
   isStreaming: false,
+  attachedDocument: null,
 
   addUserMessage: (text) =>
     set((state) => ({
@@ -76,5 +79,13 @@ export const useChatSessionStore = create<ChatSessionState>((set) => ({
       ),
     })),
 
-  reset: () => set({ sessionId: nextId('session'), messages: [], isStreaming: false }),
+  setAttachedDocument: (document) => set({ attachedDocument: document }),
+
+  reset: () =>
+    set({
+      sessionId: nextId('session'),
+      messages: [],
+      isStreaming: false,
+      attachedDocument: null,
+    }),
 }))
