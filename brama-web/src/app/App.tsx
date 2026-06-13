@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import heroImage from './assets/lublin-civic-platform.png'
-import { UIButton } from '../ui'
-import { persistLanguage } from './i18n'
-import { languageCodes, languageFlags, languageNames, type LanguageCode } from './i18n/resources'
+import { Link } from 'react-router'
+import { GlassCard } from 'react-glass-ui'
+import heroImage from '@/assets/lublin-civic-platform.png'
+import { UIButton, uiButtonClass } from '@/ui'
+import { persistLanguage } from '@/localization'
+import { languageCodes, languageFlags, languageNames, type LanguageCode } from '@/localization/resources'
 
 const serviceAreas = ['documents', 'appointments', 'benefits', 'transport'] as const
 const platformFeatures = ['guided', 'local', 'handoff'] as const
@@ -118,43 +120,67 @@ function App() {
         {t('accessibility.skipToContent')}
       </a>
       <header className="site-header" aria-label={t('navigation.headerLabel')}>
-        <a className="brand-mark" href="#top" aria-label={t('navigation.homeLabel')}>
-          <span className="brand-gate" aria-hidden="true" />
-          <span>Brama</span>
-        </a>
-        <nav className="site-nav" aria-label={t('navigation.mainLabel')}>
-          <a href="#platform">{t('navigation.platform')}</a>
-          <a href="#services">{t('navigation.services')}</a>
-          <a href="#trust">{t('navigation.trust')}</a>
-        </nav>
-        <div className="header-actions">
-          <button
-            aria-pressed={usesHighContrast}
-            className="contrast-toggle"
-            onClick={() => setUsesHighContrast((currentValue) => !currentValue)}
-            type="button"
-          >
-            {usesHighContrast ? t('accessibility.highContrastOn') : t('accessibility.highContrastOff')}
-          </button>
-          <div className="language-switcher">
-          <label className="visually-hidden" htmlFor="language-select">
-            {t('navigation.languageLabel')}
-          </label>
-          <select
-            aria-label={`${t('navigation.languageLabel')}: ${languageNames[currentLanguage]}`}
-            className="language-select"
-            id="language-select"
-            onChange={(event) => handleLanguageChange(event.target.value as LanguageCode)}
-            value={currentLanguage}
-          >
-            {languageCodes.map((languageCode) => (
-              <option key={languageCode} value={languageCode}>
-                {languageFlags[languageCode]} {languageNames[languageCode]}
-              </option>
-            ))}
-          </select>
+        <GlassCard
+          className="site-header__glass"
+          contentClassName="site-header__content"
+          blur={17}
+          distortion={343}
+          flexibility={0}
+          borderColor="#ffffff"
+          borderSize={1}
+          borderRadius={130}
+          borderOpacity={0.4}
+          backgroundColor="#000000"
+          backgroundOpacity={0.06}
+          chromaticAberration={0}
+          onHoverScale={1}
+          saturation={100}
+          brightness={100}
+          padding="12px 18px"
+        >
+          <a className="brand-mark" href="#top" aria-label={t('navigation.homeLabel')}>
+            <span className="brand-gate" aria-hidden="true" />
+            <span>Brama</span>
+          </a>
+          <nav className="site-nav" aria-label={t('navigation.mainLabel')}>
+            <a href="#platform">{t('navigation.platform')}</a>
+            <a href="#services">{t('navigation.services')}</a>
+            <a href="#trust">{t('navigation.trust')}</a>
+          </nav>
+          <div className="header-actions">
+            <Link className={uiButtonClass({ variant: 'primary', size: 'sm' })} to="/chat">
+              {t('navigation.assistant')}
+            </Link>
+            <button
+              aria-pressed={usesHighContrast}
+              className="contrast-toggle"
+              onClick={() => setUsesHighContrast((currentValue) => !currentValue)}
+              type="button"
+            >
+              {usesHighContrast
+                ? t('accessibility.highContrastOn')
+                : t('accessibility.highContrastOff')}
+            </button>
+            <div className="language-switcher">
+              <label className="visually-hidden" htmlFor="language-select">
+                {t('navigation.languageLabel')}
+              </label>
+              <select
+                aria-label={`${t('navigation.languageLabel')}: ${languageNames[currentLanguage]}`}
+                className="language-select"
+                id="language-select"
+                onChange={(event) => handleLanguageChange(event.target.value as LanguageCode)}
+                value={currentLanguage}
+              >
+                {languageCodes.map((languageCode) => (
+                  <option key={languageCode} value={languageCode}>
+                    {languageFlags[languageCode]} {languageNames[languageCode]}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-        </div>
+        </GlassCard>
       </header>
 
       <main className="site-shell" id="main-content" tabIndex={-1}>
@@ -170,7 +196,9 @@ function App() {
           </p>
           <p className="hero-lede">{t('hero.lede')}</p>
           <div className="hero-actions" aria-label={t('hero.actionsLabel')}>
-            <UIButton href="#platform">{t('hero.primaryAction')}</UIButton>
+            <Link className={uiButtonClass({ variant: 'primary', size: 'md' })} to="/chat">
+              {t('hero.primaryAction')}
+            </Link>
             <UIButton href="#services" variant="secondary">
               {t('hero.secondaryAction')}
             </UIButton>
@@ -178,7 +206,31 @@ function App() {
         </div>
 
         <div className="hero-visual" aria-label={t('hero.visualLabel')}>
-          <img src={heroImage} alt={t('hero.imageAlt')} />
+          <GlassCard
+            className="hero-glass"
+            contentClassName="hero-glass__content"
+            borderRadius={28}
+            blur={3}
+            distortion={95}
+            chromaticAberration={9}
+            saturation={150}
+            brightness={106}
+            flexibility={0}
+            onHoverScale={1.03}
+            borderColor="#ffffff"
+            borderOpacity={0.65}
+            borderSize={1}
+            innerLightBlur={28}
+            innerLightSpread={3}
+            innerLightColor="#ffffff"
+            innerLightOpacity={0.8}
+            outerLightBlur={48}
+            outerLightSpread={4}
+            outerLightColor="#ffffff"
+            outerLightOpacity={0.35}
+          >
+            <img src={heroImage} alt={t('hero.imageAlt')} />
+          </GlassCard>
           <div className="assistant-panel" aria-label={t('assistantPreview.label')}>
             <p>{t('assistantPreview.question')}</p>
             <span>{t('assistantPreview.answer')}</span>

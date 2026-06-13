@@ -19,6 +19,7 @@
     "concurrently": "^10.0.3"
   },
   "dependencies": {
-    "neo4j-driver": "^6.1.0"
+    "neo4j-driver": "^6.1.0",
+    "react-glass-ui": "^1.2.2"
   }
 }
