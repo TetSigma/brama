@@ -13,9 +13,9 @@ export function isCurrentOfficeholderQuestion(message: string): boolean {
     return false
   }
 
-  const asksWho = /\b(kto|who)\b/.test(query)
+  const asksWho = /\b(kto|kim|who)\b/.test(query)
   const asksCurrent =
-    /\b(aktualn\w*|obecn\w*|teraz|terazniejsz\w*|dzis|dzisiejsz\w*|currently|current)\b/.test(
+    /\b(aktualn\w*|obecn\w*|teraz|terazniejsz\w*|dzis|dzisiejsz\w*|currently|current)\b|\bna razie\b/.test(
       query,
     )
   const asksOffice =
@@ -25,7 +25,7 @@ export function isCurrentOfficeholderQuestion(message: string): boolean {
   const asksRoleHolder =
     asksWho &&
     (/\b(jest|pelni|sprawuje|zostal\w*|wybran\w*|nazywa|is|serves)\b/.test(query) ||
-      /^kto\s+(?:aktualn\w*\s+|obecn\w*\s+)?(?:prezydent|burmistrz|mayor|president)\b/.test(
+      /^(?:kto|kim)\s+(?:aktualn\w*\s+|obecn\w*\s+)?(?:prezydent|burmistrz|mayor|president)\b/.test(
         query,
       ))
 

@@ -8,6 +8,10 @@ describe('isCurrentOfficeholderQuestion', () => {
       isCurrentOfficeholderQuestion('Kto na razie jest prezydentem miasta Lublin?'),
       true,
     )
+    assert.equal(
+      isCurrentOfficeholderQuestion('Kim jest prezydent miasta lublin na razie?'),
+      true,
+    )
     assert.equal(isCurrentOfficeholderQuestion('Kto jest prezydentem Lublina?'), true)
     assert.equal(isCurrentOfficeholderQuestion('Obecny prezydent miasta Lublin'), true)
   })
