@@ -15,6 +15,7 @@ const envSchema = z.object({
   OLLAMA_TRANSLATION_MODEL: z.string().default("qwen2.5:7b"),
   OLLAMA_BASE_URL: z.string().default("http://localhost:11434"),
   OLLAMA_EMBED_MODEL: z.string().default("bge-m3:latest"),
+  OLLAMA_NUM_CTX: z.coerce.number().int().positive().default(8192),
   QDRANT_URL: z.string().default("http://localhost:6333"),
   QDRANT_COLLECTION: z.string().default("bip_services"),
   RAG_TOP_K: z.coerce.number().int().positive().default(4),
