@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { ListChecks } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { GlassCard } from 'react-glass-ui'
 import { useChat } from '@/hooks/useChat'
@@ -8,6 +10,7 @@ import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { useChatSessionStore } from '@/contexts/chatSessionStore'
 import { useUIStore } from '@/contexts/uiStore'
 import { LifeEventsPanel } from '@/components/lifeEvents/LifeEventsPanel'
+import { uiLabel } from '@/components/lifeEvents/config'
 
 const BACKDROP =
   'fixed inset-0 -z-10 pointer-events-none ' +
@@ -17,11 +20,13 @@ const BACKDROP =
   'linear-gradient(180deg,var(--color-background)_0%,var(--color-background-subtle)_100%)]'
 
 export function ChatPage() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const { send, isStreaming } = useChat()
   const messages = useChatSessionStore((state) => state.messages)
   const role = useUIStore((state) => state.role)
+  const [lifeMode, setLifeMode] = useState(false)
 
+  const lang = i18n.resolvedLanguage ?? 'pl'
   const isEmpty = messages.length === 0
 
   return (
@@ -59,6 +64,20 @@ export function ChatPage() {
             <span>Brama</span>
           </a>
           <div className="flex items-center gap-[var(--space-3)]">
+            <button
+              type="button"
+              aria-pressed={lifeMode}
+              onClick={() => setLifeMode((value) => !value)}
+              className={[
+                'inline-flex items-center gap-[var(--space-2)] px-[var(--space-3)] py-[var(--space-2)] rounded-[var(--radius-pill)] border text-[length:var(--font-size-sm)] cursor-pointer transition-colors',
+                lifeMode
+                  ? 'border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-primary-contrast)]'
+                  : 'border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] hover:border-[var(--color-primary)]',
+              ].join(' ')}
+            >
+              <ListChecks size={16} aria-hidden="true" />
+              <span>{uiLabel('heading', lang)}</span>
+            </button>
             <RoleModeSwitch />
             <LanguageSwitcher />
           </div>
@@ -66,7 +85,11 @@ export function ChatPage() {
       </header>
 
       <section className="flex flex-col min-h-0" aria-label={t('chat.emptyTitle')}>
-        {isEmpty ? (
+        {lifeMode ? (
+          <div className="flex-1 overflow-y-auto py-[var(--space-6)]">
+            <LifeEventsPanel />
+          </div>
+        ) : isEmpty ? (
           <div className="flex flex-col gap-[var(--space-4)] items-start justify-center flex-1 py-[var(--space-12)]">
             <h1 className="m-0 text-[clamp(2rem,5vw,3rem)]">{t('chat.emptyTitle')}</h1>
             <p className="m-0 text-[var(--color-text-muted)] text-[length:var(--font-size-lg)]">
@@ -91,7 +114,6 @@ export function ChatPage() {
                 )
               })}
             </ul>
-            <LifeEventsPanel />
           </div>
         ) : (
           <ChatThread messages={messages} onAsk={send} />
