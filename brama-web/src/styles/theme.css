@@ -1,0 +1,137 @@
+:root {
+  color-scheme: light;
+
+  /* Lublin identity palette */
+  --color-lublin-red: #fa1414;
+  --color-lublin-green: #73be46;
+  --color-lublin-black: #000000;
+  --color-lublin-white: #ffffff;
+  --color-lublin-orange: #ff8228;
+  --color-lublin-plum: #7b1e59;
+  --color-lublin-blue: #0069b4;
+  --color-lublin-magenta: #c3005a;
+  --color-lublin-teal: #00b194;
+  --color-lublin-cyan: #00c3e6;
+
+  /* Neutral palette */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f7f7f7;
+  --color-neutral-100: #eeeeee;
+  --color-neutral-200: #d8d8d8;
+  --color-neutral-300: #b8b8b8;
+  --color-neutral-400: #8a8a8a;
+  --color-neutral-500: #666666;
+  --color-neutral-600: #4a4a4a;
+  --color-neutral-700: #333333;
+  --color-neutral-800: #1f1f1f;
+  --color-neutral-900: #111111;
+  --color-neutral-1000: #000000;
+
+  /* Semantic colors */
+  --color-background: var(--color-neutral-0);
+  --color-background-subtle: var(--color-neutral-50);
+  --color-surface: var(--color-neutral-0);
+  --color-surface-muted: var(--color-neutral-100);
+  --color-surface-inverse: var(--color-neutral-900);
+  --color-border: var(--color-neutral-200);
+  --color-border-strong: var(--color-neutral-700);
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-600);
+  --color-text-subtle: var(--color-neutral-500);
+  --color-text-inverse: var(--color-neutral-0);
+  --color-primary: var(--color-lublin-red);
+  --color-primary-hover: #d90000;
+  --color-primary-active: #b80000;
+  --color-primary-contrast: var(--color-lublin-white);
+  --color-secondary: var(--color-lublin-green);
+  --color-secondary-hover: #5fa733;
+  --color-secondary-active: #4d8d26;
+  --color-secondary-contrast: var(--color-lublin-black);
+  --color-info: var(--color-lublin-blue);
+  --color-success: var(--color-lublin-green);
+  --color-warning: var(--color-lublin-orange);
+  --color-danger: var(--color-lublin-red);
+  --color-focus: var(--color-lublin-blue);
+
+  /* Typography */
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 2.25rem;
+  --line-height-tight: 1.15;
+  --line-height-heading: 1.25;
+  --line-height-body: 1.5;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Shape */
+  --radius-0: 0;
+  --radius-1: 0.25rem;
+  --radius-2: 0.375rem;
+  --radius-3: 0.5rem;
+  --radius-pill: 999px;
+
+  /* Borders, shadows, and focus */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-lg: 0 18px 48px rgb(0 0 0 / 0.16);
+  --focus-ring: 0 0 0 3px rgb(0 105 180 / 0.28);
+
+  /* Layout */
+  --container-xs: 36rem;
+  --container-sm: 48rem;
+  --container-md: 64rem;
+  --container-lg: 80rem;
+  --container-padding: clamp(var(--space-4), 4vw, var(--space-8));
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 280ms;
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+[data-theme="high-contrast"] {
+  color-scheme: light;
+  --color-background: var(--color-lublin-white);
+  --color-background-subtle: var(--color-lublin-white);
+  --color-surface: var(--color-lublin-white);
+  --color-surface-muted: var(--color-lublin-white);
+  --color-border: var(--color-lublin-black);
+  --color-border-strong: var(--color-lublin-black);
+  --color-text: var(--color-lublin-black);
+  --color-text-muted: var(--color-lublin-black);
+  --color-text-subtle: var(--color-lublin-black);
+  --color-primary: var(--color-lublin-black);
+  --color-primary-hover: var(--color-lublin-black);
+  --color-primary-active: var(--color-lublin-black);
+  --color-primary-contrast: var(--color-lublin-white);
+  --color-secondary: var(--color-lublin-white);
+  --color-secondary-hover: var(--color-neutral-100);
+  --color-secondary-active: var(--color-neutral-200);
+  --color-secondary-contrast: var(--color-lublin-black);
+  --color-focus: var(--color-lublin-black);
+  --focus-ring: 0 0 0 3px var(--color-lublin-black);
+}
