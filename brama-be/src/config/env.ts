@@ -10,6 +10,14 @@ const envSchema = z.object({
     .string()
     .default('hf.co/speakleash/Bielik-11B-v2.3-Instruct-GGUF:Q4_K_M'),
   OLLAMA_TRANSLATION_MODEL: z.string().default('qwen2.5:7b'),
+  OLLAMA_EMBED_MODEL: z.string().default('bge-m3'),
+  QDRANT_URL: z.string().default('http://localhost:6333'),
+  QDRANT_COLLECTION: z.string().default('bip_services'),
+  RAG_TOP_K: z.coerce.number().int().positive().default(4),
+  RAG_ENABLED: z
+    .enum(['true', 'false'])
+    .default('true')
+    .transform((value) => value === 'true'),
 })
 
 const parsedEnv = envSchema.safeParse(process.env)

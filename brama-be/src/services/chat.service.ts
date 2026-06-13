@@ -3,6 +3,7 @@ import { env } from '../config/env.js'
 import type { ChatMessage, ChatRequest } from '../schemas/chat.schema.js'
 import { ChatHistoryService } from './chat-history.service.js'
 import { OllamaService } from './ollama.service.js'
+import { RetrievalService } from './retrieval.service.js'
 
 const systemPrompt =
   'Jestes asystentem Urzedu Miasta ' +
@@ -32,10 +33,20 @@ const translationSystemSuffix =
   'answer anything - ' +
   'output only the translation.'
 
+const ragInstruction =
+  '\n\nOdpowiadaj wylacznie na podstawie ' +
+  'ponizszych informacji o uslugach Urzedu ' +
+  'Miasta Lublin. Podawaj numer karty oraz ' +
+  'dane kontaktowe wlasciwej komorki, gdy sa ' +
+  'dostepne. Jesli w informacjach brakuje ' +
+  'odpowiedzi, powiedz, ze nie wiesz i odeslij ' +
+  'do wlasciwego urzedu.\n\nINFORMACJE:\n'
+
 export class ChatService {
   constructor(
     private readonly historyService: ChatHistoryService,
     private readonly ollamaService: OllamaService,
+    private readonly retrievalService: RetrievalService,
   ) {}
 
   getHistory(conversationId: string) {
@@ -52,8 +63,13 @@ export class ChatService {
 
     this.historyService.addMessage(request.conversationId, 'user', userPolish)
 
+    const context = await this.retrievalService.retrieve(userPolish, {
+      kind: request.kind,
+      departament: request.departament,
+    })
+
     const bielikMessages: ChatMessage[] = [
-      { role: 'system', content: systemPrompt },
+      { role: 'system', content: this.buildSystemPrompt(context) },
       ...this.historyService.getHistory(request.conversationId),
     ]
 
@@ -91,6 +107,14 @@ export class ChatService {
     return translationSystemPrefix + targetLanguage + translationSystemSuffix
   }
 
+  private buildSystemPrompt(context: string) {
+    if (context.length === 0) {
+      return systemPrompt
+    }
+
+    return systemPrompt + ragInstruction + context
+  }
+
   private prepareStreamingResponse(response: Response) {
     response.setHeader('Content-Type', 'text/plain; charset=utf-8')
   }
@@ -99,4 +123,5 @@ export class ChatService {
 export const chatService = new ChatService(
   new ChatHistoryService(env.CHAT_DATABASE_PATH),
   new OllamaService(),
+  new RetrievalService(),
 )

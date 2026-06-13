@@ -11,6 +11,8 @@ export const chatRequestSchema = z.object({
   conversationId: z.string().trim().min(1).default('default'),
   lang: z.string().trim().min(1).default('pl'),
   message: z.string().default(''),
+  kind: z.enum(['service', 'unit']).optional(),
+  departament: z.string().trim().min(1).optional(),
 })
 
 export const resetConversationSchema = z.object({
