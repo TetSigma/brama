@@ -1,52 +1,60 @@
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import { defaultLanguage, languageCodes, type LanguageCode, resources } from './resources'
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import {
+  defaultLanguage,
+  languageCodes,
+  type LanguageCode,
+  resources,
+} from "./resources";
 
-const storageKey = 'brama.language'
+const storageKey = "brama.language";
 
 function parseLanguage(value: string | null | undefined): LanguageCode | null {
   if (!value) {
-    return null
+    return null;
   }
 
-  const normalizedLanguage = value.toLowerCase().split('-')[0]
+  const normalizedLanguage = value.toLowerCase().split("-")[0];
 
-  return languageCodes.find((languageCode) => languageCode === normalizedLanguage) ?? null
+  return (
+    languageCodes.find((languageCode) => languageCode === normalizedLanguage) ??
+    null
+  );
 }
 
 function getStoredLanguage(): LanguageCode | null {
   try {
-    return parseLanguage(window.localStorage.getItem(storageKey))
+    return parseLanguage(window.localStorage.getItem(storageKey));
   } catch {
-    return null
+    return null;
   }
 }
 
 function getBrowserLanguage(): LanguageCode | null {
   const browserLanguages = window.navigator.languages.length
     ? window.navigator.languages
-    : [window.navigator.language]
+    : [window.navigator.language];
 
   for (const browserLanguage of browserLanguages) {
-    const parsedLanguage = parseLanguage(browserLanguage)
+    const parsedLanguage = parseLanguage(browserLanguage);
 
     if (parsedLanguage) {
-      return parsedLanguage
+      return parsedLanguage;
     }
   }
 
-  return null
+  return null;
 }
 
 export function getInitialLanguage(): LanguageCode {
-  return getStoredLanguage() ?? getBrowserLanguage() ?? defaultLanguage
+  return getStoredLanguage() ?? getBrowserLanguage() ?? defaultLanguage;
 }
 
 export function persistLanguage(language: LanguageCode) {
   try {
-    window.localStorage.setItem(storageKey, language)
+    window.localStorage.setItem(storageKey, language);
   } catch {
-    return
+    return;
   }
 }
 
@@ -58,12 +66,12 @@ i18n.use(initReactI18next).init({
   interpolation: {
     escapeValue: false,
   },
-})
+});
 
-document.documentElement.lang = i18n.resolvedLanguage ?? defaultLanguage
+document.documentElement.lang = i18n.resolvedLanguage ?? defaultLanguage;
 
-i18n.on('languageChanged', (language) => {
-  document.documentElement.lang = parseLanguage(language) ?? defaultLanguage
-})
+i18n.on("languageChanged", (language) => {
+  document.documentElement.lang = parseLanguage(language) ?? defaultLanguage;
+});
 
-export default i18n
+export default i18n;

@@ -9,8 +9,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.resolve(__dirname, "../../docs/bip_db");
 const DB_PATH = path.resolve(__dirname, "../data/brama.db");
 
-const QDRANT_URL = "http://10.8.45.10:6333";
-const OLLAMA_URL = "http://10.8.45.10:11434";
+const QDRANT_URL = "http://localhost:6333";
+const OLLAMA_URL = "http://localhost:11434";
 const COLLECTION = "brama-services";
 const EMBED_MODEL = "mxbai-embed-large";
 const VECTOR_SIZE = 1024;
