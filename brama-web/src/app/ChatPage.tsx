@@ -10,7 +10,6 @@ import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { useChatSessionStore } from '@/contexts/chatSessionStore'
 import { useUIStore } from '@/contexts/uiStore'
 import { LifeEventsPanel } from '@/components/lifeEvents/LifeEventsPanel'
-import { uiLabel } from '@/components/lifeEvents/config'
 
 const BACKDROP =
   'fixed inset-0 -z-10 pointer-events-none ' +
@@ -20,13 +19,12 @@ const BACKDROP =
   'linear-gradient(180deg,var(--color-background)_0%,var(--color-background-subtle)_100%)]'
 
 export function ChatPage() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const { send, startFill, isStreaming } = useChat()
   const messages = useChatSessionStore((state) => state.messages)
   const role = useUIStore((state) => state.role)
   const [lifeMode, setLifeMode] = useState(false)
 
-  const lang = i18n.resolvedLanguage ?? 'pl'
   const isEmpty = messages.length === 0
 
   return (
@@ -76,7 +74,7 @@ export function ChatPage() {
               ].join(' ')}
             >
               <ListChecks size={16} aria-hidden="true" />
-              <span>{uiLabel('heading', lang)}</span>
+              <span>{t('lifeEvents.heading')}</span>
             </button>
             <RoleModeSwitch />
             <LanguageSwitcher />

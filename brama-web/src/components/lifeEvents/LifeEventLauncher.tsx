@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { UIButton, UIField, UISelect } from '@/ui'
-import { CITIZENSHIP_GROUPS, LIFE_EVENTS, pickLabel, uiLabel } from './config'
+import { CITIZENSHIP_GROUPS, LIFE_EVENTS } from './config'
 
 type RunInput = { eventId: string; group?: string; message: string }
 
@@ -15,15 +15,14 @@ const CARD =
   'transition-[border-color] duration-[180ms] ease-[cubic-bezier(0.2,0,0,1)]'
 
 export function LifeEventLauncher({ onRun, disabled }: Props) {
-  const { i18n } = useTranslation()
-  const lang = i18n.resolvedLanguage ?? 'pl'
+  const { t } = useTranslation()
   const [group, setGroup] = useState('')
 
   return (
     <div className="grid gap-[var(--space-3)] sm:grid-cols-2">
       {LIFE_EVENTS.map((event) => {
         const Icon = event.icon
-        const label = pickLabel(event.label, lang)
+        const label = t(`lifeEvents.events.${event.id}`)
 
         if (!event.citizenship) {
           return (
@@ -50,7 +49,7 @@ export function LifeEventLauncher({ onRun, disabled }: Props) {
               <span className="font-semibold">{label}</span>
             </div>
             <div className="flex flex-wrap items-end gap-[var(--space-3)]">
-              <UIField label={uiLabel('citizenship', lang)} htmlFor="le-group" className="min-w-[16rem]">
+              <UIField label={t('lifeEvents.citizenship')} htmlFor="le-group" className="min-w-[16rem]">
                 <UISelect
                   id="le-group"
                   value={group}
@@ -58,7 +57,7 @@ export function LifeEventLauncher({ onRun, disabled }: Props) {
                 >
                   {CITIZENSHIP_GROUPS.map((option) => (
                     <option key={option.value || 'base'} value={option.value}>
-                      {pickLabel(option.label, lang)}
+                      {t(`lifeEvents.citizenshipGroups.${option.labelKey}`)}
                     </option>
                   ))}
                 </UISelect>
@@ -67,7 +66,7 @@ export function LifeEventLauncher({ onRun, disabled }: Props) {
                 disabled={disabled}
                 onClick={() => onRun({ eventId: event.id, group: group || undefined, message: label })}
               >
-                {uiLabel('build', lang)}
+                {t('lifeEvents.build')}
               </UIButton>
             </div>
           </div>
