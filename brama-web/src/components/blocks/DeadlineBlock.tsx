@@ -1,5 +1,6 @@
 import { Clock } from 'lucide-react'
 import { UIBadge } from '@/ui'
+import { FACT, FACT_LABEL } from './blockStyles'
 import type { deadlineBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
@@ -12,8 +13,8 @@ const LABELS: Record<Props['kind'], string> = {
 
 export function DeadlineBlock({ kind, value }: Props) {
   return (
-    <section className="chat-block chat-block--fact" aria-label={LABELS[kind]}>
-      <span className="chat-fact__label">
+    <section className={FACT} aria-label={LABELS[kind]}>
+      <span className={FACT_LABEL}>
         <Clock aria-hidden="true" size={16} /> {LABELS[kind]}
       </span>
       <UIBadge tone="neutral">{value}</UIBadge>

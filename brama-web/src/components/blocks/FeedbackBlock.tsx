@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { ThumbsDown, ThumbsUp } from 'lucide-react'
 import { UIButton } from '@/ui'
 import { useFeedback } from '@/hooks/useFeedback'
+import { BLOCK_DASHED } from './blockStyles'
 import type { feedbackPromptBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
 type Props = z.infer<typeof feedbackPromptBlockSchema>
+
+const FEEDBACK = `${BLOCK_DASHED} flex flex-wrap items-center gap-[var(--space-3)]`
 
 /** D12 — per-answer thumbs feedback. */
 export function FeedbackBlock({ answerId }: Props) {
@@ -20,16 +23,16 @@ export function FeedbackBlock({ answerId }: Props) {
 
   if (submitted) {
     return (
-      <p className="chat-block chat-feedback chat-feedback--done" role="status">
+      <p className={`${FEEDBACK} text-[var(--color-success)]`} role="status">
         Dziękujemy za opinię!
       </p>
     )
   }
 
   return (
-    <section className="chat-block chat-feedback" aria-label="Oceń odpowiedź">
-      <span className="chat-feedback__label">Czy to pomogło?</span>
-      <div className="chat-feedback__buttons">
+    <section className={FEEDBACK} aria-label="Oceń odpowiedź">
+      <span className="font-semibold">Czy to pomogło?</span>
+      <div className="flex gap-[var(--space-2)]">
         <UIButton variant="quiet" size="sm" aria-label="Pomocne" onClick={() => vote('up')}>
           <ThumbsUp aria-hidden="true" size={16} /> Tak
         </UIButton>

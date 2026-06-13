@@ -1,4 +1,5 @@
 import { ExternalLink, ShieldCheck } from 'lucide-react'
+import { BLOCK_DASHED } from './blockStyles'
 import type { citationsBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
@@ -6,11 +7,11 @@ type Props = z.infer<typeof citationsBlockSchema>
 
 export function CitationsBlock({ sources, updatedAt }: Props) {
   return (
-    <footer className="chat-block chat-block--citations">
-      <p className="chat-citations__grounded">
+    <footer className={BLOCK_DASHED}>
+      <p className="inline-flex items-center gap-[var(--space-2)] mt-0 mb-[var(--space-2)] text-[var(--color-success)] text-[length:var(--font-size-sm)] font-semibold">
         <ShieldCheck aria-hidden="true" size={14} /> Odpowiedź oparta na oficjalnych źródłach
       </p>
-      <ul className="chat-citations__list">
+      <ul className="m-0 pl-[var(--space-4)] text-[length:var(--font-size-sm)]">
         {sources.map((source) => (
           <li key={source.url}>
             <a href={source.url} target="_blank" rel="noopener noreferrer">
@@ -19,7 +20,11 @@ export function CitationsBlock({ sources, updatedAt }: Props) {
           </li>
         ))}
       </ul>
-      {updatedAt ? <p className="chat-citations__date">Aktualne na: {updatedAt}</p> : null}
+      {updatedAt ? (
+        <p className="mt-[var(--space-2)] mb-0 text-[var(--color-text-subtle)] text-[length:var(--font-size-xs)]">
+          Aktualne na: {updatedAt}
+        </p>
+      ) : null}
     </footer>
   )
 }

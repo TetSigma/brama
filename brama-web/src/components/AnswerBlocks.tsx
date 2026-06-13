@@ -48,6 +48,8 @@ export function AnswerBlocks({ blocks, onAsk }: AnswerBlocksProps) {
   }
 
   return (
-    <div className="chat-blocks">{blocks.map((block, index) => renderBlock(block, index, onAsk))}</div>
+    <div className="flex flex-col gap-[var(--space-3)] mt-[var(--space-4)]">
+      {blocks.map((block, index) => renderBlock(block, index, onAsk))}
+    </div>
   )
 }

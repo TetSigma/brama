@@ -8,7 +8,6 @@ import '@fontsource/noto-sans/600.css'
 import '@fontsource/noto-sans/700.css'
 import '@/localization'
 import './index.css'
-import '@/theme/chat.css'
 import { queryClient } from '@/api/queryClient'
 import { router } from '@/app/router'
 

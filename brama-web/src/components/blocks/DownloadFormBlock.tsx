@@ -1,5 +1,6 @@
 import { Download } from 'lucide-react'
 import { UIButton } from '@/ui'
+import { BLOCK } from './blockStyles'
 import type { downloadFormBlockSchema } from '@/api/blocks'
 import type { z } from 'zod'
 
@@ -7,7 +8,10 @@ type Props = z.infer<typeof downloadFormBlockSchema>
 
 export function DownloadFormBlock({ forms }: Props) {
   return (
-    <section className="chat-block chat-block--forms" aria-label="Formularze do pobrania">
+    <section
+      className={`${BLOCK} flex flex-wrap gap-[var(--space-2)]`}
+      aria-label="Formularze do pobrania"
+    >
       {forms.map((form) => (
         <UIButton
           key={form.url}

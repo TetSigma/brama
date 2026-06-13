@@ -1,6 +1,5 @@
 @import './theme/theme.css';
 @import 'tailwindcss';
-@import './ui/ui.css';
 
 /* Bridge: expose existing design tokens (theme.css) as Tailwind theme values so
    utilities like bg-primary / text-muted / rounded-2 / p-4 reference one source. */
@@ -35,6 +34,9 @@
   --spacing: 0.25rem;
 }
 
+/* Base resets live in @layer base so Tailwind utilities (later layer) win over them —
+   e.g. a button's text-[...] beats the global `a { color }`. */
+@layer base {
 :root {
   font-family: var(--font-sans);
   color: var(--color-text);
@@ -104,11 +106,14 @@ a {
   color: var(--color-primary-contrast);
   background: var(--color-primary);
 }
+}
 
 .site-shell {
   position: relative;
   min-height: 100svh;
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) clips horizontal overflow without creating a scroll
+     container, so sticky descendants like .site-header stay pinned on scroll. */
+  overflow-x: clip;
   background:
     radial-gradient(circle at 84% 8%, rgb(0 195 230 / 0.18), transparent 27rem),
     radial-gradient(circle at 12% 18%, rgb(250 20 20 / 0.12), transparent 23rem),
@@ -134,45 +139,22 @@ a {
   position: sticky;
   top: var(--space-4);
   z-index: 10;
+  width: 70%;
+  margin: var(--space-4) auto 0;
+}
+
+/* GlassCard is the surface; header is just the sticky positioning wrapper.
+   GlassCard sets an inline `width: fit-content`, so override with !important to fill 70%. */
+.site-header__glass {
+  width: 100% !important;
+}
+
+.site-header__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  width: min(calc(100% - clamp(2rem, 4vw, 4rem)), var(--container-lg));
-  margin: var(--space-4) auto 0;
-  padding: var(--space-3) clamp(var(--space-4), 3vw, var(--space-6));
-  overflow: hidden;
-  border: var(--border-width-sm) solid rgb(255 255 255 / 0.72);
-  border-radius: var(--radius-pill);
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.68), rgb(255 255 255 / 0.34)),
-    radial-gradient(circle at 18% 0%, rgb(255 255 255 / 0.9), transparent 12rem),
-    radial-gradient(circle at 88% 100%, rgb(0 195 230 / 0.14), transparent 16rem),
-    var(--glass-surface);
-  box-shadow:
-    0 18px 52px rgb(0 0 0 / 0.12),
-    0 2px 8px rgb(255 255 255 / 0.5),
-    var(--glass-inner-light),
-    inset 0 -18px 32px rgb(255 255 255 / 0.18);
-  backdrop-filter: blur(30px) saturate(1.75);
-  -webkit-backdrop-filter: blur(30px) saturate(1.75);
-}
-
-.site-header::before {
-  position: absolute;
-  inset: 1px;
-  pointer-events: none;
-  content: '';
-  border-radius: inherit;
-  background:
-    linear-gradient(120deg, rgb(255 255 255 / 0.72), transparent 28%),
-    linear-gradient(260deg, rgb(255 255 255 / 0.38), transparent 36%);
-  opacity: 0.75;
-}
-
-.site-header > * {
-  position: relative;
-  z-index: 1;
+  width: 100%;
 }
 
 .brand-mark {
@@ -204,14 +186,20 @@ a {
 }
 
 .site-nav a {
-  color: var(--color-text-muted);
+  padding: 8px 16px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  background: transparent;
+  color: #000000;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   text-decoration: none;
+  transition: all 0.25s ease;
 }
 
 .site-nav a:hover {
-  color: var(--color-text);
+  background: var(--color-surface);
+  border-color: var(--color-primary);
 }
 
 .language-switcher {
@@ -693,6 +681,20 @@ h3 {
   color: var(--color-neutral-100);
 }
 
+@keyframes chat-typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-0.2rem);
+  }
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -781,11 +783,9 @@ h3 {
 }
 
 @media (max-width: 42rem) {
-  .site-header {
+  .site-header__content {
     align-items: flex-start;
     flex-direction: column;
-    border-radius: 1.75rem;
-    padding: var(--space-3);
   }
 
   .site-nav {

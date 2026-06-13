@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router'
+import { GlassCard } from 'react-glass-ui'
 import heroImage from '@/assets/lublin-civic-platform.png'
-import { UIButton } from '@/ui'
+import { UIButton, uiButtonClass } from '@/ui'
 import { persistLanguage } from '@/localization'
 import { languageCodes, languageFlags, languageNames, type LanguageCode } from '@/localization/resources'
 
@@ -95,33 +97,52 @@ function App() {
   return (
     <main className="site-shell">
       <header className="site-header" aria-label={t('navigation.headerLabel')}>
-        <a className="brand-mark" href="#top" aria-label={t('navigation.homeLabel')}>
-          <span className="brand-gate" aria-hidden="true" />
-          <span>Brama</span>
-        </a>
-        <nav className="site-nav" aria-label={t('navigation.mainLabel')}>
-          <a href="#platform">{t('navigation.platform')}</a>
-          <a href="#services">{t('navigation.services')}</a>
-          <a href="#trust">{t('navigation.trust')}</a>
-        </nav>
-        <div className="language-switcher">
-          <label className="visually-hidden" htmlFor="language-select">
-            {t('navigation.languageLabel')}
-          </label>
-          <select
-            aria-label={`${t('navigation.languageLabel')}: ${languageNames[currentLanguage]}`}
-            className="language-select"
-            id="language-select"
-            onChange={(event) => handleLanguageChange(event.target.value as LanguageCode)}
-            value={currentLanguage}
-          >
-            {languageCodes.map((languageCode) => (
-              <option key={languageCode} value={languageCode}>
-                {languageFlags[languageCode]}
-              </option>
-            ))}
-          </select>
-        </div>
+        <GlassCard
+          className="site-header__glass"
+          contentClassName="site-header__content"
+          blur={17}
+          distortion={343}
+          flexibility={17}
+          borderColor="#ffffff"
+          borderSize={1}
+          borderRadius={130}
+          borderOpacity={0.4}
+          backgroundColor="#000000"
+          backgroundOpacity={0}
+          chromaticAberration={0}
+          onHoverScale={1}
+          saturation={100}
+          brightness={100}
+          padding="10px 16px"
+        >
+          <a className="brand-mark" href="#top" aria-label={t('navigation.homeLabel')}>
+            <span className="brand-gate" aria-hidden="true" />
+            <span>Brama</span>
+          </a>
+          <nav className="site-nav" aria-label={t('navigation.mainLabel')}>
+            <a href="#platform">{t('navigation.platform')}</a>
+            <a href="#services">{t('navigation.services')}</a>
+            <a href="#trust">{t('navigation.trust')}</a>
+          </nav>
+          <div className="language-switcher">
+            <label className="visually-hidden" htmlFor="language-select">
+              {t('navigation.languageLabel')}
+            </label>
+            <select
+              aria-label={`${t('navigation.languageLabel')}: ${languageNames[currentLanguage]}`}
+              className="language-select"
+              id="language-select"
+              onChange={(event) => handleLanguageChange(event.target.value as LanguageCode)}
+              value={currentLanguage}
+            >
+              {languageCodes.map((languageCode) => (
+                <option key={languageCode} value={languageCode}>
+                  {languageFlags[languageCode]}
+                </option>
+              ))}
+            </select>
+          </div>
+        </GlassCard>
       </header>
 
       <section className="hero-section" id="top" aria-labelledby="hero-title">
@@ -136,7 +157,9 @@ function App() {
           </p>
           <p className="hero-lede">{t('hero.lede')}</p>
           <div className="hero-actions" aria-label={t('hero.actionsLabel')}>
-            <UIButton href="#platform">{t('hero.primaryAction')}</UIButton>
+            <Link className={uiButtonClass({ variant: 'primary', size: 'md' })} to="/chat">
+              {t('hero.primaryAction')}
+            </Link>
             <UIButton href="#services" variant="secondary">
               {t('hero.secondaryAction')}
             </UIButton>

@@ -16,7 +16,7 @@ export function ChatThread({ messages, onAsk }: ChatThreadProps) {
 
   return (
     <div
-      className="chat-thread"
+      className="flex flex-col gap-[var(--space-5)] pt-[var(--space-4)] pb-[var(--space-8)]"
       role="log"
       aria-live="polite"
       aria-relevant="additions text"
