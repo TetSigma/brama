@@ -9,6 +9,7 @@
     "start": "node dist/server.js",
     "ingest": "tsx scripts/ingest.ts",
     "ingest:graph": "tsx scripts/ingest-graph.ts",
+    "geocode": "tsx scripts/geocode-departments.ts",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
