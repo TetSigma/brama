@@ -6,24 +6,24 @@
 <title>BIP Lublin — Graf zależności usług</title>
 <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 <style>
-  :root { --bg:#1b1f27; --panel:#252b36; --ink:#e8ecf2; --muted:#9aa6b6; }
+  :root { --bg:#f6f8fb; --panel:#ffffff; --ink:#172033; --muted:#64748b; --line:#d8dee8; }
   * { box-sizing: border-box; }
   html,body { margin:0; height:100%; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); }
   #app { display:flex; height:100vh; }
   #graph { flex:1; height:100%; }
-  #side { width:320px; background:var(--panel); padding:16px; overflow-y:auto; border-left:1px solid #000; }
+  #side { width:320px; background:var(--panel); padding:16px; overflow-y:auto; border-left:1px solid var(--line); box-shadow:-12px 0 28px rgba(15,23,42,.07); }
   h1 { font-size:16px; margin:0 0 4px; }
   .sub { color:var(--muted); font-size:12px; margin-bottom:14px; }
-  .stat { display:flex; justify-content:space-between; font-size:13px; padding:3px 0; border-bottom:1px solid #333; }
+  .stat { display:flex; justify-content:space-between; font-size:13px; padding:3px 0; border-bottom:1px solid var(--line); }
   .section { margin-top:18px; }
   .section h2 { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:0 0 8px; }
   .legend-item { display:flex; align-items:center; gap:8px; font-size:12px; padding:2px 0; cursor:pointer; }
   .swatch { width:12px; height:12px; border-radius:3px; flex:none; }
-  input[type=search] { width:100%; padding:8px; border-radius:6px; border:1px solid #3a4150; background:#1b1f27; color:var(--ink); }
+  input[type=search] { width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1; background:#ffffff; color:var(--ink); }
   .hint { font-size:11px; color:var(--muted); margin-top:6px; line-height:1.4; }
   .controls { display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; }
-  button { background:#3a4150; color:var(--ink); border:none; padding:6px 10px; border-radius:6px; font-size:12px; cursor:pointer; }
-  button:hover { background:#4a5365; }
+  button { background:#e8edf4; color:var(--ink); border:1px solid #cbd5e1; padding:6px 10px; border-radius:6px; font-size:12px; cursor:pointer; }
+  button:hover { background:#dbe4ef; }
 </style>
 </head>
 <body>
@@ -68,7 +68,7 @@ const nodes = new vis.DataSet(DATA.nodes);
 const edges = new vis.DataSet(DATA.edges);
 const container = document.getElementById('graph');
 const network = new vis.Network(container, {nodes, edges}, {
-  nodes: { font:{color:'#e8ecf2', size:14}, scaling:{min:8, max:40, label:{min:11,max:22}} },
+  nodes: { font:{color:'#172033', size:14}, scaling:{min:8, max:40, label:{min:11,max:22}} },
   edges: { smooth:{type:'continuous'}, selectionWidth:2 },
   groups: {},
   physics: { stabilization:{iterations:250}, barnesHut:{gravitationalConstant:-9000, springLength:140, springConstant:0.02, avoidOverlap:0.4} },
@@ -79,7 +79,7 @@ const network = new vis.Network(container, {nodes, edges}, {
 const offEl = document.getElementById('offices');
 DATA.summary.external_office_hits && Object.entries(DATA.summary.external_office_hits).forEach(([code,hits])=>{
   const d = document.createElement('div'); d.className='legend-item';
-  d.innerHTML = `<span class="swatch" style="background:#c0392b"></span><span>${code} <span style="color:#9aa6b6">(${hits})</span></span>`;
+  d.innerHTML = `<span class="swatch" style="background:#c0392b"></span><span>${code} <span style="color:var(--muted)">(${hits})</span></span>`;
   d.onclick = ()=>focusNode('OFFICE::'+code);
   offEl.appendChild(d);
 });
