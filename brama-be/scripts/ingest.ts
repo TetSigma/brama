@@ -113,6 +113,7 @@ async function ingestServices(qdrant: QdrantClient): Promise<void> {
         komorka: svc.komorka,
         obszar: svc.obszar,
         url: svc.url,
+        text: svc.text,
       },
     });
     count++;
