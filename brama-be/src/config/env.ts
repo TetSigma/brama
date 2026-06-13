@@ -18,6 +18,7 @@ const envSchema = z.object({
   QDRANT_URL: z.string().default("http://localhost:6333"),
   QDRANT_COLLECTION: z.string().default("bip_services"),
   RAG_TOP_K: z.coerce.number().int().positive().default(4),
+  RAG_SCORE_THRESHOLD: z.coerce.number().min(0).max(1).default(0.45),
   RAG_ENABLED: z
     .enum(["true", "false"])
     .default("true")

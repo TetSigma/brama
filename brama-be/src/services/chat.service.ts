@@ -47,6 +47,34 @@ const ragInstruction =
   'brakuje odpowiedzi, powiedz, ze nie wiesz i ' +
   'odeslij do wlasciwego urzedu.\n\nINFORMACJE:\n'
 
+const refusalFallback =
+  'I can only help with City of Lublin municipal services. ' +
+  'For this matter, please contact the appropriate institution.'
+
+const refusalMessages: Record<string, string> = {
+  pl: 'Pomagam wylacznie w sprawach uslug Urzedu Miasta Lublin. W tej sprawie skontaktuj sie z odpowiednia instytucja.',
+  en: refusalFallback,
+  uk: 'Я допомагаю лише з питаннями послуг Люблінської міської ради. Зверніться, будь ласка, до відповідної установи.',
+  ru: 'Я помогаю только по вопросам услуг администрации города Люблин. Пожалуйста, обратитесь в соответствующее учреждение.',
+  de: 'Ich helfe nur bei Dienstleistungen der Stadtverwaltung Lublin. Bitte wenden Sie sich an die zustaendige Stelle.',
+  fr: 'Je n’aide que pour les services de la mairie de Lublin. Veuillez contacter l’institution compétente.',
+  es: 'Solo puedo ayudar con servicios del Ayuntamiento de Lublin. Contacte con la institución correspondiente.',
+}
+
+function refusalFor(lang: string): string {
+  return refusalMessages[lang] ?? refusalFallback
+}
+
+const CACHE_TTL_MS = 60 * 60 * 1000
+const CACHE_MAX_ENTRIES = 500
+
+type CachedAnswer = {
+  userPolish: string
+  answerPolish: string
+  output: string
+  expiresAt: number
+}
+
 export class ChatService {
   constructor(
     private readonly historyService: ChatHistoryService,
@@ -55,6 +83,8 @@ export class ChatService {
     private readonly departmentService: DepartmentService,
     private readonly graphService: GraphService,
   ) {}
+
+  private readonly responseCache = new Map<string, CachedAnswer>()
 
   getHistory(conversationId: string) {
     return this.historyService.getHistory(conversationId)
@@ -65,15 +95,46 @@ export class ChatService {
   }
 
   async handleChat(request: ChatRequest, response: Response) {
+    // Captured before adding the current turn, so a cold off-topic question
+    // can be refused while follow-ups in an active chat are let through.
+    const hadHistory = this.historyService.getHistory(request.conversationId).length > 0
+    const cacheKey =
+      !hadHistory && request.message.trim().length > 0 ? this.cacheKey(request) : null
+
+    // Fast path: an identical cold question already answered — replay it and
+    // skip translation, retrieval and generation entirely.
+    if (cacheKey) {
+      const cached = this.getCached(cacheKey)
+      if (cached) {
+        this.historyService.addMessage(request.conversationId, 'user', cached.userPolish)
+        this.prepareStreamingResponse(response)
+        response.write(cached.output)
+        this.historyService.addMessage(request.conversationId, 'assistant', cached.answerPolish)
+        return
+      }
+    }
+
     const userPolish =
       request.lang === 'pl' ? request.message : await this.translate(request.message, 'Polish')
 
     this.historyService.addMessage(request.conversationId, 'user', userPolish)
 
-    const hits = await this.retrievalService.retrieve(userPolish, {
+    const retrieval = await this.retrievalService.retrieve(userPolish, {
       komorka: request.komorka,
     })
-    const context = await this.buildContext(hits)
+
+    // Scope guard: a cold question that matches nothing in the knowledge base
+    // is off-topic — refuse deterministically instead of letting Bielik answer
+    // from its own knowledge.
+    if (retrieval.status === 'no_match' && !hadHistory) {
+      const refusal = refusalFor(request.lang)
+      this.prepareStreamingResponse(response)
+      response.write(refusal)
+      this.historyService.addMessage(request.conversationId, 'assistant', refusal)
+      return
+    }
+
+    const context = await this.buildContext(retrieval.hits)
 
     const bielikMessages: ChatMessage[] = [
       { role: 'system', content: this.buildSystemPrompt(context) },
@@ -89,6 +150,9 @@ export class ChatService {
       )
 
       this.historyService.addMessage(request.conversationId, 'assistant', answer)
+      if (cacheKey && retrieval.status === 'grounded') {
+        this.setCached(cacheKey, { userPolish, answerPolish: answer, output: answer })
+      }
       return
     }
 
@@ -97,10 +161,14 @@ export class ChatService {
 
     const targetLanguage = languageNames[request.lang] ?? request.lang
     this.prepareStreamingResponse(response)
-    await this.ollamaService.streamChat(response, env.OLLAMA_TRANSLATION_MODEL, [
+    const output = await this.ollamaService.streamChat(response, env.OLLAMA_TRANSLATION_MODEL, [
       { role: 'system', content: this.buildTranslationPrompt(targetLanguage) },
       { role: 'user', content: answerPolish },
     ])
+
+    if (cacheKey && retrieval.status === 'grounded') {
+      this.setCached(cacheKey, { userPolish, answerPolish, output })
+    }
   }
 
   private async translate(text: string, targetLanguage: string) {
@@ -205,6 +273,33 @@ export class ChatService {
     if (department.email) parts.push(`E-mail: ${department.email}.`)
     if (department.godziny_pracy) parts.push(`Godziny pracy: ${department.godziny_pracy}.`)
     return parts.join(' ')
+  }
+
+  private cacheKey(request: ChatRequest): string {
+    const message = request.message.trim().toLowerCase().replace(/\s+/g, ' ')
+    return `${request.lang}|${request.komorka ?? ''}|${message}`
+  }
+
+  private getCached(key: string): CachedAnswer | null {
+    const entry = this.responseCache.get(key)
+    if (!entry) {
+      return null
+    }
+    if (entry.expiresAt < Date.now()) {
+      this.responseCache.delete(key)
+      return null
+    }
+    return entry
+  }
+
+  private setCached(key: string, value: Omit<CachedAnswer, 'expiresAt'>): void {
+    if (this.responseCache.size >= CACHE_MAX_ENTRIES) {
+      const oldest = this.responseCache.keys().next().value
+      if (oldest !== undefined) {
+        this.responseCache.delete(oldest)
+      }
+    }
+    this.responseCache.set(key, { ...value, expiresAt: Date.now() + CACHE_TTL_MS })
   }
 
   private prepareStreamingResponse(response: Response) {

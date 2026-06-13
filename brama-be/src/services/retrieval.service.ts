@@ -13,6 +13,13 @@ export type RetrievalHit = {
   url: string
 }
 
+export type RetrievalStatus = 'grounded' | 'no_match' | 'error'
+
+export type RetrievalResult = {
+  status: RetrievalStatus
+  hits: RetrievalHit[]
+}
+
 export class RetrievalService {
   private readonly client: QdrantClient
 
@@ -20,9 +27,10 @@ export class RetrievalService {
     this.client = new QdrantClient({ url: env.QDRANT_URL })
   }
 
-  async retrieve(query: string, filter: RetrievalFilter = {}): Promise<RetrievalHit[]> {
+  async retrieve(query: string, filter: RetrievalFilter = {}): Promise<RetrievalResult> {
+    // RAG disabled: don't gate, don't refuse — answer freely with no context.
     if (!env.RAG_ENABLED || query.trim().length === 0) {
-      return []
+      return { status: 'grounded', hits: [] }
     }
 
     try {
@@ -37,13 +45,28 @@ export class RetrievalService {
           : undefined,
       })
 
-      return results
+      const top = results[0]
+      const topScore = top?.score ?? 0
+      console.log(
+        `[retrieval] topScore=${topScore.toFixed(3)} threshold=${env.RAG_SCORE_THRESHOLD}`,
+      )
+
+      // Scope/relevance gate: nothing close enough means off-topic or not
+      // covered by the knowledge base. Signal no_match so chat can refuse.
+      if (!top || top.score < env.RAG_SCORE_THRESHOLD) {
+        return { status: 'no_match', hits: [] }
+      }
+
+      const hits = results
         .map((hit) => this.toHit(hit.payload))
         .filter((hit): hit is RetrievalHit => hit !== null)
+
+      return { status: 'grounded', hits }
     } catch (error) {
-      // Degrade gracefully: a retrieval outage must not break chat.
+      // Degrade gracefully: a retrieval outage must not break chat (and must
+      // not masquerade as "off-topic").
       console.error('Retrieval failed; answering without context', error)
-      return []
+      return { status: 'error', hits: [] }
     }
   }
 

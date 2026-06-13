@@ -8,6 +8,8 @@ export class OllamaService {
       model,
       messages,
       stream: false,
+      // Keep the model resident so back-to-back requests skip the reload cost.
+      keep_alive: -1,
     })
 
     return result.message.content
@@ -19,6 +21,7 @@ export class OllamaService {
       model,
       messages,
       stream: true,
+      keep_alive: -1,
     })
 
     for await (const part of stream) {
