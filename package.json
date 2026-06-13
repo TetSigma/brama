@@ -7,14 +7,17 @@
     "brama-be"
   ],
   "scripts": {
+    "prepare": "husky",
     "dev": "concurrently -n web,api -c cyan,green \"npm run dev -w brama-web\" \"npm run dev -w brama-be\"",
     "dev:web": "npm run dev -w brama-web",
     "dev:api": "npm run dev -w brama-be",
     "build": "npm run build --workspaces --if-present",
+    "deploy:be": "bash scripts/deploy-be-local.sh",
     "lint": "npm run lint --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "devDependencies": {
-    "concurrently": "^10.0.3"
+    "concurrently": "^10.0.3",
+    "husky": "^9.1.7"
   }
 }
