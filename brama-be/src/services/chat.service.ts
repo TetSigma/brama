@@ -20,6 +20,7 @@ import {
   type ContextualTag,
 } from './blocks.service.js'
 import { buildTranslationPrompt, languageName } from '../lib/translation.js'
+import { isCurrentOfficeholderQuestion } from './query-intent.js'
 
 const systemPrompt =
   'Jestes asystentem Urzedu Miasta ' +
@@ -51,6 +52,17 @@ const refusalMessages: Record<string, string> = {
   de: 'Ich helfe nur bei Dienstleistungen der Stadtverwaltung Lublin. Bitte wenden Sie sich an die zustaendige Stelle.',
   fr: 'Je n’aide que pour les services de la mairie de Lublin. Veuillez contacter l’institution compétente.',
   es: 'Solo puedo ayudar con servicios del Ayuntamiento de Lublin. Contacte con la institución correspondiente.',
+}
+
+const officeholderUnsupportedMessages: Record<string, string> = {
+  pl:
+    'To pytanie dotyczy aktualnej osoby pełniącej funkcję, a nie procedury urzędowej. ' +
+    'Nie mam tej informacji zweryfikowanej w lokalnej bazie usług. Mogę pomóc w sprawach ' +
+    'Urzędu Miasta Lublin, np. gdzie złożyć wniosek, jakie dokumenty są potrzebne albo jaka jest opłata.',
+  en:
+    'That asks about the current person holding an office, not a municipal procedure. ' +
+    'I do not have that fact verified in the local services database. I can help with City of Lublin services, ' +
+    'such as where to submit an application, required documents, or fees.',
 }
 
 function refusalFor(lang: string): string {
@@ -198,6 +210,16 @@ export class ChatService {
         this.historyService.addMessage(request.conversationId, 'assistant', cached.answerPolish)
         return
       }
+    }
+
+    if (!hadHistory && isCurrentOfficeholderQuestion(request.message)) {
+      const message = localized(officeholderUnsupportedMessages, request.lang)
+      this.historyService.addMessage(request.conversationId, 'user', request.message)
+      this.prepareStreamingResponse(response)
+      response.write(this.envelope({}))
+      response.write(message)
+      this.historyService.addMessage(request.conversationId, 'assistant', message)
+      return
     }
 
     const userPolish =
