@@ -1,4 +1,4 @@
-import { Briefcase, Users, Zap } from 'lucide-react'
+import { Briefcase, ListChecks, Users, Zap } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useUIStore } from '@/contexts/uiStore'
 import type { RoleMode } from '@/@types/chat'
@@ -21,6 +21,8 @@ export function RoleModeSwitch() {
   const { t } = useTranslation()
   const role = useUIStore((state) => state.role)
   const setRole = useUIStore((state) => state.setRole)
+  const lifeMode = useUIStore((state) => state.lifeMode)
+  const setLifeMode = useUIStore((state) => state.setLifeMode)
 
   return (
     <div role="group" aria-label={t('chat.rolesLabel')} className="inline-flex gap-[var(--space-1)]">
@@ -29,13 +31,22 @@ export function RoleModeSwitch() {
           key={value}
           type="button"
           className={OPTION}
-          aria-pressed={role === value}
+          aria-pressed={!lifeMode && role === value}
           onClick={() => setRole(value)}
         >
           <Icon aria-hidden="true" size={16} />
           {t(`navigation.roles.${value}`)}
         </button>
       ))}
+      <button
+        type="button"
+        className={OPTION}
+        aria-pressed={lifeMode}
+        onClick={() => setLifeMode(true)}
+      >
+        <ListChecks aria-hidden="true" size={16} />
+        {t('lifeEvents.heading')}
+      </button>
     </div>
   )
 }
