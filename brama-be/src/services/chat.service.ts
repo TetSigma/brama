@@ -29,11 +29,16 @@ const translationSystemPrefix =
   "Translate the user's text into "
 
 const translationSystemSuffix =
-  '. Preserve official terminology, ' +
-  'names and meaning exactly. ' +
-  'Do not add, omit, explain or ' +
-  'answer anything - ' +
-  'output only the translation.'
+  '. Output only the translation, nothing else. ' +
+  'Keep these VERBATIM in their original Polish form - do NOT translate, ' +
+  'transliterate or alter them: names of offices and institutions ' +
+  '(e.g. Wydzial Komunikacji, Urzad Miasta Lublin, ZUS, USC), ' +
+  'names of documents, applications and forms together with their codes ' +
+  '(e.g. MKZ-009, AB-008), street and building addresses ' +
+  '(ul., al., plac, pok., + numbers), postal codes, room numbers, ' +
+  'phone numbers, e-mail addresses, URLs and bank account numbers. ' +
+  'Translate only the surrounding explanatory text and preserve the meaning ' +
+  'exactly. Do not add, omit, explain or answer anything.'
 
 const ragInstruction =
   '\n\nOdpowiadaj wylacznie na podstawie ' +
