@@ -89,7 +89,7 @@ const backendBundleSchema = z.object({
       cardId: z.string(),
       nazwa: z.string(),
       komorka: z.string(),
-      url: z.string().url(),
+      url: z.string().nullish(),
       status: z.string().optional(),
       aktualizacja: serviceUpdateSchema.nullish(),
     })
@@ -117,7 +117,7 @@ const backendBundleSchema = z.object({
       toView: z.string().optional(),
     })
     .optional(),
-  form: z.array(z.object({ nazwa: z.string(), url: z.string().url() })).optional(),
+  form: z.array(z.object({ nazwa: z.string(), url: z.string().nullish() })).optional(),
   contact: z
     .object({
       telefon: z.string().optional(),
@@ -173,6 +173,27 @@ function truncate(value: string, maxLength: number): string {
     return text
   }
   return `${text.slice(0, maxLength - 1).trim()}…`
+}
+
+function normalizeUrl(value: string | null | undefined): string | undefined {
+  if (!value) {
+    return undefined
+  }
+
+  try {
+    return new URL(value).href
+  } catch {
+    const match = /https?:\/\/[^\s)]+/u.exec(value)
+    if (!match?.[0]) {
+      return undefined
+    }
+
+    try {
+      return new URL(match[0]).href
+    } catch {
+      return undefined
+    }
+  }
 }
 
 function listItems(value: string | undefined): string[] {
@@ -235,10 +256,17 @@ function bundleToBlocks(bundle: BackendBundle): AnswerBlock[] {
   }
 
   if (bundle.form?.length) {
-    blocks.push({
-      type: 'downloadForm',
-      forms: bundle.form.map((form) => ({ name: form.nazwa, url: form.url })),
+    const forms = bundle.form.flatMap((form) => {
+      const url = normalizeUrl(form.url)
+      return url ? [{ name: form.nazwa, url }] : []
     })
+
+    if (forms.length > 0) {
+      blocks.push({
+        type: 'downloadForm',
+        forms,
+      })
+    }
   }
 
   if (bundle.fee?.text) {
@@ -328,20 +356,30 @@ function bundleToBlocks(bundle: BackendBundle): AnswerBlock[] {
     })
   }
 
-  if (bundle.service) {
+  const serviceUrl = normalizeUrl(bundle.service?.url)
+  if (bundle.service && serviceUrl) {
     blocks.push({
       type: 'citations',
       sources: [
         {
           label: `BIP Lublin — ${bundle.service.nazwa} (${bundle.service.cardId})`,
-          url: bundle.service.url,
+          url: serviceUrl,
         },
       ],
       updatedAt: updatedAt(bundle),
     })
   }
 
-  return answerBlocksSchema.parse(blocks)
+  const result = answerBlocksSchema.safeParse(blocks)
+  if (result.success) {
+    return result.data
+  }
+
+  console.warn('[chat] Dropping invalid answer block(s)', result.error)
+  return blocks.flatMap((block) => {
+    const blockResult = answerBlockSchema.safeParse(block)
+    return blockResult.success ? [blockResult.data] : []
+  })
 }
 
 /** Parse unknown block data defensively: drop variants that fail validation. */
@@ -349,11 +387,21 @@ export function parseBlocks(data: unknown): AnswerBlock[] {
   if (!Array.isArray(data)) {
     if (typeof data === 'object' && data !== null && 'blocks' in data) {
       const envelopeResult = backendEnvelopeSchema.safeParse(data)
-      return envelopeResult.success ? bundleToBlocks(envelopeResult.data.blocks) : []
+      if (envelopeResult.success) {
+        return bundleToBlocks(envelopeResult.data.blocks)
+      }
+
+      console.warn('[chat] Invalid backend blocks envelope', envelopeResult.error)
+      return []
     }
 
     const bundleResult = backendBundleSchema.safeParse(data)
-    return bundleResult.success ? bundleToBlocks(bundleResult.data) : []
+    if (bundleResult.success) {
+      return bundleToBlocks(bundleResult.data)
+    }
+
+    console.warn('[chat] Invalid backend blocks bundle', bundleResult.error)
+    return []
   }
 
   return data.flatMap((item) => {
