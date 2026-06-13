@@ -25,7 +25,11 @@ export function RoleModeSwitch() {
   const setLifeMode = useUIStore((state) => state.setLifeMode)
 
   return (
-    <div role="group" aria-label={t('chat.rolesLabel')} className="inline-flex gap-[var(--space-1)]">
+    <div
+      role="group"
+      aria-label={t('chat.rolesLabel')}
+      className="role-mode-switch inline-flex gap-[var(--space-1)]"
+    >
       {MODES.map(({ value, icon: Icon }) => (
         <button
           key={value}

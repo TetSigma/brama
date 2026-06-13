@@ -13,11 +13,13 @@ export function ChatThread({ messages, onAsk }: ChatThreadProps) {
   const endRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    endRef.current?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'end' })
   }, [messages])
 
   return (
     <div
+      id="chat-thread"
       className="flex flex-col gap-[var(--space-5)] pt-[var(--space-4)] pb-[var(--space-8)]"
       role="log"
       aria-live="polite"

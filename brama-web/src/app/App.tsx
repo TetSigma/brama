@@ -177,7 +177,10 @@ function App() {
             ))}
           </nav>
           <div className="header-actions">
-            <Link className={uiButtonClass({ variant: 'primary', size: 'sm' })} to="/chat">
+            <Link
+              className={uiButtonClass({ className: 'header-cta', variant: 'primary', size: 'sm' })}
+              to="/chat"
+            >
               {t('navigation.assistant')}
             </Link>
             <button

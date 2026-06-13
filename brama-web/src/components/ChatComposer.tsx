@@ -146,7 +146,8 @@ export function ChatComposer({ onSend, onStartFill, disabled }: ChatComposerProp
         </label>
         <textarea
           id="chat-input"
-          className="flex-1 max-h-[8rem] px-[var(--space-3)] py-[var(--space-2)] border-0 bg-transparent text-[var(--color-text)] resize-none text-[length:var(--font-size-md)] focus:outline-none"
+          aria-controls="chat-thread"
+          className="flex-1 max-h-[8rem] min-h-11 px-[var(--space-3)] py-[var(--space-2)] border-0 bg-transparent text-[var(--color-text)] resize-none text-[length:var(--font-size-md)] focus-visible:outline-[3px] focus-visible:outline-offset-[4px] focus-visible:outline-[var(--color-focus)]"
           rows={1}
           placeholder={t('chat.composerPlaceholder')}
           onKeyDown={handleKeyDown}
