@@ -6,6 +6,12 @@ import { DepartmentService, type Department } from './department.service.js'
 import { graphService, type GraphService, type ServiceGraph } from './graph.service.js'
 import { OllamaService } from './ollama.service.js'
 import { RetrievalService, type RetrievalHit } from './retrieval.service.js'
+import {
+  blocksService,
+  type BlocksService,
+  type Bundle,
+  type ContextualTag,
+} from './blocks.service.js'
 import { buildTranslationPrompt, languageName } from '../lib/translation.js'
 
 const systemPrompt =
@@ -44,6 +50,19 @@ function refusalFor(lang: string): string {
   return refusalMessages[lang] ?? refusalFallback
 }
 
+// Separates the leading blocks-bundle JSON line from the streamed prose. The
+// frontend splits the response on the first occurrence of this delimiter.
+const BLOCKS_DELIMITER = '\n--BRAMA--\n'
+
+// Polish descriptions of the contextual tags the model may place inline.
+const TAG_DESCRIPTIONS: Record<ContextualTag, string> = {
+  map: 'lokalizacja urzedu i trasa dojazdu',
+  fee: 'wysokosc oplaty',
+  deadline: 'termin zalatwienia sprawy',
+  docs: 'lista wymaganych dokumentow',
+  form: 'formularz do pobrania',
+}
+
 const CACHE_TTL_MS = 60 * 60 * 1000
 const CACHE_MAX_ENTRIES = 500
 
@@ -51,6 +70,8 @@ type CachedAnswer = {
   userPolish: string
   answerPolish: string
   output: string
+  // The blocks-bundle line + delimiter, replayed verbatim ahead of the prose.
+  envelope: string
   expiresAt: number
 }
 
@@ -61,6 +82,7 @@ export class ChatService {
     private readonly retrievalService: RetrievalService,
     private readonly departmentService: DepartmentService,
     private readonly graphService: GraphService,
+    private readonly blocksService: BlocksService,
   ) {}
 
   private readonly responseCache = new Map<string, CachedAnswer>()
@@ -87,6 +109,7 @@ export class ChatService {
       if (cached) {
         this.historyService.addMessage(request.conversationId, 'user', cached.userPolish)
         this.prepareStreamingResponse(response)
+        response.write(cached.envelope)
         response.write(cached.output)
         this.historyService.addMessage(request.conversationId, 'assistant', cached.answerPolish)
         return
@@ -108,20 +131,31 @@ export class ChatService {
     if (retrieval.status === 'no_match' && !hadHistory) {
       const refusal = refusalFor(request.lang)
       this.prepareStreamingResponse(response)
+      // Emit an empty bundle so the frontend parser is uniform across turns.
+      response.write(this.envelope({}))
       response.write(refusal)
       this.historyService.addMessage(request.conversationId, 'assistant', refusal)
       return
     }
 
+    // Build the content-block bundle from the primary (top) hit, and learn
+    // which contextual [[tags]] the model is allowed to place this turn.
+    const bundle = retrieval.hits[0]
+      ? await this.blocksService.build(retrieval.hits[0].cardId)
+      : {}
+    const tags = this.blocksService.availableTags(bundle)
+    const envelope = this.envelope(bundle)
+
     const context = await this.buildContext(retrieval.hits)
 
     const bielikMessages: ChatMessage[] = [
-      { role: 'system', content: this.buildSystemPrompt(context) },
+      { role: 'system', content: this.buildSystemPrompt(context, tags) },
       ...this.historyService.getHistory(request.conversationId),
     ]
 
     if (request.lang === 'pl') {
       this.prepareStreamingResponse(response)
+      response.write(envelope)
       const answer = await this.ollamaService.streamChat(
         response,
         env.OLLAMA_CHAT_MODEL,
@@ -130,7 +164,7 @@ export class ChatService {
 
       this.historyService.addMessage(request.conversationId, 'assistant', answer)
       if (cacheKey && retrieval.status === 'grounded') {
-        this.setCached(cacheKey, { userPolish, answerPolish: answer, output: answer })
+        this.setCached(cacheKey, { userPolish, answerPolish: answer, output: answer, envelope })
       }
       return
     }
@@ -140,14 +174,37 @@ export class ChatService {
 
     const targetLanguage = languageName(request.lang)
     this.prepareStreamingResponse(response)
+    response.write(envelope)
     const output = await this.ollamaService.streamChat(response, env.OLLAMA_TRANSLATION_MODEL, [
       { role: 'system', content: buildTranslationPrompt(targetLanguage) },
       { role: 'user', content: answerPolish },
     ])
 
     if (cacheKey && retrieval.status === 'grounded') {
-      this.setCached(cacheKey, { userPolish, answerPolish, output })
+      this.setCached(cacheKey, { userPolish, answerPolish, output, envelope })
     }
+  }
+
+  private envelope(bundle: Bundle): string {
+    return JSON.stringify({ blocks: bundle }) + BLOCKS_DELIMITER
+  }
+
+  // Lists only the contextual tags backed by real data this turn, so the model
+  // can place them but cannot emit a tag that resolves to nothing.
+  private buildTagInstruction(tags: ContextualTag[]): string {
+    if (tags.length === 0) {
+      return ''
+    }
+    const list = tags.map((tag) => `[[${tag}]] (${TAG_DESCRIPTIONS[tag]})`).join(', ')
+    return (
+      '\n\nZNACZNIKI: Mozesz wstawic w tekscie znaczniki w formacie [[nazwa]], ' +
+      'ktore aplikacja zamieni na interaktywne elementy. Wstaw znacznik dokladnie ' +
+      'tam, gdzie naturalnie wspominasz o danej informacji. Nie podawaj samej ' +
+      'wartosci przy znaczniku - element pokaze ja sam. Uzywaj wylacznie tych ' +
+      'znacznikow: ' +
+      list +
+      '.'
+    )
   }
 
   private async translate(text: string, targetLanguage: string) {
@@ -157,12 +214,9 @@ export class ChatService {
     ])
   }
 
-  private buildSystemPrompt(context: string) {
-    if (context.length === 0) {
-      return systemPrompt
-    }
-
-    return systemPrompt + ragInstruction + context
+  private buildSystemPrompt(context: string, tags: ContextualTag[]) {
+    const base = context.length === 0 ? systemPrompt : systemPrompt + ragInstruction + context
+    return base + this.buildTagInstruction(tags)
   }
 
   // Joins the retrieved service texts, appends contact details for the handling
@@ -292,4 +346,5 @@ export const chatService = new ChatService(
   new RetrievalService(),
   new DepartmentService(),
   graphService,
+  blocksService,
 )
