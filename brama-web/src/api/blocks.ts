@@ -49,6 +49,9 @@ export const placeBlockSchema = z.object({
   address: z.string(),
   phone: z.string().optional(),
   hours: z.string().optional(),
+  /** Optional precise point; falls back to geocoding the address. */
+  lat: z.number().optional(),
+  lng: z.number().optional(),
 })
 
 export const collapsibleBlockSchema = z.object({
