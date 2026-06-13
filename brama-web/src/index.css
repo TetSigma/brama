@@ -1312,11 +1312,11 @@ h3 {
 [data-theme='high-contrast'] .contrast-switch,
 [data-theme='high-contrast'] .language-select {
   border-color: var(--color-border-strong);
-  background: var(--color-surface);
   box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
+
 
 [data-theme='high-contrast'] .cta-section {
   color: var(--color-text-inverse);
@@ -1334,14 +1334,9 @@ h3 {
   box-shadow: none;
 }
 
-[data-theme='high-contrast'] .hero-copy > *,
-[data-theme='high-contrast'] .hero-visual,
-[data-theme='high-contrast'] .feature-card,
-[data-theme='high-contrast'] .services-copy,
-[data-theme='high-contrast'] .service-list li,
-[data-theme='high-contrast'] .process-step {
-  animation: none;
-}
+/* High contrast does NOT disable the one-shot entrance animations: overriding
+   `animation` here changes animation-name on toggle, which restarts (replays)
+   the animations. Motion-sensitivity is handled by prefers-reduced-motion instead. */
 
 [data-theme='high-contrast'] .contrast-switch[aria-checked='true'] .contrast-switch__track {
   background: var(--color-primary);
